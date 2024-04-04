@@ -2,37 +2,207 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Index Page</title>
-<style>
-    body {
-        background-color: #000;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .container {
-        text-align: center;
-    }
-    .icon {
-        width: 100px;
-        height: auto;
-        fill: #999;
-    }
-    .text {
-        color: #999;
-        font-family: Arial, sans-serif;
-        font-weight: 300;
-    }
-</style>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+
+<title>Tawhid.</title>
 </head>
+
 <body>
-<div class="container">
-    <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M11 1L11.7068 3.11641C11.794 3.30319 11.9133 3.46955 12.0575 3.6053C12.2017 3.74105 12.3685 3.84261 12.55 3.90243L15.577 4.6835C16.2303 4.85244 16.7309 5.4266 16.7309 6.12472V7H7.26906V6.12472C7.26906 5.4266 7.76968 4.85244 8.423 4.6835L11.45 3.90243C11.6315 3.84261 11.7983 3.74105 11.9425 3.6053C12.0867 3.46955 12.206 3.30319 12.2932 3.11641L13 1H11ZM18 7H6V19C6 20.1046 6.89543 21 8 21H16C17.1046 21 18 20.1046 18 19V7ZM12 23C11.4477 23 11 22.5523 11 22C11 21.4477 11.4477 21 12 21C12.5523 21 13 21.4477 13 22C13 22.5523 12.5523 23 12 23Z"></path></svg>
-    <p class="text">Being remade after 4 years of service</p>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">  
+            <h1 class="navbar-item">Tawhid.</h1>
+          <a role="button" class="navbar-burger is-pulled-right" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a href="#portfolio" class="button is-primary is-outlined">
+                  <strong>Portfolio</strong>
+                </a>
+                <a href="#contact" class="button is-info is-outlined">
+Contact                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+<br>
+<div class="container is-outlined is-centered" id="animatedContainer">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="card">
+          <header class="card-header is-centered">
+            <p class="card-header-title is-centered">Who am I?</p>
+          </header>
+          <div class="card-image ">
+           <img class="image is-3by1" src="images/b6.png"/>
+          </div>
+
+          <div class="card-content">
+            <div class="media">
+           
+              <div class="media-content">
+                <p class="subtitle">Tawhid Bin Omar</p>
+                <div class="content" id="animatedText">
+                  <!-- Text content will be inserted here dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<br>
+<section class="section is-large" id="portfolio">
+    <h1 class="title">Portfolio</h1>
+    <br>
+    <h2 class="subtitle">
+     Skills
+    </h2>
+
+    <h2 class="subtitle">Projects</h2>
+    <div class="columns ">
+    <div class="card column is-4 is-outlined"  style="height: 100%;">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img
+              src="https://bulma.io/assets/images/placeholders/1280x960.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="card-content">
+      
+          <div class="content">
+         Project One.
+            <br />
+          </div>
+        </div>
+      </div>
+      <!--another-->
+
+      <div class="card column is-4 is-outlined"  style="height: 100%;">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img
+              src="https://bulma.io/assets/images/placeholders/1280x960.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="card-content">
+      
+          <div class="content">
+         Project One.
+            <br />
+          </div>
+        </div>
+      </div>
+       <!--another-->
+      
+       <div class="card column is-4 is-outlined"  style="height: 100%;">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img
+              src="https://bulma.io/assets/images/placeholders/1280x960.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="card-content">
+      
+          <div class="content">
+         Project One.
+            <br />
+          </div>
+        </div>
+      </div>
+           <!--another-->
+      
+     
+    </div>
+  </section>
+
+  <section class="section is-large" id="contact">
+    <h1 class="title">Get In Touch</h1>
+    <br>
+    <h2 class="subtitle">
+Drop a message    </h2>
+<div class="form is-centered" >
+<div class="field">
+    <label class="label">Name</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Write your name">
+    </div>
+  </div>
+  
+ 
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control ">
+      <input class="input" type="email" placeholder="Write your email">
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label">Subject</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>General</option>
+          <option>Work</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label">Message</label>
+    <div class="control">
+      <textarea class="textarea" placeholder="Textarea"></textarea>
+    </div>
+  </div>
+  
+
+  
+  
+  <div class="field is-grouped is-centered">
+    <div class="control is-centered">
+      <button class="button is-link is-outlined">Submit</button>
+    </div>
+  
+  </div>
 </div>
+  </section>
+
+
+<br>
+  <footer class="footer content has-text-centered">
+      <p>
+      Self 2024
+      </p>
+  </footer>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
