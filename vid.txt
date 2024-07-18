@@ -1,0 +1,47 @@
+  <div id="video-wrapper">
+        <video id="avideo">
+            <source id="low" src="" type="" />
+            <source id="high" src="" type="" />
+        </video>
+    
+        <div class="preview-controls" id="controls">
+        
+            <!-- Seek Video Time Control  -->
+            <div class="time-bar">
+            <input id="time-seek" class="time-meter" type="range" min="0" max="100" value="0">
+            </div>
+        
+                                        
+        
+            <div class="control-bar">
+        
+            
+                <!-- play / pause button -->
+                <div id="play/pause" class="preview-controls-main control">
+                    <i class="material-icons vid-icon">play_circle_outline</i>
+                </div>
+            
+            
+                <!-- repeat button -->
+                <div id="replay" class="preview-controls-main control">
+                    <i class="material-icons vid-icon">replay</i>
+                </div>
+            
+            
+                <!-- Current Time Display  -->
+                <div id="current-time" class="preview-controls-main time">
+                    0:00
+                </div>
+            
+            
+                <span class="preview-controls-main separator">
+                    /
+                </span>
+            
+            
+                <!--display duration-->
+                <div id="duration-time" class="preview-controls-main time duration-time">
+                    0:00
+                </div>
+
+                

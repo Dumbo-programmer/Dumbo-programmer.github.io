@@ -1,0 +1,144 @@
+
+
+window.onload = function() {
+    // Video
+    var oevideo = document.getElementById("avideo");
+    // disabling the default controls
+    oevideo.controls = false;
+    
+    //setting default video source to low and initialize player 
+    var defaultVideoSouce = document.getElementById("low").getAttribute('src');
+    
+    function initializePlayer (){
+        oevideo.setAttribute('src', defaultVideoSouce);
+    }
+    initializePlayer();
+
+
+    var oeplayPauseBtn = document.getElementById("play/pause");
+ 
+
+    var oereplay = document.getElementById("replay");
+     
+     
+ 
+ 
+
+
+
+    //current time holder
+    var currentTimeView = document.getElementById("current-time");
+
+
+    //duration time holder
+    var durationTimeView = document.getElementById("duration-time");
+
+
+    // time Slider
+    var oeseekBar = document.getElementById("time-seek");
+
+
+
+    
+    // video wrapper
+    var videoWrapper = document.getElementById("video-wrapper");
+    //controls
+    var controls = document.getElementById("controls");
+
+
+
+    //functionality
+    // hover effect on video to bring up the controls
+    videoWrapper.addEventListener('mouseover', function(){
+       controls.style.display = 'block';
+    });
+    
+    videoWrapper.addEventListener('mouseout', function(){
+        controls.style.display = 'none';
+    });
+    
+    //play-pause 
+    function playPause(){
+        if (oevideo.paused == true) {
+            oevideo.play();
+            oeplayPauseBtn.innerHTML = '<i class="material-icons vid-icon">pause</i>';
+        } else {
+            oevideo.pause();
+            oeplayPauseBtn.innerHTML = ' <i class="material-icons vid-icon">play_circle_outline</i>';
+        }
+    }
+    
+    function spaceKeyFunction(e){
+        if (e.keyCode == "32") {
+        playPause();
+        }
+    }
+    
+    oeplayPauseBtn.addEventListener('click', playPause);
+    document.addEventListener('keydown', spaceKeyFunction, false);
+    oevideo.addEventListener('click', playPause);
+
+
+    //replay
+    oereplay.addEventListener('click', function(){
+        oevideo.currentTime = 0;
+        oevideo.play();
+    });
+
+
+    //current time
+    oevideo.addEventListener('timeupdate', function(){
+        var curMins = Math.floor(oevideo.currentTime / 60);
+        var curSecs = Math.floor(oevideo.currentTime - curMins * 60);
+        if(curSecs < 10){ curSecs = "0"+curSecs; }
+	    if(curMins < 10){ curMins = "0"+curMins; }
+        currentTimeView.innerHTML = curMins + ":" + curSecs;
+    });
+
+
+    //duration  
+    oevideo.addEventListener('timeupdate', function(){
+        var durMins = Math.floor(oevideo.duration / 60);
+        var durSecs = Math.floor(oevideo.duration - durMins * 60);
+        if(durSecs < 10){ durSecs = "0"+durSecs; }
+        if(durMins < 10){ durMins = "0"+durMins; }
+        durationTimeView.innerHTML = durMins + ":" + durSecs;
+    });
+
+
+    // update seek bar for time as time updates  
+    oevideo.addEventListener('timeupdate', function(){
+        var newTime = oevideo.currentTime * (100 / oevideo.duration);
+        oeseekBar.value = newTime; 
+    });  
+    // update current time if seek bar for time changes
+    oeseekBar.addEventListener('change', function(){
+        var seekTo = oevideo.duration * (oeseekBar.value / 100);
+       oevideo.currentTime = seekTo; 
+    });
+
+
+
+
+
+
+
+
+
+    //hide controls after 3 seconds if mouse is not moving
+    function inactivity(){
+        setTimeout(function(){
+            controls.style.visibility = 'hidden'; 
+         }, 3000);
+    }
+    inactivity();
+    videoWrapper.addEventListener('mousemove', function(){
+        controls.style.visibility = 'visible';
+    inactivity(); 
+    });
+
+
+}
+
+
+
