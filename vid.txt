@@ -45,3 +45,28 @@
                 </div>
 
                 
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-greyish p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">Founder and President(2024 onwards)</div>
+                                                <div class="mb-2">
+                                                    <div class="small text-white fw-bolder">Josephite Epsilon Robotics Club</div>
+                                                    <div class="small text-muted">St. Joseph Higher Secondary School</div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 text-muted"><div>As Vice President and Head of Academics for the esteemed Josephite Math Club, I spearheaded initiatives to deepen mathematical engagement and challenge our community of budding mathematicians. In this capacity, I designed and curated a collection of over 1,000 math problems, each crafted to foster critical thinking, analytical skills, and a love for the discipline. My efforts in problem curation and academic leadership not only enriched our club's resources but also laid a strong foundation for intellectual growth and collaborative exploration among members.</div></div>
+                                    </div> 
