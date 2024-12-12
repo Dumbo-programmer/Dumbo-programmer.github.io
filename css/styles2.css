@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap");
+
+:root{
+  --one:#003135;
+  --oned: #024950;
+  --two: #964734;
+  --three: #0FA4AF;
+  --four: #AFDDE5;
+}
+body {
+    font-family: "Source Sans Pro", sans-serif;
+text-align: center;
+    color:aliceblue;
+  margin: 0;
+  padding: 0;
+  background: var(--one); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    var(--one),
+    var(--oned)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--one),
+    var(--oned)
+  ); 
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  align-items: center;
+
+}
+.content{
+text-align: center;
+align-items: center;
+}
+/*navbar*/
+.navbar {
+  height: 60px;
+  width: 287px;
+  margin: 0 auto;
+  margin-top: 65px;
+
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.13);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.9px);
+-webkit-backdrop-filter: blur(3.9px);
+border: 1px solid rgba(255, 255, 255, 0.28);  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  z-index: 2;
+  border-radius: 34px;
+}
+
+.navbar .logo {
+  text-transform: uppercase;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  font-size: 16pt;
+}
+
+.navbar .logo a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 4em;
+  align-items: center;
+}
+
+.navbar ul li {
+  display: inline;
+  text-decoration: none;
+}
+
+.navbar ul li a {
+  padding: 0.25em 1em 0.25em 1em;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+}
+
+.navbar a:hover {
+  color: var(--three);
+  transition-duration: 0.3s;
+}
+.tab-link.active {
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/**card**/
+p:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+.project-cards {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns */
+  gap: 20px; /* Add spacing between cards */
+  padding: 20px; /* Add padding around the grid */
+  box-sizing: border-box; /* Include padding in container's dimensions */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%; /* Ensure the card fits its container */
+  height: auto; /* Allow card height to adjust to content */
+  padding: 20px;
+
+  background-color: #ffffff2a;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+
+  box-sizing: border-box; /* Prevent padding from affecting size */
+}
+
+.img-card img {
+  border-radius: 20px;
+  width: 100%; /* Ensure the image fits within the card */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Fill the image container without distortion */
+}
+
+.card-footer {
+  font-size: 0.65em;
+  color: var(--four);
+}
+
+.content{
+  text-align: center;
+}
