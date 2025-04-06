@@ -1,26 +1,43 @@
 import Image from "next/image";
-import React from "react";
 
 interface Props {
   src: string;
   title: string;
   description: string;
+  type?: "image" | "video"; // default to image
 }
 
-const ProjectCard = ({ src, title, description }: Props) => {
+const ProjectCard = ({ src, title, description, type = "image" }: Props) => {
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61]">
-      <Image
-        src={src}
-        alt={title}
-        width={1000}
-        height={1000}
-        className="w-full object-contain"
-      />
+    <div className="relative h-[450px] w-full max-w-sm overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] flex flex-col">
+      
+      {/* Media Section */}
+      <div className="h-[200px] w-full flex justify-center items-center overflow-hidden bg-black">
+        {type === "video" ? (
+          <video
+            src={src}
+            className="object-contain h-full"
+            controls
+            muted
+            loop
+          />
+        ) : (
+          <Image
+            src={src}
+            alt={title}
+            width={300}
+            height={200}
+            className="object-contain h-full"
+          />
+        )}
+      </div>
 
-      <div className="relative p-4">
-        <h1 className="text-2xl font-semibold text-white">{title}</h1>
-        <p className="mt-2 text-gray-300">{description}</p>
+      {/* Text Section */}
+      <div className="p-4 flex-1 overflow-hidden flex flex-col">
+        <h1 className="text-xl font-semibold text-white truncate">{title}</h1>
+        <p className="mt-2 text-gray-300 text-sm overflow-hidden text-ellipsis line-clamp-4">
+          {description}
+        </p>
       </div>
     </div>
   );

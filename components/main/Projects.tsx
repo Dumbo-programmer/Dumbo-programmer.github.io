@@ -3,13 +3,15 @@ import React, { useState } from "react";
 import ProjectCard from "../sub/ProjectCard";
 
 const projectData = [
-  { src: "/one.png", title: "PlayNux Operating system", description: "Used: C, C++, Vala, Bash, HTML, CSS, JS, Rust. It is a linux distro based on ubuntu and elementary os. Playnux was created as a project for the PlayNux console concept by arham and tawhid. It was later discontinued " },
-  { src: "/two.png", title: "Preron Food Delivery App", description: "Used: IONIC, VUE, Firebase, JS, Node.Js, etc. Applications and ecosystem for customer, client and rider and internal management inside the company. Dedicated chat and email servers were also created to support the project. The idea of a person to deliver a thing to another friend immediately was a new concept when Preron was founded during 2023-2024. The passion project was later abandoned as the initial ignitors drifted apart due to conflict "  },
-  { src: "/three.png", title: "Helping Hand Donation App", description: "Used: Ionic, firebase, etc. A donation app which was created as an experiment to see if people are willing to watch advertisement to support the poor and needy."  },
-  { src: "/jmc.png", title: "Josephite Math Club website", description: "Used: React, VUE, Mongodb, etc. A math website with dedicated user system, article system and math contest system in built. It was built for the Josephite Math Club"  },
-  { src: "/b6.png", title: "Battle Games Gambling website",description: "A web game based gambling site which was made for a Nigerian client and the company behind was later acquired alongside the game logic for around 100k usd"  },
-  { src: "/latex.png", title: "Latex code generator", description: "Used: Python. A latex code generator created as a prototype work around to type math problems faster"  },
-  { src: "/hardware.png", title: "Flight Controller", description: "Used: Ardupilot and other hardware projects for ideas and inspirations. Personal passion project I created with a friend of mine"  },
+  { type: "image", src: "/one.png", title: "PlayNux Operating system", description: "Used: C, C++, Vala, Bash, HTML, CSS, JS, Rust. It is a linux distro based on ubuntu and elementary os. Playnux was created as a project for the PlayNux console concept by arham and tawhid. It was later discontinued " },
+  { type: "image", src: "/two.png", title: "Preron Food Delivery App", description: "Used: IONIC, VUE, Firebase, JS, Node.Js, etc. Applications and ecosystem for customer, client and rider and internal management inside the company. Dedicated chat and email servers were also created to support the project. The idea of a person to deliver a thing to another friend immediately was a new concept when Preron was founded during 2023-2024. The passion project was later abandoned as the initial ignitors drifted apart due to conflict "  },
+  { type: "image", src: "/three.png", title: "Helping Hand Donation App", description: "Used: Ionic, firebase, etc. A donation app which was created as an experiment to see if people are willing to watch advertisement to support the poor and needy."  },
+  { type: "image", src: "/jmc.png", title: "Josephite Math Club website", description: "Used: React, VUE, Mongodb, etc. A math website with dedicated user system, article system and math contest system in built. It was built for the Josephite Math Club"  },
+  { type: "image", src: "/b6.png", title: "Battle Games Gambling website",description: "Used: HTML, CSS, JS, Node.Js, Firebase, etc. A web game based gambling site which was made for a Nigerian client and the company behind was later acquired alongside the game logic for around 100k usd"  },
+  { type: "video", src: "/demo.mp4", title: "Game Designs", description: "Used: C#, Unity, OpenGl, Blender, etc. Various Games I made, some are available in my itch.io" },
+  { type: "image", src: "/latex.png", title: "Latex code generator", description: "Used: Python. A latex code generator created as a prototype work around to type math problems faster"  },
+  { type: "image", src: "/hardware.png", title: "Flight Controller", description: "Used: Ardupilot and other hardware projects for ideas and inspirations. Personal passion project I created with a friend of mine"  },
+
 ];
 
 const Projects = () => {
