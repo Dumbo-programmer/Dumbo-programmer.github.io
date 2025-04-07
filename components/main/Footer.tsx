@@ -7,6 +7,7 @@ import {
   RxLinkedinLogo,
 } from "react-icons/rx";
 import { FaYoutube } from "react-icons/fa";
+import { FaSlack } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -18,25 +19,25 @@ const Footer = () => {
           <div className="min-w-[200px] flex flex-col items-center">
             <div className="font-bold text-lg">Community</div>
             <a
-              href="https://www.youtube.com/"
+              href="https://app.slack.com/client/T0266FRGM/C0266FRGT"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center my-2 cursor-pointer hover:text-red-500 transition"
             >
-              <FaYoutube size={20} />
-              <span className="ml-2">YouTube</span>
+              <FaSlack size={20} />
+              <span className="ml-2">Slack</span>
             </a>
             <a
-              href="https://github.com/"
+              href="https://github.com/Dumbo-programmer/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center my-2 cursor-pointer hover:text-gray-400 transition"
+              className="flex items-center my-2 cursor-pointer hover:text-gray-500 transition"
             >
               <RxGithubLogo size={20} />
               <span className="ml-2">GitHub</span>
             </a>
             <a
-              href="https://discord.com/"
+              href="https://discord.com/users/707079802531872769"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center my-2 cursor-pointer hover:text-blue-500 transition"
@@ -59,7 +60,7 @@ const Footer = () => {
               <span className="ml-2">Instagram</span>
             </a>
             <a
-              href="https://twitter.com/"
+              href="https://x.com/tawhid_omar"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center my-2 cursor-pointer hover:text-blue-400 transition"
@@ -68,7 +69,7 @@ const Footer = () => {
               <span className="ml-2">Twitter</span>
             </a>
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/tawhid-omar-7a0320212/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center my-2 cursor-pointer hover:text-blue-700 transition"
@@ -82,7 +83,7 @@ const Footer = () => {
           <div className="min-w-[200px] flex flex-col items-center">
             <div className="font-bold text-lg">About</div>
             <a
-              href="#sponsor"
+              href="https://buymeacoffee.com/tawhid"
               className="flex items-center my-2 cursor-pointer hover:text-yellow-400 transition"
             >
               <span className="ml-2">Donate</span>
@@ -95,7 +96,7 @@ const Footer = () => {
             </a>
             <a
               href="mailto:tawhidbinomar@gmail.com"
-              className="flex items-center my-2 cursor-pointer hover:text-gray-300 transition"
+              className="flex items-center my-2 cursor-pointer hover:text-teal-300 transition"
             >
               <span className="ml-2">tawhidbinomar@gmail.com</span>
             </a>
