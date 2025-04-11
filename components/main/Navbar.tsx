@@ -18,9 +18,7 @@ const Navbar = () => {
             height={70}
             className="cursor-pointer hover:animate-slowspin"
           />
-          <span className="font-bold ml-[10px] hidden md:block text-gray-300">
-            Tawhid
-          </span>
+    
         </a>
 
         {/* Navbar Links */}
@@ -48,7 +46,7 @@ const Navbar = () => {
         </div>
 
         {/* Social Icons */}
-        <div className="flex flex-row gap-5">
+        <div className="hidden md:flex flex-row gap-5">
   {Socials.map((social) => (
     <a
       key={social.name}
