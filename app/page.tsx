@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Hero from "@/components/main/Hero";
 import Skills from "@/components/main/Skills";
-import Encryption from "@/components/main/Encryption";
+import Encryption from "@/components/main/Achievements";
 import Projects from "@/components/main/Projects";
 import Research from "@/components/main/Research";
 import LoadingScreen from "@/components/main/LoadingScreen";
@@ -70,7 +70,6 @@ export default function Home() {
         <Encryption />
         <Projects />
         <Research />
-        <WIP />
       </div>
     </main>
   );
