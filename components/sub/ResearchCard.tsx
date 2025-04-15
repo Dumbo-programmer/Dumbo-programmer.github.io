@@ -3,13 +3,14 @@ import Image from "next/image";
 interface Props {
   src: string;
   title: string;
+  sub: string;
   description: string;
   typeA?: "image" | "video";
   tags?: string[];
-  link: string;
+  link?: string;
 }
 
-const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link }: Props) => {
+const ResearchCard = ({ src, title, sub, description, typeA = "image", tags = [], link = "#" }: Props) => {
   return (
     <a
       href={link}
@@ -41,6 +42,7 @@ const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link
       {/* Text Section */}
       <div className="p-4 flex-1 flex flex-col">
         <h1 className="text-xl font-semibold text-white mb-2">{title}</h1>
+        <h1 className="text-xs font-light text-white mb-5">Author: {sub}</h1>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-2">
@@ -52,12 +54,11 @@ const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link
               {tag}
             </span>
           ))}
-        </div>
-
+</div>
         <p className="text-gray-300 text-sm">{description}</p>
       </div>
     </a>
   );
 };
 
-export default ProjectCard;
+export default ResearchCard;

@@ -63,10 +63,9 @@ const HeroContent = () => {
           animate="visible"
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          I&apos;m a passionate student with a keen interest in physics and
-          programming. I love to explore new technologies and solve problems
-          innovatively. The best thing I can do is to dedicate an ungodly amount
-          of time and dedication to the craft.
+          I am a relentlessly curious student fueled by a passion for physics and programming — not merely as subjects, but as lenses through which I understand the world. 
+          I seek out complexity not to conquer it, but to converse with it, to unravel its patterns and reimagine its possibilities. 
+          Whether dissecting the elegance of quantum mechanics or crafting algorithms late into the night, I bring with me an unwavering devotion to deep work. For me, the pursuit of knowledge is not a task — it is a calling, one to which I willingly dedicate countless hours, driven not by obligation but by wonder.
         </motion.p>
 
         <motion.a

@@ -8,7 +8,7 @@ const projectData: {
   title: string;
   description: string;
   tags?: string[];
-  link?: string;
+  link: string;
 }[] = [
   {
     typeA: "image",
@@ -44,14 +44,24 @@ const projectData: {
   },
   {
     typeA: "image",
+    src: "/sht.png",
+    title: "Desktop Manager",
+    link: "https://github.com/Dumbo-programmer/SehtajDesk",
+    description: "A desktop manager which I made for my own use. It is a simple desktop manager which can be used to manage Ebooks, Programming Projects, Assets, Unity projects. It is a simple project which I made to learn about QT5 and FITZ",
+    tags: ["Python", "QT5", "FITZ"],
+  },
+  {
+    typeA: "image",
     src: "/b6.png",
     title: "Battle Games Gambling website",
+    link: "#",
     description: "A web game based gambling site which was made for a Nigerian client and the company behind was later acquired alongside the game logic for around 10k usd",
     tags: ["HTML", "CSS", "JS", "Node.js", "Firebase"],
   },
   {
     typeA: "video",
     src: "/ren.mp4",
+    link: "#",
     title: "Game Designs",
     description: "Various games made in Unity and other tools.",
     tags: ["C#", "Unity", "OpenGL", "Blender"],
@@ -67,6 +77,7 @@ const projectData: {
   {
     typeA: "image",
     src: "/hardware.png",
+    link: "#",
     title: "Flight Controller",
     description: "Passion project inspired by Ardupilot.",
     tags: ["Hardware", "Ardupilot", "Embedded"],
@@ -89,6 +100,7 @@ const Projects = () => {
         key={index}
         src={project.src}
         title={project.title}
+        link={project.link}
         description={project.description}
         typeA={project.typeA} 
         tags={project.tags}

@@ -2,8 +2,28 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
+import ResearchCard from "../sub/ResearchCard";
+const researchData: {
+  typeA?: "image" | "video";
+  src: string;
+  title: string;
+  sub: string;
+  description: string;
+  tags?: string[];
+  link?: string;
+}[] = [
+  {
+    typeA: "image",
+    src: "/qdc.jpg",
+    title: "Simulating and Solving Decoherence Using Quantum Error Correction",
+    sub: 'Professor Sowmitra Das & Tawhid Bin Omar',
+    description: "Decoherence is a fundamental challenge in quantum computing and quantum information processing. Understanding how environmental noise affects qubits is crucial for developing fault-tolerant quantum systems. This study aims to simulate qubit evolution under noise using two complementary approaches.",
+    tags: ["Quantum Computing", "Quantum Error Correction", "Decoherence", "Python"], 
+  },
 
+]
 const Research = () => {
+  const [showAll, setShowAll] = useState(false);
 
   return (
     <div className="flex flex-col items-center justify-center py-20" id="projects">
@@ -21,8 +41,32 @@ const Research = () => {
           </span>
           
         </motion.div>
-      </div>
 
+      </div>
+      {/* 🏆 Research Cards */}
+      <div className="h-full w-full flex flex-wrap gap-10 px-10 justify-center">
+        {researchData
+          .slice(0, showAll ? researchData.length : 3)
+          .map((research, index) => (
+            <ResearchCard
+            key={index}
+            src={research.src}
+            title={research.title}
+            sub={research.sub}
+            description={research.description}
+            typeA={research.typeA} 
+            tags={research.tags}
+            />
+          ))}
+      </div>
+  
+      {/* Button */}
+      {/* <button
+        onClick={() => setShowAll(!showAll)}
+        className="mt-10 px-6 py-3 text-white text-lg font-semibold bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full hover:opacity-80 transition"
+      >
+        {showAll ? "Show Less" : "Show More"}
+      </button>*/}
 
 
 </div>

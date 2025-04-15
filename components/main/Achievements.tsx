@@ -36,6 +36,12 @@ const achievementData: {
           title: "Physics Brawl",
           description: "Participated in team based online physics competition and won 154th place out of 1584 teams."
           },
+          {
+            typeA: "image",
+            src: "/lc.png",
+            title: "Leet Code",
+            description: "Solved 200+ problems and still solving, on LeetCode and ranked in top 7% of all users(12.2 million)."
+            },  
 ]
 const Achievements = () => {
   const [showAll, setShowAll] = useState(false);
