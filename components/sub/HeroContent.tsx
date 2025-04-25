@@ -53,7 +53,7 @@ const HeroContent = () => {
               {" "}
               Tawhid {" "}
             </span>
-            Bin Omar
+            Bin Omar (Rentaro)
           </span>
         </motion.div>
 
