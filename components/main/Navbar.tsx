@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         {/* Logo */}
         <a
-          href="#about-me"
+          href="/#about-me"
           className="h-auto w-auto flex flex-row items-center"
         >
           <Image
@@ -25,19 +25,19 @@ const Navbar = () => {
         <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <a
-              href="#about-me"
+              href="/#about-me"
               className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
             >
               About
             </a>
             <a
-              href="#skills"
+              href="/#skills"
               className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
             >
               Skills
             </a>
             <a
-              href="#projects"
+              href="/#projects"
               className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
             >
               Projects
