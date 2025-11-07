@@ -13,7 +13,22 @@ const researchData: {
   link?: string;
 }[] = [
   
-
+{
+    typeA: "image",
+    src: "/pyxl.jpg",
+    title: "Pyxl Chronicles",
+    link: "https://pyxl-chronicles.itch.io",
+    sub: 'Lead Game Developer',
+    description: "We create distinctive narrative styled horror games that immerse players in captivating stories. As the lead game developer, I oversee the technical aspects of game creation, ensuring seamless gameplay and innovative mechanics.",
+    tags: ["Game Development", "Narrative Design", "Horror Games", "Unity"], 
+  },{
+      typeA: "image",
+    src: "/team.jpg",
+    title: "Team Nokkhotropoth",
+    sub: 'Mechanical Engineering Department Lead',
+    description: "Nokkhotropoth is a student-run team that focuses on designing and building unmanned aerial vehicles (UAVs) and participating in national and international competitions. As the Mechanical Engineering Department Lead, I am responsible for overseeing the design, analysis, and fabrication of the mechanical components of our robots.",
+    tags: ["Mechanical Engineering", "Mechatronics", "Robotics", "Team Leadership"],
+  },
 ]
 const Research = () => {
   const [showAll, setShowAll] = useState(false);
@@ -29,7 +44,7 @@ const Research = () => {
           
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
             {" "}
-            Research & Publications
+            Current Project
             {" "}
           </span>
           

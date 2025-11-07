@@ -36,6 +36,16 @@ const achievementData: {
           title: "Physics Brawl",
           description: "Participated in team based online physics competition and won 154th place out of 1584 teams."
           },
+             {  typeA: "image",
+          src: "/iaac.jpg",
+          title: "International Astronomy and Astrophysics Competition",
+          description: "Silver honor and special recognition for well typesetted solution"
+          },
+          {  typeA: "image",
+          src: "/nsac.jpg",
+          title: "Nasa Space App Challenge",
+          description: "Created AI/ML model to identify exoplanets from datasets."
+          },
           {
             typeA: "image",
             src: "/lc.png",
