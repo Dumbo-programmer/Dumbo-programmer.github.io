@@ -14,7 +14,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Tawhid's Portfolio | Developer",
-  description: "Explore the portfolio of Tawhid, a full stack developer skilled in React, Next.js, Node.js, and more.",
+  description: "Explore the portfolio of Tawhid, a full stack developer skilled in C#, C++, React, Next.js, Node.js, and more.",
   keywords: [
     "Tawhid", "portfolio", "developer", "full stack",
     "React", "Next.js", "Node.js", "TypeScript",
