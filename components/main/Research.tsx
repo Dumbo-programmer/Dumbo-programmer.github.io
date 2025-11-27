@@ -15,7 +15,7 @@ const researchData: {
   
 {
     typeA: "image",
-    src: "/pyxl.jpg",
+    src: "/pyxl.png",
     title: "Pyxl Chronicles",
     link: "https://pyxl-chronicles.itch.io",
     sub: 'Lead Game Developer',
@@ -23,7 +23,7 @@ const researchData: {
     tags: ["Game Development", "Narrative Design", "Horror Games", "Unity"], 
   },{
       typeA: "image",
-    src: "/team.jpg",
+    src: "/team.png",
     title: "Team Nokkhotropoth",
     sub: 'Mechanical Engineering Department Lead',
     description: "Nokkhotropoth is a student-run team that focuses on designing and building unmanned aerial vehicles (UAVs) and participating in national and international competitions. As the Mechanical Engineering Department Lead, I am responsible for overseeing the design, analysis, and fabrication of the mechanical components of our robots.",

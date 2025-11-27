@@ -42,7 +42,7 @@ const ResearchCard = ({ src, title, sub, description, typeA = "image", tags = []
       {/* Text Section */}
       <div className="p-4 flex-1 flex flex-col">
         <h1 className="text-xl font-semibold text-white mb-2">{title}</h1>
-        <h1 className="text-xs font-light text-white mb-5">Author: {sub}</h1>
+        <h1 className="text-xs font-light text-white mb-5">Role: {sub}</h1>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-2">
