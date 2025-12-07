@@ -36,6 +36,12 @@ const achievementData: {
           title: "Physics Brawl",
           description: "Participated in the prestigious team based online physics competition and won 40th place out of 1584 teams, 10th in National."
           },
+          {
+          typeA: "image",
+          src: "/phiga.png",
+          title: "PHIGA Physics Competition",
+          description: "Achieved 1st place out of 1,211 participants worldwide in the PHIGA International Gamefied Physics Competition."
+          },
              {  typeA: "image",
           src: "/iaac.png",
           title: "International Astronomy and Astrophysics Competition",
