@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   slideInFromLeft,
@@ -9,22 +9,8 @@ import {
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-import LoadingScreen from "../main/LoadingScreen"; // Import the loading screen component
 
 const HeroContent = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate a delay for loading (adjust as needed)
-    const timer = setTimeout(() => setIsLoading(false), 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <LoadingScreen />; // Show loading screen while loading
-  }
-
   return (
     <motion.div
       initial="hidden"
@@ -86,9 +72,10 @@ const HeroContent = () => {
       >
         <Image
           src="/mainIconsdark.svg"
-          alt="work icons"
+          alt="Technology and development icons illustration"
           height={650}
           width={650}
+          priority
         />
       </motion.div>
     </motion.div>

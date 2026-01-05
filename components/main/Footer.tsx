@@ -105,7 +105,7 @@ const Footer = () => {
 
         {/* Footer Text */}
         <div className="mt-5 text-sm text-center">
-          &copy; Tawhid 2025 Inc. All rights reserved
+          &copy; Tawhid {new Date().getFullYear()} Inc. All rights reserved
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Hero from "@/components/main/Hero";
 import Skills from "@/components/main/Skills";
-import Encryption from "@/components/main/Achievements";
+import Achievements from "@/components/main/Achievements";
 import Projects from "@/components/main/Projects";
 import Research from "@/components/main/Research";
 import LoadingScreen from "@/components/main/LoadingScreen";
@@ -61,13 +61,37 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tawhid Bin Omar",
+    "url": "https://tawhid.is-a.dev",
+    "image": "https://tawhid.is-a.dev/NavLogo.png",
+    "sameAs": [
+      "https://github.com/Dumbo-programmer",
+      "https://discord.com/users/707079802531872769",
+      "https://www.facebook.com/tawhid.bin.omar.2024/",
+      "https://instagram.com/renisudesu"
+    ],
+    "jobTitle": "Full Stack Developer & Student",
+    "description": "Full stack developer and physicist passionate about physics, programming, and innovation",
+    "knowsAbout": [
+      "Web Development", "Game Development", "Physics", "Artificial Intelligence",
+      "React", "Next.js", "Unity", "C#", "TypeScript", "Python"
+    ]
+  };
+
   return (
     <main className="h-full w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="flex flex-col gap-20">
         <LoadingScreen />
         <Hero />
         <Skills />
-        <Encryption />
+        <Achievements />
         <Projects />
         <Research />
       </div>

@@ -10,13 +10,15 @@ const Navbar = () => {
         <a
           href="/#about-me"
           className="h-auto w-auto flex flex-row items-center"
+          aria-label="Go to About section"
         >
           <Image
             src="/NavLogo.png"
-            alt="logo"
+            alt="Tawhid's Portfolio Logo"
             width={70}
             height={70}
             className="cursor-pointer hover:animate-slowspin"
+            priority
           />
     
         </a>
@@ -27,18 +29,21 @@ const Navbar = () => {
             <a
               href="/#about-me"
               className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
+              aria-label="Navigate to About section"
             >
               About
             </a>
             <a
               href="/#skills"
               className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
+              aria-label="Navigate to Skills section"
             >
               Skills
             </a>
             <a
               href="/#projects"
               className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
+              aria-label="Navigate to Projects section"
             >
               Projects
             </a>
@@ -53,10 +58,11 @@ const Navbar = () => {
       href={social.link}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={`Visit ${social.name} profile`}
     >
       <Image
         src={social.src}
-        alt={social.name}
+        alt={`${social.name} icon`}
         width={24}
         height={24}
         className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:opacity-80"

@@ -66,6 +66,14 @@ const projectData: {
     description: "A web game based gambling site which was made for a Nigerian client and the company behind was later acquired alongside the game logic for around 10k usd",
     tags: ["HTML", "CSS", "JS", "Node.js", "Firebase"],
   },
+    {
+    typeA: "image",
+    src: "/rhyme.png",
+    title: "Basketball Coach Resume",
+    link: "https://dumbo-programmer.github.io/rhymeehasan/",
+    description: "A website for basketball coach Rhyme to showcase his skills and get clients.",
+    tags: ["HTML", "CSS", "JS"],
+  },
   {
     typeA: "video",
     src: "/ren.mp4",
@@ -119,6 +127,7 @@ const Projects = () => {
       <button
         onClick={() => setShowAll(!showAll)}
         className="mt-10 px-6 py-3 text-white text-lg font-semibold bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full hover:opacity-80 transition"
+        aria-label={showAll ? "Show less projects" : "Show more projects"}
       >
         {showAll ? "Show Less" : "Show More"}
       </button>

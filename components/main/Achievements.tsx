@@ -97,6 +97,7 @@ const Achievements = () => {
       <button
         onClick={() => setShowAll(!showAll)}
         className="mt-10 px-6 py-3 text-white text-lg font-semibold bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full hover:opacity-80 transition"
+        aria-label={showAll ? "Show less achievements" : "Show more achievements"}
       >
         {showAll ? "Show Less" : "Show More"}
       </button>
