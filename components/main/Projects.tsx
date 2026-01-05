@@ -26,6 +26,14 @@ const projectData: {
     description: "Applications and ecosystem for customer, client and rider and internal management inside the company. Dedicated chat and email servers were also created to support the project. The idea of a person to deliver a thing to another friend immediately was a new concept when Preron was founded during 2021-2023. The passion project was later abandoned as the initial ignitors drifted apart due to the pandemic and lack of funding",
     tags: ["IONIC", "VUE", "Firebase", "JS", "Node.js"],
   },
+    {
+    typeA: "image",
+    src: "/special.png",
+    title: "Vocal Guard Antivishing AI",
+    link: "https://vocalguard.netlify.app",
+    description: "An AI based antivishing system which uses ML to identify callers and live analyze calls and protect. Built as a special project for Conrad Challenge 2025",
+    tags: ["Jupiter Notebook", "Python", "Firebase", "ML/AI", "Node.js"],
+  },
   {
     typeA: "image",
     src: "/three.png",
