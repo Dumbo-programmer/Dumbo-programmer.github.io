@@ -37,8 +37,13 @@ const LoadingScreen = () => {
   if (!loading) return null; // Hide when done loading
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-[#030014cc] backdrop-blur-md z-[100]">
-      <div className="text-green-400 font-mono text-sm md:text-lg leading-5 md:leading-7">
+    <div 
+      className="fixed inset-0 flex items-center justify-center bg-[#030014cc] backdrop-blur-md z-[100]"
+      role="status"
+      aria-live="polite"
+      aria-label="Loading page content"
+    >
+      <div className="text-green-400 font-mono text-sm md:text-lg leading-5 md:leading-7" aria-hidden="true">
         {binaryMatrix.map((line, index) => (
           <p key={index} className="animate-flicker">{line}</p>
         ))}

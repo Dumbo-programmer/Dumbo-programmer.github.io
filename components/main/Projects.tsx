@@ -105,23 +105,22 @@ const Projects = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <div>
-    <div className="flex flex-col items-center justify-center py-20" id="projects">
-    <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
+    <section aria-labelledby="projects-heading">
+      <div className="flex flex-col items-center justify-center py-20" id="projects">
+        <h2 id="projects-heading" className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
         Projects
-      </h1>
+      </h2>
       <div className="h-full w-full flex flex-wrap gap-10 px-10 justify-center">
         {projectData.slice(0, showAll ? projectData.length : 3).map((project, index) => (
           <ProjectCard
-        key={index}
-        src={project.src}
-        title={project.title}
-        link={project.link}
-        description={project.description}
-        typeA={project.typeA} 
-        tags={project.tags}
-/>
-
+            key={`project-${project.title.replace(/\s+/g, '-').toLowerCase()}-${index}`}
+            src={project.src}
+            title={project.title}
+            link={project.link}
+            description={project.description}
+            typeA={project.typeA} 
+            tags={project.tags}
+          />
         ))}
       </div>
       <button
@@ -132,10 +131,7 @@ const Projects = () => {
         {showAll ? "Show Less" : "Show More"}
       </button>
     </div>
-
-
-    </div>
-
+  </section>
   );
 };
 

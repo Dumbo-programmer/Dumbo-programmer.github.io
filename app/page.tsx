@@ -82,7 +82,7 @@ export default function Home() {
   };
 
   return (
-    <main className="h-full w-full">
+    <main className="h-full w-full" id="main-content">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

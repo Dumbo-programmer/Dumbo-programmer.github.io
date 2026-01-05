@@ -63,15 +63,15 @@ const Achievements = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <div className="flex flex-col relative items-center justify-center min-h-screen w-full h-full py-20">
+    <section className="flex flex-col relative items-center justify-center min-h-screen w-full h-full py-20" aria-labelledby="achievements-heading">
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}
           className="text-[40px] font-medium text-center text-gray-200"
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+          <h2 id="achievements-heading" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
             Education & Achievements
-          </span>
+          </h2>
         </motion.div>
       </div>
   
@@ -84,7 +84,7 @@ const Achievements = () => {
           .slice(0, showAll ? achievementData.length : 3)
           .map((achievement, index) => (
             <AchievementCard
-              key={index}
+              key={`achievement-${achievement.title.replace(/\s+/g, '-').toLowerCase()}-${index}`}
               src={achievement.src}
               title={achievement.title}
               description={achievement.description}
@@ -101,7 +101,7 @@ const Achievements = () => {
       >
         {showAll ? "Show Less" : "Show More"}
       </button>
-    </div>
+    </section>
   );
   
 };

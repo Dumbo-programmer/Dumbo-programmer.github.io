@@ -10,9 +10,10 @@ interface Props {
     width: number;
     height: number;
     index: number;
+    alt?: string;
 }
 
-const SkillDataProvider = ({ src, width, height, index} : Props) => {
+const SkillDataProvider = ({ src, width, height, index, alt } : Props) => {
     const {ref, inView} = useInView({
         triggerOnce: true
     })
@@ -33,10 +34,11 @@ const SkillDataProvider = ({ src, width, height, index} : Props) => {
   transition={{delay: index * animationDelay}}
   >
     <Image
-src={src}
-width={width}
-height={height}
-alt='skill image'
+      src={src}
+      width={width}
+      height={height}
+      alt={alt || 'Technology skill icon'}
+      loading="lazy"
     />
   </motion.div>
   )

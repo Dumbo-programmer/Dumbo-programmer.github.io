@@ -22,6 +22,7 @@ const Footer = () => {
               href="https://app.slack.com/client/T0266FRGM/C0266FRGT"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Join our Slack community"
               className="flex items-center my-2 cursor-pointer hover:text-red-500 transition"
             >
               <FaSlack size={20} />
@@ -96,6 +97,7 @@ const Footer = () => {
             </a>
             <a
               href="mailto:tawhidbinomar@gmail.com"
+              aria-label="Send email to tawhidbinomar@gmail.com"
               className="flex items-center my-2 cursor-pointer hover:text-teal-300 transition"
             >
               <span className="ml-2">tawhidbinomar@gmail.com</span>

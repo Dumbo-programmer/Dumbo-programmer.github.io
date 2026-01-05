@@ -15,6 +15,7 @@ const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link
       href={link}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={`View ${title} project details`}
       className="relative h-auto w-full max-w-sm overflow-hidden rounded-lg border border-[#2A0E61] flex flex-col bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6] hover:scale-105"
     >
       {/* Media Section */}
@@ -26,14 +27,17 @@ const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link
             controls
             muted
             loop
+            preload="metadata"
+            aria-label={`Video preview of ${title}`}
           />
         ) : (
           <Image
             src={src}
-            alt={title}
+            alt={`Screenshot of ${title} project`}
             width={300}
             height={200}
             className="object-contain h-full w-full"
+            loading="lazy"
           />
         )}
       </div>

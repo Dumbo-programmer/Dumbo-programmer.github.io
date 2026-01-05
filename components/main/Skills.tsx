@@ -21,11 +21,12 @@ const Skills = () => {
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Skill_data.map((image, index) => (
           <SkillDataProvider
-            key={index}
+            key={`skill-${image.skill_name}-${index}`}
             src={image.Image}
             width={image.width}
             height={image.height}
             index={index}
+            alt={image.skill_name}
           />
         ))}
       </div>
@@ -33,44 +34,48 @@ const Skills = () => {
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Frontend_skill.map((image, index) => (
           <SkillDataProvider
-            key={index}
+            key={`frontend-${image.skill_name}-${index}`}
             src={image.Image}
             width={image.width}
             height={image.height}
             index={index}
+            alt={image.skill_name}
           />
         ))}
       </div>
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Backend_skill.map((image, index) => (
           <SkillDataProvider
-            key={index}
+            key={`backend-${image.skill_name}-${index}`}
             src={image.Image}
             width={image.width}
             height={image.height}
             index={index}
+            alt={image.skill_name}
           />
         ))}
       </div>
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Full_stack.map((image, index) => (
           <SkillDataProvider
-            key={index}
+            key={`fullstack-${image.skill_name}-${index}`}
             src={image.Image}
             width={image.width}
             height={image.height}
             index={index}
+            alt={image.skill_name}
           />
         ))}
       </div>
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Other_skill.map((image, index) => (
           <SkillDataProvider
-            key={index}
+            key={`other-${image.skill_name}-${index}`}
             src={image.Image}
             width={image.width}
             height={image.height}
             index={index}
+            alt={image.skill_name}
           />
         ))}
       </div>
@@ -84,7 +89,6 @@ const Skills = () => {
             loop
             muted
             autoPlay
-            loading="lazy"
             aria-hidden="true"
             src="/cards-video.webm"
           />
