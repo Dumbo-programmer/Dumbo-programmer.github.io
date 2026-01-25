@@ -21,8 +21,18 @@ const researchData: {
     sub: 'Lead Game Developer',
     description: "We create distinctive narrative styled horror games that immerse players in captivating stories. As the lead game developer, I oversee the technical aspects of game creation, ensuring seamless gameplay and innovative mechanics.",
     tags: ["Game Development", "Narrative Design", "Horror Games", "Unity"], 
-  },{
-      typeA: "image",
+  },
+  {
+    typeA: "image",
+    src: "/ongko.png",
+    title: "Ongko",
+    link: "#",
+    sub: 'Academic Team Member',
+    description: "Working as an academic team member at Ongko, contributing to educational initiatives and academic excellence.",
+    tags: ["Education", "Math Olympiad", "Team Collaboration", "Physics Olympiad", "Math Organization"],
+  },
+  {
+    typeA: "image",
     src: "/team.png",
     title: "Team Nokkhotropoth",
     sub: 'Mechanical Engineering Department Lead',
@@ -42,7 +52,7 @@ const Research = () => {
             className="text-[40px] font-medium text-center text-gray-200"
           >
             <h2 id="research-heading" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              Current Project
+              Current Projects
             </h2>
           
         </motion.div>

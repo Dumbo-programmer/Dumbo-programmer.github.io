@@ -34,7 +34,7 @@ const achievementData: {
           typeA: "image",
           src: "/pb.jpg",
           title: "Physics Brawl",
-          description: "Participated in the prestigious team based online physics competition and won 40th place out of 1584 teams, 10th in National."
+          description: "Participated in the prestigious team based online physics competition and won 29th place out of 1584 teams, 10th in National."
           },
           {
           typeA: "image",
@@ -57,7 +57,14 @@ const achievementData: {
             src: "/lc.png",
             title: "Leet Code",
             description: "Solved 200+ problems and still solving, on LeetCode and ranked in top 7% of all users(12.2 million)."
-            },  
+          },  
+            {
+              typeA: "image",
+              src: "/codeforces.png",
+              title: "Codeforces",
+              description: "Achieved a rating of 1300+ on Codeforces by solving various competitive programming problems."
+            },
+          
 ]
 const Achievements = () => {
   const [showAll, setShowAll] = useState(false);
