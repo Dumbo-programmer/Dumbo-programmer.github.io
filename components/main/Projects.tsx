@@ -34,6 +34,13 @@ const projectData: {
     description: "An AI based antivishing system which uses ML to identify callers and live analyze calls and protect. Built as a special project for Conrad Challenge 2025",
     tags: ["Jupiter Notebook", "Python", "Firebase", "ML/AI", "Node.js"],
   },
+  {typeA: "image",
+    src: "/conceptvector.png",
+    title: "Concept Vector",
+    link: "https://conceptvector.netlify.app/",
+    description: "A tool that evaluates your subject understanding and gives you a flow of concepts that you should learn to understand the subject.",
+    tags: ["AI/ML", "Python", "Jupiter Notebook", "Node.js"],
+  },
   {
     typeA: "image",
     src: "/three.png",

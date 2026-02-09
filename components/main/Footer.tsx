@@ -52,7 +52,7 @@ const Footer = () => {
           <div className="min-w-[200px] flex flex-col items-center">
             <div className="font-bold text-lg">Social Media</div>
             <a
-              href="https://www.instagram.com/renisudesu"
+              href="https://www.instagram.com/renscule"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center my-2 cursor-pointer hover:text-pink-500 transition"

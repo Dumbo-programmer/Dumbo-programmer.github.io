@@ -20,6 +20,12 @@ const achievementData: {
     },
     {
       typeA: "image",
+      src: "/bdpho.png",
+      title: "Bangladesh Physics Olympiad",
+      description: "2x regional champ, 2x nationalist, 1x national champ, IPHO national camper"
+    },
+    {
+      typeA: "image",
       src: "/dev.png",
       title: "Dev.to Blogs",
       description: "Wrote over 50 blogs with over 1300 followers and 78k post views"
@@ -34,7 +40,7 @@ const achievementData: {
           typeA: "image",
           src: "/pb.jpg",
           title: "Physics Brawl",
-          description: "Participated in the prestigious team based online physics competition and won 29th place out of 1584 teams, 10th in National."
+          description: "Participated in the prestigious team based online physics competition and won 29th place out of 1584 teams, 10th nation wide"
           },
           {
           typeA: "image",

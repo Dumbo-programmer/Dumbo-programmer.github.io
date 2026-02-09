@@ -19,8 +19,8 @@ const researchData: {
     title: "Pyxl Chronicles",
     link: "https://pyxl-chronicles.itch.io",
     sub: 'Lead Game Developer',
-    description: "We create distinctive narrative styled horror games that immerse players in captivating stories. As the lead game developer, I oversee the technical aspects of game creation, ensuring seamless gameplay and innovative mechanics.",
-    tags: ["Game Development", "Narrative Design", "Horror Games", "Unity"], 
+    description: `Led a 6-developer studio to design and launch an indie horror game with 230+ early players. Built a custom game engine combining 2D mechanics with realistic 3D visuals, implementing AI systems, procedural content generation, and performance-optimized rendering. Improved performance by 50–80% through custom optimization strategies. Managed the full development pipeline—80+ builds, 200+ commits, CI/CD automation, profiling, and cross-platform deployment (Windows/Linux). Leveraged the engine to create 4 additional trending Android games, with more than 10k+ active players.`,
+    tags: ["Game Development", "Indie Horror", "Custom Game Engine", "Procedural Generation", "AI", "Performance Optimization", "CI/CD", "Cross-Platform", "Android"], 
   },
   {
     typeA: "image",
@@ -36,8 +36,8 @@ const researchData: {
     src: "/team.png",
     title: "Team Nokkhotropoth",
     sub: 'Mechanical Engineering Department Lead',
-    description: "Nokkhotropoth is a student-run team that focuses on designing and building unmanned aerial vehicles (UAVs) and participating in national and international competitions. As the Mechanical Engineering Department Lead, I am responsible for overseeing the design, analysis, and fabrication of the mechanical components of our robots.",
-    tags: ["Mechanical Engineering", "Mechatronics", "Robotics", "Team Leadership"],
+    description: `Co-founded and co-led a 4-member Robotics-for-Good R&D team (robotics-for-good) tackling accessibility, healthcare, and disaster response in underdeveloped regions. Designed and deployed 10–15 autonomous assistive systems, including robotic canes, HUD captioning glasses, spatial-audio hearing aids, and communication wearables. Led system integration, testing, documentation, and alignment with UN Sustainable Development Goals.`,
+    tags: ["Mechanical Engineering", "Mechatronics", "Robotics", "Robotics-for-Good", "Assistive Systems", "UN SDG", "R&D"],
   },
 ]
 const Research = () => {
