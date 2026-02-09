@@ -72,8 +72,8 @@ export const metadata: Metadata = {
     nocache: false,
   },
   openGraph: {
-    title: "Tawhid Bin Omar - Game Dev, Robotics Engineer & Physicist",
-    description: "🏆 Physics Olympiad Champion (BdPhO, PHIGA #1 worldwide) | 🎮 Lead Game Developer (Pyxl Chronicles, 230+ players) | 🤖 Robotics-for-Good Engineer | 💻 Top 7% LeetCode | Built 15+ projects: custom game engines, AI systems, assistive robotics, PlayNux OS.",
+    title: "Tawhid Bin Omar - Game Dev, Maker & Physics Enthusiast",
+    description: "🛰️ Physics Enthusiast | 🎮 Lead Game Developer (Pyxl Chronicles) | 🤖 Maker, Robotics-for-Good | Built 150+ projects: custom game engines, AI systems, assistive robotics, PlayNux OS.",
     url: "https://tawhid.is-a.dev",
     siteName: "Tawhid's Portfolio",
     images: [
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
         url: "https://tawhid.is-a.dev/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Tawhid Bin Omar - Game Developer, Robotics Engineer & Physics Olympiad Champion",
+        alt: "Tawhid Bin Omar - Game Developer, Maker & Physics Enthusiast",
       },
     ],
     locale: "en_US",
@@ -89,8 +89,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tawhid Bin Omar - Game Dev, Robotics Engineer & Physicist",
-    description: "🏆 Physics Olympiad Champion | 🎮 Custom Game Engine Dev | 🤖 Assistive Robotics | 💻 Top 7% LeetCode | Built Pyxl Chronicles (230+ players), PlayNux OS, AI systems & 15+ projects.",
+    title: "Tawhid Bin Omar - Game Dev, Maker & Physics Enthusiast",
+    description: "🛰️ Physics Enthusiast | 🎮 Lead Game Developer (Pyxl Chronicles) | 🤖 Maker, Robotics-for-Good | Built 150+ projects: custom game engines, AI systems, assistive robotics, PlayNux OS.",
     images: ["https://tawhid.is-a.dev/og-image.png"],
     creator: "@tawhid_omar", 
   },
@@ -121,7 +121,7 @@ export default function Home() {
       "https://pyxl-chronicles.itch.io"
     ],
     "jobTitle": "Full Stack Developer, Game Developer & Student",
-    "description": "Full stack developer, lead game developer at Pyxl Chronicles, robotics-for-good engineer, and physicist. Built custom game engines with AI and procedural generation. Physics Olympiad champion (BdPhO national champion, PHIGA #1 worldwide, Physics Brawl top 29/1584 teams). Competitive programmer ranked top 7% on LeetCode. Also known as Ren and Dumbo-programmer.",
+    "description": "Full stack developer, lead game developer at Pyxl Chronicles, maker, robotics-for-good , and physics enthusiast. Built custom game engines with AI and procedural generation. Physics Olympiad champion (BdPhO national champion, PHIGA #1 worldwide, Physics Brawl top 29/1584 teams). Competitive programmer ranked top 7% on LeetCode. Also known as Ren and Dumbo-programmer.",
     "alumniOf": {
       "@type": "EducationalOrganization",
       "name": "St. Joseph Higher Secondary School"
