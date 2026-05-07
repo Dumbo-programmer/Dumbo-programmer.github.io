@@ -24,6 +24,11 @@ const achievementData: {
       title: "Bangladesh Physics Olympiad",
       description: "2x regional champ, 2x nationalist, 1x national champ, IPHO national camper"
     },
+       {   typeA: "image",
+      src: "/bdoaa.png",
+      title: "Bangladesh Olympiad on Astronomy and Astrophysics",
+      description: "15th Nationally, IOAA camper"
+    },
     {
       typeA: "image",
       src: "/dev.png",
