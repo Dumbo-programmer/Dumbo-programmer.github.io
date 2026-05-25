@@ -19,11 +19,11 @@ export default function NotesPage() {
         {
           name: "Handouts",
           items: [
-            { title: "CheatSheet 1", description: "Basic Physics Concepts/formulae", link: "/notes/Phy1.pdf" },
-            { title: "CheatSheet 2", description: "Basic Physics Concepts/formulae", link: "/notes/Phy2.pdf" },
-            { title: "CheatSheet 3", description: "Basic Physics Concepts/formulae", link: "/notes/Phy3Astro.pdf" },
-            { title: "CheatSheet 4", description: "Basic Physics Concepts/formulae", link: "/notes/Phy4.pdf" },
-            { title: "CheatSheet 5", description: "Basic Physics Concepts/formulae", link: "/notes/Phy5.pdf" },
+            { title: "Handout 1", description: "Basic Physics Concepts/formulae", link: "/notes/Phy1.pdf" },
+            { title: "Handout 2", description: "Basic Physics Concepts/formulae", link: "/notes/Phy2.pdf" },
+            { title: "Handout 3", description: "Basic Physics Concepts/formulae", link: "/notes/Phy3Astro.pdf" },
+            { title: "Handout 4", description: "Basic Physics Concepts/formulae", link: "/notes/Phy4.pdf" },
+            { title: "Handout 5", description: "Basic Physics Concepts/formulae", link: "/notes/Phy5.pdf" },
             { title: "Quantum Theory", description: "Quantum Physics Concepts", link: "/notes/qt.pdf" },
             { title: "Relativity", description: "Relativity Concepts", link: "/notes/relativity.pdf" },]
         },
