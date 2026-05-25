@@ -19,13 +19,13 @@ export default function NotesPage() {
         {
           name: "Handouts",
           items: [
-            { title: "CheatSheet 1", description: "Basic Physics Concepts/formulae", link: "public/notes/Phy1.pdf" },
-            { title: "CheatSheet 2", description: "Basic Physics Concepts/formulae", link: "public/notes/Phy2.pdf" },
-            { title: "CheatSheet 3", description: "Basic Physics Concepts/formulae", link: "public/notes/Phy3.pdf" },
-            { title: "CheatSheet 4", description: "Basic Physics Concepts/formulae", link: "public/notes/Phy4.pdf" },
-            { title: "CheatSheet 5", description: "Basic Physics Concepts/formulae", link: "public/notes/Phy5.pdf" },
-            { title: "Quantum Theory", description: "Quantum Physics Concepts", link: "public/notes/qt.pdf" },
-            { title: "Relativity", description: "Relativity Concepts", link: "public/notes/relativity.pdf" },]
+            { title: "CheatSheet 1", description: "Basic Physics Concepts/formulae", link: "/notes/Phy1.pdf" },
+            { title: "CheatSheet 2", description: "Basic Physics Concepts/formulae", link: "/notes/Phy2.pdf" },
+            { title: "CheatSheet 3", description: "Basic Physics Concepts/formulae", link: "/notes/Phy3Astro.pdf" },
+            { title: "CheatSheet 4", description: "Basic Physics Concepts/formulae", link: "/notes/Phy4.pdf" },
+            { title: "CheatSheet 5", description: "Basic Physics Concepts/formulae", link: "/notes/Phy5.pdf" },
+            { title: "Quantum Theory", description: "Quantum Physics Concepts", link: "/notes/qt.pdf" },
+            { title: "Relativity", description: "Relativity Concepts", link: "/notes/relativity.pdf" },]
         },
         {
           name: "Observations",
@@ -48,14 +48,14 @@ export default function NotesPage() {
         {
           name: "Handouts",
           items: [
-            { title: "Applied Math Reference", description: "Reference for applied mathematics concepts", link: "public/notes/Applied_Math_Ref.pdf" }
+            { title: "Applied Math Reference", description: "Reference for applied mathematics concepts", link: "/notes/Applied_Math_ref.pdf" }
           ]
         },
         {
           name: "Observations",
           items: [
-            { title: "Open Problems", description: "A few open problems I made", link: "public/notes/OpenMathProblems.pdf" },
-            { title: "Open Problems 2", description: "more open problems I made", link: "public/notes/OpenProblems2.pdf" }
+            { title: "Open Problems", description: "A few open problems I made", link: "/notes/OpenMathProblems.pdf" },
+            { title: "Open Problems 2", description: "more open problems I made", link: "/notes/OpenProblems2.pdf" }
 
           ]
         },
@@ -74,11 +74,11 @@ export default function NotesPage() {
         {
           name: "Handouts",
           items: [
-            { title: "Algorithms", description: "Handout on various algorithms", link: "public/notes/Algorithms.pdf" },
-            { title: "Graph Theory", description: "Handout on graph theory concepts", link: "public/notes/GraphTheory.pdf" },
-            { title: "Greedy Algorithms", description: "Handout on greedy algorithm techniques", link: "public/notes/GreedyAlgorithms.pdf" },
-            { title: "Dynamic Programming", description: "Handout on dynamic programming techniques", link: "public/notes/Dp.pdf" },
-            { title: "String Algorithms", description: "Handout on various string algorithms", link: "public/notes/StringAlgorithms.pdf" },
+            { title: "Algorithms", description: "Handout on various algorithms", link: "/notes/Algorithms.pdf" },
+            { title: "Graph Theory", description: "Handout on graph theory concepts", link: "/notes/GraphTheory.pdf" },
+            { title: "Greedy Algorithms", description: "Handout on greedy algorithm techniques", link: "/notes/GreedyAlgorithms.pdf" },
+            { title: "Dynamic Programming", description: "Handout on dynamic programming techniques", link: "/notes/Dp.pdf" },
+            { title: "String Algorithms", description: "Handout on various string algorithms", link: "/notes/StringAlgorithms.pdf" },
 
 
 
