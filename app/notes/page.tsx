@@ -19,8 +19,13 @@ export default function NotesPage() {
         {
           name: "Handouts",
           items: [
-            { title: "Coming Soon", description: "Physics handouts will be available here", link: "#" }
-          ]
+            { title: "CheatSheet 1", description: "Basic Physics Concepts/formulae", link: "public/notes/Phy1.pdf" },
+            { title: "CheatSheet 2", description: "Basic Physics Concepts/formulae", link: "public/notes/Phy2.pdf" },
+            { title: "CheatSheet 3", description: "Basic Physics Concepts/formulae", link: "public/notes/Phy3.pdf" },
+            { title: "CheatSheet 4", description: "Basic Physics Concepts/formulae", link: "public/notes/Phy4.pdf" },
+            { title: "CheatSheet 5", description: "Basic Physics Concepts/formulae", link: "public/notes/Phy5.pdf" },
+            { title: "Quantum Theory", description: "Quantum Physics Concepts", link: "public/notes/qt.pdf" },
+            { title: "Relativity", description: "Relativity Concepts", link: "public/notes/relativity.pdf" },]
         },
         {
           name: "Observations",
@@ -43,13 +48,15 @@ export default function NotesPage() {
         {
           name: "Handouts",
           items: [
-            { title: "Coming Soon", description: "Math handouts will be available here", link: "#" }
+            { title: "Applied Math Reference", description: "Reference for applied mathematics concepts", link: "public/notes/Applied_Math_Ref.pdf" }
           ]
         },
         {
           name: "Observations",
           items: [
-            { title: "Coming Soon", description: "Math observations will be available here", link: "#" }
+            { title: "Open Problems", description: "A few open problems I made", link: "public/notes/OpenMathProblems.pdf" },
+            { title: "Open Problems 2", description: "more open problems I made", link: "public/notes/OpenProblems2.pdf" }
+
           ]
         },
         {
@@ -67,7 +74,14 @@ export default function NotesPage() {
         {
           name: "Handouts",
           items: [
-            { title: "Coming Soon", description: "CP handouts will be available here", link: "#" }
+            { title: "Algorithms", description: "Handout on various algorithms", link: "public/notes/Algorithms.pdf" },
+            { title: "Graph Theory", description: "Handout on graph theory concepts", link: "public/notes/GraphTheory.pdf" },
+            { title: "Greedy Algorithms", description: "Handout on greedy algorithm techniques", link: "public/notes/GreedyAlgorithms.pdf" },
+            { title: "Dynamic Programming", description: "Handout on dynamic programming techniques", link: "public/notes/Dp.pdf" },
+            { title: "String Algorithms", description: "Handout on various string algorithms", link: "public/notes/StringAlgorithms.pdf" },
+
+
+
           ]
         },
         {
