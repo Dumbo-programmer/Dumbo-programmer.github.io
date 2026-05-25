@@ -21,9 +21,11 @@ export default function NotesPage() {
           items: [
             { title: "Handout 1", description: "Basic Physics Concepts/formulae", link: "/notes/Phy1.pdf" },
             { title: "Handout 2", description: "Basic Physics Concepts/formulae", link: "/notes/Phy2.pdf" },
-            { title: "Handout 3", description: "Basic Physics Concepts/formulae", link: "/notes/Phy3Astro.pdf" },
-            { title: "Handout 4", description: "Basic Physics Concepts/formulae", link: "/notes/Phy4.pdf" },
+            { title: "Handout 3", description: "Basic Astrophysics Concepts/formulae", link: "/notes/Phy3Astro.pdf" },
+            { title: "Handout 4", description: "Basic Mechanics & Oscillatory Systems Concepts/formulae", link: "/notes/Phy4.pdf" },
             { title: "Handout 5", description: "Basic Physics Concepts/formulae", link: "/notes/Phy5.pdf" },
+            { title: "Handout 6", description: "Basic Astrophysics Concepts/formulae", link: "/notes/Phy6.pdf" },
+
             { title: "Quantum Theory", description: "Quantum Physics Concepts", link: "/notes/qt.pdf" },
             { title: "Relativity", description: "Relativity Concepts", link: "/notes/relativity.pdf" },]
         },
