@@ -62,9 +62,26 @@ export default function NotesPage() {
           ]
         },
         {
-          name: "Models",
+          name: "Articles",
           items: [
-            { title: "Coming Soon", description: "Math models will be available here", link: "#" }
+            { title: "Analytic Continuation Limits", description: "Analytic Continuation and theLimits of Generalization", link: "/notes/Articles/AnalyticCont.pdf" },
+            { title: "Category Theory", description: "An introduction to category theory", link: "/notes/Articles/CategoryTheory.pdf" },
+            { title: "Circle I", description: "Coordinate Geometry and Circles", link: "/notes/Articles/Circles.pdf" },
+            { title: "Circle II", description: "Circle Problem Solving", link: "/notes/Articles/CircleProblemSolving.pdf" },
+            { title: "Combinatorics", description: "Basic Combinatorics", link: "/notes/Articles/Combinatorics.pdf" },
+            { title: "EigenVectors", description: "Basic EigenVectors", link: "/notes/Articles/Eigenvectors.pdf" },
+            { title: "General Relativity", description: "An introduction to general relativity", link: "/notes/Articles/GeneralRelativity.pdf" },
+            { title: "Graph Theory", description: "An introduction to graph theory", link: "/notes/Articles/GraphTheory.pdf" },
+            { title: "Legendre Polynomials and Generating Functions", description: "An elementary introduction to generating functions", link: "/notes/Articles/Legendre.pdf" },
+            { title: "Power of Point", description: "Introduction to Power of point and radical axis", link: "/notes/Articles/PowerOfPoint.pdf" },
+            { title: "Projective Geometry", description: "An introduction to projective geometry", link: "/notes/Articles/ProjectiveGeo.pdf" },
+            { title: "Tensor", description: "An introduction to tensors", link: "/notes/Articles/Tensor.pdf" },
+            { title: "Jacobian Matrix", description: "Intro to jacobians", link: "/notes/Articles/Jacobian.pdf" },
+
+
+
+
+            
           ]
         }
       ]
