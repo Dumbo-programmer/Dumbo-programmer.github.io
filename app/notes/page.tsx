@@ -54,11 +54,11 @@ export default function NotesPage() {
           ]
         },
         {
-          name: "Observations",
+          name: "Observations & Papers",
           items: [
             { title: "Open Problems", description: "A few open problems I made", link: "/notes/OpenMathProblems.pdf" },
-            { title: "Open Problems 2", description: "more open problems I made", link: "/notes/OpenProblems2.pdf" }
-
+            { title: "Open Problems 2", description: "more open problems I made", link: "/notes/OpenProblems2.pdf" },
+            { title: "Spectral and Information-Theoretic Analysis of Digit Distributions in Perfect Squares and Digit-Splitting Numbers", description: "Mathematical analysis of digit distributions", link: "/notes/Articles/main.pdf" }
           ]
         },
         {
@@ -77,8 +77,8 @@ export default function NotesPage() {
             { title: "Projective Geometry", description: "An introduction to projective geometry", link: "/notes/Articles/ProjectiveGeo.pdf" },
             { title: "Tensor", description: "An introduction to tensors", link: "/notes/Articles/Tensor.pdf" },
             { title: "Jacobian Matrix", description: "Intro to jacobians", link: "/notes/Articles/Jacobian.pdf" },
-
-
+            { title: "The Gliding Principle", description: "Moving Points on Conics and Beyond", link: "/notes/Articles/Article1.pdf" },
+            { title: "Vieta Jumping Extension", description: "Beyond Vieta Jumping: Non-linear Root Flipping and Surface Orbits", link: "/notes/Articles/Article2.pdf" }
 
 
             
