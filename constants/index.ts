@@ -70,7 +70,7 @@ export const Skill_data = [
     {
       name: "Facebook",
       src: "/facebook.svg",
-      link: "https://www.facebook.com/tawhid.bin.omar.2024/",
+      link: "https://www.facebook.com/tawhiddayo/",
     },
     {
       name: "Instagram",

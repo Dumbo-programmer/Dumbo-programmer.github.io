@@ -112,7 +112,7 @@ export default function Home() {
     "sameAs": [
       "https://github.com/Dumbo-programmer",
       "https://discord.com/users/707079802531872769",
-      "https://www.facebook.com/tawhid.bin.omar.2024/",
+      "https://www.facebook.com/tawhiddayo/",
       "https://instagram.com/renscule",
       "https://www.linkedin.com/in/tawhid-omar-7a0320212/",
       "https://dev.to/dumbo_programmer",
