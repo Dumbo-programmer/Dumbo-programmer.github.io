@@ -114,7 +114,7 @@ export default function Home() {
       "https://discord.com/users/707079802531872769",
       "https://www.facebook.com/tawhiddayo/",
       "https://instagram.com/renscule",
-      "https://www.linkedin.com/in/tawhid-omar-7a0320212/",
+      "https://www.linkedin.com/in/tawhidbinomar/",
       "https://dev.to/dumbo_programmer",
       "https://leetcode.com/u/Dumbo-programmer/",
       "https://codeforces.com/profile/Dumbo-programmer",

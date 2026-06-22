@@ -70,7 +70,7 @@ const Footer = () => {
               <span className="ml-2">Twitter</span>
             </a>
             <a
-              href="https://www.linkedin.com/in/tawhid-omar-7a0320212/"
+              href="https://www.linkedin.com/in/tawhidbinomar/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center my-2 cursor-pointer hover:text-blue-700 transition"

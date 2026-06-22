@@ -114,9 +114,11 @@ export default function NotesPage() {
           ]
         },
         {
-          name: "Models",
+          name: "Papers",
           items: [
-            { title: "Coming Soon", description: "Physics models will be available here", link: "#" }
+            { title: "Entropy-Minimal Noise Schedules for Denoising Diffusion Probabilistic Models: A Non-Equilibrium Thermodynamics Approach", description: "DOI: 10.67149/yhjs2024.5/k2v9p4cz", link: "https://ijscar.org/pubs/articles/vol3-issue2-omar-diffusion-thermodynamics.pdf" },
+            {title: "Geometric Distortion of Quantum State Space Under Noise: A Comparative Information-Theoretic Analysis of Common Quantum Channels", description: "DOI: 10.5281/zenodo.20793740", link: "https://zenodo.org/records/20793740" }
+
           ]
         }
       ]
