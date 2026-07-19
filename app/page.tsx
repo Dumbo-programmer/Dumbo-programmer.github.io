@@ -63,7 +63,7 @@ export const metadata: Metadata = {
         url: "https://tawhid.is-a.dev/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Tawhid Bin Omar — Open Problem Solving Library & STEM Education Bangladesh",
+        alt: "Tawhid Bin Omar — Aspiring physicist, Avid Problem Solver, Robotics Enthusiast",
       },
     ],
     locale: "en_US",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tawhid Bin Omar — Open Problem Solving Library & Bangladesh STEM Education",
+    title: "Tawhid Bin Omar — Aspiring physicist, Avid Problem Solver, Robotics Enthusiast",
     description: "Creator of the Open Problem Solving Library. Physics Olympiad champion. Free STEM education resources for Bangladesh.",
     images: ["https://tawhid.is-a.dev/og-image.png"],
     creator: "@tawhid_omar",
