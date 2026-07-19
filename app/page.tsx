@@ -6,6 +6,7 @@ import Skills from "@/components/main/Skills";
 import Achievements from "@/components/main/Achievements";
 import Projects from "@/components/main/Projects";
 import Research from "@/components/main/Research";
+import LibrarySection from "@/components/main/LibrarySection";
 import LoadingScreen from "@/components/main/LoadingScreen";
 
 const WIP = dynamic(() => import('@/components/main/WIP'), { ssr: false });
@@ -13,55 +14,29 @@ const WIP = dynamic(() => import('@/components/main/WIP'), { ssr: false });
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tawhid Bin Omar - Game Dev, Robotics Engineer & Physicist Prodigy",
-  description: "Lead game developer at Pyxl Chronicles (230+ players, custom engine). Physics Olympiad champion: BdPhO National, PHIGA #1/1211 worldwide. Top 7% LeetCode programmer. Built 15+ major projects including PlayNux OS, Vocal Guard AI, assistive robotics systems. Full-stack developer specializing in Next.js, Unity, AI/ML.",
+  title: "Tawhid Bin Omar — Open Problem Solving Library & Bangladesh STEM Education",
+  description: "Creator of the Open Problem Solving Library — Bangladesh's free open-access STEM education platform. Physics Olympiad champion (BdPhO National, PHIGA #1 worldwide out of 1,211). Lead game developer, robotics-for-good engineer, competitive programmer. Free educational resources in mathematics, physics, programming, and astronomy for students, teachers, and Olympiad participants.",
   keywords: [
-    // Names & Aliases
-    "Tawhid", "Tawhid Bin Omar", "Ren", "Dumbo-programmer", "tawhid developer", "ren developer",
-    // Core Roles
-    "full stack developer", "game developer", "indie game developer", "lead game developer",
-    "physicist", "robotics engineer", "mechanical engineer",
-    // Organizations & Projects
-    "Pyxl Chronicles", "Team Nokkhotropoth", "Ongko", "PlayNux", "Preron", "Vocal Guard", "Concept Vector",
-    // Game Dev & Engine
-    "custom game engine", "indie horror game", "procedural generation", "procedural content generation",
-    "AI systems", "game AI", "performance optimization", "game optimization", "Unity", "C#", "OpenGL", "Blender",
-    "2D mechanics", "3D visuals", "cross-platform deployment", "Windows Linux deployment",
-    "CI/CD automation", "game development pipeline", "profiling", "Android games",
-    // Robotics & Hardware
-    "robotics-for-good", "assistive robotics", "autonomous systems", "assistive systems",
-    "robotic canes", "HUD captioning glasses", "spatial-audio hearing aids", "communication wearables",
-    "UAV", "unmanned aerial vehicles", "mechatronics", "embedded systems", "Arduino", "Ardupilot",
-    "UN Sustainable Development Goals", "UN SDG", "accessibility technology", "healthcare robotics",
-    // Physics & Competitions
-    "Bangladesh Physics Olympiad", "BdPhO", "Physics Olympiad", "IPHO", "national physics champion",
-    "Physics Brawl", "PHIGA", "International Astronomy Competition", "IAAC",
-    "NASA Space Apps Challenge", "exoplanet detection",
-    // Programming & Competitive
-    "LeetCode", "Codeforces", "competitive programming", "algorithm design", "data structures",
-    "problem solving", "coding challenges", "Grepper",
-    // Technologies - Frontend
-    "React", "Next.js", "Next.js 13", "TypeScript", "JavaScript", "Tailwind CSS", "HTML", "CSS",
-    "Framer Motion", "Material UI", "Redux", "Vue", "VUE", "Ionic",
-    // Technologies - Backend
-    "Node.js", "Express.js", "Firebase", "MongoDB", "PostgreSQL", "MySQL", "Prisma", "GraphQL",
-    // Technologies - Languages
-    "Python", "C++", "C", "C#", "Java", "Rust", "Bash", "Vala", "Go", "Ruby", "Swift",
-    // Technologies - Tools & Platforms
-    "Docker", "Git", "GitHub", "Tauri", "QT5", "FITZ", "Figma",
-    "Jupiter Notebook", "Jupyter", "PyTorch", "OpenCV", "Machine Learning", "ML", "AI", "Artificial Intelligence",
-    // Projects & Platforms
-    "Linux distro", "Ubuntu", "Elementary OS", "operating system development",
-    "food delivery app", "real-time chat", "email servers",
-    "anti-vishing", "vishing protection", "call analysis", "Conrad Challenge",
-    "math website", "Josephite Math Club", "user system", "article system", "contest system",
-    "desktop manager", "LaTeX generator", "basketball coach website",
-    "dev.to blogger", "technical writing", "HackClub", "Hack Club Arcade",
-    // General
-    "portfolio", "student developer", "open source", "web development", "game development",
-    "St. Joseph Higher Secondary School", "CS50"
+    "Open Problem Solving Library", "Bangladesh STEM Education", "Free Educational Resources",
+    "Olympiad Mathematics", "Olympiad Physics", "Olympiad Programming",
+    "STEM Education Bangladesh", "Open Educational Resources", "Bangladesh Mathematics",
+    "Problem Solving", "Free Math Books", "Free Physics Notes",
+    "Teacher Resources Bangladesh", "Bangla STEM", "Open Textbooks",
+    "Mathematics Library", "Physics Library", "Programming Library",
+    "Computational Thinking", "Creative Problem Solving", "Critical Thinking",
+    "Education Reform Bangladesh", "Student Research",
+    "Tawhid Bin Omar", "Dumbo-programmer", "Tawhid",
+    "full stack developer", "game developer", "physicist", "robotics engineer",
+    "Pyxl Chronicles", "Team Nokkhotropoth", "Ongko", "PlayNux", "Vocal Guard",
+    "Bangladesh Physics Olympiad", "BdPhO", "PHIGA", "Physics Olympiad",
+    "competitive programming", "algorithms", "data structures",
+    "React", "Next.js", "TypeScript", "Python", "C++", "Unity",
+    "open source", "STEM education", "education technology",
+    "Bangladesh education", "free learning resources",
+    "math olympiad training", "physics olympiad notes",
+    "Bangla STEM education", "Olympiad preparation Bangladesh",
   ],
-  authors: [{ name: "Tawhid" }],
+  authors: [{ name: "Tawhid Bin Omar", url: "https://tawhid.is-a.dev" }],
   metadataBase: new URL("https://tawhid.is-a.dev"),
   alternates: {
     canonical: "https://tawhid.is-a.dev",
@@ -69,36 +44,47 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
-    title: "Tawhid Bin Omar - Game Dev, Maker & Physics Enthusiast",
-    description: "🛰️ Physics Enthusiast | 🎮 Lead Game Developer (Pyxl Chronicles) | 🤖 Maker, Robotics-for-Good | Built 150+ projects: custom game engines, AI systems, assistive robotics, PlayNux OS.",
+    title: "Tawhid Bin Omar — Open Problem Solving Library & Bangladesh STEM Education",
+    description: "Creator of the Open Problem Solving Library. Physics Olympiad champion (BdPhO National, PHIGA #1 worldwide). Free STEM education resources for Bangladesh: mathematics, physics, competitive programming, and astronomy.",
     url: "https://tawhid.is-a.dev",
-    siteName: "Tawhid's Portfolio",
+    siteName: "Tawhid Bin Omar — Open Problem Solving Library",
     images: [
       {
         url: "https://tawhid.is-a.dev/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Tawhid Bin Omar - Game Developer, Maker & Physics Enthusiast",
+        alt: "Tawhid Bin Omar — Open Problem Solving Library & STEM Education Bangladesh",
       },
     ],
     locale: "en_US",
     type: "website",
+    countryName: "Bangladesh",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tawhid Bin Omar - Game Dev, Maker & Physics Enthusiast",
-    description: "🛰️ Physics Enthusiast | 🎮 Lead Game Developer (Pyxl Chronicles) | 🤖 Maker, Robotics-for-Good | Built 150+ projects: custom game engines, AI systems, assistive robotics, PlayNux OS.",
+    title: "Tawhid Bin Omar — Open Problem Solving Library & Bangladesh STEM Education",
+    description: "Creator of the Open Problem Solving Library. Physics Olympiad champion. Free STEM education resources for Bangladesh.",
     images: ["https://tawhid.is-a.dev/og-image.png"],
-    creator: "@tawhid_omar", 
+    creator: "@tawhid_omar",
   },
   icons: {
     icon: "/tawhid.png",
     apple: "/tawhid.png",
   },
   viewport: "width=device-width, initial-scale=1",
+  category: "education",
+  other: {
+    "geo.country": "BD",
+  },
 };
 
 export default function Home() {
@@ -265,7 +251,7 @@ export default function Home() {
       { "name": "Skills", "url": "https://tawhid.is-a.dev/#skills" },
       { "name": "Projects", "url": "https://tawhid.is-a.dev/#projects" },
       { "name": "Research", "url": "https://tawhid.is-a.dev/#current-projects" },
-      { "name": "Notes", "url": "https://tawhid.is-a.dev/notes" }
+      { "name": "Library", "url": "https://tawhid.is-a.dev/notes" }
     ]
   };
 
@@ -383,6 +369,7 @@ export default function Home() {
         <Achievements />
         <Projects />
         <Research />
+        <LibrarySection />
       </div>
     </main>
   );

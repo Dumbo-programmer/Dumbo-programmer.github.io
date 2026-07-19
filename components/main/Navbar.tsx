@@ -50,7 +50,7 @@ const Navbar = () => {
             <a
               href="/notes"
               className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
-              aria-label="Navigate to Notes section"
+              aria-label="Navigate to Open Problem Solving Library"
             >
               Notes
             </a>

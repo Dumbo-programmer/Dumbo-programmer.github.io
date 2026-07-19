@@ -1,358 +1,322 @@
-import type { Metadata } from "next";
+"use client";
+import React, { useState, useMemo } from "react";
+import { featuredResources, librarySubjects } from "@/constants/library";
+import type { LibraryResource } from "@/constants/library";
 
-export const metadata: Metadata = {
-  title: "Notes | Tawhid's Portfolio",
-  description: "Physics, Mathematics, and Competitive Programming notes by Tawhid Bin Omar. Handouts, articles, observations, and models covering quantum theory, relativity, astrophysics, mechanics, category theory, graph theory, combinatorics, tensors, projective geometry, functional equations, algorithms, dynamic programming, and more.",
-  keywords: [
-    // Main categories
-    "Physics notes", "Mathematics notes", "Competitive Programming notes",
-    "Physics handouts", "Math observations", "Programming models",
-    "Tawhid Bin Omar", "Tawhid notes",
+const SUBJECT_IDS = librarySubjects.map((s) => ({
+  label: s.title,
+  id: s.title.toLowerCase().replace(/\s+/g, "-"),
+  icon: s.icon,
+}));
 
-    // Physics
-    "Physics", "Astrophysics", "Mechanics", "Oscillatory Systems",
-    "Quantum Theory", "Quantum Physics", "Relativity", "General Relativity",
-    "Physics handouts PDF", "physics formulae", "astrophysics formulae",
+const GRADIENT = "from-purple-400 to-pink-400";
 
-    // Mathematics
-    "Applied Mathematics", "Applied Math reference",
-    "Open Math Problems", "Open Problems",
-    "Perfect Squares", "Digit Distributions", "Digit-Splitting Numbers",
-    "Analytic Continuation", "Category Theory",
-    "Coordinate Geometry", "Circles", "Circle Problem Solving",
-    "Combinatorics", "Advanced Combinatorics", "Combinatorics techniques",
-    "EigenVectors", "Graph Theory", "Legendre Polynomials",
-    "Generating Functions", "Power of Point", "Radical Axis",
-    "Projective Geometry", "Tensors", "Jacobian Matrix",
-    "Moving Points", "Functional Equations",
-    "Warp Drives", "Wormholes", "Mathematical models",
-    "The Gliding Principle", "Moving Points on Conics",
-    "Vieta Jumping", "Nonlinear Root Flipping", "Surface Orbits",
+function SubjectNav() {
+  return (
+    <nav className="flex flex-wrap justify-center gap-2 mb-10" aria-label="Subject navigation">
+      {SUBJECT_IDS.map((n) => (
+        <a
+          key={n.id}
+          href={`/notes#${n.id}`}
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/10 bg-white/[0.04] text-sm text-gray-300 hover:text-white hover:border-purple-500/40 hover:shadow-[0_0_15px_#a855f733] transition-all duration-200"
+          aria-label={`Jump to ${n.label}`}
+        >
+          <span className="text-base">{n.icon}</span>
+          <span>{n.label}</span>
+        </a>
+      ))}
+    </nav>
+  );
+}
 
-    // Competitive Programming
-    "Algorithms", "Data Structures", "Greedy Algorithms",
-    "Dynamic Programming", "String Algorithms", "CP handouts",
+function SubjectCard({ subject, index }: { subject: (typeof librarySubjects)[number]; index: number }) {
+  const hasContent = subject.sections.some((s) => s.items.length > 0);
 
-    // Bangla (Bengali) resources
-    "Bangla math notes", "Bangla physics notes",
-    "Bangla analytic continuation", "Bangla circle geometry",
-    "Bangla combinatorics", "Bangla eigenvectors",
-    "Bangla general relativity", "Bangla graph theory",
-    "Bangla legendre polynomials", "Bangla power of point",
-    "Bangla projective geometry", "Bangla tensor",
-    "Bangla jacobian", "Bangla moving points",
-    "Bangla functional equations", "Bangla warp drives",
-    "Bangla wormholes",
+  return (
+    <section
+      id={subject.title.toLowerCase().replace(/\s+/g, "-")}
+      className="w-full scroll-mt-28"
+      aria-labelledby={`subject-${index}`}
+    >
+      <h2
+        id={`subject-${index}`}
+        className={`text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${GRADIENT} mb-1 flex items-center gap-3`}
+      >
+        <span className="text-4xl md:text-5xl">{subject.icon}</span>
+        {subject.title}
+      </h2>
+      <p className="text-gray-500 text-sm mb-6 ml-1">{subject.description}</p>
 
-    // Resource types
-    "Math articles PDF", "Physics handouts PDF",
-    "Student notes", "Study materials", "Academic resources",
-    "Physics olympiad notes", "Math olympiad notes"
-  ],
-  authors: [{ name: "Tawhid Bin Omar" }],
-  creator: "Tawhid Bin Omar",
-  metadataBase: new URL("https://tawhid.is-a.dev"),
-  robots: {
-    index: true,
-    follow: true,
-  },
-  openGraph: {
-    title: "Notes & Resources | Tawhid's Portfolio",
-    description: "Physics, Mathematics, and Competitive Programming notes by Tawhid Bin Omar — handouts, articles, observations, and models on quantum theory, relativity, category theory, combinatorics, graph theory, algorithms, and more.",
-    url: "https://tawhid.is-a.dev/notes",
-    siteName: "Tawhid's Portfolio",
-    images: [
-      {
-        url: "https://tawhid.is-a.dev/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Notes & Resources - Tawhid Bin Omar",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Notes & Resources | Tawhid's Portfolio",
-    description: "Physics, Mathematics, and Competitive Programming notes by Tawhid Bin Omar — handouts, articles, observations, and models.",
-    images: ["https://tawhid.is-a.dev/og-image.png"],
-    creator: "@tawhid_omar",
-  },
-  icons: {
-    icon: "/tawhid.png",
-    apple: "/tawhid.png",
-  },
-  alternates: {
-    canonical: "https://tawhid.is-a.dev/notes",
-  },
-};
+      {!hasContent && (
+        <div className="text-center py-12 border border-dashed border-white/5 rounded-lg">
+          <p className="text-gray-600 text-sm">Resources coming soon</p>
+        </div>
+      )}
+
+      {hasContent && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+          {subject.sections.map(
+            (section, sIdx) =>
+              section.items.length > 0 && (
+                <div
+                  key={sIdx}
+                  className="border border-white/[0.06] rounded-lg bg-white/[0.02] p-3.5"
+                >
+                  <h3 className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2 uppercase tracking-widest">
+                    {section.name}
+                  </h3>
+                  <div className="space-y-1">
+                    {section.items.map((item, iIdx) => (
+                      <a
+                        key={iIdx}
+                        href={item.link}
+                        target={item.link.startsWith("http") ? "_blank" : undefined}
+                        rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className="block px-2.5 py-2 rounded bg-white/[0.04] hover:bg-white/[0.08] transition-colors"
+                        aria-label={`View ${item.title}`}
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <span className="text-sm font-medium text-gray-200 hover:text-purple-300 transition-colors leading-snug">
+                            {item.title}
+                          </span>
+                          {item.link.endsWith(".pdf") && (
+                            <span className="shrink-0 text-[10px] text-gray-600 mt-0.5">PDF</span>
+                          )}
+                          {item.link.startsWith("http") && (
+                            <span className="shrink-0 text-[10px] text-gray-600 mt-0.5">ext</span>
+                          )}
+                        </div>
+                        <p className="text-gray-600 text-xs leading-relaxed mt-0.5 line-clamp-2">
+                          {item.description}
+                        </p>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )
+          )}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function SearchResults({ query }: { query: string }) {
+  const q = query.toLowerCase().trim();
+
+  const results = useMemo(() => {
+    const matches: { subject: string; section: string; item: LibraryResource }[] = [];
+    for (const subject of librarySubjects) {
+      for (const section of subject.sections) {
+        for (const item of section.items) {
+          if (
+            item.title.toLowerCase().includes(q) ||
+            item.description.toLowerCase().includes(q)
+          ) {
+            matches.push({ subject: subject.title, section: section.name, item });
+          }
+        }
+      }
+    }
+    return matches;
+  }, [q]);
+
+  if (results.length === 0) {
+    return (
+      <div className="text-center py-16">
+        <p className="text-gray-500 text-sm">No resources found for &ldquo;{query}&rdquo;</p>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <p className="text-gray-500 text-xs mb-4">{results.length} result{results.length !== 1 ? "s" : ""}</p>
+      <div className="space-y-3">
+        {results.map((r, i) => (
+          <a
+            key={i}
+            href={r.item.link}
+            target={r.item.link.startsWith("http") ? "_blank" : undefined}
+            rel={r.item.link.startsWith("http") ? "noopener noreferrer" : undefined}
+            className="block border border-white/[0.06] rounded-lg bg-white/[0.02] p-4 hover:bg-white/[0.05] transition-colors"
+          >
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[10px] uppercase tracking-wider text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded">
+                {r.subject}
+              </span>
+              <span className="text-[10px] text-gray-600">{r.section}</span>
+            </div>
+            <h4 className="text-sm font-medium text-gray-200 mb-0.5">{r.item.title}</h4>
+            <p className="text-gray-600 text-xs">{r.item.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function NotesPage() {
-  const notesCategories = [
-    {
-      title: "Physics",
-      icon: "⚛️",
-      sections: [
-        {
-          name: "Handouts",
-          items: [
-            { title: "Handout 1", description: "Basic Physics Concepts/formulae", link: "/notes/Phy1.pdf" },
-            { title: "Handout 2", description: "Basic Physics Concepts/formulae", link: "/notes/Phy2.pdf" },
-            { title: "Handout 3", description: "Basic Astrophysics Concepts/formulae", link: "/notes/Phy3Astro.pdf" },
-            { title: "Handout 4", description: "Basic Mechanics & Oscillatory Systems Concepts/formulae", link: "/notes/Phy4.pdf" },
-            { title: "Handout 5", description: "Basic Physics Concepts/formulae", link: "/notes/Phy5.pdf" },
-            { title: "Handout 6", description: "Basic Astrophysics Concepts/formulae", link: "/notes/Phy6.pdf" },
-
-            { title: "Quantum Theory", description: "Quantum Physics Concepts", link: "/notes/qt.pdf" },
-            { title: "Relativity", description: "Relativity Concepts", link: "/notes/relativity.pdf" },]
-        },
-        {
-          name: "Observations",
-          items: [
-            { title: "Coming Soon", description: "Physics observations will be available here", link: "#" }
-          ]
-        },
-        {
-          name: "Papers",
-          items: [
-            { title: "Entropy-Minimal Noise Schedules for Denoising Diffusion Probabilistic Models: A Non-Equilibrium Thermodynamics Approach", description: "DOI: 10.67149/yhjs2024.5/k2v9p4cz", link: "https://ijscar.org/pubs/articles/vol3-issue2-omar-diffusion-thermodynamics.pdf" },
-            {title: "Geometric Distortion of Quantum State Space Under Noise: A Comparative Information-Theoretic Analysis of Common Quantum Channels", description: "DOI: 10.5281/zenodo.20793740", link: "https://zenodo.org/records/20793740" }
-
-          ]
-        }
-      ]
-    },
-    {
-      title: "Mathematics",
-      icon: "📐",
-      sections: [
-        {
-          name: "Handouts",
-          items: [
-            { title: "Applied Math Reference", description: "Reference for applied mathematics concepts", link: "/notes/Applied_Math_ref.pdf" }
-          ]
-        },
-        {
-          name: "Observations & Papers",
-          items: [
-            { title: "Open Problems", description: "A few open problems I made", link: "/notes/OpenMathProblems.pdf" },
-            { title: "Open Problems 2", description: "more open problems I made", link: "/notes/OpenProblems2.pdf" },
-            { title: "Spectral and Information-Theoretic Analysis of Digit Distributions in Perfect Squares and Digit-Splitting Numbers", description: "Mathematical analysis of digit distributions", link: "/notes/Articles/main.pdf" }
-          ]
-        },
-        {
-          name: "Articles",
-          items: [
-            { title: "Analytic Continuation Limits[Bangla]", description: "Analytic Continuation and theLimits of Generalization", link: "/notes/Articles/AnalyticCont.pdf" },
-            { title: "Category Theory", description: "An introduction to category theory", link: "/notes/Articles/CategoryTheory.pdf" },
-            { title: "Circle I[Bangla]", description: "Coordinate Geometry and Circles", link: "/notes/Articles/Circles.pdf" },
-            { title: "Circle II[Bangla]", description: "Circle Problem Solving", link: "/notes/Articles/CircleProblemSolving.pdf" },
-            { title: "Combinatorics[Bangla]", description: "Basic Combinatorics", link: "/notes/Articles/Combinatorics.pdf" },
-            { title: "Combinatorics Advanced[Bangla]", description: "Advanced combinatorics techniques and problems", link: "/notes/Articles/CombinatoricsAdv.pdf" },
-            { title: "EigenVectors[Bangla]", description: "Basic EigenVectors", link: "/notes/Articles/Eigenvectors.pdf" },
-            { title: "General Relativity[Bangla]", description: "An introduction to general relativity", link: "/notes/Articles/GeneralRelativity.pdf" },
-            { title: "Graph Theory[Bangla]", description: "An introduction to graph theory", link: "/notes/Articles/GraphTheory.pdf" },
-            { title: "Legendre Polynomials and Generating Functions[Bangla]", description: "An elementary introduction to generating functions", link: "/notes/Articles/Legendre.pdf" },
-            { title: "Power of Point[Bangla]", description: "Introduction to Power of point and radical axis", link: "/notes/Articles/PowerOfPoint.pdf" },
-            { title: "Projective Geometry[Bangla]", description: "An introduction to projective geometry", link: "/notes/Articles/ProjectiveGeo.pdf" },
-            { title: "Tensor[Bangla]", description: "An introduction to tensors", link: "/notes/Articles/Tensor.pdf" },
-            { title: "Jacobian Matrix[Bangla]", description: "Intro to jacobians", link: "/notes/Articles/Jacobian.pdf" },
-            { title: "Moving Points[Bangla]", description: "Moving Points and Beyond", link: "/notes/Articles/MovingPoints.pdf" },
-            { title: "Functional Equations[Bangla]", description: "An introduction to functional equations", link: "/notes/Articles/FunctionalAnalysis.pdf" },
-            { title: "WarpDrives[Bangla]", description: "Basic idea of Mathematical models of warp drives", link: "/notes/Articles/WarpDrives.pdf" },
-            { title: "WormHoles[Bangla]", description: "Basic idea of Mathematical models of wormholes", link: "/notes/Articles/Wormholes.pdf" },
-            { title: "The Gliding Principle", description: "Moving Points on Conics and Beyond", link: "/notes/Articles/Article1.pdf" },
-            { title: "Vieta Jumping Extension", description: "Beyond Vieta Jumping: Non-linear Root Flipping and Surface Orbits", link: "/notes/Articles/Article2.pdf" }
-
-
-            
-          ]
-        }
-      ]
-    },
-    {
-      title: "Competitive Programming",
-      icon: "💻",
-      sections: [
-        {
-          name: "Handouts",
-          items: [
-            { title: "Algorithms", description: "Handout on various algorithms", link: "/notes/Algorithms.pdf" },
-            { title: "Graph Theory", description: "Handout on graph theory concepts", link: "/notes/GraphTheory.pdf" },
-            { title: "Greedy Algorithms", description: "Handout on greedy algorithm techniques", link: "/notes/GreedyAlgorithms.pdf" },
-            { title: "Dynamic Programming", description: "Handout on dynamic programming techniques", link: "/notes/Dp.pdf" },
-            { title: "String Algorithms", description: "Handout on various string algorithms", link: "/notes/StringAlgorithms.pdf" },
-
-
-
-          ]
-        },
-        {
-          name: "Observations",
-          items: [
-            { title: "Coming Soon", description: "CP observations will be available here", link: "#" }
-          ]
-        },
-        {
-          name: "Models",
-          items: [
-            { title: "Coming Soon", description: "CP models will be available here", link: "#" }
-          ]
-        }
-      ]
-    }
-  ];
+  const [searchQuery, setSearchQuery] = useState("");
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Notes & Resources - Tawhid Bin Omar",
-    "description": "A collection of handouts, observations, articles, and models in Physics, Mathematics, and Competitive Programming by Tawhid Bin Omar.",
-    "url": "https://tawhid.is-a.dev/notes",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Tawhid's Portfolio",
-      "url": "https://tawhid.is-a.dev"
-    },
-    "about": [
-      { "@type": "Thing", "name": "Physics", "description": "Quantum Theory, Relativity, Astrophysics, Mechanics, Oscillatory Systems" },
-      { "@type": "Thing", "name": "Mathematics", "description": "Category Theory, Combinatorics, Graph Theory, Projective Geometry, Tensors, Functional Equations, Analytic Continuation, Vieta Jumping" },
-      { "@type": "Thing", "name": "Competitive Programming", "description": "Algorithms, Data Structures, Dynamic Programming, String Algorithms, Greedy Algorithms" }
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "Open Problem Solving Library",
+        "description": "Free mathematics, physics, competitive programming, and astronomy resources for learners, educators, and Olympiad students in Bangladesh.",
+        "url": "https://tawhid.is-a.dev/notes",
+        "sameAs": ["https://tawhid.is-a.dev"],
+        "knowsAbout": ["Mathematics", "Physics", "Computer Science", "Competitive Programming", "Astronomy", "STEM Education", "Olympiad Preparation", "Problem Solving"],
+        "educationalLevel": ["Beginner", "Intermediate", "Advanced"],
+        "audience": { "@type": "Audience", "audienceType": ["Students", "Educators", "Olympiad Participants", "Researchers", "Parents", "Self-learners"] },
+        "teaches": ["Mathematics", "Physics", "Computer Science", "Astronomy", "Problem Solving", "Critical Thinking", "Computational Thinking"],
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://tawhid.is-a.dev",
+        "name": "Open Problem Solving Library",
+        "publisher": { "@type": "Person", "name": "Tawhid Bin Omar", "url": "https://tawhid.is-a.dev" },
+        "inLanguage": ["en", "bn"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://tawhid.is-a.dev/notes?q={search_term_string}",
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "CollectionPage",
+        "name": "Open Problem Solving Library",
+        "description": "A comprehensive open-access library of educational resources including problem sets, olympiad training materials, research papers, and learning guides in mathematics, physics, competitive programming, and astronomy for Bangladesh and beyond.",
+        "url": "https://tawhid.is-a.dev/notes",
+        "isPartOf": { "@type": "WebSite", "name": "Open Problem Solving Library", "url": "https://tawhid.is-a.dev" },
+        "inLanguage": ["en", "bn"],
+        "about": [
+          { "@type": "Thing", "name": "Mathematics", "description": "Algebra, geometry, number theory, combinatorics, calculus, and analysis" },
+          { "@type": "Thing", "name": "Physics", "description": "Classical mechanics, electromagnetism, quantum physics, relativity, and astrophysics" },
+          { "@type": "Thing", "name": "Competitive Programming", "description": "Algorithms, data structures, and problem-solving techniques" },
+          { "@type": "Thing", "name": "Astronomy", "description": "Astrophysics, cosmology, observational astronomy, and planetary science" },
+        ],
+        "hasPart": [
+          ...librarySubjects.flatMap((subject) =>
+            subject.sections.flatMap((section) =>
+              section.items.map((item) => ({
+                "@type": "LearningResource",
+                "name": item.title,
+                "description": item.description,
+                "url": item.link.startsWith("http") ? item.link : `https://tawhid.is-a.dev${item.link}`,
+                "about": { "@type": "Thing", "name": subject.title },
+                "teaches": subject.title,
+                "inLanguage": item.title.includes("[Bangla]") ? "bn" : "en",
+                "audience": {
+                  "@type": "Audience",
+                  "audienceType": ["Students", "Olympiad Participants", "Self-learners"],
+                },
+                "educationalLevel": ["Intermediate", "Advanced"],
+                "encodingFormat": item.link.endsWith(".pdf") ? "application/pdf" : "text/html",
+              }))
+            )
+          ),
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tawhid.is-a.dev" },
+          { "@type": "ListItem", "position": 2, "name": "Open Problem Solving Library", "item": "https://tawhid.is-a.dev/notes" },
+        ],
+      },
     ],
-    "hasPart": [
-      {
-        "@type": "CreativeWork",
-        "name": "Quantum Theory",
-        "description": "Quantum Physics Concepts",
-        "url": "https://tawhid.is-a.dev/notes/qt.pdf",
-        "teaches": "Quantum Physics"
-      },
-      {
-        "@type": "CreativeWork",
-        "name": "Relativity",
-        "description": "Relativity Concepts",
-        "url": "https://tawhid.is-a.dev/notes/relativity.pdf",
-        "teaches": "Relativity"
-      },
-      {
-        "@type": "CreativeWork",
-        "name": "Category Theory",
-        "description": "An introduction to category theory",
-        "url": "https://tawhid.is-a.dev/notes/Articles/CategoryTheory.pdf",
-        "teaches": "Category Theory"
-      },
-      {
-        "@type": "CreativeWork",
-        "name": "Graph Theory",
-        "description": "An introduction to graph theory",
-        "url": "https://tawhid.is-a.dev/notes/Articles/GraphTheory.pdf",
-        "teaches": "Graph Theory"
-      },
-      {
-        "@type": "CreativeWork",
-        "name": "General Relativity",
-        "description": "An introduction to general relativity",
-        "url": "https://tawhid.is-a.dev/notes/Articles/GeneralRelativity.pdf",
-        "teaches": "General Relativity"
-      },
-      {
-        "@type": "CreativeWork",
-        "name": "Projective Geometry",
-        "description": "An introduction to projective geometry",
-        "url": "https://tawhid.is-a.dev/notes/Articles/ProjectiveGeo.pdf",
-        "teaches": "Projective Geometry"
-      },
-      {
-        "@type": "CreativeWork",
-        "name": "The Gliding Principle",
-        "description": "Moving Points on Conics and Beyond",
-        "url": "https://tawhid.is-a.dev/notes/Articles/Article1.pdf",
-        "teaches": "Conic Geometry"
-      },
-      {
-        "@type": "CreativeWork",
-        "name": "Vieta Jumping Extension",
-        "description": "Beyond Vieta Jumping: Non-linear Root Flipping and Surface Orbits",
-        "url": "https://tawhid.is-a.dev/notes/Articles/Article2.pdf",
-        "teaches": "Number Theory"
-      }
-    ]
   };
 
   return (
-    <main className="min-h-screen w-full pt-32 pb-20 px-6" id="main-content">
+    <main className="min-h-screen w-full pt-28 pb-16 px-4 md:px-6" id="main-content">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4">
-            Notes & Resources
+        <div className="text-center mb-8">
+          <h1 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-3 leading-tight">
+            Open Problem Solving Library
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A collection of my handouts, observations, and models in Physics, Mathematics, and Competitive Programming
+          <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+            Free mathematics, physics, competitive programming, and astronomy resources for learners,
+            educators, and Olympiad students.
           </p>
         </div>
 
-        {/* Categories */}
-        <div className="space-y-16">
-          {notesCategories.map((category, categoryIndex) => (
-            <section key={categoryIndex} className="w-full" aria-labelledby={`category-${categoryIndex}`}>
-              {/* Category Title */}
-              <h2 
-                id={`category-${categoryIndex}`}
-                className="text-4xl font-bold text-white mb-8 flex items-center gap-3"
-              >
-                <span className="text-5xl">{category.icon}</span>
-                {category.title}
-              </h2>
+        {/* Search */}
+        <div className="max-w-md mx-auto mb-8">
+          <div className="relative">
+            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-600 text-sm">🔍</span>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search resources..."
+              className="w-full pl-9 pr-3.5 py-2 text-sm rounded-full border border-white/10 bg-white/[0.04] text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/40 focus:ring-1 focus:ring-purple-500/20 transition-all"
+              aria-label="Search educational resources"
+            />
+          </div>
+        </div>
 
-              {/* Sections Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {category.sections.map((section, sectionIndex) => (
-                  <div 
-                    key={sectionIndex}
-                    className="border border-[#2A0E61] rounded-lg bg-white/5 backdrop-blur-md p-6 transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6] hover:scale-105"
+        {/* Search Results */}
+        {searchQuery.trim() ? (
+          <SearchResults query={searchQuery} />
+        ) : (
+          <>
+            {/* Subject Navigation */}
+            <SubjectNav />
+
+            {/* Featured Resources */}
+            <section aria-labelledby="featured-heading" className="mb-12">
+              <h3 id="featured-heading" className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-4 uppercase tracking-widest">
+                Featured Resources
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+                {featuredResources.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={item.link}
+                    target={item.link.startsWith("http") ? "_blank" : undefined}
+                    rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="border border-white/[0.06] rounded-lg bg-white/[0.02] p-4 transition-all duration-200 hover:bg-white/[0.06] hover:border-purple-500/30 flex flex-col"
+                    aria-label={`Featured: ${item.title}`}
                   >
-                    {/* Section Title */}
-                    <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-4">
-                      {section.name}
-                    </h3>
-
-                    {/* Items */}
-                    <div className="space-y-3">
-                      {section.items.map((item, itemIndex) => (
-                        <a
-                          key={itemIndex}
-                          href={item.link}
-                          className="block p-3 rounded bg-[#0300145e] hover:bg-[#03001480] transition-colors group"
-                          aria-label={`View ${item.title}`}
-                        >
-                          <h4 className="text-white font-medium mb-1 group-hover:text-purple-400 transition-colors">
-                            {item.title}
-                          </h4>
-                          <p className="text-gray-400 text-sm">
-                            {item.description}
-                          </p>
-                        </a>
-                      ))}
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-[10px] uppercase tracking-wider text-purple-400/80 bg-purple-500/10 px-1.5 py-0.5 rounded">
+                        {item.type.replace("-", " ")}
+                      </span>
+                      <span className="text-[10px] text-gray-600">{item.subject}</span>
                     </div>
-                  </div>
+                    <h4 className="text-sm font-medium text-gray-200 mb-1 leading-snug">{item.title}</h4>
+                    <p className="text-gray-600 text-xs leading-relaxed flex-1 line-clamp-2">
+                      {item.description}
+                    </p>
+                  </a>
                 ))}
               </div>
             </section>
-          ))}
-        </div>
 
-        {/* Footer Note */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-500 text-sm">
-            Personal notes I had made for myself.
-          </p>
-        </div>
+            {/* Subject Sections */}
+            <div className="space-y-14">
+              {librarySubjects.map((subject, index) => (
+                <SubjectCard key={subject.title} subject={subject} index={index} />
+              ))}
+            </div>
+
+            {/* Footer */}
+            <div className="mt-16 text-center border-t border-white/[0.06] pt-6">
+              <p className="text-gray-600 text-xs leading-relaxed max-w-xl mx-auto">
+                Open Problem Solving Library — free STEM resources I had created for myself and others.
+                All materials freely available for learning, teaching, and research.
+              </p>
+            </div>
+          </>
+        )}
       </div>
     </main>
   );

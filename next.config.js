@@ -10,6 +10,15 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: '/library',
+        destination: '/notes',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

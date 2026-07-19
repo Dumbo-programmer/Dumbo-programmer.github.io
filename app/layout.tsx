@@ -10,47 +10,72 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Tawhid's Portfolio | Full Stack Developer & Physicist",
+    default: "Tawhid's Portfolio | Open Problem Solving Library — Bangladesh STEM Education",
     template: "%s | Tawhid's Portfolio"
   },
-  description: "Portfolio of Tawhid Bin Omar (Ren, Dumbo-programmer) - Full stack developer, lead game developer at Pyxl Chronicles, robotics-for-good engineer, physics olympiad champion (BdPhO, PHIGA), competitive programmer. Expert in custom game engines, AI systems, procedural generation, assistive robotics, web development.",
+  description: "Tawhid Bin Omar — Creator of the Open Problem Solving Library, Bangladesh's free open-access STEM education platform. Full stack developer, Physics Olympiad champion (BdPhO, PHIGA #1 worldwide), competitive programmer, and robotics-for-good engineer. Free educational resources in mathematics, physics, programming, and astronomy.",
   keywords: [
-    // Core Identity
-    "Tawhid", "Tawhid Bin Omar", "Ren", "Dumbo-programmer", "portfolio", "developer",
-    // Roles & Expertise
-    "full stack developer", "game developer", "lead game developer", "indie game developer",
-    "physicist", "robotics engineer", "mechanical engineer", "student developer",
-    // Game Development
-    "custom game engine", "indie horror game", "procedural generation", "game AI", "performance optimization",
-    "Unity", "C#", "OpenGL", "Blender", "CI/CD", "cross-platform", "Android games",
-    // Robotics & Hardware
-    "robotics-for-good", "assistive systems", "autonomous systems", "UAV", "mechatronics",
-    "embedded systems", "Arduino", "UN SDG", "accessibility technology", "healthcare robotics",
-    // Physics & Competitions
-    "Bangladesh Physics Olympiad", "BdPhO", "Physics Olympiad", "IPHO", "Physics Brawl",
-    "PHIGA", "NASA Space Apps", "International Astronomy Competition",
-    // Programming
-    "LeetCode", "Codeforces", "competitive programming", "algorithms", "data structures",
-    // Technologies
-    "React", "Next.js", "Node.js", "TypeScript", "JavaScript", "Python", "C++",
-    "Firebase", "MongoDB", "PostgreSQL", "Vue", "Ionic", "Tailwind CSS",
-    "Machine Learning", "AI", "PyTorch", "OpenCV",
-    // Projects
+    "Tawhid", "Tawhid Bin Omar", "Ren", "Dumbo-programmer",
+    "Open Problem Solving Library", "Bangladesh STEM Education",
+    "Open Educational Resources", "STEM Education Bangladesh",
+    "Free Math Books", "Free Physics Notes", "Mathematics Library",
+    "Physics Library", "Programming Library", "Olympiad Mathematics",
+    "Olympiad Physics", "Olympiad Programming",
+    "Bangladesh Mathematics", "Bangla STEM",
+    "Problem Solving", "Critical Thinking", "Computational Thinking",
+    "full stack developer", "game developer", "physicist", "robotics engineer",
+    "Physics Olympiad", "BdPhO", "PHIGA", "Bangladesh Physics Olympiad",
+    "competitive programming", "algorithms", "data structures",
+    "React", "Next.js", "TypeScript", "Python", "C++",
+    "Unity", "C#", "Firebase", "MongoDB", "PostgreSQL",
     "Pyxl Chronicles", "Team Nokkhotropoth", "Ongko", "PlayNux", "Vocal Guard",
-    "Preron", "Concept Vector", "Josephite Math Club",
-    // General
-    "Game Development", "Web Development", "Physics", "Robotics", "open source"
+    "Game Development", "Web Development", "Physics", "Robotics", "open source",
+    "Bangladesh developer", "STEM education Bangladesh",
+    "Free educational resources", "Bangla educational content",
   ],
-  authors: [{ name: "Tawhid Bin Omar" }],
+  authors: [{ name: "Tawhid Bin Omar", url: "https://tawhid.is-a.dev" }],
   creator: "Tawhid Bin Omar",
+  publisher: "Tawhid Bin Omar",
   metadataBase: new URL("https://tawhid.is-a.dev"),
   robots: {
     index: true,
     follow: true,
-    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   verification: {
     google: "AIb87YBCHR0yYrFkkuFPNPX0ZM41iD8QODY06HZBC4Q",
+  },
+  openGraph: {
+    title: "Tawhid Bin Omar — STEM Education, Physics Olympiad & Open Problem Solving Library",
+    description: "Creator of the Open Problem Solving Library. Physics Olympiad champion (BdPhO, PHIGA #1 worldwide). Full stack developer, competitive programmer, robotics engineer. Free STEM education resources for Bangladesh.",
+    url: "https://tawhid.is-a.dev",
+    siteName: "Tawhid Bin Omar — Open Problem Solving Library",
+    images: [{ url: "https://tawhid.is-a.dev/og-image.png", width: 1200, height: 630, alt: "Tawhid Bin Omar - Open Problem Solving Library" }],
+    locale: "en_US",
+    type: "website",
+    countryName: "Bangladesh",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tawhid Bin Omar — STEM Education & Open Problem Solving Library",
+    description: "Creator of the Open Problem Solving Library. Physics Olympiad champion. Free STEM education resources for Bangladesh.",
+    images: ["https://tawhid.is-a.dev/og-image.png"],
+    creator: "@tawhid_omar",
+  },
+  icons: {
+    icon: "/tawhid.png",
+    apple: "/tawhid.png",
+  },
+  category: "education",
+  other: {
+    "geo.country": "BD",
+    "content-language": "en, bn",
   },
 };
 
