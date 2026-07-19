@@ -54,7 +54,9 @@ const Research = () => {
             <h2 id="research-heading" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               Current Projects
             </h2>
+          <br>
           
+          </br>
         </motion.div>
 
       </div>

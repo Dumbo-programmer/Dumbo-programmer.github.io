@@ -5,6 +5,7 @@ import Hero from "@/components/main/Hero";
 import Skills from "@/components/main/Skills";
 import Achievements from "@/components/main/Achievements";
 import Projects from "@/components/main/Projects";
+import EducationImpactSection from "@/components/main/EducationImpactSection";
 import Research from "@/components/main/Research";
 import LibrarySection from "@/components/main/LibrarySection";
 import LoadingScreen from "@/components/main/LoadingScreen";
@@ -91,78 +92,131 @@ export default function Home() {
   const person = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://tawhid.is-a.dev/#person",
     "name": "Tawhid Bin Omar",
-    "alternateName": ["Ren", "Dumbo-programmer", "Tawhid"],
+    "alternateName": ["Ren", "Dumbo-programmer", "Tawhid", "Tawhid Omar"],
+    "givenName": "Tawhid",
+    "familyName": "Bin Omar",
     "url": "https://tawhid.is-a.dev",
     "image": "https://tawhid.is-a.dev/tawhid.png",
     "sameAs": [
       "https://github.com/Dumbo-programmer",
-      "https://discord.com/users/707079802531872769",
+      "https://www.linkedin.com/in/tawhidbinomar/",
       "https://www.facebook.com/tawhiddayo/",
       "https://instagram.com/renscule",
-      "https://www.linkedin.com/in/tawhidbinomar/",
       "https://dev.to/dumbo_programmer",
       "https://leetcode.com/u/Dumbo-programmer/",
       "https://codeforces.com/profile/Dumbo-programmer",
-      "https://pyxl-chronicles.itch.io"
+      "https://pyxl-chronicles.itch.io",
+      "https://discord.com/users/707079802531872769",
+      "https://www.youtube.com/@tawhidbinomar",
     ],
-    "jobTitle": "Full Stack Developer, Game Developer & Student",
-    "description": "Full stack developer, lead game developer at Pyxl Chronicles, maker, robotics-for-good , and physics enthusiast. Built custom game engines with AI and procedural generation. Physics Olympiad champion (BdPhO national champion, PHIGA #1 worldwide, Physics Brawl top 29/1584 teams). Competitive programmer ranked top 7% on LeetCode. Also known as Ren and Dumbo-programmer.",
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "St. Joseph Higher Secondary School"
+    "jobTitle": [
+      "STEM Educator & Problem Solving Curriculum Developer",
+      "President of St. Joseph Higher Secondary School Math Club",
+      "Full Stack Developer",
+      "Physics Olympiad Champion — BdPhO National Champion, PHIGA #1 Worldwide",
+    ],
+    "description":
+      "Tawhid Bin Omar is a Bangladesh-based STEM educator, Physics Olympiad champion (BdPhO National Champion, PHIGA 1st place worldwide out of 1,211), and creator of the Open Problem Solving Library — a free open-access STEM education platform. He serves as President of the St. Joseph Higher Secondary School Math Club in Dhaka, where he leads the Math Bootcamp program, mentors Olympiad aspirants, conducts teacher training, and creates open educational resources in mathematics, physics, competitive programming, and astronomy. He is also a full stack developer, game developer (Pyxl Chronicles), and robotics-for-good engineer (Team Nokkhotropoth).",
+    "nationality": {
+      "@type": "Country",
+      "name": "Bangladesh"
     },
-    "knowsAbout": [
-      "Game Development", "Custom Game Engines", "Procedural Generation", "AI Systems",
-      "Robotics", "Assistive Technology", "Autonomous Systems", "Mechatronics", "Embedded Systems",
-      "Web Development", "Full Stack Development", "Mobile Development",
-      "Physics", "Competitive Physics", "Astrophysics",
-      "Competitive Programming", "Algorithms", "Data Structures",
-      "Machine Learning", "Artificial Intelligence", "Computer Vision",
-      "React", "Next.js", "Node.js", "Unity", "C#", "Python", "C++", "TypeScript",
-      "Firebase", "MongoDB", "PostgreSQL", "CI/CD", "Performance Optimization",
-      "Linux", "Operating System Development", "Cross-platform Development"
-    ],
-    "hasCredential": [
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dhaka",
+      "addressCountry": "BD"
+    },
+    "birthPlace": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dhaka",
+        "addressCountry": "BD"
+      }
+    },
+    "alumniOf": [
       {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Bangladesh Physics Olympiad National Champion",
+        "@type": "EducationalOrganization",
+        "name": "St. Joseph Higher Secondary School"
+      }
+    ],
+    "affiliation": [
+      {
+        "@type": "Organization",
+        "name": "St. Joseph Higher Secondary School Math Club",
+        "url": "https://tawhid.is-a.dev/#education-impact"
+      },
+      {
+        "@type": "Organization",
+        "name": "Bangladesh Physics Olympiad (BdPhO)",
+        "url": "https://physicsolympiad.org.bd"
+      },
+      {
+        "@type": "Organization",
+        "name": "PHIGA International Physics Competition"
+      },
+      {
+        "@type": "Organization",
+        "name": "Scintilla Science Club",
+        "url": "https://tawhid.is-a.dev/#education-impact"
+      }
+    ],
+    "knowsAbout": [
+      "STEM Education Bangladesh",
+      "Problem Solving Pedagogy",
+      "Mathematics Olympiad Training",
+      "Physics Olympiad Training",
+      "Competitive Programming Education",
+      "Open Educational Resources",
+      "Bangladesh Education Reform",
+      "Teacher Training and Curriculum Development",
+      "Game Development",
+      "Custom Game Engines",
+      "Robotics for Good",
+      "Assistive Technology",
+      "Full Stack Web Development",
+      "Physics",
+      "Competitive Physics",
+      "Astrophysics",
+      "Competitive Programming",
+      "Algorithms",
+      "Data Structures",
+      "Artificial Intelligence",
+      "Machine Learning",
+    ],
+    "award": [
+      {
+        "@type": "Award",
+        "name": "Bangladesh Physics Olympiad — National Champion",
         "description": "2x regional champion, 2x nationalist, 1x national champion, IPHO national camper"
       },
       {
-        "@type": "EducationalOccupationalCredential",
-        "name": "PHIGA Physics Competition - 1st Place Worldwide",
-        "description": "Achieved 1st place out of 1,211 participants worldwide in the PHIGA International Gamified Physics Competition"
+        "@type": "Award",
+        "name": "PHIGA Physics Competition — 1st Place Worldwide",
+        "description": "Achieved 1st place out of 1,211 participants worldwide"
       },
       {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Physics Brawl - Top 29 Team",
-        "description": "29th place out of 1,584 teams internationally, 10th nationwide"
+        "@type": "Award",
+        "name": "Physics Brawl — Top 29 Teams Internationally",
+        "description": "29th place out of 1,584 teams, 10th nationwide"
       },
       {
-        "@type": "EducationalOccupationalCredential",
-        "name": "International Astronomy and Astrophysics Competition - Silver Honor",
-        "description": "Silver honor and special recognition for well-typesetted solution"
+        "@type": "Award",
+        "name": "IAAC — Silver Honor, International Astronomy and Astrophysics Competition"
       },
       {
-        "@type": "EducationalOccupationalCredential",
-        "name": "LeetCode Top 7%",
-        "description": "Solved 200+ problems, ranked in top 7% of all users (12.2 million)"
+        "@type": "Award",
+        "name": "LeetCode Top 7% — Solved 200+ Problems"
       },
       {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Codeforces 1300+ Rating",
-        "description": "Achieved rating of 1300+ solving competitive programming problems"
+        "@type": "Award",
+        "name": "Codeforces 1300+ Rating"
       },
       {
-        "@type": "EducationalOccupationalCredential",
-        "name": "NASA Space Apps Challenge",
-        "description": "Created AI/ML model to identify exoplanets from datasets"
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "CS50 Certificate",
-        "description": "Completed CS50 and various programming bootcamps"
+        "@type": "Award",
+        "name": "NASA Space Apps Challenge — Exoplanet AI Model"
       }
     ],
     "memberOf": [
@@ -218,6 +272,7 @@ export default function Home() {
     "name": "Tawhid's Portfolio",
     "publisher": {
       "@type": "Person",
+      "@id": "https://tawhid.is-a.dev/#person",
       "name": "Tawhid Bin Omar",
       "url": "https://tawhid.is-a.dev"
     },
@@ -231,13 +286,21 @@ export default function Home() {
   const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Tawhid Bin Omar",
+    "@id": "https://tawhid.is-a.dev/#organization",
+    "name": "Open Problem Solving Library — Tawhid Bin Omar",
     "url": "https://tawhid.is-a.dev",
     "logo": "https://tawhid.is-a.dev/tawhid.png",
+    "description": "Free open-access STEM education platform for Bangladesh, founded by Tawhid Bin Omar. Provides educational resources in mathematics, physics, competitive programming, and astronomy for students, teachers, and Olympiad participants.",
+    "foundingDate": "2026",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://tawhid.is-a.dev/#person",
+      "name": "Tawhid Bin Omar"
+    },
     "sameAs": [
       "https://github.com/Dumbo-programmer",
-      "https://instagram.com/renscule",
-      "https://www.linkedin.com/in/tawhid-omar-7a0320212/"
+      "https://www.linkedin.com/in/tawhidbinomar/",
+      "https://www.facebook.com/tawhiddayo/"
     ]
   };
 
@@ -250,6 +313,7 @@ export default function Home() {
       { "name": "About", "url": "https://tawhid.is-a.dev/#about-me" },
       { "name": "Skills", "url": "https://tawhid.is-a.dev/#skills" },
       { "name": "Projects", "url": "https://tawhid.is-a.dev/#projects" },
+      { "name": "Education Impact", "url": "https://tawhid.is-a.dev/#education-impact" },
       { "name": "Research", "url": "https://tawhid.is-a.dev/#current-projects" },
       { "name": "Library", "url": "https://tawhid.is-a.dev/notes" }
     ]
@@ -261,7 +325,8 @@ export default function Home() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tawhid.is-a.dev" },
       { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://tawhid.is-a.dev/#projects" },
-      { "@type": "ListItem", "position": 3, "name": "Research", "item": "https://tawhid.is-a.dev/#current-projects" }
+      { "@type": "ListItem", "position": 3, "name": "Education Impact", "item": "https://tawhid.is-a.dev/#education-impact" },
+      { "@type": "ListItem", "position": 4, "name": "Research", "item": "https://tawhid.is-a.dev/#current-projects" }
     ]
   };
 
@@ -368,6 +433,7 @@ export default function Home() {
         <Skills />
         <Achievements />
         <Projects />
+        <EducationImpactSection />
         <Research />
         <LibrarySection />
       </div>
