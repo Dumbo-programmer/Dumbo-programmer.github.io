@@ -43,7 +43,7 @@ export interface Initiative {
 export const sectionTitle = "Building the Next Generation of Problem Solvers";
 
 export const sectionSubtitle =
-  "Through workshops, literacy-school outreach, Olympiad mentoring, and open educational resources, I am working toward making high-quality problem-solving education accessible to every student in Bangladesh.";
+  "I believe the most impactful thing I can build is not software — it is infrastructure for learning. Every workshop, every handout, every mentorship session exists to answer one question: how do I make high-quality STEM education as accessible in a Dhaka classroom as it is anywhere in the world?";
 
 export const gallerySlides: GallerySlide[] = [
   {

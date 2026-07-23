@@ -11,6 +11,21 @@ const SUBJECT_IDS = librarySubjects.map((s) => ({
 
 const GRADIENT = "from-purple-400 to-pink-400";
 
+const GRADE_FILTERS = [
+  { label: "Grades 3–5", id: "grade-3-5" },
+  { label: "Grades 6–8", id: "grade-6-8" },
+  { label: "Grades 9–10", id: "grade-9-10" },
+  { label: "Grades 11–12", id: "grade-11-12" },
+  { label: "Undergrad+", id: "undergrad" },
+];
+
+const OLYMPIAD_FILTERS = [
+  { label: "BdMO", id: "bdmo" },
+  { label: "BdPhO", id: "bdpho" },
+  { label: "IAAC", id: "iaac" },
+  { label: "Programming", id: "prog-olympiad" },
+];
+
 function SubjectNav() {
   return (
     <nav className="flex flex-wrap justify-center gap-2 mb-10" aria-label="Subject navigation">
@@ -271,6 +286,34 @@ export default function NotesPage() {
             {/* Subject Navigation */}
             <SubjectNav />
 
+            {/* Quick Filters — Browse by Grade & Olympiad */}
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                <span className="text-[11px] uppercase tracking-wider text-gray-500 mr-1">By Grade:</span>
+                {GRADE_FILTERS.map((g) => (
+                  <a
+                    key={g.id}
+                    href={`/notes#${g.id}`}
+                    className="text-xs px-3 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-gray-400 hover:text-white hover:border-cyan-500/30 hover:shadow-[0_0_12px_#06b6d433] transition-all duration-200"
+                  >
+                    {g.label}
+                  </a>
+                ))}
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                <span className="text-[11px] uppercase tracking-wider text-gray-500 mr-1">Olympiads:</span>
+                {OLYMPIAD_FILTERS.map((o) => (
+                  <a
+                    key={o.id}
+                    href={`/notes#${o.id}`}
+                    className="text-xs px-3 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-gray-400 hover:text-white hover:border-purple-500/30 hover:shadow-[0_0_12px_#a855f733] transition-all duration-200"
+                  >
+                    {o.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
             {/* Featured Resources */}
             <section aria-labelledby="featured-heading" className="mb-12">
               <h3 id="featured-heading" className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-4 uppercase tracking-widest">
@@ -311,8 +354,8 @@ export default function NotesPage() {
             {/* Footer */}
             <div className="mt-16 text-center border-t border-white/[0.06] pt-6">
               <p className="text-gray-600 text-xs leading-relaxed max-w-xl mx-auto">
-                Open Problem Solving Library — free STEM resources I had created for myself and others.
-                All materials freely available for learning, teaching, and research.
+                Built because a student in Bangladesh should have the same access to quality STEM education
+                as a student anywhere else. All materials free, open-access, and yours to use.
               </p>
             </div>
           </>

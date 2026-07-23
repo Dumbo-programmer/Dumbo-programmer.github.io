@@ -10,10 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Tawhid's Portfolio | Open Problem Solving Library — Bangladesh STEM Education",
-    template: "%s | Tawhid's Portfolio"
+    default: "Tawhid Bin Omar — Building STEM Education Infrastructure for Bangladesh",
+    template: "%s | Tawhid Bin Omar"
   },
-  description: "Tawhid Bin Omar — Creator of the Open Problem Solving Library, Bangladesh's free open-access STEM education platform. Full stack developer, Physics Olympiad champion (BdPhO, PHIGA #1 worldwide), competitive programmer, and robotics-for-good engineer. Free educational resources in mathematics, physics, programming, and astronomy.",
+  description: "Building open-access STEM education infrastructure for Bangladesh. Creator of the Open Problem Solving Library — free mathematics, physics, programming, and astronomy resources. Physics Olympiad champion (BdPhO, PHIGA #1 worldwide). Every project starts with one question: how do I make quality education accessible regardless of geography or wealth?",
   keywords: [
     "Tawhid", "Tawhid Bin Omar", "Ren", "Dumbo-programmer",
     "Open Problem Solving Library", "Bangladesh STEM Education",
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     google: "AIb87YBCHR0yYrFkkuFPNPX0ZM41iD8QODY06HZBC4Q",
   },
   openGraph: {
-    title: "Tawhid Bin Omar — STEM Education, Physics Olympiad & Open Problem Solving Library",
-    description: "Creator of the Open Problem Solving Library. Physics Olympiad champion (BdPhO, PHIGA #1 worldwide). Full stack developer, competitive programmer, robotics engineer. Free STEM education resources for Bangladesh.",
+    title: "Tawhid Bin Omar — Building STEM Education Infrastructure for Bangladesh",
+    description: "Open-access STEM education for Bangladesh. Creator of the Open Problem Solving Library. Physics Olympiad champion (BdPhO, PHIGA #1 worldwide). Free mathematics, physics, programming, and astronomy resources.",
     url: "https://tawhid.is-a.dev",
     siteName: "Tawhid Bin Omar — Open Problem Solving Library",
     images: [{ url: "https://tawhid.is-a.dev/og-image.png", width: 1200, height: 630, alt: "Tawhid Bin Omar - Open Problem Solving Library" }],
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tawhid Bin Omar — STEM Education & Open Problem Solving Library",
-    description: "Creator of the Open Problem Solving Library. Physics Olympiad champion. Free STEM education resources for Bangladesh.",
+    title: "Tawhid Bin Omar — Building STEM Education Infrastructure for Bangladesh",
+    description: "Open-access STEM education for Bangladesh. Free mathematics, physics, programming, and astronomy resources. Physics Olympiad champion.",
     images: ["https://tawhid.is-a.dev/og-image.png"],
     creator: "@tawhid_omar",
   },

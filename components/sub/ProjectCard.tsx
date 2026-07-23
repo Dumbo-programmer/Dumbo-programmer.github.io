@@ -7,9 +7,12 @@ interface Props {
   typeA?: "image" | "video";
   tags?: string[];
   link: string;
+  purpose?: string;
+  impact?: string;
+  users?: string;
 }
 
-const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link }: Props) => {
+const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link, purpose, impact, users }: Props) => {
   return (
     <a
       href={link}
@@ -58,7 +61,25 @@ const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link
           ))}
         </div>
 
-        <p className="text-gray-300 text-sm">{description}</p>
+        <p className="text-gray-300 text-sm mb-3">{description}</p>
+
+        {purpose && (
+          <p className="text-purple-300 text-xs mb-1">
+            <span className="font-semibold">Why:</span> {purpose}
+          </p>
+        )}
+
+        {users && (
+          <p className="text-cyan-300 text-xs mb-1">
+            <span className="font-semibold">For:</span> {users}
+          </p>
+        )}
+
+        {impact && (
+          <p className="text-green-300 text-xs">
+            <span className="font-semibold">Impact:</span> {impact}
+          </p>
+        )}
       </div>
     </a>
   );

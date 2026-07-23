@@ -11,16 +11,20 @@ const researchData: {
   description: string;
   tags?: string[];
   link?: string;
+  status?: "published" | "preprint" | "in-progress" | "submitted";
+  doi?: string;
+  date?: string;
+  citations?: number;
 }[] = [
-  
-{
+  {
     typeA: "image",
     src: "/pyxl.png",
     title: "Pyxl Chronicles",
     link: "https://pyxl-chronicles.itch.io",
     sub: 'Lead Game Developer',
     description: `Led a 6-developer studio to design and launch an indie horror game with 230+ early players. Built a custom game engine combining 2D mechanics with realistic 3D visuals, implementing AI systems, procedural content generation, and performance-optimized rendering. Improved performance by 50–80% through custom optimization strategies. Managed the full development pipeline—80+ builds, 200+ commits, CI/CD automation, profiling, and cross-platform deployment (Windows/Linux). Leveraged the engine to create 4 additional trending Android games, with more than 10k+ active players.`,
-    tags: ["Game Development", "Indie Horror", "Custom Game Engine", "Procedural Generation", "AI", "Performance Optimization", "CI/CD", "Cross-Platform", "Android"], 
+    tags: ["Game Development", "Indie Horror", "Custom Game Engine", "Procedural Generation", "AI", "Performance Optimization", "CI/CD", "Cross-Platform", "Android"],
+    date: "2024 – Present",
   },
   {
     typeA: "image",
@@ -30,6 +34,7 @@ const researchData: {
     sub: 'Academic Team Member',
     description: "Working as an academic team member at Ongko, contributing to educational initiatives and academic excellence.",
     tags: ["Education", "Math Olympiad", "Team Collaboration", "Physics Olympiad", "Math Organization"],
+    date: "2025 – Present",
   },
   {
     typeA: "image",
@@ -38,6 +43,16 @@ const researchData: {
     sub: 'Mechanical Engineering Department Lead',
     description: `Co-founded and co-led a 4-member Robotics-for-Good R&D team (robotics-for-good) tackling accessibility, healthcare, and disaster response in underdeveloped regions. Designed and deployed 10–15 autonomous assistive systems, including robotic canes, HUD captioning glasses, spatial-audio hearing aids, and communication wearables. Led system integration, testing, documentation, and alignment with UN Sustainable Development Goals.`,
     tags: ["Mechanical Engineering", "Mechatronics", "Robotics", "Robotics-for-Good", "Assistive Systems", "UN SDG", "R&D"],
+    date: "2024 – Present",
+  },
+  {
+    typeA: "image",
+    src: "/team.png",
+    title: "Team Nokkhotropoth",
+    sub: 'Research Paper',
+    description: `Co-founded and co-led a 4-member Robotics-for-Good R&D team (robotics-for-good) tackling accessibility, healthcare, and disaster response in underdeveloped regions. Designed and deployed 10–15 autonomous assistive systems, including robotic canes, HUD captioning glasses, spatial-audio hearing aids, and communication wearables. Led system integration, testing, documentation, and alignment with UN Sustainable Development Goals.`,
+    tags: ["Mechanical Engineering", "Mechatronics", "Robotics", "Robotics-for-Good", "Assistive Systems", "UN SDG", "R&D"],
+    date: "2024 – Present",
   },
 ]
 const Research = () => {
@@ -73,6 +88,10 @@ const Research = () => {
               description={research.description}
               typeA={research.typeA} 
               tags={research.tags}
+              status={research.status}
+              doi={research.doi}
+              date={research.date}
+              citations={research.citations}
             />
           ))}
       </div>

@@ -13,13 +13,17 @@ const LibrarySection = () => {
     >
       <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full">
         <div className="absolute w-auto h-auto top-0 z-[5]">
-          <motion.div variants={slideInFromTop} className="text-[40px] font-medium text-center text-gray-200">
+          <motion.div variants={slideInFromTop} className="text-center">
             <h2
               id="library-heading"
-              className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500"
+              className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4"
             >
               Open Problem Solving Library
             </h2>
+            <p className="text-gray-400 text-sm max-w-2xl mx-auto">
+              Built so that no student in Bangladesh is held back by the cost of educational resources.
+              Free, open-access, always.
+            </p>
           </motion.div>
         </div>
 

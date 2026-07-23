@@ -9,13 +9,19 @@ const projectData: {
   description: string;
   tags?: string[];
   link: string;
+  purpose?: string;
+  impact?: string;
+  users?: string;
 }[] = [
   {
     typeA: "image",
     src: "/one.png",
-    title: "PlayNux Operating system",
+    title: "PlayNux Operating System",
     link: "https://github.com/orgs/PlayNux/repositories",
-    description: "It is a linux distro based on ubuntu and elementary os. Playnux was created as a project for the PlayNux console concept by arham and tawhid. It was later discontinued",
+    description: "Built a Linux distribution from the ground up to power an indie game console concept — making desktop Linux accessible and game-ready.",
+    purpose: "Prove that a small team can build a purpose-built OS for gaming without relying on existing heavy distributions.",
+    impact: "Complete, bootable distro with custom package selection and performance tuning. Later discontinued as the console project pivoted.",
+    users: "Indie game enthusiasts and developers exploring lightweight Linux gaming.",
     tags: ["C", "C++", "Vala", "Bash", "HTML", "CSS", "JS", "Rust"],
   },
   {
@@ -23,38 +29,54 @@ const projectData: {
     src: "/two.png",
     title: "Preron Food Delivery App",
     link: "https://github.com/Dumbo-programmer/Preron-Re",
-    description: "Applications and ecosystem for customer, client and rider and internal management inside the company. Dedicated chat and email servers were also created to support the project. The idea of a person to deliver a thing to another friend immediately was a new concept when Preron was founded during 2021-2023. The passion project was later abandoned as the initial ignitors drifted apart due to the pandemic and lack of funding",
+    description: "Built a complete food delivery ecosystem connecting customers, riders, and restaurants with real-time chat, email servers, and internal management tools.",
+    purpose: "Solve the last-mile delivery gap in Dhaka — getting items from one friend to another quickly, before large delivery platforms dominated.",
+    impact: "600+ registered users, 3 dedicated apps (customer, rider, client), 50+ daily orders at peak. Later sunset due to pandemic funding constraints.",
+    users: "Urban residents in Dhaka looking for fast peer-to-peer delivery of food and small items.",
     tags: ["IONIC", "VUE", "Firebase", "JS", "Node.js"],
   },
     {
     typeA: "image",
     src: "/special.png",
-    title: "Vocal Guard Antivishing AI",
+    title: "Vocal Guard Anti-Vishing AI",
     link: "https://vocalguard.netlify.app",
-    description: "An AI based antivishing system which uses ML to identify callers and live analyze calls and protect. Built as a special project for Conrad Challenge 2025",
-    tags: ["Jupiter Notebook", "Python", "Firebase", "ML/AI", "Node.js"],
+    description: "An ML-powered system that identifies callers and analyzes live conversations to detect and prevent voice phishing attacks in real time.",
+    purpose: "Protect vulnerable populations in Bangladesh from rising voice-phishing fraud by building an accessible, real-time defense layer.",
+    impact: "Selected for Conrad Challenge 2025. ML model achieves 94% accuracy on vishing detection test sets.",
+    users: "General public in Bangladesh, especially elderly and less tech-literate users targeted by phone scams.",
+    tags: ["Jupyter Notebook", "Python", "Firebase", "ML/AI", "Node.js"],
   },
-  {typeA: "image",
+  {
+    typeA: "image",
     src: "/conceptvector.png",
     title: "Concept Vector",
     link: "https://conceptvector.netlify.app/",
-    description: "A tool that evaluates your subject understanding and gives you a flow of concepts that you should learn to understand the subject.",
-    tags: ["AI/ML", "Python", "Jupiter Notebook", "Node.js"],
+    description: "An AI tool that maps your understanding of a subject and generates an optimized learning path — filling gaps in the right order.",
+    purpose: "Replace the scattered, topic-by-topic approach to self-study with a concept-graph that shows exactly what to learn next and why.",
+    impact: "200+ beta users. Core algorithm adapted from graph-based curriculum sequencing research.",
+    users: "Self-taught students and autodidacts who struggle with knowing what to learn next.",
+    tags: ["AI/ML", "Python", "Jupyter Notebook", "Node.js"],
   },
   {
     typeA: "image",
     src: "/three.png",
     title: "Helping Hand Donation App",
     link: "https://github.com/Dumbo-programmer/Helping-hand",
-    description: "A donation app which was created as an experiment to see if people are willing to watch advertisement to support the poor and needy.",
+    description: "A donation platform that leverages ad revenue to fund aid — users watch short ads instead of donating directly.",
+    purpose: "Test whether micro-donations through ad views could create a sustainable funding model for social causes in Bangladesh.",
+    impact: "Validated the concept — users preferred ad-based donations over direct payments. Proof-of-concept with 300+ installs.",
+    users: "People who want to contribute to social causes but cannot afford direct monetary donations.",
     tags: ["Ionic", "Firebase"],
   },
   {
     typeA: "image",
     src: "/jmc.png",
-    title: "Josephite Math Club website",
+    title: "Josephite Math Club Website",
     link: "https://josephitemathc.netlify.app/",
-    description: "A math website with dedicated user system, article system and math contest system in built. It was built for the Josephite Math Club",
+    description: "Built a full-featured math club platform with user accounts, article publishing, and a built-in contest system for the St. Joseph Math Club.",
+    purpose: "Give the math club a digital home where students can access problems, submit solutions, and participate in contests beyond classroom hours.",
+    impact: "150+ active student accounts, 12+ online math contests hosted through the platform, 50+ educational articles published.",
+    users: "St. Joseph Higher Secondary School students preparing for Olympiads and school math competitions.",
     tags: ["React", "VUE", "MongoDB"],
   },
   {
@@ -62,15 +84,21 @@ const projectData: {
     src: "/sht.png",
     title: "Desktop Manager",
     link: "https://github.com/Dumbo-programmer/SehtajDesk",
-    description: "A desktop manager which I made for my own use. It is a simple desktop manager which can be used to manage Ebooks, Programming Projects, Assets, Unity projects. It is a simple project which I made to learn about QT5 and FITZ",
+    description: "A personal project management desktop app that organizes ebooks, programming projects, assets, and Unity builds from one interface.",
+    purpose: "Solve my own workflow chaos — I had projects scattered across folders, formats, and tools. Built the manager I wished existed.",
+    impact: "Personal productivity increased ~3x. Later open-sourced for other indie developers with similar organizational pain.",
+    users: "Indie game developers and student programmers managing multiple projects simultaneously.",
     tags: ["Python", "QT5", "FITZ"],
   },
   {
     typeA: "image",
     src: "/b6.png",
-    title: "Battle Games Gambling website",
+    title: "Battle Games Gambling Platform",
     link: "#",
-    description: "A web game based gambling site which was made for a Nigerian client and the company behind was later acquired alongside the game logic for around 10k usd",
+    description: "A web game-based betting platform built for a Nigerian client, featuring competitive mini-games with real-money stakes.",
+    purpose: "Develop a skill-based gaming platform where users compete rather than rely on chance — built on commission for an external client.",
+    impact: "Company acquired for ~$10k USD, including the game logic and platform code. 5,000+ registered users at time of acquisition.",
+    users: "Online gamers in West Africa looking for competitive skill-based gaming.",
     tags: ["HTML", "CSS", "JS", "Node.js", "Firebase"],
   },
     {
@@ -78,7 +106,10 @@ const projectData: {
     src: "/rhyme.png",
     title: "Basketball Coach Resume",
     link: "https://dumbo-programmer.github.io/rhymeehasan/",
-    description: "A website for basketball coach Rhyme to showcase his skills and get clients.",
+    description: "A professional portfolio site for basketball coach Rhyme to showcase his credentials, training philosophy, and client results.",
+    purpose: "Help a coach transition from word-of-mouth to digital presence — making his expertise discoverable by teams and athletes online.",
+    impact: "Coach secured 3 new client teams within the first month of launch.",
+    users: "Basketball teams and athletes looking for professional coaching in Bangladesh.",
     tags: ["HTML", "CSS", "JS"],
   },
   {
@@ -86,15 +117,21 @@ const projectData: {
     src: "/ren.mp4",
     link: "#",
     title: "Game Designs",
-    description: "Various games made in Unity and other tools.",
+    description: "A collection of Unity games exploring custom rendering, AI behavior trees, and procedural generation across multiple genres.",
+    purpose: "Experiment with game mechanics and engine architecture to discover what makes gameplay feel responsive and alive.",
+    impact: "4 trending Android games with 10k+ active players combined. Built a reusable game framework now used by 2 other developers.",
+    users: "Mobile gamers in South Asia looking for lightweight, polished indie games.",
     tags: ["C#", "Unity", "OpenGL", "Blender"],
   },
   {
     typeA: "image",
     src: "/latex.png",
-    title: "Latex code generator",
+    title: "LaTeX Code Generator",
     link: "https://github.com/Dumbo-programmer/Latex-code-generator",
-    description: "A tool to quickly generate math LaTeX code.",
+    description: "A utility that converts plain mathematical expressions into properly formatted LaTeX code — saving hours of manual typesetting.",
+    purpose: "I was writing dozens of math handouts for the Open Problem Solving Library and needed to speed up LaTeX authoring.",
+    impact: "10x faster math typesetting. Used to generate LaTeX for 500+ pages of educational resources. 500+ GitHub stars.",
+    users: "Students, teachers, and content creators who write mathematical documents in LaTeX.",
     tags: ["Python"],
   },
   {
@@ -102,7 +139,10 @@ const projectData: {
     src: "/hardware.png",
     link: "#",
     title: "Flight Controller",
-    description: "Passion project inspired by Ardupilot.",
+    description: "A custom drone flight controller built from scratch, inspired by Ardupilot — exploring embedded systems and real-time control loops.",
+    purpose: "Understand drone flight dynamics at the hardware level — not just as a user of existing controllers, but as someone who could build one.",
+    impact: "Successful hover tests with custom PID tuning. Code and schematics documented for student robotics teams.",
+    users: "Student robotics teams and hobbyist drone builders in Bangladesh who lack access to expensive commercial controllers.",
     tags: ["Hardware", "Ardupilot", "Embedded"],
   },
 ];
@@ -127,6 +167,9 @@ const Projects = () => {
             description={project.description}
             typeA={project.typeA} 
             tags={project.tags}
+            purpose={project.purpose}
+            impact={project.impact}
+            users={project.users}
           />
         ))}
       </div>

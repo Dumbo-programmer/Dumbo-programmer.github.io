@@ -25,7 +25,7 @@ const HeroContent = () => {
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">An Ambitious Student</h1>
+          <h1 className="Welcome-text text-[13px]">Building Bangladesh&apos;s STEM Infrastructure</h1>
         </motion.div>
 
         <motion.div
@@ -49,19 +49,33 @@ const HeroContent = () => {
           animate="visible"
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          I am a relentlessly curious student fueled by a passion for physics and programming — not merely as subjects, but as lenses through which I understand the world. 
-          I seek out complexity not to conquer it, but to converse with it, to unravel its patterns and reimagine its possibilities. 
-          Whether dissecting the elegance of quantum mechanics or crafting algorithms late into the night, I bring with me an unwavering devotion to deep work. For me, the pursuit of knowledge is not a task — it is a calling, one to which I willingly dedicate countless hours, driven not by obligation but by wonder.
+          I believe a student in Bangladesh should have the same access to high-quality STEM education as one anywhere in the world. 
+          That belief drives everything I build — from free open-access educational libraries and Olympiad training programs to custom game engines and assistive robotics. 
+          I don&apos;t just learn physics and programming; I use them to create infrastructure that makes complex ideas accessible, learning free, and opportunity independent of geography or wealth.
         </motion.p>
 
-        <motion.a
+        <motion.p
           variants={slideInFromLeft(1)}
           initial="hidden"
           animate="visible"
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Portfolio
-        </motion.a>
+          This site is not a portfolio of what I have built. It is a window into why.
+        </motion.p>
+
+        <motion.div
+          variants={slideInFromLeft(1.2)}
+          initial="hidden"
+          animate="visible"
+          className="flex gap-4"
+        >
+          <a
+            href="#projects"
+            className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          >
+            See What I Build
+          </a>
+        </motion.div>
       </div>
 
       <motion.div

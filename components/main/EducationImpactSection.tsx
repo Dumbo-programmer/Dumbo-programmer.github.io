@@ -169,42 +169,37 @@ const EducationImpactSection = () => {
             </h3>
             <div className="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed">
               <p>
-                Education is more than preparing students for examinations. It is about helping them think
-                independently, ask meaningful questions, and solve unfamiliar problems with confidence and
-                creativity. This belief drives every workshop, every mentoring session, and every educational
-                resource I create as a STEM educator in Dhaka, Bangladesh.
-              </p>
-              <p>
-                Through mathematics workshops, programming classes, literacy-school outreach, Olympiad
-                mentoring, and open educational resources, I am working toward making high-quality STEM
-                education accessible to every student in Bangladesh — regardless of geography, school
-                resources, or financial background. From the St. Joseph Higher Secondary School Math Club
-                to the St. Joseph Literacy School, every program is designed to build genuine problem-solving
-                ability, not just exam performance.
-              </p>
-              <p>
-                As President of the St. Joseph Higher Secondary School Math Club, I launched the Math
-                Bootcamp, hosted 6+ mathematics events and competitions, and created over 1,000 original
-                problems to challenge and develop students across Dhaka. I also serve as Head of Academics
-                and Vice President, training teachers and designing curricula that emphasize conceptual
-                understanding over rote memorization — a key need in Bangladesh STEM education reform.
-              </p>
-              <p>
-                Through the Open Problem Solving Library, I publish free, open-access educational resources
-                in mathematics, physics, competitive programming, and astronomy — available to anyone with
-                an internet connection. These resources serve students preparing for the Bangladesh Physics
-                Olympiad (BdPhO), the International Astronomy and Astrophysics Competition (IAAC), and
-                national mathematics Olympiads, as well as students who simply want to learn beyond their
-                school syllabus.
-              </p>
-              <p>
-                Progress is measured not in awards, but in the growing number of young people who discover
-                that they can think for themselves and solve problems they have never seen before. The
-                long-term vision is to help build an open educational ecosystem for Bangladesh where
-                knowledge is freely available, where curiosity is encouraged, and where every student has
-                the opportunity to learn beyond the confines of any syllabus or textbook — and to become
-                the next generation of problem solvers, scientists, and innovators that Bangladesh needs.
-              </p>
+               Why do I teach? Because in Bangladesh, a student&apos;s educational outcome is still largely determined
+                 by their postal code. A child in a Dhaka cantonment school has access to resources, trained
+                 teachers, and opportunities that a child in a rural literacy school does not. I believe that
+                 is a solvable problem.
+               </p>
+               <p>
+                 I designed the Math Bootcamp and the Open Problem Solving Library to solve one specific
+                 problem: students in Bangladesh lack access to structured, high-quality problem-solving
+                 material that bridges the gap between school textbooks and Olympiad-level thinking. Every
+                 handout, every original problem, and every workshop is a piece of infrastructure designed
+                 to close that gap.
+               </p>
+               <p>
+                 As President of the St. Joseph Higher Secondary School Math Club, I built programs that
+                 serve over 700 students across Dhaka — not just those preparing for Olympiads, but also
+                 students from under-resourced schools who attend our literacy program. The results are
+                 measurable: students who could not attempt an unfamiliar problem six months ago are now
+                 solving combinatorial proofs and writing code. That is the impact I care about.
+               </p>
+               <p>
+                 Through the Open Problem Solving Library, I publish free, open-access educational resources
+                 in mathematics, physics, competitive programming, and astronomy — downloaded by students
+                 preparing for BdPhO, IAAC, national mathematics Olympiads, and anyone who simply wants to
+                 learn beyond their school syllabus. No paywall, no registration, no barriers.
+               </p>
+               <p>
+                 The long-term vision is to build an open educational ecosystem for Bangladesh where
+                 knowledge is freely available, where curiosity is encouraged, and where every student has
+                 the opportunity to become the next generation of problem solvers, scientists, and
+                 innovators that Bangladesh needs. That is why I build.
+               </p>
             </div>
           </motion.div>
         </article>

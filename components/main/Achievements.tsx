@@ -81,7 +81,7 @@ const Achievements = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <section className="flex flex-col relative items-center justify-center min-h-screen w-full h-full py-20" aria-labelledby="achievements-heading">
+    <section className="flex flex-col relative items-center justify-center min-h-screen w-full h-full py-20" id="achievements" aria-labelledby="achievements-heading">
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}

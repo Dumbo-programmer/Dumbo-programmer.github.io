@@ -15,8 +15,8 @@ const WIP = dynamic(() => import('@/components/main/WIP'), { ssr: false });
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tawhid Bin Omar — Open Problem Solving Library & Bangladesh STEM Education",
-  description: "Creator of the Open Problem Solving Library — Bangladesh's free open-access STEM education platform. Physics Olympiad champion (BdPhO National, PHIGA #1 worldwide out of 1,211). Lead game developer, robotics-for-good engineer, competitive programmer. Free educational resources in mathematics, physics, programming, and astronomy for students, teachers, and Olympiad participants.",
+  title: "Tawhid Bin Omar — Building Bangladesh's STEM Education Infrastructure",
+  description: "I build infrastructure for STEM education in Bangladesh — free open-access problem solving libraries, Olympiad training programs, assistive robotics, and educational platforms. Physics Olympiad champion (BdPhO National, PHIGA #1 worldwide). Created because I believe a student's zip code should not determine their educational outcome.",
   keywords: [
     "Open Problem Solving Library", "Bangladesh STEM Education", "Free Educational Resources",
     "Olympiad Mathematics", "Olympiad Physics", "Olympiad Programming",
@@ -36,6 +36,10 @@ export const metadata: Metadata = {
     "Bangladesh education", "free learning resources",
     "math olympiad training", "physics olympiad notes",
     "Bangla STEM education", "Olympiad preparation Bangladesh",
+    "STEM education", "problem solving", "open educational resources",
+    "Olympiad preparation", "teacher resources", "computational thinking",
+    "education in Bangladesh", "mathematics education", "physics education",
+    "programming education", "student research", "Bangladesh problem solving",
   ],
   authors: [{ name: "Tawhid Bin Omar", url: "https://tawhid.is-a.dev" }],
   metadataBase: new URL("https://tawhid.is-a.dev"),
@@ -419,7 +423,38 @@ export default function Home() {
     ]
   };
 
-  const jsonLd = [person, website, organization, navigation, breadcrumb, projects];
+  const educationalProgram = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOccupationalProgram",
+    "name": "Open Problem Solving Library — STEM Education Resources",
+    "description": "Free open-access STEM education platform providing educational resources in mathematics, physics, competitive programming, and astronomy for students, teachers, and Olympiad participants in Bangladesh.",
+    "educationalCredentialAwarded": "Certificate of Completion",
+    "educationalProgramMode": "DistanceLearning",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BDT",
+      "availability": "https://schema.org/InStock"
+    },
+    "provider": {
+      "@type": "Person",
+      "@id": "https://tawhid.is-a.dev/#person",
+      "name": "Tawhid Bin Omar"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": ["Students in Bangladesh", "Olympiad Aspirants", "STEM Learners", "Teachers"]
+    },
+    "teaches": ["Mathematics", "Physics", "Competitive Programming", "Astronomy", "Problem Solving"],
+    "inLanguage": ["en", "bn"],
+    "timeRequired": "Self-paced",
+    "numberOfCredits": 0,
+    "occupationalCategory": "Educational Resources",
+    "programPrerequisites": "None — open to all skill levels",
+    "applicationDeadline": "Rolling admission"
+  };
+
+  const jsonLd = [person, website, organization, navigation, breadcrumb, projects, educationalProgram];
 
   return (
     <main className="h-full w-full" id="main-content">

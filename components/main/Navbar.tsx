@@ -24,21 +24,14 @@ const Navbar = () => {
         </a>
 
         {/* Navbar Links */}
-        <div className="w-[600px] h-full flex flex-row items-center justify-between md:mr-20">
+        <div className="w-[720px] h-full flex flex-row items-center justify-between md:mr-20">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <a
               href="/#about-me"
               className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
               aria-label="Navigate to About section"
             >
-              About
-            </a>
-            <a
-              href="/#skills"
-              className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
-              aria-label="Navigate to Skills section"
-            >
-              Skills
+              Why
             </a>
             <a
               href="/#projects"
@@ -48,11 +41,32 @@ const Navbar = () => {
               Projects
             </a>
             <a
+              href="/#achievements"
+              className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
+              aria-label="Navigate to Achievements section"
+            >
+              Achievements
+            </a>
+            <a
+              href="/#education-impact"
+              className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
+              aria-label="Navigate to Education Impact section"
+            >
+              Impact
+            </a>
+            <a
+              href="/#current-projects"
+              className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
+              aria-label="Navigate to Research section"
+            >
+              Research
+            </a>
+            <a
               href="/notes"
               className="cursor-pointer transition duration-300 hover:text-[#7042f8]"
               aria-label="Navigate to Open Problem Solving Library"
             >
-              Notes
+              Library
             </a>
           </div>
         </div>

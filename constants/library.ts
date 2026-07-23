@@ -97,6 +97,9 @@ export const librarySubjects: LibrarySubject[] = [
         { title: "Relativity", description: "Special and general relativity.", link: "/notes/relativity.pdf" },
         { title: "Celestial Energy", description: "Collaboration notes on celestial energy.", link: "/notes/PhyCollab/CelEnergy.pdf" },
         { title: "Class One", description: "Collaboration class notes.", link: "/notes/PhyCollab/Class-One.pdf" },
+        { title: "Class Two", description: "Collaboration class notes.", link: "/notes/PhyCollab/Class-Two.pdf" },
+        { title: "Class Three", description: "Collaboration class notes.", link: "/notes/PhyCollab/Class-Three.pdf" },
+
       ]},
       { name: "Research", items: [
         { title: "Entropy-Minimal Noise Schedules", description: "Thermodynamics approach to diffusion models.", link: "https://ijscar.org/pubs/articles/vol3-issue2-omar-diffusion-thermodynamics.pdf" },
@@ -123,6 +126,11 @@ export const librarySubjects: LibrarySubject[] = [
     title: "Astronomy",
     icon: "🔭",
     description: "Astrophysics, cosmology, observational astronomy, and space exploration.",
-    sections: [],
+    sections: [
+      { name: "Handouts/Book", items: [
+        { title: "A JOURNEY THROUGH THE UNIVERSE Astronomy For Young Explorers", description: "Mini beginner's book on astronomy.", link: "/notes/AstroIntro.pdf" },
+       
+      ]},
+    ],
   },
 ];
