@@ -47,12 +47,23 @@ const researchData: {
   },
   {
     typeA: "image",
-    src: "/team.png",
-    title: "Team Nokkhotropoth",
+    src: "/paper1.png",
+    title: "Entropy-Minimal Noise Schedules for Denoising Diffusion Probabilistic Models: A Non-Equilibrium Thermodynamics Approach",
     sub: 'Research Paper',
-    description: `Co-founded and co-led a 4-member Robotics-for-Good R&D team (robotics-for-good) tackling accessibility, healthcare, and disaster response in underdeveloped regions. Designed and deployed 10–15 autonomous assistive systems, including robotic canes, HUD captioning glasses, spatial-audio hearing aids, and communication wearables. Led system integration, testing, documentation, and alignment with UN Sustainable Development Goals.`,
-    tags: ["Mechanical Engineering", "Mechatronics", "Robotics", "Robotics-for-Good", "Assistive Systems", "UN SDG", "R&D"],
-    date: "2024 – Present",
+    description: ``,
+      tags: ["Physics", "Thermodynamics", "Diffusion Models", "Noise schedule", "Entropy production", "Stochastic thermodynamics", "Generative models"],
+      status: "published",
+    date: "2026",
+  },
+    {
+    typeA: "image",
+    src: "/paper1.png",
+    title: "Geometric Distortion of Quantum State Space Under Noise: A Comparative Information-Theoretic Analysis of Common Quantum Channels",
+    sub: 'Research Paper',
+    description: ``,
+      tags: ["Physics", "Quantum Information", "Information Theory", "Quantum Channels", "Geometric Distortions", "Quantum State Space"],
+      status: "preprint",
+    date: "2026",
   },
 ]
 const Research = () => {
