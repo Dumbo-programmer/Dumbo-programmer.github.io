@@ -52,6 +52,7 @@ export const librarySubjects: LibrarySubject[] = [
       { name: "Problems", items: [
         { title: "Open Math Problems", description: "Original open problems in mathematics.", link: "/notes/OpenMathProblems.pdf" },
         { title: "Open Problems II", description: "More original open problems.", link: "/notes/OpenProblems2.pdf" },
+        { title: "IMO 2026 Solve [Bangla]", description: "Bangla solutions of IMO 2026 problems.", link: "/notes/Articles/IMO2026.pdf" },
       ]},
       { name: "Resources", items: [
         { title: "Applied Math Reference", description: "Comprehensive applied mathematics reference.", link: "/notes/Applied_Math_ref.pdf" },
@@ -65,6 +66,7 @@ export const librarySubjects: LibrarySubject[] = [
         { title: "General Relativity [Bangla]", description: "Introduction to general relativity.", link: "/notes/Articles/GeneralRelativity.pdf" },
         { title: "Graph Theory [Bangla]", description: "Introduction to graph theory.", link: "/notes/Articles/GraphTheory.pdf" },
         { title: "Legendre Polynomials [Bangla]", description: "Generating functions and Legendre polynomials.", link: "/notes/Articles/Legendre.pdf" },
+        { title: "Modular Arithmetic [Bangla]", description: "Basic note on modular arithmetic.", link: "/notes/Articles/mod.pdf" }, 
         { title: "Power of Point [Bangla]", description: "Power of point and radical axis.", link: "/notes/Articles/PowerOfPoint.pdf" },
         { title: "Projective Geometry [Bangla]", description: "Introduction to projective geometry.", link: "/notes/Articles/ProjectiveGeo.pdf" },
         { title: "Tensor [Bangla]", description: "Introduction to tensors.", link: "/notes/Articles/Tensor.pdf" },
