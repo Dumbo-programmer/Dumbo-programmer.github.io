@@ -89,7 +89,7 @@ const Research = () => {
       {/*  Research Cards */}
       <div className="h-full w-full flex flex-wrap gap-10 px-10 justify-center">
         {researchData
-          .slice(0, showAll ? researchData.length : 3)
+          .slice(0, showAll ? researchData.length : 5)
           .map((research, index) => (
             <ResearchCard
               key={`research-${research.title.replace(/\s+/g, '-').toLowerCase()}-${index}`}
