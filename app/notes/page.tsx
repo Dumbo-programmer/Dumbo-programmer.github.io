@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { featuredResources, librarySubjects } from "@/constants/library";
 import type { LibraryResource } from "@/constants/library";
 
@@ -173,6 +173,22 @@ function SearchResults({ query }: { query: string }) {
 
 export default function NotesPage() {
   const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("q");
+    if (q) setSearchQuery(q);
+  }, []);
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (searchQuery.trim()) {
+      url.searchParams.set("q", searchQuery.trim());
+    } else {
+      url.searchParams.delete("q");
+    }
+    window.history.replaceState({}, "", url.toString());
+  }, [searchQuery]);
 
   const jsonLd = {
     "@context": "https://schema.org",

@@ -48,7 +48,7 @@ export const sectionSubtitle =
 export const gallerySlides: GallerySlide[] = [
   {
     id: "math-workshop-one",
-    image: "/sessions/one.png",
+    image: "/sessions/tawhid-bin-omar-math-workshop.png",
     imageAlt:
       "Tawhid Bin Omar leading a mathematics problem-solving workshop at St. Joseph Higher Secondary School in Dhaka, Bangladesh — students working on Olympiad-level math problems on the whiteboard during a Math Club session.",
     gradient: "from-indigo-900/80 via-purple-900/80 to-pink-900/80",
@@ -61,7 +61,7 @@ export const gallerySlides: GallerySlide[] = [
   },
   {
     id: "math-workshop",
-    image: "/sessions/two.jpg",
+    image: "/sessions/tawhid-bin-omar-math-bootcamp.jpg",
     imageAlt:
       "Tawhid Bin Omar teaching mathematics at St. Joseph Higher Secondary School Math Club in Dhaka — students engaged in collaborative problem solving during a Math Bootcamp session.",
     gradient: "from-indigo-900/80 via-purple-900/80 to-pink-900/80",
@@ -74,7 +74,7 @@ export const gallerySlides: GallerySlide[] = [
   },
   {
     id: "physics-demo",
-    image: "/sessions/three.jpg",
+    image: "/sessions/tawhid-bin-omar-physics-demonstration.jpg",
     imageAlt:
       "Tawhid Bin Omar conducting a physics demonstration for community outreach in Bangladesh — students observing a hands-on science experiment during a STEM education event.",
     gradient: "from-slate-900/80 via-blue-900/80 to-teal-900/80",
@@ -87,7 +87,7 @@ export const gallerySlides: GallerySlide[] = [
   },
   {
     id: "olympiad-mentoring",
-    image: "/sessions/four.jpg",
+    image: "/sessions/tawhid-bin-omar-olympiad-mentorship.jpg",
     imageAlt:
       "Tawhid Bin Omar mentoring Bangladesh Physics Olympiad (BdPhO) and mathematics Olympiad students at St. Joseph Higher Secondary School — preparing for national and international competitions.",
     gradient: "from-amber-900/80 via-purple-900/80 to-rose-900/80",
@@ -98,7 +98,19 @@ export const gallerySlides: GallerySlide[] = [
     caption:
       "Mentoring students preparing for national and international Olympiads in mathematics and physics through structured problem-solving sessions and personalized guidance.",
   },
-  
+  {
+    id: "stem-teaching-session",
+    image: "/sessions/tawhid-bin-omar-teaching-session.jpg",
+    imageAlt:
+      "Tawhid Bin Omar teaching a STEM session to students in Bangladesh — a classroom problem-solving session led by the President of the St. Joseph Higher Secondary School Math Club.",
+    gradient: "from-emerald-900/80 via-cyan-900/80 to-slate-900/80",
+    icon: <FaChalkboardTeacher className="text-5xl text-purple-300" />,
+    title: "STEM Teaching Session",
+    organization: "St. Joseph Higher Secondary School",
+    date: "2025 – Present",
+    caption:
+      "Teaching STEM and problem solving in the classroom as President of the St. Joseph Higher Secondary School Math Club.",
+  },
 ];
 
 export const statistics: Statistic[] = [

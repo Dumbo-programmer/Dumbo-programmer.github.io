@@ -175,11 +175,18 @@ const EducationImpactSection = () => {
                  is a solvable problem.
                </p>
                <p>
-                 I designed the Math Bootcamp and the Open Problem Solving Library to solve one specific
-                 problem: students in Bangladesh lack access to structured, high-quality problem-solving
-                 material that bridges the gap between school textbooks and Olympiad-level thinking. Every
-                 handout, every original problem, and every workshop is a piece of infrastructure designed
-                 to close that gap.
+                  I designed the Math Bootcamp and the{" "}
+                  <a
+                    href="/notes"
+                    className="text-purple-300 hover:text-purple-200 underline decoration-purple-500/50 underline-offset-4 transition"
+                  >
+                    Open Problem Solving Library
+                  </a>{" "}
+                  to solve one specific
+                  problem: students in Bangladesh lack access to structured, high-quality problem-solving
+                  material that bridges the gap between school textbooks and Olympiad-level thinking. Every
+                  handout, every original problem, and every workshop is a piece of infrastructure designed
+                  to close that gap.
                </p>
                <p>
                  As President of the St. Joseph Higher Secondary School Math Club, I built programs that
@@ -189,10 +196,17 @@ const EducationImpactSection = () => {
                  solving combinatorial proofs and writing code. That is the impact I care about.
                </p>
                <p>
-                 Through the Open Problem Solving Library, I publish free, open-access educational resources
-                 in mathematics, physics, competitive programming, and astronomy — downloaded by students
-                 preparing for BdPhO, IAAC, national mathematics Olympiads, and anyone who simply wants to
-                 learn beyond their school syllabus. No paywall, no registration, no barriers.
+                  Through the{" "}
+                  <a
+                    href="/notes"
+                    className="text-purple-300 hover:text-purple-200 underline decoration-purple-500/50 underline-offset-4 transition"
+                  >
+                    Open Problem Solving Library
+                  </a>
+                  , I publish free, open-access educational resources
+                  in mathematics, physics, competitive programming, and astronomy — downloaded by students
+                  preparing for BdPhO, IAAC, national mathematics Olympiads, and anyone who simply wants to
+                  learn beyond their school syllabus. No paywall, no registration, no barriers.
                </p>
                <p>
                  The long-term vision is to build an open educational ecosystem for Bangladesh where

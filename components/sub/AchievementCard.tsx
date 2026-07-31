@@ -9,13 +9,15 @@ interface Props {
 }
 
 const AchievementCard = ({ src, title, description, typeA = "image", link = "#" }: Props) => {
-  return (
+  const cardClass = "relative h-auto w-full max-w-sm overflow-hidden rounded-lg border border-[#2A0E61] flex flex-col bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6] hover:scale-105";
+
+  return link && link !== "#" ? (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`View ${title} achievement details`}
-      className="relative h-auto w-full max-w-sm overflow-hidden rounded-lg border border-[#2A0E61] flex flex-col bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6] hover:scale-105"
+      className={cardClass}
     >
       {/* Media Section */}
       <div className="h-[200px] w-full flex justify-center items-center overflow-hidden bg-black">
@@ -43,13 +45,48 @@ const AchievementCard = ({ src, title, description, typeA = "image", link = "#" 
 
       {/* Text Section */}
       <div className="p-4 flex-1 flex flex-col">
-        <h1 className="text-xl font-semibold text-white mb-2">{title}</h1>
+        <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
 
 
 
         <p className="text-gray-300 text-sm">{description}</p>
       </div>
     </a>
+  ) : (
+    <article aria-label={`${title} achievement`} className={cardClass}>
+      {/* Media Section */}
+      <div className="h-[200px] w-full flex justify-center items-center overflow-hidden bg-black">
+        {typeA === "video" ? (
+          <video
+            src={src}
+            className="object-contain h-full w-full"
+            controls
+            muted
+            loop
+            preload="metadata"
+            aria-label={`Video of ${title}`}
+          />
+        ) : (
+          <Image
+            src={src}
+            alt={`${title} achievement`}
+            width={300}
+            height={200}
+            className="object-contain h-full w-full"
+            loading="lazy"
+          />
+        )}
+      </div>
+
+      {/* Text Section */}
+      <div className="p-4 flex-1 flex flex-col">
+        <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+
+
+
+        <p className="text-gray-300 text-sm">{description}</p>
+      </div>
+    </article>
   );
 };
 

@@ -28,13 +28,15 @@ const ResearchCard = ({ src, title, sub, description, typeA = "image", tags = []
     </span>
   ) : null;
 
-  return (
+  const cardClass = "relative h-auto w-full max-w-sm overflow-hidden rounded-lg border border-[#2A0E61] flex flex-col bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6] hover:scale-105";
+
+  return link && link !== "#" ? (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`View ${title} - ${sub}`}
-      className="relative h-auto w-full max-w-sm overflow-hidden rounded-lg border border-[#2A0E61] flex flex-col bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6] hover:scale-105"
+      className={cardClass}
     >
       {/* Media Section */}
       <div className="h-[200px] w-full flex justify-center items-center overflow-hidden bg-black">
@@ -51,7 +53,7 @@ const ResearchCard = ({ src, title, sub, description, typeA = "image", tags = []
         ) : (
           <Image
             src={src}
-            alt={`${title} project`}
+            alt={`${title} by Tawhid Bin Omar`}
             width={300}
             height={200}
             className="object-contain h-full w-full"
@@ -63,10 +65,10 @@ const ResearchCard = ({ src, title, sub, description, typeA = "image", tags = []
       {/* Text Section */}
       <div className="p-4 flex-1 flex flex-col">
         <div className="flex items-center gap-2 mb-1">
-          <h1 className="text-xl font-semibold text-white">{title}</h1>
+          <h3 className="text-xl font-semibold text-white">{title}</h3>
         </div>
         <div className="flex flex-wrap items-center gap-2 mb-2">
-          <h2 className="text-xs font-light text-white">Role: {sub}</h2>
+          <p className="text-xs font-light text-white">Role: {sub}</p>
           {statusBadge}
         </div>
 
@@ -102,6 +104,62 @@ const ResearchCard = ({ src, title, sub, description, typeA = "image", tags = []
         </div>
       </div>
     </a>
+  ) : (
+    <article aria-label={`${title} - ${sub}`} className={cardClass}>
+      {/* Media Section */}
+      <div className="h-[200px] w-full flex justify-center items-center overflow-hidden bg-black">
+        <Image
+          src={src}
+          alt={`${title} by Tawhid Bin Omar`}
+          width={300}
+          height={200}
+          className="object-contain h-full w-full"
+          loading="lazy"
+        />
+      </div>
+
+      {/* Text Section */}
+      <div className="p-4 flex-1 flex flex-col">
+        <div className="flex items-center gap-2 mb-1">
+          <h3 className="text-xl font-semibold text-white">{title}</h3>
+        </div>
+        <div className="flex flex-wrap items-center gap-2 mb-2">
+          <p className="text-xs font-light text-white">Role: {sub}</p>
+          {statusBadge}
+        </div>
+
+        {date && (
+          <p className="text-gray-500 text-[11px] mb-1">{date}</p>
+        )}
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-2">
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className="bg-purple-700/30 text-purple-300 text-xs px-2 py-1 rounded-full"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <p className="text-gray-300 text-sm mb-3">{description}</p>
+
+        {/* Metadata footer */}
+        <div className="flex flex-wrap items-center gap-3 mt-auto">
+          {doi && (
+            <span className="text-[11px] text-blue-400 hover:text-blue-300 font-mono">
+              DOI: {doi}
+            </span>
+          )}
+          {citations !== undefined && citations > 0 && (
+            <span className="text-[11px] text-cyan-400">
+              {citations} citation{citations !== 1 ? "s" : ""}
+            </span>
+          )}
+        </div>
+      </div>
+    </article>
   );
 };
 

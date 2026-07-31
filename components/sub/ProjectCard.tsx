@@ -13,13 +13,15 @@ interface Props {
 }
 
 const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link, purpose, impact, users }: Props) => {
-  return (
+  const cardClass = "relative h-auto w-full max-w-sm overflow-hidden rounded-lg border border-[#2A0E61] flex flex-col bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6] hover:scale-105";
+
+  return link && link !== "#" ? (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`View ${title} project details`}
-      className="relative h-auto w-full max-w-sm overflow-hidden rounded-lg border border-[#2A0E61] flex flex-col bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6] hover:scale-105"
+      className={cardClass}
     >
       {/* Media Section */}
       <div className="h-[200px] w-full flex justify-center items-center overflow-hidden bg-black">
@@ -36,7 +38,7 @@ const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link
         ) : (
           <Image
             src={src}
-            alt={`Screenshot of ${title} project`}
+            alt={`Screenshot of ${title} project by Tawhid Bin Omar`}
             width={300}
             height={200}
             className="object-contain h-full w-full"
@@ -47,7 +49,7 @@ const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link
 
       {/* Text Section */}
       <div className="p-4 flex-1 flex flex-col">
-        <h1 className="text-xl font-semibold text-white mb-2">{title}</h1>
+        <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-2">
@@ -82,6 +84,57 @@ const ProjectCard = ({ src, title, description, typeA = "image", tags = [], link
         )}
       </div>
     </a>
+  ) : (
+    <article aria-label={`${title} project`} className={cardClass}>
+      {/* Media Section */}
+      <div className="h-[200px] w-full flex justify-center items-center overflow-hidden bg-black">
+        <Image
+          src={src}
+          alt={`Screenshot of ${title} project by Tawhid Bin Omar`}
+          width={300}
+          height={200}
+          className="object-contain h-full w-full"
+          loading="lazy"
+        />
+      </div>
+
+      {/* Text Section */}
+      <div className="p-4 flex-1 flex flex-col">
+        <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-2">
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className="bg-purple-700/30 text-purple-300 text-xs px-2 py-1 rounded-full"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <p className="text-gray-300 text-sm mb-3">{description}</p>
+
+        {purpose && (
+          <p className="text-purple-300 text-xs mb-1">
+            <span className="font-semibold">Why:</span> {purpose}
+          </p>
+        )}
+
+        {users && (
+          <p className="text-cyan-300 text-xs mb-1">
+            <span className="font-semibold">For:</span> {users}
+          </p>
+        )}
+
+        {impact && (
+          <p className="text-green-300 text-xs">
+            <span className="font-semibold">Impact:</span> {impact}
+          </p>
+        )}
+      </div>
+    </article>
   );
 };
 

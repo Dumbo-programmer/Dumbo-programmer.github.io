@@ -13,11 +13,11 @@ const LoadingScreen = () => {
     // Lock scrolling
     document.body.style.overflow = "hidden";
 
-    // Simulate a delay (e.g., fetching data)
+    // Brief branded intro; kept short to avoid hurting LCP/INP
     const timeout = setTimeout(() => {
       setLoading(false);
       document.body.style.overflow = "auto"; // Unlock scrolling
-    }, 3000); // Change time as needed
+    }, 1000); // Minimal delay to keep Core Web Vitals healthy
 
     // Binary animation update
     const interval = setInterval(() => {

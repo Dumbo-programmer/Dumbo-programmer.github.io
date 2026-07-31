@@ -10,12 +10,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Tawhid Bin Omar — Building STEM Education Infrastructure for Bangladesh",
+    default: "Tawhid Bin Omar — Physics, Number Theory, Competitive Programming & STEM Education",
     template: "%s | Tawhid Bin Omar"
   },
-  description: "Building open-access STEM education infrastructure for Bangladesh. Creator of the Open Problem Solving Library — free mathematics, physics, programming, and astronomy resources. Physics Olympiad champion (BdPhO, PHIGA #1 worldwide). Every project starts with one question: how do I make quality education accessible regardless of geography or wealth?",
+  description: "Aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Creator of the Open Problem Solving Library — free mathematics, physics, programming, and astronomy resources. Physics Olympiad champion (BdPhO, PHIGA #1 worldwide). Driven by curiosity about the quantum structure of spacetime, the elegance of prime numbers, and the craft of building educational infrastructure that makes opportunity independent of geography.",
   keywords: [
     "Tawhid", "Tawhid Bin Omar", "Ren", "Dumbo-programmer",
+    "Tawhid Bin Omar photos", "Tawhid Bin Omar images", "Tawhid Bin Omar picture",
     "Open Problem Solving Library", "Bangladesh STEM Education",
     "Open Educational Resources", "STEM Education Bangladesh",
     "Free Math Books", "Free Physics Notes", "Mathematics Library",
@@ -36,6 +37,12 @@ export const metadata: Metadata = {
   authors: [{ name: "Tawhid Bin Omar", url: "https://tawhid.is-a.dev" }],
   creator: "Tawhid Bin Omar",
   publisher: "Tawhid Bin Omar",
+  applicationName: "Tawhid Bin Omar — Portfolio",
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
+  colorScheme: "dark",
+  themeColor: "#030014",
+  formatDetection: { telephone: false },
   metadataBase: new URL("https://tawhid.is-a.dev"),
   robots: {
     index: true,
@@ -52,8 +59,8 @@ export const metadata: Metadata = {
     google: "AIb87YBCHR0yYrFkkuFPNPX0ZM41iD8QODY06HZBC4Q",
   },
   openGraph: {
-    title: "Tawhid Bin Omar — Building STEM Education Infrastructure for Bangladesh",
-    description: "Open-access STEM education for Bangladesh. Creator of the Open Problem Solving Library. Physics Olympiad champion (BdPhO, PHIGA #1 worldwide). Free mathematics, physics, programming, and astronomy resources.",
+    title: "Tawhid Bin Omar — Physics, Number Theory, Competitive Programming & STEM Education",
+    description: "Aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Creator of the Open Problem Solving Library. Physics Olympiad champion (BdPhO, PHIGA #1 worldwide). Building open-access STEM education for Bangladesh.",
     url: "https://tawhid.is-a.dev",
     siteName: "Tawhid Bin Omar — Open Problem Solving Library",
     images: [{ url: "https://tawhid.is-a.dev/og-image.png", width: 1200, height: 630, alt: "Tawhid Bin Omar - Open Problem Solving Library" }],
@@ -63,8 +70,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tawhid Bin Omar — Building STEM Education Infrastructure for Bangladesh",
-    description: "Open-access STEM education for Bangladesh. Free mathematics, physics, programming, and astronomy resources. Physics Olympiad champion.",
+    title: "Tawhid Bin Omar — Physics, Number Theory, Competitive Programming & STEM Education",
+    description: "Aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Building open-access STEM education for Bangladesh. Physics Olympiad champion.",
     images: ["https://tawhid.is-a.dev/og-image.png"],
     creator: "@tawhid_omar",
   },

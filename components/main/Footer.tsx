@@ -7,11 +7,10 @@ import {
   RxLinkedinLogo,
 } from "react-icons/rx";
 import { FaYoutube } from "react-icons/fa";
-import { FaSlack } from "react-icons/fa";
 
 const Footer = () => {
   return (
-<div className="relative z-[10] bg-transparent text-gray-200 shadow-lg p-5">
+<footer className="relative z-[10] bg-transparent text-gray-200 shadow-lg p-5">
 <div className="w-full flex flex-col items-center justify-center">
         <div className="w-full flex flex-row items-center justify-around flex-wrap">
           
@@ -19,23 +18,23 @@ const Footer = () => {
           <div className="min-w-[200px] flex flex-col items-center">
             <div className="font-bold text-lg">Community</div>
             <a
-              href="https://app.slack.com/client/T0266FRGM/C0266FRGT"
+              href="https://github.com/Dumbo-programmer/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Join our Slack community"
-              className="flex items-center my-2 cursor-pointer hover:text-red-500 transition"
+              aria-label="Visit Tawhid Bin Omar's GitHub profile"
+              className="flex items-center my-2 cursor-pointer hover:text-gray-500 transition"
             >
-              <FaSlack size={20} />
-              <span className="ml-2">Slack</span>
+              <RxGithubLogo size={20} />
+              <span className="ml-2">GitHub</span>
             </a>
             <a
-              href="https://github.com/Dumbo-programmer/"
+              href="https://dev.to/dumbo_programmer"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center my-2 cursor-pointer hover:text-gray-500 transition"
             >
               <RxGithubLogo size={20} />
-              <span className="ml-2">GitHub</span>
+              <span className="ml-2">Dev.to</span>
             </a>
             <a
               href="https://discord.com/users/707079802531872769"
@@ -78,11 +77,64 @@ const Footer = () => {
               <RxLinkedinLogo size={20} />
               <span className="ml-2">LinkedIn</span>
             </a>
+            <a
+              href="https://www.youtube.com/@tawhidbinomar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center my-2 cursor-pointer hover:text-red-500 transition"
+            >
+              <FaYoutube size={20} />
+              <span className="ml-2">YouTube</span>
+            </a>
           </div>
 
           {/* About Section */}
           <div className="min-w-[200px] flex flex-col items-center">
-            <div className="font-bold text-lg">About</div>
+            <div className="font-bold text-lg">Portfolio</div>
+            <a
+              href="/#about-me"
+              className="flex items-center my-2 cursor-pointer hover:text-purple-400 transition"
+            >
+              <span className="ml-2">About Me</span>
+            </a>
+            <a
+              href="/#projects"
+              className="flex items-center my-2 cursor-pointer hover:text-purple-400 transition"
+            >
+              <span className="ml-2">Projects</span>
+            </a>
+            <a
+              href="/#achievements"
+              className="flex items-center my-2 cursor-pointer hover:text-purple-400 transition"
+            >
+              <span className="ml-2">Achievements</span>
+            </a>
+            <a
+              href="/#education-impact"
+              className="flex items-center my-2 cursor-pointer hover:text-purple-400 transition"
+            >
+              <span className="ml-2">Education Impact</span>
+            </a>
+            <a
+              href="/notes"
+              className="flex items-center my-2 cursor-pointer hover:text-purple-400 transition"
+            >
+              <span className="ml-2">Open Problem Solving Library</span>
+            </a>
+          </div>
+
+          {/* Contact Section */}
+          <div className="min-w-[200px] flex flex-col items-center">
+            <div className="font-bold text-lg">Contact</div>
+            <address className="not-italic flex flex-col items-center">
+              <a
+                href="mailto:tawhidbinomar@gmail.com"
+                aria-label="Send email to tawhidbinomar@gmail.com"
+                className="flex items-center my-2 cursor-pointer hover:text-teal-300 transition"
+              >
+                <span className="ml-2">tawhidbinomar@gmail.com</span>
+              </a>
+            </address>
             <a
               href="https://buymeacoffee.com/tawhid"
               className="flex items-center my-2 cursor-pointer hover:text-yellow-400 transition"
@@ -90,27 +142,20 @@ const Footer = () => {
               <span className="ml-2">Donate</span>
             </a>
             <a
-              href="#about-me"
+              href="/resume.pdf"
               className="flex items-center my-2 cursor-pointer hover:text-green-400 transition"
             >
-              <span className="ml-2">More About Me</span>
-            </a>
-            <a
-              href="mailto:tawhidbinomar@gmail.com"
-              aria-label="Send email to tawhidbinomar@gmail.com"
-              className="flex items-center my-2 cursor-pointer hover:text-teal-300 transition"
-            >
-              <span className="ml-2">tawhidbinomar@gmail.com</span>
+              <span className="ml-2">Resume</span>
             </a>
           </div>
         </div>
 
         {/* Footer Text */}
         <div className="mt-5 text-sm text-center">
-          &copy; Tawhid {new Date().getFullYear()} Inc. All rights reserved
+          &copy; {new Date().getFullYear()} Tawhid Bin Omar. All rights reserved.
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

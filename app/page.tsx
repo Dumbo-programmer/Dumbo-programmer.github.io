@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Hero from "@/components/main/Hero";
+import SeoImageLayer from "@/components/main/SeoImageLayer";
 import Skills from "@/components/main/Skills";
 import Achievements from "@/components/main/Achievements";
 import Projects from "@/components/main/Projects";
@@ -13,10 +14,11 @@ import LoadingScreen from "@/components/main/LoadingScreen";
 const WIP = dynamic(() => import('@/components/main/WIP'), { ssr: false });
 
 import type { Metadata } from "next";
+import { allPhotos } from "@/constants/gallery";
 
 export const metadata: Metadata = {
-  title: "Tawhid Bin Omar — Building Bangladesh's STEM Education Infrastructure",
-  description: "I build infrastructure for STEM education in Bangladesh — free open-access problem solving libraries, Olympiad training programs, assistive robotics, and educational platforms. Physics Olympiad champion (BdPhO National, PHIGA #1 worldwide). Created because I believe a student's zip code should not determine their educational outcome.",
+  title: "Tawhid Bin Omar — Physics, Number Theory, Competitive Programming & STEM Education",
+  description: "Aspiring physicist, number theory enthusiast, and competitive programmer building STEM education infrastructure in Bangladesh. Creator of the Open Problem Solving Library — free open-access problem solving resources, Olympiad training programs, and assistive robotics. Physics Olympiad champion (BdPhO National, PHIGA #1 worldwide). Driven by a deep curiosity about how the universe works and the belief that a student's zip code should not determine their educational outcome.",
   keywords: [
     "Open Problem Solving Library", "Bangladesh STEM Education", "Free Educational Resources",
     "Olympiad Mathematics", "Olympiad Physics", "Olympiad Programming",
@@ -27,6 +29,7 @@ export const metadata: Metadata = {
     "Computational Thinking", "Creative Problem Solving", "Critical Thinking",
     "Education Reform Bangladesh", "Student Research",
     "Tawhid Bin Omar", "Dumbo-programmer", "Tawhid",
+    "Tawhid Bin Omar photos", "Tawhid Bin Omar images", "Tawhid Bin Omar picture",
     "full stack developer", "game developer", "physicist", "robotics engineer",
     "Pyxl Chronicles", "Team Nokkhotropoth", "Ongko", "PlayNux", "Vocal Guard",
     "Bangladesh Physics Olympiad", "BdPhO", "PHIGA", "Physics Olympiad",
@@ -58,8 +61,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Tawhid Bin Omar — Open Problem Solving Library & Bangladesh STEM Education",
-    description: "Creator of the Open Problem Solving Library. Physics Olympiad champion (BdPhO National, PHIGA #1 worldwide). Free STEM education resources for Bangladesh: mathematics, physics, competitive programming, and astronomy.",
+    title: "Tawhid Bin Omar — Physics, Number Theory, Competitive Programming & STEM Education",
+    description: "Aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Creator of the Open Problem Solving Library. Physics Olympiad champion (BdPhO National, PHIGA #1 worldwide). Free STEM education resources for Bangladesh: mathematics, physics, competitive programming, and astronomy.",
     url: "https://tawhid.is-a.dev",
     siteName: "Tawhid Bin Omar — Open Problem Solving Library",
     images: [
@@ -76,8 +79,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tawhid Bin Omar — Aspiring physicist, Avid Problem Solver, Robotics Enthusiast",
-    description: "Creator of the Open Problem Solving Library. Physics Olympiad champion. Free STEM education resources for Bangladesh.",
+    title: "Tawhid Bin Omar — Physics, Number Theory, Competitive Programming & STEM Education",
+    description: "Aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Creator of the Open Problem Solving Library. Physics Olympiad champion. Free STEM education resources for Bangladesh.",
     images: ["https://tawhid.is-a.dev/og-image.png"],
     creator: "@tawhid_omar",
   },
@@ -102,7 +105,28 @@ export default function Home() {
     "givenName": "Tawhid",
     "familyName": "Bin Omar",
     "url": "https://tawhid.is-a.dev",
-    "image": "https://tawhid.is-a.dev/tawhid.png",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "name": "Tawhid Bin Omar — profile photo",
+        "description": "Profile photo of Tawhid Bin Omar, Bangladeshi physicist, competitive programmer, and STEM educator.",
+        "url": "https://tawhid.is-a.dev/tawhid.png",
+        "contentUrl": "https://tawhid.is-a.dev/tawhid.png",
+        "representativeOfPage": true
+      },
+      ...allPhotos.map((photo) => ({
+        "@type": "ImageObject",
+        "name": photo.title,
+        "description": photo.caption,
+        "caption": photo.alt,
+        "url": `https://tawhid.is-a.dev${photo.src}`,
+        "contentUrl": `https://tawhid.is-a.dev${photo.src}`,
+        "width": photo.width,
+        "height": photo.height,
+        "keywords": photo.keywords.join(", "),
+        "creator": { "@id": "https://tawhid.is-a.dev/#person" },
+      })),
+    ],
     "sameAs": [
       "https://github.com/Dumbo-programmer",
       "https://www.linkedin.com/in/tawhidbinomar/",
@@ -116,16 +140,25 @@ export default function Home() {
       "https://www.youtube.com/@tawhidbinomar",
     ],
     "jobTitle": [
+      "Aspiring Physicist & Number Theory Enthusiast",
+      "Competitive Programmer & Problem Solver",
       "STEM Educator & Problem Solving Curriculum Developer",
       "President of St. Joseph Higher Secondary School Math Club",
       "Full Stack Developer",
       "Physics Olympiad Champion — BdPhO National Champion, PHIGA #1 Worldwide",
     ],
     "description":
-      "Tawhid Bin Omar is a Bangladesh-based STEM educator, Physics Olympiad champion (BdPhO National Champion, PHIGA 1st place worldwide out of 1,211), and creator of the Open Problem Solving Library — a free open-access STEM education platform. He serves as President of the St. Joseph Higher Secondary School Math Club in Dhaka, where he leads the Math Bootcamp program, mentors Olympiad aspirants, conducts teacher training, and creates open educational resources in mathematics, physics, competitive programming, and astronomy. He is also a full stack developer, game developer (Pyxl Chronicles), and robotics-for-good engineer (Team Nokkhotropoth).",
+      "Tawhid Bin Omar is a Bangladesh-based aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Physics Olympiad champion (BdPhO National Champion, PHIGA 1st place worldwide out of 1,211), creator of the Open Problem Solving Library — a free open-access STEM education platform. He serves as President of the St. Joseph Higher Secondary School Math Club in Dhaka, where he leads the Math Bootcamp program, mentors Olympiad aspirants, conducts teacher training, and creates open educational resources in mathematics, physics, competitive programming, and astronomy. Beyond education, he is a full stack developer, game developer (Pyxl Chronicles), robotics-for-good engineer (Team Nokkhotropoth), and a lifelong learner of quantum physics, number theory, and algorithms.",
     "nationality": {
       "@type": "Country",
       "name": "Bangladesh"
+    },
+    "knowsLanguage": ["en", "bn"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "personal",
+      "email": "tawhidbinomar@gmail.com",
+      "availableLanguage": ["en", "bn"]
     },
     "address": {
       "@type": "PostalAddress",
@@ -168,6 +201,23 @@ export default function Home() {
       }
     ],
     "knowsAbout": [
+      "Physics",
+      "Quantum Physics",
+      "Astrophysics",
+      "General Relativity",
+      "Thermodynamics",
+      "Competitive Physics",
+      "Number Theory",
+      "Analytic Number Theory",
+      "Combinatorics",
+      "Geometry",
+      "Algebra",
+      "Mathematics",
+      "Competitive Programming",
+      "Algorithms",
+      "Data Structures",
+      "Artificial Intelligence",
+      "Machine Learning",
       "STEM Education Bangladesh",
       "Problem Solving Pedagogy",
       "Mathematics Olympiad Training",
@@ -181,14 +231,6 @@ export default function Home() {
       "Robotics for Good",
       "Assistive Technology",
       "Full Stack Web Development",
-      "Physics",
-      "Competitive Physics",
-      "Astrophysics",
-      "Competitive Programming",
-      "Algorithms",
-      "Data Structures",
-      "Artificial Intelligence",
-      "Machine Learning",
     ],
     "award": [
       {
@@ -272,8 +314,9 @@ export default function Home() {
   const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://tawhid.is-a.dev/#website",
     "url": "https://tawhid.is-a.dev",
-    "name": "Tawhid's Portfolio",
+    "name": "Tawhid Bin Omar — Portfolio",
     "publisher": {
       "@type": "Person",
       "@id": "https://tawhid.is-a.dev/#person",
@@ -282,7 +325,7 @@ export default function Home() {
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://tawhid.is-a.dev/?s={search_term_string}",
+      "target": "https://tawhid.is-a.dev/notes?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -306,6 +349,23 @@ export default function Home() {
       "https://www.linkedin.com/in/tawhidbinomar/",
       "https://www.facebook.com/tawhiddayo/"
     ]
+  };
+
+  const profilePage = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://tawhid.is-a.dev/#profile-page",
+    "name": "Tawhid Bin Omar — Portfolio",
+    "headline": "Tawhid Bin Omar — Physicist, Number Theorist, Competitive Programmer & STEM Educator",
+    "description":
+      "The official online profile of Tawhid Bin Omar — aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator from Dhaka, Bangladesh. Creator of the Open Problem Solving Library, BdPhO National Champion, PHIGA 1st place worldwide.",
+    "url": "https://tawhid.is-a.dev",
+    "inLanguage": "en",
+    "isPartOf": { "@id": "https://tawhid.is-a.dev/#website" },
+    "mainEntity": { "@id": "https://tawhid.is-a.dev/#person" },
+    "about": { "@id": "https://tawhid.is-a.dev/#person" },
+    "creator": { "@id": "https://tawhid.is-a.dev/#person" },
+    "author": { "@id": "https://tawhid.is-a.dev/#person" },
   };
 
   const navigation = {
@@ -454,7 +514,7 @@ export default function Home() {
     "applicationDeadline": "Rolling admission"
   };
 
-  const jsonLd = [person, website, organization, navigation, breadcrumb, projects, educationalProgram];
+  const jsonLd = [person, profilePage, website, organization, navigation, breadcrumb, projects, educationalProgram];
 
   return (
     <main className="h-full w-full" id="main-content">
@@ -465,6 +525,7 @@ export default function Home() {
       <div className="flex flex-col gap-20">
         <LoadingScreen />
         <Hero />
+        <SeoImageLayer />
         <Skills />
         <Achievements />
         <Projects />

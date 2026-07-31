@@ -80,16 +80,15 @@ const Research = () => {
             <h2 id="research-heading" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               Current Projects
             </h2>
-          <br>
-          
-          </br>
+          <br />
         </motion.div>
 
       </div>
       {/*  Research Cards */}
       <div className="h-full w-full flex flex-wrap gap-10 px-10 justify-center">
         {researchData
-          .slice(0, showAll ? researchData.length : 5)
+          .slice(0, showAll ? researchData.length : 5
+          )
           .map((research, index) => (
             <ResearchCard
               key={`research-${research.title.replace(/\s+/g, '-').toLowerCase()}-${index}`}
