@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/#projects", label: "Projects" },
   { href: "/#achievements", label: "Achievements" },
   { href: "/#education-impact", label: "Impact" },
-  { href: "/#current-projects", label: "Research" },
+  { href: "/#current-projects", label: "Projects" },
   { href: "/notes", label: "Library" },
 ];
 

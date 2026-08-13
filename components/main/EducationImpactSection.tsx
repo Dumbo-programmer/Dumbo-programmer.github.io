@@ -189,7 +189,7 @@ const EducationImpactSection = () => {
                   to close that gap.
                </p>
                <p>
-                 As President of the St. Joseph Higher Secondary School Math Club, I built programs that
+                 As President of the Josephite Math Club, I built programs that
                  serve over 700 students across Dhaka — not just those preparing for Olympiads, but also
                  students from under-resourced schools who attend our literacy program. The results are
                  measurable: students who could not attempt an unfamiliar problem six months ago are now
@@ -234,7 +234,7 @@ const EducationImpactSection = () => {
             viewport={{ once: true }}
             className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-12 text-center"
           >
-            The Journey So Far — Tawhid Bin Omar&apos;s STEM Education Timeline
+            The Journey So Far 
           </motion.h3>
           <ImpactTimeline entries={timelineEntries} />
         </div>

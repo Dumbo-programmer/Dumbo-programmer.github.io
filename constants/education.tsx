@@ -150,7 +150,7 @@ export const statistics: Statistic[] = [
 export const timelineEntries: TimelineEntry[] = [
   {
     year: "2022",
-    items: ["Joined St. Joseph Higher Secondary School as an Academic Member"],
+    items: ["Joined Josephite Math Club as an Academic Member"],
   },
   {
     year: "2023",
@@ -166,7 +166,7 @@ export const timelineEntries: TimelineEntry[] = [
   {
     year: "2025",
     items: [
-      "Appointed Head of Academics & Vice President of St. Joseph Higher Secondary School",
+      "Appointed Head of Academics & Vice President of Josephite Math Club",
       "Launched Math Bootcamp program",
       "Hosted 6+ math events and competitions",
       "Began literacy school outreach program",
@@ -177,7 +177,7 @@ export const timelineEntries: TimelineEntry[] = [
   {
     year: "2026",
     items: [
-      "President of St. Joseph Higher Secondary School",
+      "President of Josephite Math Club",
       "Led 40+ teaching sessions across schools and clubs",
       "Launched Open Problem Solving Library",
       "Conducted teacher workshops and training sessions",
