@@ -62,6 +62,15 @@ const LibrarySection = () => {
               <p className="text-gray-400 text-xs leading-relaxed flex-1 line-clamp-3">
                 {item.description}
               </p>
+              {item.tags.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  {item.tags.slice(0, 4).map((tag) => (
+                    <span key={tag} className="text-[10px] text-gray-500 bg-white/5 px-1.5 py-0.5 rounded">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </a>
           ))}
         </div>
