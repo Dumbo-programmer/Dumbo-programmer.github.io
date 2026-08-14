@@ -75,7 +75,7 @@ export const Skill_data = [
     {
       name: "Instagram",
       src: "/instagram.svg",
-      link: "https://instagram.com/renscule",
+      link: "https://instagram.com/acutepierce",
     },
   ];
   

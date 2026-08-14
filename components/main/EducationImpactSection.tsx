@@ -61,7 +61,7 @@ const EducationImpactSection = () => {
           "https://github.com/Dumbo-programmer",
           "https://www.linkedin.com/in/tawhidbinomar/",
           "https://www.facebook.com/tawhiddayo/",
-          "https://instagram.com/renscule",
+          "https://instagram.com/acutepierce",
           "https://leetcode.com/u/Dumbo-programmer/",
           "https://codeforces.com/profile/Dumbo-programmer",
         ],
