@@ -52,6 +52,17 @@ export const librarySubjects: LibrarySubject[] = [
       { name: "Problems", items: [
         { title: "Open Math Problems", description: "Original open problems in mathematics.", link: "/notes/OpenMathProblems.pdf" },
         { title: "Open Problems II", description: "More original open problems.", link: "/notes/OpenProblems2.pdf" },
+        { title: "Random Problem", description: "Idk some problem", link: "/notes/Mathprob/(math)friendsProb.pdf" },
+        { title: "Random ProblemSet", description: "Random problems.", link: "/notes/Mathprob/pidayhsec.pdf" },
+        { title: "Random Problem I", description: "Random problem.", link: "/notes/Mathprob/problem1.pdf" },
+        { title: "Random Problem II", description: "Random problem.", link: "/notes/Mathprob/problem2.pdf" },
+        { title: "Random Problem III", description: "Random problem.", link: "/notes/Mathprob/problem3.pdf" },
+        { title: "Random Problem IV", description: "Random problem.", link: "/notes/Mathprob/problem4.pdf" },
+        { title: "Random Problem V", description: "Random problem.", link: "/notes/Mathprob/problem5.pdf" },
+        { title: "Random Problem VI", description: "Random problem.", link: "/notes/Mathprob/problem6.pdf" },
+        { title: "Random Problem VII", description: "Random problem.", link: "/notes/Mathprob/problem7.pdf" },
+        { title: "Random Problem VIII", description: "Random problem.", link: "/notes/Mathprob/problem8.pdf" },
+        { title: "Random Problem Set", description: "Random problem Set.", link: "/notes/Mathprob/ProblemSet-Aug.pdf" },
         { title: "IMO 2026 Solve [Bangla]", description: "Bangla solutions of IMO 2026 problems.", link: "/notes/Articles/IMO2026.pdf" },
       ]},
       { name: "Resources", items: [
@@ -101,6 +112,26 @@ export const librarySubjects: LibrarySubject[] = [
         { title: "Class One", description: "Collaboration class notes.", link: "/notes/PhyCollab/Class-One.pdf" },
         { title: "Class Two", description: "Collaboration class notes.", link: "/notes/PhyCollab/Class-Two.pdf" },
         { title: "Class Three", description: "Collaboration class notes.", link: "/notes/PhyCollab/Class-Three.pdf" },
+
+      ]},
+            { name: "Toy Problems", items: [
+         { title: "Cosmology Question Set I", description: "Something I made for a competition", link: "/notes/PhysicsProb/Cosmologic.pdf" },     
+         { title: "Cosmology I Answer", description: "Solution of the above", link: "/notes/PhysicsProb/CosmologicalSol.pdf" },
+         { title: "Cosmology Question Set II", description: "Something I made for a competition (another category)", link: "/notes/PhysicsProb/CosmologyOpen.pdf" },
+         { title: "Cosmology II Answer", description: "Something I made for a competition (another category)", link: "/notes/PhysicsProb/CosmologyOpenSol.pdf" },
+         
+
+
+         { title: "Problem 1", description: "Random Problem", link: "/notes/PhysicsProb/beadprob3.pdf" },
+        { title: "Problem 2", description: "Another Random Problem", link: "/notes/PhysicsProb/beadprob2.pdf" },
+        { title: "Problem 3", description: "Yet Another Random Problem", link: "/notes/PhysicsProb/Hare.pdf" },
+        { title: "Problem 4", description: "Yet Another Random Problem", link: "/notes/PhysicsProb/phyprob.pdf" },
+        { title: "Problem 5", description: "Yet Another Random Problem", link: "/notes/PhysicsProb/qq13prob.pdf" },
+        { title: "Problem 6", description: "Yet Another Random Problem", link: "/notes/PhysicsProb/qq14prob.pdf" },
+        { title: "Problem 7", description: "Yet Another Random Problem", link: "/notes/PhysicsProb/tawhidprob2.pdf" },
+        { title: "Problem Set", description: "Yet Another Random Problem Set", link: "/notes/PhysicsProb/Weekly.pdf" },
+
+       
 
       ]},
       { name: "Research", items: [
