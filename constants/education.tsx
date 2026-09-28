@@ -168,7 +168,7 @@ export const timelineEntries: TimelineEntry[] = [
     items: [
       "Appointed Head of Academics & Vice President of Josephite Math Club",
       "Launched Math Bootcamp program",
-      "Hosted 6+ math events and competitions",
+      "Helped host 6+ national math events and competitions",
       "Began literacy school outreach program",
       "Created 1000+ original math problems",
     ],
@@ -178,6 +178,7 @@ export const timelineEntries: TimelineEntry[] = [
     year: "2026",
     items: [
       "President of Josephite Math Club",
+      "Organized the 8th Josephite Math Mania \u2014 5000+ participants across 22 events",
       "Led 40+ teaching sessions across schools and clubs",
       "Launched Open Problem Solving Library",
       "Conducted teacher workshops and training sessions",

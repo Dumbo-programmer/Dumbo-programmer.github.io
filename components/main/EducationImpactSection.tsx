@@ -71,7 +71,7 @@ const EducationImpactSection = () => {
         "@id": "https://tawhid.is-a.dev/#math-club",
         "name": "St. Joseph Higher Secondary School Math Club",
         "description":
-          "Mathematics and programming club at St. Joseph Higher Secondary School in Dhaka, Bangladesh, led by President Tawhid Bin Omar. Organizes Math Bootcamp, problem-solving workshops, Olympiad training, and inter-school math competitions.",
+          "Mathematics and programming club at St. Joseph Higher Secondary School in Dhaka, Bangladesh, led by President Tawhid Bin Omar (2026-2027), who previously served as Vice President & Head of Academics (2024-2025). Organizes Math Bootcamp, problem-solving workshops, Olympiad training, and inter-school math competitions. Under his leadership the club hosted the 8th Josephite Math Mania, one of the biggest national math events in the country with over 5000 participants and 22 events, and over 6 national math events.",
         "url": "https://tawhid.is-a.dev/#education-impact",
         "founder": { "@id": "https://tawhid.is-a.dev/#person" },
         "memberOf": { "@type": "Organization", "name": "St. Joseph Higher Secondary School" },
@@ -188,13 +188,22 @@ const EducationImpactSection = () => {
                   handout, every original problem, and every workshop is a piece of infrastructure designed
                   to close that gap.
                </p>
-               <p>
-                 As President of the Josephite Math Club, I built programs that
-                 serve over 700 students across Dhaka — not just those preparing for Olympiads, but also
-                 students from under-resourced schools who attend our literacy program. The results are
-                 measurable: students who could not attempt an unfamiliar problem six months ago are now
-                 solving combinatorial proofs and writing code. That is the impact I care about.
-               </p>
+              <p>
+                As President of the Josephite Math Club, I built programs that
+                serve over 700 students across Dhaka — not just those preparing for Olympiads, but also
+                students from under-resourced schools who attend our literacy program. The results are
+                measurable: students who could not attempt an unfamiliar problem six months ago are now
+                solving combinatorial proofs and writing code. That is the impact I care about.
+              </p>
+              <p>
+                In 2026 I organized the 8th Josephite Math Mania, one of the biggest national math
+                events in the country, with over 5000 participants and 22 events. Before that, as Vice
+                President &amp; Head of Academics (2024–2025), I helped host over 6 national math events.
+                I have also completed Code in Place, did the Conrad Challenge, Blue Ocean Challenge, NASA
+                Space Apps Challenge, and Green Challenge, was a finalist at the BDOC chemistry olympiad,
+                got a silver diploma at KAIPHO hosted by Kazan National Research Technical University, and
+                got recognition from the Poetry Society for writing poems.
+              </p>
                <p>
                   Through the{" "}
                   <a

@@ -43,6 +43,16 @@ export const metadata: Metadata = {
     "Olympiad preparation", "teacher resources", "computational thinking",
     "education in Bangladesh", "mathematics education", "physics education",
     "programming education", "student research", "Bangladesh problem solving",
+    "Josephite Math Club", "Josephite Math Club President",
+    "Josephite Math Mania", "8th Josephite Math Mania", "Math Mania Bangladesh",
+    "Math Mania 5000 participants", "national math events",
+    "Vice President Head of Academics Math Club",
+    "Code in Place", "Stanford Code in Place",
+    "Conrad Challenge", "Blue Ocean Challenge",
+    "Green Challenge", "NASA Space Apps", "NASA Space Apps Challenge",
+    "BDOC", "BDOC chemistry olympiad", "BDOC finalist",
+    "KAIPHO", "Kazan National Research Technical University",
+    "KAIPHO silver diploma", "Poetry Society", "Poetry Society recognition",
   ],
   authors: [{ name: "Tawhid Bin Omar", url: "https://tawhid.is-a.dev" }],
   metadataBase: new URL("https://tawhid.is-a.dev"),
@@ -143,12 +153,13 @@ export default function Home() {
       "Aspiring Physicist & Number Theory Enthusiast",
       "Competitive Programmer & Problem Solver",
       "STEM Educator & Problem Solving Curriculum Developer",
-      "President of St. Joseph Higher Secondary School Math Club",
+      "President of St. Joseph Higher Secondary School Math Club (2026-2027)",
+      "Vice President & Head of Academics, Josephite Math Club (2024-2025)",
       "Full Stack Developer",
       "Physics Olympiad Champion — BdPhO National Champion, PHIGA #1 Worldwide",
     ],
     "description":
-      "Tawhid Bin Omar is a Bangladesh-based aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Physics Olympiad champion (BdPhO National Champion, PHIGA 1st place worldwide out of 1,211), creator of the Open Problem Solving Library — a free open-access STEM education platform. He serves as President of the St. Joseph Higher Secondary School Math Club in Dhaka, where he leads the Math Bootcamp program, mentors Olympiad aspirants, conducts teacher training, and creates open educational resources in mathematics, physics, competitive programming, and astronomy. Beyond education, he is a full stack developer, game developer (Pyxl Chronicles), robotics-for-good engineer (Team Nokkhotropoth), and a lifelong learner of quantum physics, number theory, and algorithms.",
+      "Tawhid Bin Omar is a Bangladesh-based aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Physics Olympiad champion (BdPhO National Champion, PHIGA 1st place worldwide out of 1,211), creator of the Open Problem Solving Library — a free open-access STEM education platform. He is President (2026-2027) of the Josephite Math Club, where he organized the 8th Josephite Math Mania — one of the biggest national math events in the country, with over 5000 participants and 22 events — and previously served as Vice President & Head of Academics (2024-2025) while helping host over 6 national math events. He completed Code in Place, did the Conrad Challenge, Blue Ocean Challenge, NASA Space Apps Challenge, and Green Challenge, was a finalist at the BDOC chemistry olympiad, got a silver diploma at KAIPHO hosted by Kazan National Research Technical University, and got recognition from the Poetry Society for writing poems. Beyond education, he is a full stack developer, game developer (Pyxl Chronicles), robotics-for-good engineer (Team Nokkhotropoth), and a lifelong learner of quantum physics, number theory, and algorithms.",
     "nationality": {
       "@type": "Country",
       "name": "Bangladesh"
@@ -183,7 +194,8 @@ export default function Home() {
       {
         "@type": "Organization",
         "name": "St. Joseph Higher Secondary School Math Club",
-        "url": "https://tawhid.is-a.dev/#education-impact"
+        "url": "https://tawhid.is-a.dev/#education-impact",
+        "description": "President (2026-2027) and Vice President & Head of Academics (2024-2025). Organized the 8th Josephite Math Mania, one of the biggest national math events in the country with over 5000 participants and 22 events, and helped host over 6 national math events."
       },
       {
         "@type": "Organization",
@@ -263,6 +275,54 @@ export default function Home() {
       {
         "@type": "Award",
         "name": "NASA Space Apps Challenge — Exoplanet AI Model"
+      },
+      {
+        "@type": "Award",
+        "name": "8th Josephite Math Mania \u2014 Organizer",
+        "description": "Organized as President of the Josephite Math Club (2026-2027). One of the biggest national math events in the country, with over 5000 participants and 22 events."
+      },
+      {
+        "@type": "Award",
+        "name": "Josephite Math Club \u2014 Vice President & Head of Academics (2024-2025)",
+        "description": "Served as Vice President & Head of Academics of the Josephite Math Club and helped host over 6 national math events."
+      },
+      {
+        "@type": "Award",
+        "name": "BDOC \u2014 Finalist",
+        "description": "Finalist at the BDOC chemistry olympiad."
+      },
+      {
+        "@type": "Award",
+        "name": "Conrad Challenge \u2014 Participant",
+        "description": "Participated in the Conrad Challenge."
+      },
+      {
+        "@type": "Award",
+        "name": "Blue Ocean Challenge \u2014 Participant",
+        "description": "Participated in the Blue Ocean Challenge."
+      },
+      {
+        "@type": "Award",
+        "name": "Green Challenge \u2014 Participant",
+        "description": "Participated in the Green Challenge."
+      },
+      {
+        "@type": "Award",
+        "name": "KAIPHO \u2014 Silver Diploma",
+        "description": "Got a silver diploma at KAIPHO, hosted by Kazan National Research Technical University."
+      },
+      {
+        "@type": "Award",
+        "name": "Poetry Society \u2014 Recognition",
+        "description": "Got recognition from the Poetry Society for writing poems."
+      }
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Code in Place",
+        "description": "Completed Code in Place.",
+        "credentialCategory": "certificate"
       }
     ],
     "memberOf": [

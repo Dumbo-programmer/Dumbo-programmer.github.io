@@ -83,6 +83,59 @@ const achievementData: {
             },
           
 ]
+const leadershipData: { title: string; description: string }[] = [
+  {
+    title: "President (2026\u20132027) \u2014 Josephite Math Club",
+    description:
+      "President of the Josephite Math Club, and organizer of the 8th Josephite Math Mania \u2014 one of the biggest national math events in the country, with over 5000 participants and 22 events.",
+  },
+  {
+    title: "Vice President & Head of Academics (2024\u20132025) \u2014 Josephite Math Club",
+    description:
+      "Served as Vice President & Head of Academics of the Josephite Math Club, and helped host over 6 national math events.",
+  },
+  {
+    title: "Code in Place \u2014 Completed",
+    description:
+      "Completed Code in Place.",
+  },
+  {
+    title: "BDOC \u2014 Finalist",
+    description:
+      "Finalist at the BDOC chemistry olympiad.",
+  },
+  {
+    title: "Conrad Challenge",
+    description:
+      "Participated in the Conrad Challenge.",
+  },
+  {
+    title: "Blue Ocean Challenge",
+    description:
+      "Participated in the Blue Ocean Challenge.",
+  },
+  {
+    title: "NASA Space Apps Challenge",
+    description:
+      "Participated in the NASA Space Apps Challenge.",
+  },
+  {
+    title: "Green Challenge",
+    description:
+      "Participated in the Green Challenge.",
+  },
+  {
+    title: "KAIPHO \u2014 Silver Diploma",
+    description:
+      "Got a silver diploma at KAIPHO, hosted by Kazan National Research Technical University.",
+  },
+  {
+    title: "Poetry Society \u2014 Recognition",
+    description:
+      "Got recognition from the Poetry Society for writing poems.",
+  },
+];
+
 const Achievements = () => {
   const [showAll, setShowAll] = useState(false);
 
@@ -132,6 +185,26 @@ const Achievements = () => {
           Certificates
         </h3>
         <CertificateCarousel />
+      </div>
+
+      {/* 🏅 Leadership & Recognition */}
+      <div className="w-full max-w-5xl mt-24 px-6">
+        <h3 className="text-2xl md:text-3xl font-medium text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+          Leadership &amp; Recognition
+        </h3>
+        <ul className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {leadershipData.map((item) => (
+            <li
+              key={item.title}
+              className="p-5 rounded-lg border border-[#2A0E61] bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6]"
+            >
+              <h4 className="text-lg font-semibold text-white">{item.title}</h4>
+              <p className="mt-2 text-gray-300 text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
