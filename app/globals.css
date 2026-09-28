@@ -52,6 +52,50 @@
   box-shadow: inset 0 0 12px #bf97ff70;
 }
 
+@keyframes marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(var(--marquee-distance, 0px) * -1), 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translate3d(calc(var(--marquee-distance, 0px) * -1), 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.marquee-track {
+  animation-duration: var(--marquee-duration, 40s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.marquee-track[data-direction="left"] {
+  animation-name: marquee-left;
+}
+
+.marquee-track[data-direction="right"] {
+  animation-name: marquee-right;
+}
+
+.marquee-viewport:hover .marquee-track,
+.marquee-viewport:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
 .scrollbar-hidden {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

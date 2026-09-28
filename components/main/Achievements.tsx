@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
 import EducationTimeline from "../sub/EducationTimeline";
 import AchievementCard from "../sub/AchievementCard";
+import CertificateCarousel from "../sub/CertificateCarousel";
 const achievementData: {
   typeA?: "image" | "video";
   src: string;
@@ -28,6 +29,11 @@ const achievementData: {
       src: "/bdoaa.png",
       title: "Bangladesh Olympiad on Astronomy and Astrophysics",
       description: "15th Nationally, IOAA camper"
+    },
+           {   typeA: "image",
+      src: "/JMC_new.png",
+      title: "Josephite Math Club",
+      description: "President(2026-2027), Vice President & Head Of Academics (2024-2025), Academic Team Member(2022)"
     },
     {
       typeA: "image",
@@ -119,6 +125,14 @@ const Achievements = () => {
       >
         {showAll ? "Show Less" : "Show More"}
       </button>
+
+      {/* 📜 Certificate Carousel */}
+      <div className="w-full flex flex-col items-center mt-24">
+        <h3 className="text-2xl md:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+          Certificates
+        </h3>
+        <CertificateCarousel />
+      </div>
     </section>
   );
   
