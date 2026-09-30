@@ -5,6 +5,7 @@ const educationData = [
   { year: "2017", content: "Got selected at St. Joseph Higher Secondary School" },
   { year: "2023", content: "Completed CS50 and various bootcamps" },
   { year: "2025", content: "Finished Sophomore year with an unweighted CGPA 4" },
+  { year: "2026", content: "Completed Stanford Code In Place" },
   { year: "2027", content: "Expected to graduate highschool" },
 ];
 
