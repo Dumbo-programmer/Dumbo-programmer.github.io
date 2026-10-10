@@ -81,7 +81,7 @@ const LibrarySection = () => {
           className="mt-8 px-8 py-3 text-white text-lg font-semibold bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full hover:opacity-80 transition"
           aria-label="Browse the full Open Problem Solving Library"
         >
-          Browse the Library →
+          Browse the Library
         </a>
       </div>
     </section>

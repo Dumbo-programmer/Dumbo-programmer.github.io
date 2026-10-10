@@ -46,27 +46,27 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           initial="hidden"
           animate="visible"
-          className="text-sm sm:text-base md:text-lg text-gray-400 my-5 max-w-[600px]"
+          className="text-sm sm:text-base md:text-lg text-gray-300 my-5 max-w-[600px] leading-relaxed"
         >
-          I am driven by an obsessive curiosity about how things work — from the quantum structure of spacetime and the elegant patterns hiding in prime numbers to the perfect efficiency of a well-designed algorithm. Physics, number theory, and competitive programming are not just subjects I study; they are lenses through which I see the world. Every problem solved, every theorem understood, every algorithm optimized — each is a small victory against the vast unknown.
+          I&apos;m curious about the fundamental questions of physics and number theory, and enjoy the logical precision of competitive programming. I like exploring problems that connect abstract theory with practical solutions.
         </motion.p>
 
         <motion.p
           variants={slideInFromLeft(0.9)}
           initial="hidden"
           animate="visible"
-          className="text-sm sm:text-base md:text-lg text-gray-400 my-5 max-w-[600px]"
+          className="text-sm sm:text-base md:text-lg text-gray-300 my-5 max-w-[600px] leading-relaxed"
         >
-          That same drive extends to building. I believe a student in Bangladesh should have the same access to high-quality STEM education as one anywhere in the world. This belief powers the Open Problem Solving Library, Olympiad mentorship programs, custom game engines, and assistive robotics. I don&apos;t just learn physics and programming; I use them to create infrastructure that makes complex ideas accessible, learning free, and opportunity independent of geography or wealth.
+          Through the Open Problem Solving Library, Olympiads mentorship, and personal projects, I aim to make high-quality STEM learning accessible to students in Bangladesh. My goal is to help build free, practical resources that lower barriers to opportunity.
         </motion.p>
 
         <motion.p
           variants={slideInFromLeft(1)}
           initial="hidden"
           animate="visible"
-          className="text-sm sm:text-base md:text-lg text-gray-400 my-5 max-w-[600px] italic"
+          className="text-sm sm:text-base md:text-lg text-gray-300 my-5 max-w-[600px]"
         >
-          This site is not a portfolio of what I have built. It is a window into why.
+          I&apos;m focused on solving meaningful problems and sharing what I learn along the way.
         </motion.p>
 
         <motion.div

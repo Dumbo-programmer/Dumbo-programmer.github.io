@@ -17,16 +17,16 @@ const LoadingScreen = () => {
     const timeout = setTimeout(() => {
       setLoading(false);
       document.body.style.overflow = "auto"; // Unlock scrolling
-    }, 1000); // Minimal delay to keep Core Web Vitals healthy
+    }, 600); // Reduced load time for better UX
 
     // Binary animation update
     const interval = setInterval(() => {
       if (loading) {
         setBinaryMatrix(
-          Array.from({ length: 10 }, () => generateBinaryString(30))
+          Array.from({ length: 8 }, () => generateBinaryString(24))
         );
       }
-    }, 150);
+    }, 120);
 
     return () => {
       clearTimeout(timeout);
@@ -37,25 +37,25 @@ const LoadingScreen = () => {
   if (!loading) return null; // Hide when done loading
 
   return (
-    <div 
-      className="fixed inset-0 flex items-center justify-center bg-[#030014cc] backdrop-blur-md z-[100]"
+    <div
+      className="fixed inset-0 flex items-center justify-center bg-[#030014e6] backdrop-blur-sm z-[100]"
       role="status"
       aria-live="polite"
       aria-label="Loading page content"
     >
-      <div className="text-green-400 font-mono text-sm md:text-lg leading-5 md:leading-7" aria-hidden="true">
-        {binaryMatrix.map((line, index) => (
+      <div className="text-green-400 font-mono text-xs leading-3 md:text-sm md:leading-4 max-h-[60vh] overflow-hidden px-4" aria-hidden="true">
+        {binaryMatrix.slice(0, 8).map((line, index) => (
           <p key={index} className="animate-flicker">{line}</p>
         ))}
       </div>
       <style jsx>{`
         @keyframes flicker {
-          0% { opacity: 0.8; }
-          50% { opacity: 0.4; }
-          100% { opacity: 0.8; }
+          0% { opacity: 0.9; }
+          50% { opacity: 0.5; }
+          100% { opacity: 0.9; }
         }
         .animate-flicker {
-          animation: flicker 1s infinite alternate;
+          animation: flicker 0.8s infinite alternate;
         }
       `}</style>
     </div>
