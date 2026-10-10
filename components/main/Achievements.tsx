@@ -99,10 +99,10 @@ const Achievements = () => {
         </motion.div>
       </div>
   
-      {/* 📚 Education Timeline Here */}
+      {/* Education Timeline Here */}
       <EducationTimeline />
   
-      {/* 🏆 Achievement Cards */}
+      {/* Achievement Cards */}
       <div className="h-full w-full flex flex-wrap gap-10 px-10 justify-center">
         {achievementData
           .slice(0, showAll ? achievementData.length : 3)
@@ -126,7 +126,7 @@ const Achievements = () => {
         {showAll ? "Show Less" : "Show More"}
       </button>
 
-      {/* 📜 Certificate Carousel */}
+      {/* Certificate Carousel */}
       <div className="w-full flex flex-col items-center mt-24">
         <h3 className="text-2xl md:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
           Certificates

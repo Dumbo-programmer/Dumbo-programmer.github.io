@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import type { TimelineEntry } from "@/constants/education";
 import { HiSparkles } from "react-icons/hi";
+import { FaCircle, FaStar } from "react-icons/fa";
 
 interface ImpactTimelineProps {
   entries: TimelineEntry[];
@@ -65,7 +66,13 @@ const ImpactTimeline = ({ entries }: ImpactTimelineProps) => {
                       : "text-purple-400/60"
                   }`}
                 >
-                  {entry.isFuture ? "✦" : entry.highlight ? "◆" : "●"}
+                  {entry.isFuture ? (
+                    <HiSparkles className="text-xs" />
+                  ) : entry.highlight ? (
+                    <FaStar className="text-[10px]" />
+                  ) : (
+                    <FaCircle className="text-[6px]" />
+                  )}
                 </span>
               </div>
 

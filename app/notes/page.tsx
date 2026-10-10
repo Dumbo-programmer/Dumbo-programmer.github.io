@@ -2,6 +2,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { featuredResources, librarySubjects } from "@/constants/library";
 import type { LibraryResource, ResourceType } from "@/constants/library";
+import { FaSearch, FaTimes } from "react-icons/fa";
 
 const SUBJECT_IDS = librarySubjects.map((s) => ({
   label: s.title,
@@ -43,7 +44,7 @@ const OLYMPIAD_FILTERS = [
   { label: "BdPhO", id: "bdpho" },
   { label: "IMO", id: "imo" },
   { label: "IPhO", id: "ipho" },
-  { label: "IAAC", id: "iaac" },
+  { label: "IOAA/BDOAA", id: "iaac" },
   { label: "IOI", id: "ioi" },
   { label: "Programming", id: "prog-olympiad" },
 ];
@@ -467,7 +468,9 @@ export default function NotesPage() {
         {/* Search */}
         <div className="max-w-md mx-auto mb-6">
           <div className="relative">
-            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-600 text-sm">🔍</span>
+            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-600 text-sm">
+              <FaSearch />
+            </span>
             <input
               type="text"
               value={searchQuery}
@@ -558,9 +561,9 @@ export default function NotesPage() {
               <button
                 type="button"
                 onClick={clearFilters}
-                className="text-xs px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.04] text-gray-300 hover:text-white hover:border-purple-500/40 transition-all"
+                className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.04] text-gray-300 hover:text-white hover:border-purple-500/40 transition-all"
               >
-                Clear all filters ✕
+                Clear all filters <FaTimes className="text-[10px]" />
               </button>
             </div>
 

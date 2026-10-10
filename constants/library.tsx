@@ -1,4 +1,18 @@
-﻿export type ResourceType =
+import type { ReactNode } from "react";
+import {
+  FaAtom,
+  FaBook,
+  FaBookOpen,
+  FaCalculator,
+  FaFlask,
+  FaLaptopCode,
+  FaPenFancy,
+  FaSpaceShuttle,
+  FaSquareRootAlt,
+  FaUsers,
+} from "react-icons/fa";
+
+export type ResourceType =
   | "article"
   | "handout"
   | "notes"
@@ -26,7 +40,7 @@ export interface LibrarySubSection {
 
 export interface LibrarySubject {
   title: string;
-  icon: string;
+  icon: ReactNode;
   description: string;
   sections: LibrarySubSection[];
 }
@@ -42,12 +56,12 @@ export interface FeaturedResource {
 }
 
 export const featuredResources: FeaturedResource[] = [
-  { title: "Quantum Theory", description: "Quantum physics from wave-particle duality to the Schr├╢dinger equation.", subject: "Physics", link: "/notes/qt.pdf", type: "handout", tags: ["quantum physics", "wave-particle duality", "schrodinger", "undergrad"] },
+  { title: "Quantum Theory", description: "Quantum physics from wave-particle duality to the Schrödinger equation.", subject: "Physics", link: "/notes/qt.pdf", type: "handout", tags: ["quantum physics", "wave-particle duality", "schrodinger", "undergrad"] },
   { title: "Category Theory", description: "Functors, natural transformations, and universal properties.", subject: "Mathematics", link: "/notes/Articles/CategoryTheory.pdf", type: "article", tags: ["category theory", "functors", "abstract algebra"] },
   { title: "General Relativity", description: "Einstein field equations, spacetime curvature, and applications.", subject: "Physics", link: "/notes/Articles/GeneralRelativity.pdf", type: "article", tags: ["general relativity", "spacetime", "gravity"] },
-  { title: "Vieta Jumping Extension", description: "Non-linear Root Flipping and Surface Orbits ΓÇö original research.", subject: "Mathematics", link: "/notes/Articles/Article2.pdf", type: "research", tags: ["number theory", "vieta jumping", "original research"] },
+  { title: "Vieta Jumping Extension", description: "Non-linear Root Flipping and Surface Orbits — original research.", subject: "Mathematics", link: "/notes/Articles/Article2.pdf", type: "research", tags: ["number theory", "vieta jumping", "original research"] },
   { title: "Graph Theory Handbook", description: "BFS, DFS, shortest paths, MST for competitive programming.", subject: "Competitive Programming", link: "/notes/GraphTheory.pdf", type: "handout", tags: ["graph theory", "BFS", "DFS", "shortest path", "MST"] },
-  { title: "The Gliding Principle", description: "Moving Points on Conics and Beyond ΓÇö original geometry research.", subject: "Mathematics", link: "/notes/Articles/Article1.pdf", type: "research", tags: ["geometry", "conics", "original research"] },
+  { title: "The Gliding Principle", description: "Moving Points on Conics and Beyond — original geometry research.", subject: "Mathematics", link: "/notes/Articles/Article1.pdf", type: "research", tags: ["geometry", "conics", "original research"] },
   { title: "Dynamic Programming", description: "DP techniques from classic problems to advanced optimizations.", subject: "Competitive Programming", link: "/notes/Dp.pdf", type: "handout", tags: ["dynamic programming", "DP", "optimization"] },
   { title: "Entropy-Minimal Noise Schedules", description: "Thermodynamics approach to diffusion probabilistic models.", subject: "Physics", link: "https://ijscar.org/pubs/articles/vol3-issue2-omar-diffusion-thermodynamics.pdf", type: "research", tags: ["machine learning", "diffusion", "thermodynamics", "AI"] },
 ];
@@ -55,8 +69,8 @@ export const featuredResources: FeaturedResource[] = [
 export const librarySubjects: LibrarySubject[] = [
   {
     title: "Mathematics",
-    icon: "≡ƒôÉ",
-    description: "Algebra, geometry, number theory, combinatorics, and analysis ΓÇö from fundamentals to research.",
+    icon: <FaSquareRootAlt />,
+    description: "Algebra, geometry, number theory, combinatorics, and analysis — from fundamentals to research.",
     sections: [
       { name: "Problems", items: [
         { title: "Open Math Problems", description: "Original open problems in mathematics.", link: "/notes/OpenMathProblems.pdf", type: "problem-set", tags: ["open problems", "research", "number theory", "conjecture"], grade: ["undergrad"], language: "en" },
@@ -105,7 +119,7 @@ export const librarySubjects: LibrarySubject[] = [
   },
   {
     title: "Physics",
-    icon: "ΓÜ¢∩╕Å",
+    icon: <FaAtom />,
     description: "Classical mechanics, electromagnetism, thermodynamics, quantum physics, relativity, and astrophysics.",
     sections: [
       { name: "Handouts", items: [
@@ -144,7 +158,7 @@ export const librarySubjects: LibrarySubject[] = [
   },
   {
     title: "Competitive Programming",
-    icon: "≡ƒÆ╗",
+    icon: <FaLaptopCode />,
     description: "Algorithms, data structures, and problem-solving techniques for programming contests.",
     sections: [
       { name: "Handouts", items: [
@@ -159,7 +173,7 @@ export const librarySubjects: LibrarySubject[] = [
   },
   {
     title: "Astronomy",
-    icon: "≡ƒö¡",
+    icon: <FaSpaceShuttle />,
     description: "Astrophysics, cosmology, observational astronomy, and space exploration.",
     sections: [
       { name: "Handouts/Book", items: [
@@ -181,10 +195,10 @@ const countByType = (type: ResourceType) =>
   );
 
 export const platformStats = [
-  { label: "Problems", value: countByType("problem-set"), icon: "≡ƒº«" },
-  { label: "Articles", value: countByType("article"), icon: "≡ƒô¥" },
-  { label: "Handouts", value: countByType("handout") + countByType("notes"), icon: "≡ƒôÜ" },
-  { label: "Research", value: countByType("research"), icon: "≡ƒö¼" },
-  { label: "Books", value: countByType("book"), icon: "≡ƒôû" },
-  { label: "Contributors", value: 1, icon: "≡ƒæÑ" },
+  { label: "Problems", value: countByType("problem-set"), icon: <FaCalculator /> },
+  { label: "Articles", value: countByType("article"), icon: <FaPenFancy /> },
+  { label: "Handouts", value: countByType("handout") + countByType("notes"), icon: <FaBookOpen /> },
+  { label: "Research", value: countByType("research"), icon: <FaFlask /> },
+  { label: "Books", value: countByType("book"), icon: <FaBook /> },
+  { label: "Contributors", value: 1, icon: <FaUsers /> },
 ];

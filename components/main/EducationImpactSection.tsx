@@ -214,7 +214,7 @@ const EducationImpactSection = () => {
                   </a>
                   , I publish free, open-access educational resources
                   in mathematics, physics, competitive programming, and astronomy — downloaded by students
-                  preparing for BdPhO, IAAC, national mathematics Olympiads, and anyone who simply wants to
+                  preparing for BdPhO, IOAA/BDOAA, national mathematics Olympiads, and anyone who simply wants to
                   learn beyond their school syllabus. No paywall, no registration, no barriers.
                </p>
                <p>
