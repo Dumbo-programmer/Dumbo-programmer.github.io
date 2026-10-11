@@ -15,17 +15,17 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col lg:flex-row items-center justify-center px-5 sm:px-10 md:px-20 mt-16 sm:mt-24 md:mt-40 w-full z-[20]"
+      className="flex flex-col lg:flex-row items-center justify-center px-5 sm:px-10 md:px-20 mt-24 sm:mt-28 md:mt-40 w-full z-[20]"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+      <div className="h-full w-full min-w-0 flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
           variants={slideInFromTop}
           initial="hidden"
           animate="visible"
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
         >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <p className="Welcome-text text-[13px]">Physics &bull; Number Theory &bull; Competitive Programming &bull; STEM</p>
+          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5 shrink-0" />
+          <p className="Welcome-text text-[12px] sm:text-[13px] text-center min-w-0">Physics &bull; Number Theory &bull; Competitive Programming &bull; STEM</p>
         </motion.div>
 
         <motion.div

@@ -11,7 +11,7 @@ const LibrarySection = () => {
       id="open-problem-solving-library"
       aria-labelledby="library-heading"
     >
-      <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full">
+      <div className="flex flex-col relative items-center justify-center min-h-screen w-full h-full">
         <div className="absolute w-auto h-auto top-0 z-[5]">
           <motion.div variants={slideInFromTop} className="text-center">
             <h2
