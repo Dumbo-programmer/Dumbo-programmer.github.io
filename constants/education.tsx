@@ -79,7 +79,7 @@ export const gallerySlides: GallerySlide[] = [
       "Tawhid Bin Omar conducting a physics demonstration for community outreach in Bangladesh — students observing a hands-on science experiment during a STEM education event.",
     gradient: "from-slate-900/80 via-blue-900/80 to-teal-900/80",
     icon: <FaRocket className="text-5xl text-purple-300" />,
-    title: "Physics Demonstration Session",
+    title: "Astrophysics, Astronomy Session",
     organization: "Community Outreach Program",
     date: "2025",
     caption:
@@ -105,11 +105,24 @@ export const gallerySlides: GallerySlide[] = [
       "Tawhid Bin Omar teaching a STEM session to students in Bangladesh — a classroom problem-solving session led by the President of the St. Joseph Higher Secondary School Math Club.",
     gradient: "from-emerald-900/80 via-cyan-900/80 to-slate-900/80",
     icon: <FaChalkboardTeacher className="text-5xl text-purple-300" />,
-    title: "STEM Teaching Session",
+    title: "Hosted mathematical event with over 25 segments",
     organization: "St. Joseph Higher Secondary School",
     date: "2025 – Present",
     caption:
       "Teaching STEM and problem solving in the classroom as President of the St. Joseph Higher Secondary School Math Club.",
+  },
+  {
+    id: "8th-jmm-speech",
+    image: "/sessions/tawhid-bin-omar-8thjmm-speech.JPG",
+    imageAlt:
+      "Tawhid Bin Omar delivering a speech at the 8th Josephite Math Mania, one of the largest mathematical events in Bangladesh.",
+    gradient: "from-amber-900/80 via-purple-900/80 to-rose-900/80",
+    icon: <FaStar className="text-5xl text-purple-300" />,
+    title: "8th Josephite Math Mania",
+    organization: "St. Joseph Higher Secondary School",
+    date: "2026",
+    caption:
+      "Hosted the 8th Josephite Math Mania — one of the largest mathematical events in Bangladesh, uniting thousands of students across 25+ segments of competition, workshops, and celebration.",
   },
 ];
 
