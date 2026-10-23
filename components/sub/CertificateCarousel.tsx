@@ -18,6 +18,7 @@ const certificates = [
   "pb29.png",
   "pf_cert.png",
   "phiga.png",
+  "qcwc.png",
   "poet.png",
   "image copy 10.png",
   "image copy 11.png",

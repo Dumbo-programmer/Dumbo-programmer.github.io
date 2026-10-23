@@ -201,8 +201,9 @@ const EducationImpactSection = () => {
                 President &amp; Head of Academics (2024–2025), I helped host over 6 national math events.
                 I have also completed Code in Place, did the Conrad Challenge, Blue Ocean Challenge, NASA
                 Space Apps Challenge, and Green Challenge, was a finalist at the BDOC chemistry olympiad,
-                got a silver diploma at KAIPHO hosted by Kazan National Research Technical University, and
-                got recognition from the Poetry Society for writing poems.
+                got a silver diploma at KAIPHO hosted by Kazan National Research Technical University,
+                received the Silver Award in the Queen's Commonwealth Writing Competition 2026 out of
+                53,840 people, and got recognition from the Poetry Society for writing poems.
               </p>
                <p>
                   Through the{" "}

@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     "Green Challenge", "NASA Space Apps", "NASA Space Apps Challenge",
     "BDOC", "BDOC chemistry olympiad", "BDOC finalist",
     "KAIPHO", "Kazan National Research Technical University",
-    "KAIPHO silver diploma", "Poetry Society", "Poetry Society recognition",
+    "KAIPHO silver diploma", "Queen's Commonwealth Writing Competition", "QCWC", "QCWC 2026", "Queen's Commonwealth Writing Competition 2026 Silver Award", "Poetry Society", "Poetry Society recognition",
   ],
   authors: [{ name: "Tawhid Bin Omar", url: "https://tawhid.is-a.dev" }],
   metadataBase: new URL("https://tawhid.is-a.dev"),
@@ -159,7 +159,7 @@ export default function Home() {
       "Physics Olympiad Champion — BdPhO National Champion, PHIGA #1 Worldwide",
     ],
     "description":
-      "Tawhid Bin Omar is a Bangladesh-based aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Physics Olympiad champion (BdPhO National Champion, PHIGA 1st place worldwide out of 1,211), creator of the Open Problem Solving Library — a free open-access STEM education platform. He is President (2026-2027) of the Josephite Math Club, where he organized the 8th Josephite Math Mania — one of the biggest national math events in the country, with over 5000 participants and 22 events — and previously served as Vice President & Head of Academics (2024-2025) while helping host over 6 national math events. He completed Code in Place, did the Conrad Challenge, Blue Ocean Challenge, NASA Space Apps Challenge, and Green Challenge, was a finalist at the BDOC chemistry olympiad, got a silver diploma at KAIPHO hosted by Kazan National Research Technical University, and got recognition from the Poetry Society for writing poems. Beyond education, he is a full stack developer, game developer (Pyxl Chronicles), robotics-for-good engineer (Team Nokkhotropoth), and a lifelong learner of quantum physics, number theory, and algorithms.",
+      "Tawhid Bin Omar is a Bangladesh-based aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Physics Olympiad champion (BdPhO National Champion, PHIGA 1st place worldwide out of 1,211), creator of the Open Problem Solving Library — a free open-access STEM education platform. He is President (2026-2027) of the Josephite Math Club, where he organized the 8th Josephite Math Mania — one of the biggest national math events in the country, with over 5000 participants and 22 events — and previously served as Vice President & Head of Academics (2024-2025) while helping host over 6 national math events. He completed Code in Place, did the Conrad Challenge, Blue Ocean Challenge, NASA Space Apps Challenge, and Green Challenge, was a finalist at the BDOC chemistry olympiad, got a silver diploma at KAIPHO hosted by Kazan National Research Technical University, received the Silver Award in the Queen's Commonwealth Writing Competition 2026 out of 53,840 people, and got recognition from the Poetry Society for writing poems. Beyond education, he is a full stack developer, game developer (Pyxl Chronicles), robotics-for-good engineer (Team Nokkhotropoth), and a lifelong learner of quantum physics, number theory, and algorithms.",
     "nationality": {
       "@type": "Country",
       "name": "Bangladesh"
@@ -254,6 +254,11 @@ export default function Home() {
         "@type": "Award",
         "name": "PHIGA Physics Competition — 1st Place Worldwide",
         "description": "Achieved 1st place out of 1,211 participants worldwide"
+      },
+      {
+        "@type": "Award",
+        "name": "Queen's Commonwealth Writing Competition 2026 \u2014 Silver Award",
+        "description": "Received the Silver Award in the Queen's Commonwealth Writing Competition 2026, out of 53,840 people."
       },
       {
         "@type": "Award",

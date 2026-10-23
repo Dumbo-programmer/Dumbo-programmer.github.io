@@ -59,6 +59,12 @@ const achievementData: {
           title: "PHIGA Physics Competition",
           description: "Achieved 1st place out of 1,211 participants worldwide in the PHIGA International Gamefied Physics Competition."
           },
+          {
+            typeA: "image",
+            src: "/certis/qcwc.png",
+            title: "Queen's Commonwealth Writing Competition 2026",
+            description: "Silver Award, out of 53,840 people."
+          },
              {  typeA: "image",
           src: "/iaac.png",
           title: "International Astronomy and Astrophysics Competition",

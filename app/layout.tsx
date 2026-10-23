@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "Conrad Challenge", "Blue Ocean Challenge", "Green Challenge",
     "NASA Space Apps Challenge", "exoplanet AI", "BDOC", "BDOC chemistry olympiad",
     "BDOC finalist", "KAIPHO", "Kazan National Research Technical University",
-    "KAIPHO silver diploma", "Poetry Society", "Poetry Society recognition",
+    "KAIPHO silver diploma", "Queen's Commonwealth Writing Competition", "QCWC", "QCWC 2026", "Queen's Commonwealth Writing Competition 2026 Silver Award", "Poetry Society", "Poetry Society recognition",
   ],
   authors: [{ name: "Tawhid Bin Omar", url: "https://tawhid.is-a.dev" }],
   creator: "Tawhid Bin Omar",
