@@ -38,6 +38,16 @@ const researchData: {
   },
   {
     typeA: "image",
+    src: "/gonit.png",
+    title: "Academic Team Member — Prothom Alo Gonit Ishkul",
+    link: "https://gonit-solving.netlify.app/",
+    sub: "Academic Team Member",
+    description: "Responsible for creating and maintaining the web application for Prothom Alo Gonit Ishkul, a bilingual math problem-solving platform. The platform provides a searchable archive of 100+ auto-gradable problems, balanced practice-test creation, timed test sessions, instant grading with rational-answer parsing, saved reviews, cloud sync, learner leaderboards, contest ratings, and offline support in Bangla and English.",
+    tags: ["Academic Team", "Mathematics Education", "React", "TypeScript", "Problem Solving", "Auto-Grading", "Bangla + English", "Offline-First", "Educational Technology"],
+    date: "2025 – Present",
+  },
+  {
+    typeA: "image",
     src: "/team.png",
     title: "Team Nokkhotropoth",
     sub: 'Mechanical Engineering Department Lead',
@@ -45,32 +55,12 @@ const researchData: {
     tags: ["Mechanical Engineering", "Mechatronics", "Robotics", "Robotics-for-Good", "Assistive Systems", "UN SDG", "R&D"],
     date: "2024 – Present",
   },
-  {
-    typeA: "image",
-    src: "/paper1.png",
-    title: "Entropy-Minimal Noise Schedules for Denoising Diffusion Probabilistic Models: A Non-Equilibrium Thermodynamics Approach",
-    sub: 'Research Paper',
-    description: ``,
-      tags: ["Physics", "Thermodynamics", "Diffusion Models", "Noise schedule", "Entropy production", "Stochastic thermodynamics", "Generative models"],
-      status: "published",
-    date: "2026",
-  },
-    {
-    typeA: "image",
-    src: "/paper1.png",
-    title: "Geometric Distortion of Quantum State Space Under Noise: A Comparative Information-Theoretic Analysis of Common Quantum Channels",
-    sub: 'Research Paper',
-    description: ``,
-      tags: ["Physics", "Quantum Information", "Information Theory", "Quantum Channels", "Geometric Distortions", "Quantum State Space"],
-      status: "preprint",
-    date: "2026",
-  },
 ]
 const Research = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <section className="flex flex-col items-center justify-center py-20" id="current-projects" aria-labelledby="research-heading">
+    <section className="flex flex-col items-center justify-center py-20" id="current-roles" aria-labelledby="research-heading">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -79,7 +69,7 @@ const Research = () => {
         className="w-full px-6 text-[40px] font-medium text-center text-gray-200"
       >
         <h2 id="research-heading" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-          Current Projects
+          Current Roles
         </h2>
       </motion.div>
       {/*  Research Cards */}

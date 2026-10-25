@@ -31,6 +31,11 @@ export const metadata: Metadata = {
     "Tawhid Bin Omar", "Dumbo-programmer", "Tawhid",
     "Tawhid Bin Omar photos", "Tawhid Bin Omar images", "Tawhid Bin Omar picture",
     "full stack developer", "game developer", "physicist", "robotics engineer",
+    "Rust libraries", "Rust algorithms", "Rust statistics library", "Rust README generator",
+    "Crates.io", "Rust crates", "Algod Rust", "statify Rust", "Rust data structures",
+    "Prothom Alo Gonit Ishkul", "Prothom Alo Math School", "Gonit Ishkul",
+    "math problem solving platform", "online math practice", "auto-gradable math problems",
+    "Bangla math platform", "bilingual math education", "math contest platform",
     "Pyxl Chronicles", "Team Nokkhotropoth", "Ongko", "PlayNux", "Vocal Guard",
     "Bangladesh Physics Olympiad", "BdPhO", "PHIGA", "Physics Olympiad",
     "competitive programming", "algorithms", "data structures",
@@ -442,8 +447,8 @@ export default function Home() {
       { "name": "About", "url": "https://tawhid.is-a.dev/#about-me" },
       { "name": "Skills", "url": "https://tawhid.is-a.dev/#skills" },
       { "name": "Projects", "url": "https://tawhid.is-a.dev/#projects" },
+      { "name": "Current Roles", "url": "https://tawhid.is-a.dev/#current-roles" },
       { "name": "Education Impact", "url": "https://tawhid.is-a.dev/#education-impact" },
-      { "name": "Research", "url": "https://tawhid.is-a.dev/#current-projects" },
       { "name": "Library", "url": "https://tawhid.is-a.dev/notes" }
     ]
   };
@@ -455,7 +460,7 @@ export default function Home() {
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tawhid.is-a.dev" },
       { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://tawhid.is-a.dev/#projects" },
       { "@type": "ListItem", "position": 3, "name": "Education Impact", "item": "https://tawhid.is-a.dev/#education-impact" },
-      { "@type": "ListItem", "position": 4, "name": "Research", "item": "https://tawhid.is-a.dev/#current-projects" }
+      { "@type": "ListItem", "position": 4, "name": "Current Roles", "item": "https://tawhid.is-a.dev/#current-roles" }
     ]
   };
 
@@ -544,6 +549,29 @@ export default function Home() {
         "url": "https://github.com/Dumbo-programmer/Latex-code-generator",
         "keywords": "LaTeX, math equations, code generator, Python, mathematics",
         "creator": { "@type": "Person", "name": "Tawhid Bin Omar", "url": "https://tawhid.is-a.dev" }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "position": 10,
+        "name": "Rust Libraries — Algorithms, Statistics & README Generator",
+        "description": "Open-source Rust libraries for algorithms, data structures, statistics, and terminal-based README generation, published on Crates.io with around 15,000 cumulative downloads.",
+        "url": "https://crates.io/users/Dumbo-programmer",
+        "codeRepository": "https://github.com/Dumbo-programmer",
+        "programmingLanguage": "Rust",
+        "keywords": "Rust libraries, Rust algorithms, Rust statistics library, Rust README generator, Crates.io, data structures",
+        "creator": { "@type": "Person", "name": "Tawhid Bin Omar", "url": "https://tawhid.is-a.dev" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 11,
+        "name": "Prothom Alo Gonit Ishkul Math Problem-Solving Platform",
+        "description": "Bilingual Bangla and English math problem-solving platform created for Prothom Alo Gonit Ishkul, featuring 100+ auto-gradable problems, practice-test building, timed tests, instant grading, saved reviews, leaderboards, contests, and offline support.",
+        "url": "https://gonit-solving.netlify.app/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "softwareVersion": "1.0",
+        "keywords": "Prothom Alo Gonit Ishkul, math problem solving platform, auto-gradable math problems, Bangla math platform, online math practice",
+        "creator": { "@type": "Person", "name": "Tawhid Bin Omar", "url": "https://tawhid.is-a.dev" }
       }
     ]
   };
@@ -594,8 +622,8 @@ export default function Home() {
         <Skills />
         <Achievements />
         <Projects />
-        <EducationImpactSection />
         <Research />
+        <EducationImpactSection />
         <LibrarySection />
       </div>
     </main>

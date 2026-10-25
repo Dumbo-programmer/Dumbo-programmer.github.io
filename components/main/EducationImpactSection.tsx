@@ -116,7 +116,7 @@ const EducationImpactSection = () => {
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tawhid.is-a.dev" },
           { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://tawhid.is-a.dev/#projects" },
           { "@type": "ListItem", "position": 3, "name": sectionTitle, "item": "https://tawhid.is-a.dev/#education-impact" },
-          { "@type": "ListItem", "position": 4, "name": "Research", "item": "https://tawhid.is-a.dev/#current-projects" },
+          { "@type": "ListItem", "position": 4, "name": "Current Roles", "item": "https://tawhid.is-a.dev/#current-roles" },
         ],
       },
     ],
