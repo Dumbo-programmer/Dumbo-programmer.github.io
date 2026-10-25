@@ -83,7 +83,7 @@ const Navbar = () => {
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}
         >
-          {menuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+          {menuOpen ? <HiX size={28} aria-hidden="true" /> : <HiMenu size={28} aria-hidden="true" />}
         </button>
       </div>
 

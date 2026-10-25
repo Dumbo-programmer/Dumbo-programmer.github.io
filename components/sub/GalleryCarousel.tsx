@@ -132,14 +132,14 @@ const GalleryCarousel = ({ slides, autoPlayInterval = 5000 }: GalleryCarouselPro
           className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 transition-all duration-300 hover:shadow-[0_0_15px_#a855f7]"
           aria-label="Previous slide"
         >
-          <HiChevronLeft className="text-xl" />
+          <HiChevronLeft className="text-xl" aria-hidden="true" />
         </button>
         <button
           onClick={goNext}
           className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 transition-all duration-300 hover:shadow-[0_0_15px_#a855f7]"
           aria-label="Next slide"
         >
-          <HiChevronRight className="text-xl" />
+          <HiChevronRight className="text-xl" aria-hidden="true" />
         </button>
       </div>
 

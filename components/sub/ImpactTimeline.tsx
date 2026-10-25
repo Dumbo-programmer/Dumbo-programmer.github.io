@@ -38,7 +38,7 @@ const ImpactTimeline = ({ entries }: ImpactTimelineProps) => {
                       : "bg-purple-500/10 text-purple-300/60 border-purple-500/20"
                   }`}
                 >
-                  {entry.isFuture && <HiSparkles className="text-xs" />}
+                  {entry.isFuture && <HiSparkles className="text-xs" aria-hidden="true" />}
                   {entry.year}
                 </span>
               ) : (
@@ -67,11 +67,11 @@ const ImpactTimeline = ({ entries }: ImpactTimelineProps) => {
                   }`}
                 >
                   {entry.isFuture ? (
-                    <HiSparkles className="text-xs" />
+                    <HiSparkles className="text-xs" aria-hidden="true" />
                   ) : entry.highlight ? (
-                    <FaStar className="text-[10px]" />
+                    <FaStar className="text-[10px]" aria-hidden="true" />
                   ) : (
-                    <FaCircle className="text-[6px]" />
+                    <FaCircle className="text-[6px]" aria-hidden="true" />
                   )}
                 </span>
               </div>

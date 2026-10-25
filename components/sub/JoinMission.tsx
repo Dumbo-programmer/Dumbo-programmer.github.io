@@ -13,25 +13,25 @@ interface CTAButton {
 
 const buttons: CTAButton[] = [
   {
-    icon: <HiUserGroup className="text-lg" />,
+    icon: <HiUserGroup className="text-lg" aria-hidden="true" />,
     label: "Become a Volunteer",
     href: "mailto:tawhidbinomar@gmail.com?subject=Volunteer%20-%20Education%20Initiative",
     variant: "primary",
   },
   {
-    icon: <HiGlobe className="text-lg" />,
+    icon: <HiGlobe className="text-lg" aria-hidden="true" />,
     label: "Partner With Me",
     href: "mailto:tawhidbinomar@gmail.com?subject=Partnership%20-%20Education%20Initiative",
     variant: "secondary",
   },
   {
-    icon: <HiAcademicCap className="text-lg" />,
+    icon: <HiAcademicCap className="text-lg" aria-hidden="true" />,
     label: "Contribute Resources",
     href: "mailto:tawhidbinomar@gmail.com?subject=Resource%20Contribution",
     variant: "secondary",
   },
   {
-    icon: <HiMail className="text-lg" />,
+    icon: <HiMail className="text-lg" aria-hidden="true" />,
     label: "Get In Touch",
     href: "mailto:tawhidbinomar@gmail.com?subject=Education%20Initiative",
     variant: "secondary",

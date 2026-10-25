@@ -469,7 +469,7 @@ export default function NotesPage() {
         <div className="max-w-md mx-auto mb-6">
           <div className="relative">
             <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-600 text-sm">
-              <FaSearch />
+              <FaSearch aria-hidden="true" />
             </span>
             <input
               type="text"
@@ -563,7 +563,7 @@ export default function NotesPage() {
                 onClick={clearFilters}
                 className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.04] text-gray-300 hover:text-white hover:border-purple-500/40 transition-all"
               >
-                Clear all filters <FaTimes className="text-[10px]" />
+                Clear all filters <FaTimes className="text-[10px]" aria-hidden="true" />
               </button>
             </div>
 

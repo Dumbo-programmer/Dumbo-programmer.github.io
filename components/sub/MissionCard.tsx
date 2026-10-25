@@ -27,7 +27,7 @@ const MissionCard = () => {
         <div className="relative mb-6 mx-auto w-fit">
           <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-700" />
           <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/25 flex items-center justify-center text-purple-400 group-hover:text-purple-300 group-hover:border-purple-400/50 group-hover:scale-110 transition-all duration-500">
-            <HiHeart className="text-2xl" />
+            <HiHeart className="text-2xl" aria-hidden="true" />
           </div>
         </div>
 
