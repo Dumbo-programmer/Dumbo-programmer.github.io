@@ -78,10 +78,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://tawhid.is-a.dev/notes",
-    languages: {
-      "en": "https://tawhid.is-a.dev/notes",
-      "bn": "https://tawhid.is-a.dev/notes",
-    },
   },
   category: "education",
   classification: "Educational Resources",

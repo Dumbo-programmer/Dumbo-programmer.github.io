@@ -127,6 +127,10 @@ export default function Home() {
         "description": "Profile photo of Tawhid Bin Omar, Bangladeshi physicist, competitive programmer, and STEM educator.",
         "url": "https://tawhid.is-a.dev/tawhid.png",
         "contentUrl": "https://tawhid.is-a.dev/tawhid.png",
+        "creditText": "Tawhid Bin Omar",
+        "copyrightNotice": "© 2026 Tawhid Bin Omar. All rights reserved.",
+        "license": "https://tawhid.is-a.dev/license",
+        "acquireLicensePage": "https://tawhid.is-a.dev/license",
         "representativeOfPage": true
       },
       ...allPhotos.map((photo) => ({
@@ -138,6 +142,10 @@ export default function Home() {
         "contentUrl": `https://tawhid.is-a.dev${photo.src}`,
         "width": photo.width,
         "height": photo.height,
+        "creditText": "Tawhid Bin Omar",
+        "copyrightNotice": "© 2026 Tawhid Bin Omar. All rights reserved.",
+        "license": "https://tawhid.is-a.dev/license",
+        "acquireLicensePage": "https://tawhid.is-a.dev/license",
         "keywords": photo.keywords.join(", "),
         "creator": { "@id": "https://tawhid.is-a.dev/#person" },
       })),

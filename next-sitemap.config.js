@@ -78,6 +78,7 @@ module.exports = {
       loc: new URL(image.src, config.siteUrl),
       title: image.title,
       caption: image.caption,
+      license: new URL('/license', config.siteUrl),
       geoLocation: 'Dhaka, Bangladesh',
     }));
     return [
