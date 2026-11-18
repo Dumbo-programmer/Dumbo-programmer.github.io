@@ -48,20 +48,32 @@ const TabbedPortfolio = () => {
   const [active, setActive] = useState<TabId>(DEFAULT_TAB);
   const tabRefs = useRef<Partial<Record<TabId, HTMLButtonElement | null>>>({});
 
-  useEffect(() => {
-    const initial = tabFromHash(window.location.hash);
-    setActive(initial);
-    if (initial !== DEFAULT_TAB) {
-      window.requestAnimationFrame(() => {
-        document
-          .getElementById(`panel-${initial}`)
-          ?.scrollIntoView({ block: "start" });
-      });
-    }
+  const scrollToHashTarget = useCallback((hash: string) => {
+    const id = hash.replace(/^#/, "");
+    if (!id) return;
+    window.requestAnimationFrame(() => {
+      const target =
+        document.getElementById(id) ??
+        document.getElementById(`panel-${tabFromHash(hash)}`);
+      target?.scrollIntoView({ block: "start" });
+    });
   }, []);
 
   useEffect(() => {
-    const syncFromHash = () => setActive(tabFromHash(window.location.hash));
+    const initialHash = window.location.hash;
+    const initial = tabFromHash(initialHash);
+    setActive(initial);
+    if (initial !== DEFAULT_TAB) {
+      scrollToHashTarget(initialHash);
+    }
+  }, [scrollToHashTarget]);
+
+  useEffect(() => {
+    const syncFromHash = () => {
+      const hash = window.location.hash;
+      setActive(tabFromHash(hash));
+      if (hash) scrollToHashTarget(hash);
+    };
     const onTabRequest = (event: Event) => {
       const detail = (event as CustomEvent<TabNavigationDetail>).detail;
       setActive(detail.tab);
@@ -76,7 +88,7 @@ const TabbedPortfolio = () => {
       window.removeEventListener("popstate", onPopState);
       window.removeEventListener(TAB_EVENT, onTabRequest);
     };
-  }, []);
+  }, [scrollToHashTarget]);
 
   const selectTab = useCallback((tab: TabId, shouldScroll = false) => {
     setActive(tab);

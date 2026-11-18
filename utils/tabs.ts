@@ -38,6 +38,7 @@ const HASH_ALIASES: Record<string, TabId> = {
 
 export function tabFromHash(hash: string): TabId {
   const key = hash.replace(/^#/, "").trim().toLowerCase();
+  if (key.startsWith("writing-")) return "writing";
   return HASH_ALIASES[key] ?? DEFAULT_TAB;
 }
 

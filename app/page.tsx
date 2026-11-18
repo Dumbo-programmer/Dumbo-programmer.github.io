@@ -395,6 +395,7 @@ export default function Home() {
     "inLanguage": "en",
     "isPartOf": { "@id": "https://tawhid.is-a.dev/#website" },
     "mainEntity": { "@id": "https://tawhid.is-a.dev/#person" },
+    "hasPart": [{ "@id": "https://tawhid.is-a.dev/#writing-works" }],
     "about": { "@id": "https://tawhid.is-a.dev/#person" },
     "creator": { "@id": "https://tawhid.is-a.dev/#person" },
     "author": { "@id": "https://tawhid.is-a.dev/#person" },

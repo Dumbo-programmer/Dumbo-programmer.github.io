@@ -12,6 +12,36 @@
   font-family: "Noto Sans Bengali", "SolaimanLipi", sans-serif;
   line-height: 2.1;
 }
+.hero-video {
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 42%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.85) 40%,
+    rgba(0, 0, 0, 0) 82%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 42%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.85) 40%,
+    rgba(0, 0, 0, 0) 82%
+  );
+}
+.hero-video-fade {
+  background:
+    linear-gradient(
+      to bottom,
+      #030014 0%,
+      rgba(3, 0, 20, 0) 18%,
+      rgba(3, 0, 20, 0) 78%,
+      #030014 100%
+    ),
+    radial-gradient(
+      ellipse 75% 70% at 50% 45%,
+      rgba(3, 0, 20, 0) 25%,
+      #030014 100%
+    );
+}
 .Welcome-text {
   background: linear-gradient(
       0deg,
