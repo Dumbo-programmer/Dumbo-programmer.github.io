@@ -6,7 +6,7 @@ const educationData = [
   { year: "2023", content: "Completed CS50 and various bootcamps" },
   { year: "2025", content: "Finished Sophomore year with an unweighted CGPA 4" },
   { year: "2026", content: "Completed Stanford Code In Place" },
-  { year: "2027", content: "Expected to graduate highschool" },
+  { year: "2027", content: "Expected to graduate high school" },
 ];
 
 const EducationTimeline = () => {

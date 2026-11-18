@@ -9,7 +9,9 @@ interface StatCardsProps {
 }
 
 const CountUp = ({ value, prefix, suffix, duration = 2000 }: { value: number; prefix?: string; suffix: string; duration?: number }) => {
-  const [count, setCount] = useState(0);
+  // Render the real value during SSR and hydration; animate only after the
+  // card enters view so no-JS/ crawlers never see a "0+" placeholder.
+  const [count, setCount] = useState(value);
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -20,6 +22,8 @@ const CountUp = ({ value, prefix, suffix, duration = 2000 }: { value: number; pr
     const end = value;
     const increment = end / (duration / 16);
     let timer: ReturnType<typeof requestAnimationFrame>;
+
+    setCount(0);
 
     const step = () => {
       start += increment;

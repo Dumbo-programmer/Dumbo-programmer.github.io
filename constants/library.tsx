@@ -194,11 +194,13 @@ const countByType = (type: ResourceType) =>
     0
   );
 
+export const publishedProblemSetCount = countByType("problem-set");
+
 export const platformStats = [
-  { label: "Problems", value: countByType("problem-set"), icon: <FaCalculator /> },
+  { label: "Published problem sets", value: publishedProblemSetCount, icon: <FaCalculator /> },
   { label: "Articles", value: countByType("article"), icon: <FaPenFancy /> },
   { label: "Handouts", value: countByType("handout") + countByType("notes"), icon: <FaBookOpen /> },
   { label: "Research", value: countByType("research"), icon: <FaFlask /> },
   { label: "Books", value: countByType("book"), icon: <FaBook /> },
-  { label: "Contributors", value: 1, icon: <FaUsers /> },
+  { label: "Library contributors", value: 1, icon: <FaUsers /> },
 ];

@@ -1,25 +1,35 @@
 "use client";
+
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { animate, motion, useMotionValue } from "framer-motion";
 
-const certificates = [
-  "bdoaawin.png",
-  "bdoc.png",
-  "blueocean.png",
-  "cip.png",
-  "conrad.png",
-  "cr.png",
-  "iaac_hon.png",
-  "iymc.png",
-  "kaipho.png",
-  "nasac.png",
-  "pb177.png",
-  "pb29.png",
-  "pf_cert.png",
-  "phiga.png",
-  "qcwc.png",
-  "poet.png",
+interface Certificate {
+  file: string;
+  title: string;
+  caption: string;
+}
+
+const knownCertificates: Certificate[] = [
+  { file: "bdoaawin.png", title: "BDOAA Astronomy Olympiad", caption: "Bangladesh Olympiad on Astronomy and Astrophysics award" },
+  { file: "bdoc.png", title: "BDOC Chemistry Olympiad", caption: "Chemistry Olympiad finalist certificate" },
+  { file: "blueocean.png", title: "Blue Ocean Challenge", caption: "Blue Ocean Challenge participation certificate" },
+  { file: "cip.png", title: "Code in Place", caption: "Stanford Code in Place completion certificate" },
+  { file: "conrad.png", title: "Conrad Challenge", caption: "Conrad Challenge participation certificate" },
+  { file: "cr.png", title: "Certificate of Recognition", caption: "Recognition certificate from Tawhid’s archive" },
+  { file: "iaac_hon.png", title: "IAAC Honorable Mention", caption: "International Astronomy and Astrophysics Competition honour" },
+  { file: "iymc.png", title: "IYMC Certificate", caption: "International Youth Math Challenge certificate" },
+  { file: "kaipho.png", title: "KAIPHO Silver Diploma", caption: "Kazan National Research Technical University silver diploma" },
+  { file: "nasac.png", title: "NASA Space Apps Challenge", caption: "NASA Space Apps Challenge participation certificate" },
+  { file: "pb177.png", title: "Physics Brawl", caption: "International Physics Brawl certificate" },
+  { file: "pb29.png", title: "Physics Brawl — Top 29 Team", caption: "29th place out of 1,584 international teams" },
+  { file: "pf_cert.png", title: "Programme Certificate", caption: "Programme completion certificate from Tawhid’s archive" },
+  { file: "phiga.png", title: "PHIGA #1 Worldwide", caption: "1st place out of 1,211 participants worldwide" },
+  { file: "qcwc.png", title: "Queen’s Commonwealth Essay Competition", caption: "Silver Award out of 53,840 entries" },
+  { file: "poet.png", title: "Poetry Society Recognition", caption: "Recognition for poetry writing" },
+];
+
+const archivedFiles = [
   "image copy 10.png",
   "image copy 11.png",
   "image copy 12.png",
@@ -45,6 +55,16 @@ const certificates = [
   "image copy.png",
   "image.png",
 ];
+
+const archivedCertificates: Certificate[] = archivedFiles.map((file) => ({
+  file,
+  title: file === "image.png" || file === "image copy.png"
+    ? "Additional certificate"
+    : `Additional certificate ${file.replace(/image copy\s?/i, "").replace(/\.png$/i, "")}`,
+  caption: "Additional certificate from Tawhid Bin Omar’s archive.",
+}));
+
+const certificates: Certificate[] = [...knownCertificates, ...archivedCertificates];
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(Math.max(value, min), max);
@@ -93,7 +113,7 @@ const CertificateCarousel = () => {
   }, [limit, step, x]);
 
   return (
-    <div className="w-full flex flex-col items-center py-10">
+    <div className="w-full flex flex-col items-center py-6">
       <div
         ref={viewport}
         className="overflow-hidden"
@@ -108,26 +128,38 @@ const CertificateCarousel = () => {
           style={{ x }}
           className="flex list-none p-0 m-0 cursor-grab active:cursor-grabbing touch-pan-y select-none"
         >
-          {certificates.map((file) => (
+          {certificates.map((certificate) => (
             <li
-              key={file}
-              className="shrink-0 w-[250px] h-[200px] m-2 flex items-center justify-center overflow-hidden rounded-lg border border-[#2A0E61] bg-black/50 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6]"
+              key={certificate.file}
+              className="shrink-0 w-[250px] m-2 overflow-hidden rounded-lg border border-[#2A0E61] bg-black/50 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6]"
             >
-              <Image
-                src={`/certis/${file}`}
-                alt={file.replace(/\.[^.]+$/, "").replace(/[_-]/g, " ")}
-                width={250}
-                height={200}
-                className="object-contain max-h-full max-w-full"
-                draggable={false}
-                loading="lazy"
-              />
+              <figure className="flex flex-col h-full">
+                <div className="h-[200px] w-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src={`/certis/${certificate.file}`}
+                    alt={`${certificate.title} — certificate earned by Tawhid Bin Omar`}
+                    width={250}
+                    height={200}
+                    className="object-contain max-h-full max-w-full"
+                    draggable={false}
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption className="px-3 py-3 border-t border-[#2A0E61] bg-white/[0.03]">
+                  <p className="text-sm font-semibold text-white leading-tight">
+                    {certificate.title}
+                  </p>
+                  <p className="text-[11px] text-gray-400 mt-1 leading-snug">
+                    {certificate.caption}
+                  </p>
+                </figcaption>
+              </figure>
             </li>
           ))}
         </motion.ul>
       </div>
 
-      <div className="flex gap-4 mt-10">
+      <div className="flex gap-4 mt-8">
         <CarouselButton direction={-1} onClick={() => scrollBy(-1)} />
         <CarouselButton direction={1} onClick={() => scrollBy(1)} />
       </div>

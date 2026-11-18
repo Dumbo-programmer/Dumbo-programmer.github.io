@@ -9,13 +9,17 @@ import {
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { requestTab } from "@/utils/tabs";
+
+const proofPoints =
+  "National Physics Olympiad champion · Published researcher · 15k+ Rust downloads · Founder of an open STEM library serving 700+ students";
 
 const HeroContent = () => {
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col lg:flex-row items-center justify-center px-5 sm:px-10 md:px-20 mt-24 sm:mt-28 md:mt-40 w-full z-[20]"
+      className="flex flex-col lg:flex-row items-center justify-center gap-12 px-5 sm:px-10 md:px-20 mt-28 sm:mt-32 md:mt-36 w-full z-[20]"
     >
       <div className="h-full w-full min-w-0 flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
@@ -25,48 +29,35 @@ const HeroContent = () => {
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5 shrink-0" />
-          <p className="Welcome-text text-[12px] sm:text-[13px] text-center min-w-0">Physics &bull; Number Theory &bull; Competitive Programming &bull; STEM</p>
+          <p className="Welcome-text text-[12px] sm:text-[13px] text-center min-w-0">
+            Physics &bull; Number Theory &bull; Competitive Programming &bull; STEM
+          </p>
         </motion.div>
 
         <motion.div
           variants={slideInFromLeft(0.5)}
           initial="hidden"
           animate="visible"
-          className="flex flex-col gap-6 mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-4 mt-4 text-4xl sm:text-5xl md:text-6xl font-bold text-white max-w-[650px]"
         >
           <h1 id="hero-heading" className="m-0">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               Tawhid
-            </span>
-            {" "}Bin Omar
+            </span>{" "}
+            Bin Omar
           </h1>
+          <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-200 leading-snug">
+            I turn hard problems into free learning infrastructure.
+          </p>
         </motion.div>
 
         <motion.p
           variants={slideInFromLeft(0.8)}
           initial="hidden"
           animate="visible"
-          className="text-sm sm:text-base md:text-lg text-gray-300 my-5 max-w-[600px] leading-relaxed"
+          className="text-sm sm:text-base md:text-lg text-gray-300 max-w-[650px] leading-relaxed"
         >
-          I&apos;m curious about the fundamental questions of physics and number theory, and enjoy the logical precision of competitive programming. I like exploring problems that connect abstract theory with practical solutions.
-        </motion.p>
-
-        <motion.p
-          variants={slideInFromLeft(0.9)}
-          initial="hidden"
-          animate="visible"
-          className="text-sm sm:text-base md:text-lg text-gray-300 my-5 max-w-[600px] leading-relaxed"
-        >
-          Through the Open Problem Solving Library, Olympiads mentorship, and personal projects, I aim to make high-quality STEM learning accessible to students in Bangladesh. My goal is to help build free, practical resources that lower barriers to opportunity.
-        </motion.p>
-
-        <motion.p
-          variants={slideInFromLeft(1)}
-          initial="hidden"
-          animate="visible"
-          className="text-sm sm:text-base md:text-lg text-gray-300 my-5 max-w-[600px]"
-        >
-          I&apos;m focused on solving meaningful problems and sharing what I learn along the way.
+          {proofPoints}
         </motion.p>
 
         <motion.div
@@ -75,12 +66,20 @@ const HeroContent = () => {
           animate="visible"
           className="flex gap-4 flex-wrap"
         >
-          <a
-            href="#projects"
-            className="py-2 px-4 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] text-sm sm:text-base"
+          <button
+            type="button"
+            onClick={() => requestTab("projects", { scroll: true })}
+            className="py-2.5 px-6 button-primary text-center text-white cursor-pointer rounded-lg text-sm sm:text-base border border-[#7042f8]/30 hover:border-[#7042f8]/60 transition"
           >
             See What I Build
-          </a>
+          </button>
+          <button
+            type="button"
+            onClick={() => requestTab("contact", { scroll: true })}
+            className="py-2.5 px-6 text-center text-gray-200 cursor-pointer rounded-lg text-sm sm:text-base border border-[#2A0E61] bg-white/5 hover:text-white hover:border-cyan-400/50 hover:bg-white/10 transition"
+          >
+            Resume &amp; Contact
+          </button>
         </motion.div>
       </div>
 
@@ -88,15 +87,20 @@ const HeroContent = () => {
         variants={slideInFromRight(0.8)}
         initial="hidden"
         animate="visible"
-        className="w-full h-full hidden lg:flex justify-center items-center"
+        className="w-full lg:w-auto flex justify-center items-center"
       >
-        <Image
-          src="/mainIconsdark.svg"
-          alt="Technology and development icons illustration"
-          height={650}
-          width={650}
-          priority
-        />
+        <div className="relative w-[220px] sm:w-[280px] lg:w-[340px]">
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-500/30 to-cyan-500/20 blur-2xl" />
+          <Image
+            src="/perimg/tawhid-bin-omar-headshot.png"
+            alt="Portrait of Tawhid Bin Omar"
+            width={1024}
+            height={1536}
+            priority
+            sizes="(max-width: 640px) 220px, (max-width: 1024px) 280px, 340px"
+            className="relative w-full h-auto max-h-[440px] object-cover object-top rounded-2xl border border-[#7042f8]/40 shadow-[0_0_45px_#7042f850]"
+          />
+        </div>
       </motion.div>
     </motion.div>
   );

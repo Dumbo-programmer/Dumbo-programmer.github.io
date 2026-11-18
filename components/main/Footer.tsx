@@ -3,18 +3,16 @@ import {
   RxDiscordLogo,
   RxGithubLogo,
   RxInstagramLogo,
-  RxTwitterLogo,
   RxLinkedinLogo,
+  RxTwitterLogo,
 } from "react-icons/rx";
-import { FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-<footer className="relative z-[10] bg-transparent text-gray-200 shadow-lg p-5">
-<div className="w-full flex flex-col items-center justify-center">
-        <div className="w-full flex flex-row items-center justify-around flex-wrap">
-          
-          {/* Community Section */}
+    <footer className="relative z-[10] bg-transparent text-gray-200 shadow-lg p-5">
+      <div className="w-full flex flex-col items-center justify-center">
+        <div className="w-full flex flex-row items-center justify-around flex-wrap gap-8">
           <div className="min-w-[200px] flex flex-col items-center">
             <div className="font-bold text-lg">Community</div>
             <a
@@ -47,9 +45,17 @@ const Footer = () => {
             </a>
           </div>
 
-          {/* Social Media Section */}
           <div className="min-w-[200px] flex flex-col items-center">
             <div className="font-bold text-lg">Social Media</div>
+            <a
+              href="https://www.facebook.com/tawhiddayo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center my-2 cursor-pointer hover:text-blue-400 transition"
+            >
+              <FaFacebook size={20} />
+              <span className="ml-2">Facebook</span>
+            </a>
             <a
               href="https://www.instagram.com/acutepierce"
               target="_blank"
@@ -88,33 +94,8 @@ const Footer = () => {
             </a>
           </div>
 
-          {/* About Section */}
           <div className="min-w-[200px] flex flex-col items-center">
-            <div className="font-bold text-lg">Portfolio</div>
-            <a
-              href="/#about-me"
-              className="flex items-center my-2 cursor-pointer hover:text-purple-400 transition"
-            >
-              <span className="ml-2">About Me</span>
-            </a>
-            <a
-              href="/#projects"
-              className="flex items-center my-2 cursor-pointer hover:text-purple-400 transition"
-            >
-              <span className="ml-2">Projects</span>
-            </a>
-            <a
-              href="/#achievements"
-              className="flex items-center my-2 cursor-pointer hover:text-purple-400 transition"
-            >
-              <span className="ml-2">Achievements</span>
-            </a>
-            <a
-              href="/#education-impact"
-              className="flex items-center my-2 cursor-pointer hover:text-purple-400 transition"
-            >
-              <span className="ml-2">Education Impact</span>
-            </a>
+            <div className="font-bold text-lg">Resources</div>
             <a
               href="/notes"
               className="flex items-center my-2 cursor-pointer hover:text-purple-400 transition"
@@ -123,7 +104,6 @@ const Footer = () => {
             </a>
           </div>
 
-          {/* Contact Section */}
           <div className="min-w-[200px] flex flex-col items-center">
             <div className="font-bold text-lg">Contact</div>
             <address className="not-italic flex flex-col items-center">
@@ -150,7 +130,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Text */}
         <div className="mt-5 text-sm text-center">
           &copy; {new Date().getFullYear()} Tawhid Bin Omar. All rights reserved.
         </div>

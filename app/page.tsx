@@ -1,64 +1,16 @@
 // app/page.tsx
 
-import dynamic from "next/dynamic";
 import Hero from "@/components/main/Hero";
-import SeoImageLayer from "@/components/main/SeoImageLayer";
-import Skills from "@/components/main/Skills";
-import Achievements from "@/components/main/Achievements";
-import Projects from "@/components/main/Projects";
-import EducationImpactSection from "@/components/main/EducationImpactSection";
-import Research from "@/components/main/Research";
-import LibrarySection from "@/components/main/LibrarySection";
 import LoadingScreen from "@/components/main/LoadingScreen";
-
-const WIP = dynamic(() => import('@/components/main/WIP'), { ssr: false });
+import TabbedPortfolio from "@/components/main/TabbedPortfolio";
 
 import type { Metadata } from "next";
 import { allPhotos } from "@/constants/gallery";
 
 export const metadata: Metadata = {
-  title: "Tawhid Bin Omar — Physics, Number Theory, Competitive Programming & STEM Education",
-  description: "Aspiring physicist, number theory enthusiast, and competitive programmer building STEM education infrastructure in Bangladesh. Creator of the Open Problem Solving Library — free open-access problem solving resources, Olympiad training programs, and assistive robotics. Physics Olympiad champion (BdPhO National, PHIGA #1 worldwide). Driven by a deep curiosity about how the universe works and the belief that a student's zip code should not determine their educational outcome.",
-  keywords: [
-    "Open Problem Solving Library", "Bangladesh STEM Education", "Free Educational Resources",
-    "Olympiad Mathematics", "Olympiad Physics", "Olympiad Programming",
-    "STEM Education Bangladesh", "Open Educational Resources", "Bangladesh Mathematics",
-    "Problem Solving", "Free Math Books", "Free Physics Notes",
-    "Teacher Resources Bangladesh", "Bangla STEM", "Open Textbooks",
-    "Mathematics Library", "Physics Library", "Programming Library",
-    "Computational Thinking", "Creative Problem Solving", "Critical Thinking",
-    "Education Reform Bangladesh", "Student Research",
-    "Tawhid Bin Omar", "Dumbo-programmer", "Tawhid",
-    "Tawhid Bin Omar photos", "Tawhid Bin Omar images", "Tawhid Bin Omar picture",
-    "full stack developer", "game developer", "physicist", "robotics engineer",
-    "Rust libraries", "Rust algorithms", "Rust statistics library", "Rust README generator",
-    "Crates.io", "Rust crates", "Algod Rust", "statify Rust", "Rust data structures",
-    "Prothom Alo Gonit Ishkul", "Prothom Alo Math School", "Gonit Ishkul",
-    "math problem solving platform", "online math practice", "auto-gradable math problems",
-    "Bangla math platform", "bilingual math education", "math contest platform",
-    "Pyxl Chronicles", "Team Nokkhotropoth", "Ongko", "PlayNux", "Vocal Guard",
-    "Bangladesh Physics Olympiad", "BdPhO", "PHIGA", "Physics Olympiad",
-    "competitive programming", "algorithms", "data structures",
-    "React", "Next.js", "TypeScript", "Python", "C++", "Unity",
-    "open source", "STEM education", "education technology",
-    "Bangladesh education", "free learning resources",
-    "math olympiad training", "physics olympiad notes",
-    "Bangla STEM education", "Olympiad preparation Bangladesh",
-    "STEM education", "problem solving", "open educational resources",
-    "Olympiad preparation", "teacher resources", "computational thinking",
-    "education in Bangladesh", "mathematics education", "physics education",
-    "programming education", "student research", "Bangladesh problem solving",
-    "Josephite Math Club", "Josephite Math Club President",
-    "Josephite Math Mania", "8th Josephite Math Mania", "Math Mania Bangladesh",
-    "Math Mania 5000 participants", "national math events",
-    "Vice President Head of Academics Math Club",
-    "Code in Place", "Stanford Code in Place",
-    "Conrad Challenge", "Blue Ocean Challenge",
-    "Green Challenge", "NASA Space Apps", "NASA Space Apps Challenge",
-    "BDOC", "BDOC chemistry olympiad", "BDOC finalist",
-    "KAIPHO", "Kazan National Research Technical University",
-    "KAIPHO silver diploma", "Queen's Commonwealth Writing Competition", "QCWC", "QCWC 2026", "Queen's Commonwealth Writing Competition 2026 Silver Award", "Poetry Society", "Poetry Society recognition",
-  ],
+  title: "Tawhid Bin Omar — Physicist, Rust & STEM Educator",
+  description:
+    "Physics Olympiad champion, published researcher, and STEM educator building free problem-solving resources for 700+ students in Bangladesh.",
   authors: [{ name: "Tawhid Bin Omar", url: "https://tawhid.is-a.dev" }],
   metadataBase: new URL("https://tawhid.is-a.dev"),
   alternates: {
@@ -76,8 +28,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Tawhid Bin Omar — Physics, Number Theory, Competitive Programming & STEM Education",
-    description: "Aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Creator of the Open Problem Solving Library. Physics Olympiad champion (BdPhO National, PHIGA #1 worldwide). Free STEM education resources for Bangladesh: mathematics, physics, competitive programming, and astronomy.",
+    title: "Tawhid Bin Omar — Physicist, Rust & STEM Educator",
+    description:
+      "Physics Olympiad champion, published researcher, and STEM educator building free learning resources in Bangladesh.",
     url: "https://tawhid.is-a.dev",
     siteName: "Tawhid Bin Omar — Open Problem Solving Library",
     images: [
@@ -85,7 +38,7 @@ export const metadata: Metadata = {
         url: "https://tawhid.is-a.dev/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Tawhid Bin Omar — Aspiring physicist, Avid Problem Solver, Robotics Enthusiast",
+        alt: "Tawhid Bin Omar — portfolio",
       },
     ],
     locale: "en_US",
@@ -94,8 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tawhid Bin Omar — Physics, Number Theory, Competitive Programming & STEM Education",
-    description: "Aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Creator of the Open Problem Solving Library. Physics Olympiad champion. Free STEM education resources for Bangladesh.",
+    title: "Tawhid Bin Omar — Physicist, Rust & STEM Educator",
+    description:
+      "Physics Olympiad champion, published researcher, and STEM educator building free learning resources in Bangladesh.",
     images: ["https://tawhid.is-a.dev/og-image.png"],
     creator: "@tawhid_omar",
   },
@@ -207,7 +161,7 @@ export default function Home() {
       {
         "@type": "Organization",
         "name": "St. Joseph Higher Secondary School Math Club",
-        "url": "https://tawhid.is-a.dev/#education-impact",
+        "url": "https://tawhid.is-a.dev/#notes",
         "description": "President (2026-2027) and Vice President & Head of Academics (2024-2025). Organized the 8th Josephite Math Mania, one of the biggest national math events in the country with over 5000 participants and 22 events, and helped host over 6 national math events."
       },
       {
@@ -222,7 +176,7 @@ export default function Home() {
       {
         "@type": "Organization",
         "name": "Scintilla Science Club",
-        "url": "https://tawhid.is-a.dev/#education-impact"
+        "url": "https://tawhid.is-a.dev/#notes"
       }
     ],
     "knowsAbout": [
@@ -261,7 +215,7 @@ export default function Home() {
       {
         "@type": "Award",
         "name": "Bangladesh Physics Olympiad — National Champion",
-        "description": "2x regional champion, 2x nationalist, 1x national champion, IPHO national camper"
+        "description": "2× regional champion · 2× national finalist · 1× national champion · IPhO national camp selection"
       },
       {
         "@type": "Award",
@@ -348,21 +302,21 @@ export default function Home() {
         "@type": "Organization",
         "name": "Pyxl Chronicles",
         "url": "https://pyxl-chronicles.itch.io",
-        "description": "Lead Game Developer: Led a 6-developer studio to design and launch an indie horror game with 230+ early players. Built a custom game engine combining 2D mechanics with realistic 3D visuals, implementing AI systems, procedural content generation, and performance-optimized rendering. Improved performance by 50-80% through custom optimization strategies. Managed the full development pipeline—80+ builds, 200+ commits, CI/CD automation, profiling, and cross-platform deployment (Windows/Linux). Leveraged the engine to create 4 additional trending Android games with more than 10k+ active players.",
+        "description": "Lead Game Developer: Led a 6-developer studio to design and launch an indie horror game with 230+ early players. Built a custom game engine combining 2D mechanics with realistic 3D visuals, implementing AI systems, procedural content generation, and performance-optimized rendering. Improved performance by 50-80% through custom optimization strategies. Managed the full development pipeline—80+ builds, 200+ commits, CI/CD automation, profiling, and cross-platform deployment (Windows/Linux). Leveraged the engine to create 4 additional trending Android games with 10k+ active players combined.",
         "keywords": "indie horror, custom game engine, procedural generation, AI systems, performance optimization, CI/CD, cross-platform, Android games, Unity, C#, game development"
       },
       {
         "@type": "Organization",
         "name": "Team Nokkhotropoth",
         "url": "#",
-        "description": "Mechanical Engineering Department Lead & Robotics-for-Good co-founder: Co-founded and co-led a 4-member R&D team (robotics-for-good) tackling accessibility, healthcare, and disaster response in underdeveloped regions. Designed and deployed 10-15 autonomous assistive systems, including robotic canes, HUD captioning glasses, spatial-audio hearing aids, and communication wearables. Led system integration, testing, documentation, and alignment with UN Sustainable Development Goals.",
+        "description": "Mechanical Engineering Department Lead & Robotics-for-Good co-founder: Co-founded and co-led a 4-member R&D team (robotics-for-good) tackling accessibility, healthcare, and disaster response in underdeveloped regions. Designed and deployed 10+ autonomous assistive systems, including robotic canes, HUD captioning glasses, spatial-audio hearing aids, and communication wearables. Led system integration, testing, documentation, and alignment with UN Sustainable Development Goals.",
         "keywords": "robotics-for-good, assistive systems, autonomous systems, UAV, mechatronics, embedded systems, UN SDG, accessibility, healthcare robotics, disaster response"
       },
       {
         "@type": "Organization",
         "name": "Ongko",
         "url": "#",
-        "description": "Academic team member contributing to educational initiatives, math olympiad preparation, physics olympiad training, and academic excellence programs.",
+        "description": "Academic team member supporting mathematics and physics Olympiad preparation and academic excellence programs across multiple cohorts.",
         "keywords": "education, math olympiad, physics olympiad, academic excellence"
       },
       {
@@ -452,11 +406,12 @@ export default function Home() {
     "name": "Main Navigation",
     "url": "https://tawhid.is-a.dev",
     "about": [
-      { "name": "About", "url": "https://tawhid.is-a.dev/#about-me" },
-      { "name": "Skills", "url": "https://tawhid.is-a.dev/#skills" },
       { "name": "Projects", "url": "https://tawhid.is-a.dev/#projects" },
-      { "name": "Current Roles", "url": "https://tawhid.is-a.dev/#current-roles" },
-      { "name": "Education Impact", "url": "https://tawhid.is-a.dev/#education-impact" },
+      { "name": "Roles", "url": "https://tawhid.is-a.dev/#roles" },
+      { "name": "Notes", "url": "https://tawhid.is-a.dev/#notes" },
+      { "name": "Certificates", "url": "https://tawhid.is-a.dev/#certificates" },
+      { "name": "Writing", "url": "https://tawhid.is-a.dev/#writing" },
+      { "name": "Contact", "url": "https://tawhid.is-a.dev/#contact" },
       { "name": "Library", "url": "https://tawhid.is-a.dev/notes" }
     ]
   };
@@ -467,8 +422,9 @@ export default function Home() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tawhid.is-a.dev" },
       { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://tawhid.is-a.dev/#projects" },
-      { "@type": "ListItem", "position": 3, "name": "Education Impact", "item": "https://tawhid.is-a.dev/#education-impact" },
-      { "@type": "ListItem", "position": 4, "name": "Current Roles", "item": "https://tawhid.is-a.dev/#current-roles" }
+      { "@type": "ListItem", "position": 3, "name": "Roles", "item": "https://tawhid.is-a.dev/#roles" },
+      { "@type": "ListItem", "position": 4, "name": "Notes", "item": "https://tawhid.is-a.dev/#notes" },
+      { "@type": "ListItem", "position": 5, "name": "Writing", "item": "https://tawhid.is-a.dev/#writing" }
     ]
   };
 
@@ -526,7 +482,7 @@ export default function Home() {
         "@type": "CreativeWork",
         "position": 6,
         "name": "Team Nokkhotropoth Robotics",
-        "description": "Robotics-for-good R&D team building 10-15 autonomous assistive systems: robotic canes, HUD glasses, spatial-audio hearing aids, communication wearables aligned with UN SDGs.",
+        "description": "Robotics-for-good R&D team building 10+ autonomous assistive systems: robotic canes, HUD glasses, spatial-audio hearing aids, communication wearables aligned with UN SDGs.",
         "url": "#",
         "keywords": "robotics-for-good, assistive systems, autonomous systems, UAV, mechatronics, UN SDG, accessibility, healthcare",
         "creator": { "@type": "Person", "name": "Tawhid Bin Omar", "url": "https://tawhid.is-a.dev" }
@@ -623,16 +579,10 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-10">
         <LoadingScreen />
         <Hero />
-        <SeoImageLayer />
-        <Skills />
-        <Achievements />
-        <Projects />
-        <Research />
-        <EducationImpactSection />
-        <LibrarySection />
+        <TabbedPortfolio />
       </div>
     </main>
   );

@@ -6,125 +6,60 @@ import { slideInFromTop } from "@/utils/motion";
 import {
   sectionTitle,
   sectionSubtitle,
-  gallerySlides,
   statistics,
   timelineEntries,
   initiatives,
 } from "@/constants/education";
-import GalleryCarousel from "@/components/sub/GalleryCarousel";
 import StatCards from "@/components/sub/StatCards";
 import ImpactTimeline from "@/components/sub/ImpactTimeline";
 import InitiativeCards from "@/components/sub/InitiativeCards";
-import MissionCard from "@/components/sub/MissionCard";
-import VisionCard from "@/components/sub/VisionCard";
-import JoinMission from "@/components/sub/JoinMission";
 
 const EducationImpactSection = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Person",
-        "@id": "https://tawhid.is-a.dev/#person",
-        "name": "Tawhid Bin Omar",
-        "alternateName": ["Tawhid", "Ren", "Dumbo-programmer"],
-        "url": "https://tawhid.is-a.dev",
-        "image": "https://tawhid.is-a.dev/tawhid.png",
-        "jobTitle": [
-          "STEM Educator",
-          "Full Stack Developer",
-          "Physics Olympiad Champion",
-          "President of St. Joseph Higher Secondary School Math Club",
-        ],
-        "description":
-          "Tawhid Bin Omar — Bangladesh STEM educator, President of St. Joseph Higher Secondary School Math Club, Physics Olympiad champion (BdPhO National Champion, PHIGA #1 worldwide), creator of the Open Problem Solving Library. Teaching mathematics, programming, and physics through workshops, literacy school outreach, Olympiad mentoring, and open educational resources across Dhaka, Bangladesh.",
-        "knowsAbout": [
-          "STEM Education Bangladesh",
-          "Mathematics Olympiad Training",
-          "Physics Olympiad Training",
-          "Competitive Programming Education",
-          "Problem Solving Pedagogy",
-          "Open Educational Resources",
-          "Bangladesh Education",
-          "Teacher Training",
-          "Curriculum Development",
-        ],
-        "alumniOf": [
-          { "@type": "EducationalOrganization", "name": "St. Joseph Higher Secondary School", "@id": "https://tawhid.is-a.dev/#st-joseph" },
-          { "@type": "EducationalOrganization", "name": "St. Joseph Literacy School", "@id": "https://tawhid.is-a.dev/#literacy-school" },
-        ],
-        "affiliation": [
-          { "@type": "Organization", "name": "Bangladesh Physics Olympiad (BdPhO)" },
-          { "@type": "Organization", "name": "PHIGA International Physics Competition" },
-        ],
-        "sameAs": [
-          "https://github.com/Dumbo-programmer",
-          "https://www.linkedin.com/in/tawhidbinomar/",
-          "https://www.facebook.com/tawhiddayo/",
-          "https://instagram.com/acutepierce",
-          "https://leetcode.com/u/Dumbo-programmer/",
-          "https://codeforces.com/profile/Dumbo-programmer",
-        ],
-      },
-      {
-        "@type": "EducationalOrganization",
+        "@type": "Organization",
         "@id": "https://tawhid.is-a.dev/#math-club",
-        "name": "St. Joseph Higher Secondary School Math Club",
+        "name": "Josephite Math Club",
         "description":
-          "Mathematics and programming club at St. Joseph Higher Secondary School in Dhaka, Bangladesh, led by President Tawhid Bin Omar (2026-2027), who previously served as Vice President & Head of Academics (2024-2025). Organizes Math Bootcamp, problem-solving workshops, Olympiad training, and inter-school math competitions. Under his leadership the club hosted the 8th Josephite Math Mania, one of the biggest national math events in the country with over 5000 participants and 22 events, and over 6 national math events.",
-        "url": "https://tawhid.is-a.dev/#education-impact",
-        "founder": { "@id": "https://tawhid.is-a.dev/#person" },
-        "memberOf": { "@type": "Organization", "name": "St. Joseph Higher Secondary School" },
-        "teaches": ["Mathematics", "Programming", "Problem Solving", "Physics"],
-        "audience": { "@type": "Audience", "audienceType": "Secondary School Students in Bangladesh" },
-        "location": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" } },
+          "Mathematics and programming club led by President Tawhid Bin Omar, serving 700+ students through workshops, Olympiad mentoring, and national contests.",
+        "url": "https://tawhid.is-a.dev/#roles",
       },
       {
         "@type": "ItemList",
-        "name": "STEM Education Initiatives by Tawhid Bin Omar",
-        "description":
-          "Current educational outreach initiatives led by Tawhid Bin Omar including literacy school STEM programs, programming workshops, mathematics workshops, Olympiad mentorship, the Open Problem Solving Library, Bangla educational articles, teacher resources, student research, free STEM handouts, and open educational resources.",
+        "name": "Core STEM education initiatives by Tawhid Bin Omar",
         "itemListElement": initiatives.map((initiative, i) => ({
           "@type": "EducationalOccupationalProgram",
           "position": i + 1,
           "name": initiative.title,
           "description": initiative.description,
           "provider": { "@id": "https://tawhid.is-a.dev/#person" },
-          "educationalProgramMode": "InPerson",
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BDT", "availability": "https://schema.org/InStock" },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "BDT",
+          },
         })),
       },
       {
         "@type": "ItemList",
-        "name": "Educational Outreach Timeline — Tawhid Bin Omar",
-        "description":
-          "Timeline of Tawhid Bin Omar's STEM education journey: from joining St. Joseph Higher Secondary School Math Club in 2022 to launching the Open Problem Solving Library and leading 40+ teaching sessions across Bangladesh.",
+        "name": "Educational outreach timeline — Tawhid Bin Omar",
         "itemListElement": timelineEntries.flatMap((entry) =>
           entry.items.map((item, i) => ({
             "@type": "CreativeWork",
             "position": i + 1,
             "name": `${entry.year}: ${item}`,
-            "dateCreated": entry.year.match(/^\d{4}$/) ? `${entry.year}-01-01` : undefined,
             "creator": { "@id": "https://tawhid.is-a.dev/#person" },
           }))
         ),
-      },
-      {
-        "@type": "BreadcrumbList",
-        "name": "Education Impact Section Breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tawhid.is-a.dev" },
-          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://tawhid.is-a.dev/#projects" },
-          { "@type": "ListItem", "position": 3, "name": sectionTitle, "item": "https://tawhid.is-a.dev/#education-impact" },
-          { "@type": "ListItem", "position": 4, "name": "Current Roles", "item": "https://tawhid.is-a.dev/#current-roles" },
-        ],
       },
     ],
   };
 
   return (
     <section
-      className="flex flex-col items-center justify-center py-20 w-full"
+      className="flex flex-col items-center justify-center py-4 w-full"
       id="education-impact"
       aria-labelledby="education-impact-heading"
     >
@@ -133,15 +68,11 @@ const EducationImpactSection = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <motion.div
-          variants={slideInFromTop}
-          className="text-center mb-16"
-        >
+      <div className="w-full max-w-6xl px-2 sm:px-4">
+        <motion.div variants={slideInFromTop} className="text-center mb-12">
           <h2
             id="education-impact-heading"
-            className="text-[32px] sm:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4"
+            className="text-[30px] sm:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-3"
           >
             {sectionTitle}
           </h2>
@@ -150,126 +81,52 @@ const EducationImpactSection = () => {
           </p>
         </motion.div>
 
-        {/* Hero Gallery */}
-        <div className="mb-20">
-          <GalleryCarousel slides={gallerySlides} autoPlayInterval={5500} />
-        </div>
-
-        {/* Story Section */}
-        <article className="mb-20" aria-label="Beyond the Classroom — STEM Education Story">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-8 text-center">
-              Beyond the Classroom — A STEM Education Journey in Bangladesh
-            </h3>
-            <div className="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed">
-              <p>
-               Why do I teach? Because in Bangladesh, a student&apos;s educational outcome is still largely determined
-                 by their postal code. A child in a Dhaka cantonment school has access to resources, trained
-                 teachers, and opportunities that a child in a rural literacy school does not. I believe that
-                 is a solvable problem.
-               </p>
-               <p>
-                  I designed the Math Bootcamp and the{" "}
-                  <a
-                    href="/notes"
-                    className="text-purple-300 hover:text-purple-200 underline decoration-purple-500/50 underline-offset-4 transition"
-                  >
-                    Open Problem Solving Library
-                  </a>{" "}
-                  to solve one specific
-                  problem: students in Bangladesh lack access to structured, high-quality problem-solving
-                  material that bridges the gap between school textbooks and Olympiad-level thinking. Every
-                  handout, every original problem, and every workshop is a piece of infrastructure designed
-                  to close that gap.
-               </p>
-              <p>
-                As President of the Josephite Math Club, I built programs that
-                serve over 700 students across Dhaka — not just those preparing for Olympiads, but also
-                students from under-resourced schools who attend our literacy program. The results are
-                measurable: students who could not attempt an unfamiliar problem six months ago are now
-                solving combinatorial proofs and writing code. That is the impact I care about.
-              </p>
-              <p>
-                In 2026 I organized the 8th Josephite Math Mania, one of the biggest national math
-                events in the country, with over 5000 participants and 22 events. Before that, as Vice
-                President &amp; Head of Academics (2024–2025), I helped host over 6 national math events.
-                I have also completed Code in Place, did the Conrad Challenge, Blue Ocean Challenge, NASA
-                Space Apps Challenge, and Green Challenge, was a finalist at the BDOC chemistry olympiad,
-                got a silver diploma at KAIPHO hosted by Kazan National Research Technical University,
-                received the Silver Award in the Queen&apos;s Commonwealth Writing Competition 2026 out of
-                53,840 people, and got recognition from the Poetry Society for writing poems.
-              </p>
-               <p>
-                  Through the{" "}
-                  <a
-                    href="/notes"
-                    className="text-purple-300 hover:text-purple-200 underline decoration-purple-500/50 underline-offset-4 transition"
-                  >
-                    Open Problem Solving Library
-                  </a>
-                  , I publish free, open-access educational resources
-                  in mathematics, physics, competitive programming, and astronomy — downloaded by students
-                  preparing for BdPhO, IOAA/BDOAA, national mathematics Olympiads, and anyone who simply wants to
-                  learn beyond their school syllabus. No paywall, no registration, no barriers.
-               </p>
-               <p>
-                 The long-term vision is to build an open educational ecosystem for Bangladesh where
-                 knowledge is freely available, where curiosity is encouraged, and where every student has
-                 the opportunity to become the next generation of problem solvers, scientists, and
-                 innovators that Bangladesh needs. That is why I build.
-               </p>
-            </div>
-          </motion.div>
+        <article className="max-w-4xl mx-auto mb-14" aria-label="Impact narrative">
+          <div className="rounded-2xl border border-[#2A0E61] bg-white/[0.04] backdrop-blur-md p-6 sm:p-8">
+            <p className="text-gray-300 text-sm sm:text-base leading-8">
+              I build learning infrastructure because a student’s postal code should not
+              decide what they can become. In Bangladesh, motivated students often lack
+              structured material between school textbooks and Olympiad-level thinking.
+              The{" "}
+              <a
+                href="/notes"
+                className="text-purple-300 hover:text-purple-200 underline decoration-purple-500/50 underline-offset-4 transition"
+              >
+                Open Problem Solving Library
+              </a>{" "}
+              is my answer: free handouts, problem sets, articles, and research in
+              mathematics, physics, programming, and astronomy. I have authored 1,000+
+              original problems across competitions and camps; the published library
+              currently holds 26 problem sets from one contributor. As President of the
+              Josephite Math Club, I lead programs serving 700+ students, mentor
+              Olympiad aspirants, and organize national contests including the 8th
+              Josephite Math Mania with 5,000+ participants. I measure impact not by
+              downloads, but by students who learn to attack unfamiliar problems with
+              confidence.
+            </p>
+          </div>
         </article>
 
-        {/* Statistics */}
-        <div className="mb-20">
-          <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-12 text-center">
-            Impact by the Numbers — STEM Education in Bangladesh
+        <div className="mb-14">
+          <h3 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-8 text-center">
+            Impact by the Numbers
           </h3>
           <StatCards statistics={statistics} />
         </div>
 
-        {/* Timeline */}
-        <div className="mb-20">
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-12 text-center"
-          >
-            The Journey So Far 
-          </motion.h3>
+        <div className="mb-14">
+          <h3 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-8 text-center">
+            The Journey So Far
+          </h3>
           <ImpactTimeline entries={timelineEntries} />
         </div>
 
-        {/* Current Initiatives */}
-        <section className="mb-20" aria-label="Current STEM education initiatives by Tawhid Bin Omar">
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-12 text-center"
-          >
-            Current Initiatives
-          </motion.h3>
+        <section aria-label="Core STEM initiatives">
+          <h3 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-8 text-center">
+            Core Initiatives
+          </h3>
           <InitiativeCards initiatives={initiatives} />
         </section>
-
-        {/* Mission + Vision side by side on large screens */}
-        <div className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <MissionCard />
-          <VisionCard />
-        </div>
-
-        {/* Join the Mission */}
-        <JoinMission />
       </div>
     </section>
   );

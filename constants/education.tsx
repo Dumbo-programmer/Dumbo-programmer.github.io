@@ -1,11 +1,17 @@
 import {
-  FaChalkboardTeacher, FaLaptopCode, FaCalculator, FaStar,
-  FaBookOpen, FaUsers, FaGlobeAsia, FaRocket, FaHandsHelping,
-  FaGraduationCap, FaLightbulb, FaSchool, FaPenFancy,
-  FaClipboardList, FaInfinity
+  FaChalkboardTeacher,
+  FaCalculator,
+  FaStar,
+  FaBookOpen,
+  FaUsers,
+  FaRocket,
+  FaSchool,
+  FaPenFancy,
+  FaClipboardList,
 } from "react-icons/fa";
-import { SiGoogleclassroom, SiFuturelearn } from "react-icons/si";
+import { SiGoogleclassroom } from "react-icons/si";
 import { ReactNode } from "react";
+import { publishedProblemSetCount } from "@/constants/library";
 
 export interface GallerySlide {
   id: string;
@@ -43,7 +49,7 @@ export interface Initiative {
 export const sectionTitle = "Building the Next Generation of Problem Solvers";
 
 export const sectionSubtitle =
-  "I believe the most impactful thing I can build is not software — it is infrastructure for learning. Every workshop, every handout, every mentorship session exists to answer one question: how do I make high-quality STEM education as accessible in a Dhaka classroom as it is anywhere in the world?";
+  "Free, open-access learning infrastructure for students in Bangladesh — built through teaching, mentoring, and publishing.";
 
 export const gallerySlides: GallerySlide[] = [
   {
@@ -131,32 +137,37 @@ export const statistics: Statistic[] = [
     icon: <FaChalkboardTeacher className="text-2xl" />,
     value: 40,
     suffix: "+",
-    label: "Teaching Sessions",
+    label: "Teaching sessions",
   },
   {
     icon: <FaUsers className="text-2xl" />,
     value: 700,
     suffix: "+",
-    label: "Students Mentored",
+    label: "Students mentored",
   },
-
   {
     icon: <FaBookOpen className="text-2xl" />,
     value: 500,
     suffix: "+",
-    label: "Pages of Educational Resources",
-  },
-  {
-    icon: <FaCalculator className="text-2xl" />,
-    value: 1000,
-    suffix: "+",
-    label: "Math Questions Created",
+    label: "Pages published",
   },
   {
     icon: <FaStar className="text-2xl" />,
+    value: 1000,
+    suffix: "+",
+    label: "Original problems authored",
+  },
+  {
+    icon: <FaCalculator className="text-2xl" />,
+    value: publishedProblemSetCount,
+    suffix: "",
+    label: "Published library sets",
+  },
+  {
+    icon: <FaClipboardList className="text-2xl" />,
     value: 6,
     suffix: "+",
-    label: "Math Events Hosted",
+    label: "National events hosted",
   },
 ];
 
@@ -177,13 +188,13 @@ export const timelineEntries: TimelineEntry[] = [
     ],
   },
   {
-    year: "2025",
+    year: "2024–2025",
     items: [
-      "Appointed Head of Academics & Vice President of Josephite Math Club",
+      "Served as Vice President & Head of Academics, Josephite Math Club",
       "Launched Math Bootcamp program",
       "Helped host 6+ national math events and competitions",
       "Began literacy school outreach program",
-      "Created 1000+ original math problems",
+      "Authored 1000+ original problems across camps and competitions",
     ],
     highlight: true,
   },
@@ -214,63 +225,33 @@ export const timelineEntries: TimelineEntry[] = [
 
 export const initiatives: Initiative[] = [
   {
-    icon: <FaSchool className="text-2xl" />,
-    title: "Literacy School STEM",
+    icon: <FaBookOpen className="text-2xl" />,
+    title: "Open Problem Solving Library",
     description:
-      "Teaching programming and computational thinking to underprivileged students at the St. Joseph Literacy School, bridging the technology education gap.",
-  },
-  {
-    icon: <FaLaptopCode className="text-2xl" />,
-    title: "Programming Workshops",
-    description:
-      "Conducting hands-on programming workshops covering Python, C++, algorithms, and problem-solving for students at various skill levels.",
-  },
-  {
-    icon: <FaCalculator className="text-2xl" />,
-    title: "Mathematics Workshops",
-    description:
-      "Leading problem-solving workshops in number theory, combinatorics, geometry, and algebra for Olympiad preparation and beyond.",
+      "Free handouts, problem sets, articles, and research in mathematics, physics, programming, and astronomy.",
   },
   {
     icon: <FaStar className="text-2xl" />,
     title: "Olympiad Mentorship",
     description:
-      "Mentoring students for national and international Olympiads in mathematics, physics, and astronomy through structured guidance and practice.",
+      "Structured preparation for national and international mathematics, physics, and astronomy Olympiads.",
   },
   {
-    icon: <FaBookOpen className="text-2xl" />,
-    title: "Open Problem Solving Library",
+    icon: <FaCalculator className="text-2xl" />,
+    title: "Math & Programming Workshops",
     description:
-      "Building a free, open-access library of educational resources in mathematics, physics, competitive programming, and astronomy.",
+      "Hands-on sessions in number theory, combinatorics, algorithms, and Python/C++ for school and Olympiad learners.",
+  },
+  {
+    icon: <FaSchool className="text-2xl" />,
+    title: "Literacy School Outreach",
+    description:
+      "Computational thinking and STEM sessions for under-resourced students at St. Joseph Literacy School.",
   },
   {
     icon: <FaPenFancy className="text-2xl" />,
-    title: "Bangla Educational Articles",
+    title: "Bangla Articles & Teacher Resources",
     description:
-      "Writing original educational content in Bangla to make advanced STEM topics accessible to Bengali-speaking students.",
-  },
-  {
-    icon: <FaClipboardList className="text-2xl" />,
-    title: "Teacher Resources",
-    description:
-      "Developing curricula, handouts, and teaching guides to help educators deliver high-quality STEM education in classrooms and clubs.",
-  },
-  {
-    icon: <FaGraduationCap className="text-2xl" />,
-    title: "Student Research",
-    description:
-      "Encouraging and mentoring students to undertake independent research projects in STEM fields, fostering a culture of inquiry.",
-  },
-  {
-    icon: <SiGoogleclassroom className="text-2xl" />,
-    title: "Free STEM Handouts",
-    description:
-      "Distributing free, high-quality study handouts covering essential topics in mathematics, physics, and programming to students nationwide.",
-  },
-  {
-    icon: <FaGlobeAsia className="text-2xl" />,
-    title: "Open Educational Resources",
-    description:
-      "Curating and creating open educational resources that are freely accessible to anyone with an internet connection, removing financial barriers to learning.",
+      "Bilingual articles, handouts, and teaching guides that help educators bring advanced topics into ordinary classrooms.",
   },
 ];

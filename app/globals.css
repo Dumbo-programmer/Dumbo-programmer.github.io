@@ -1,9 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Noto+Sans+Bengali:wght@400;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 .cursive {
   font-family: "Cedarville Cursive", cursive;
+}
+.writing-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+.bangla {
+  font-family: "Noto Sans Bengali", "SolaimanLipi", sans-serif;
+  line-height: 2.1;
 }
 .Welcome-text {
   background: linear-gradient(

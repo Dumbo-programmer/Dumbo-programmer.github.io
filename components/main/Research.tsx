@@ -1,8 +1,10 @@
-"use client";  
-import React, { useState } from "react";
+"use client";
+
+import React from "react";
 import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
 import ResearchCard from "../sub/ResearchCard";
+
 const researchData: {
   typeA?: "image" | "video";
   src: string;
@@ -11,87 +13,94 @@ const researchData: {
   description: string;
   tags?: string[];
   link?: string;
-  status?: "published" | "preprint" | "in-progress" | "submitted";
-  doi?: string;
-  date?: string;
-  citations?: number;
 }[] = [
+  {
+    typeA: "image",
+    src: "/JMC_new.png",
+    title: "Josephite Math Club — President",
+    link: "#",
+    sub: "President (2026–2027)",
+    description:
+      "Leading a math club serving 700+ students through Olympiad training, weekly workshops, and national contests — including the 8th Josephite Math Mania with 5,000+ participants across 22 events.",
+    tags: ["Leadership", "700+ students", "National contests", "Olympiad training"],
+  },
   {
     typeA: "image",
     src: "/pyxl.png",
     title: "Pyxl Chronicles",
     link: "https://pyxl-chronicles.itch.io",
-    sub: 'Lead Game Developer',
-    description: `Led a 6-developer studio to design and launch an indie horror game with 230+ early players. Built a custom game engine combining 2D mechanics with realistic 3D visuals, implementing AI systems, procedural content generation, and performance-optimized rendering. Improved performance by 50–80% through custom optimization strategies. Managed the full development pipeline—80+ builds, 200+ commits, CI/CD automation, profiling, and cross-platform deployment (Windows/Linux). Leveraged the engine to create 4 additional trending Android games, with more than 10k+ active players.`,
-    tags: ["Game Development", "Indie Horror", "Custom Game Engine", "Procedural Generation", "AI", "Performance Optimization", "CI/CD", "Cross-Platform", "Android"],
-    date: "2024 – Present",
+    sub: "Lead Game Developer",
+    description:
+      "Led a 6-developer studio that launched an indie horror game with 230+ early players, using a custom engine with AI systems, procedural generation, and 50–80% performance gains. The engine powered 4 additional trending Android games with 10k+ active players combined.",
+    tags: ["Game Development", "Custom Engine", "AI", "Performance", "Android"],
   },
   {
     typeA: "image",
     src: "/ongko.png",
     title: "Ongko",
     link: "#",
-    sub: 'Academic Team Member',
-    description: "Working as an academic team member at Ongko, contributing to educational initiatives and academic excellence.",
-    tags: ["Education", "Math Olympiad", "Team Collaboration", "Physics Olympiad", "Math Organization"],
-    date: "2025 – Present",
-  },
-  {
-    typeA: "image",
-    src: "/gonit.png",
-    title: "Academic Team Member — Prothom Alo Gonit Ishkul",
-    link: "https://gonit-solving.netlify.app/",
     sub: "Academic Team Member",
-    description: "Responsible for creating and maintaining the web application for Prothom Alo Gonit Ishkul, a bilingual math problem-solving platform. The platform provides a searchable archive of 100+ auto-gradable problems, balanced practice-test creation, timed test sessions, instant grading with rational-answer parsing, saved reviews, cloud sync, learner leaderboards, contest ratings, and offline support in Bangla and English.",
-    tags: ["Academic Team", "Mathematics Education", "React", "TypeScript", "Problem Solving", "Auto-Grading", "Bangla + English", "Offline-First", "Educational Technology"],
-    date: "2025 – Present",
+    // TODO: Add Ongko's exact reach metric (students/cohorts) here when available;
+    // the repository does not contain a verified number yet.
+    description:
+      "Contributing to Olympiad preparation and academic excellence programs across mathematics and physics cohorts.",
+    tags: ["Education", "Math Olympiad", "Physics Olympiad", "Academic Excellence"],
   },
   {
     typeA: "image",
     src: "/team.png",
     title: "Team Nokkhotropoth",
-    sub: 'Mechanical Engineering Department Lead',
-    description: `Co-founded and co-led a 4-member Robotics-for-Good R&D team (robotics-for-good) tackling accessibility, healthcare, and disaster response in underdeveloped regions. Designed and deployed 10–15 autonomous assistive systems, including robotic canes, HUD captioning glasses, spatial-audio hearing aids, and communication wearables. Led system integration, testing, documentation, and alignment with UN Sustainable Development Goals.`,
-    tags: ["Mechanical Engineering", "Mechatronics", "Robotics", "Robotics-for-Good", "Assistive Systems", "UN SDG", "R&D"],
-    date: "2024 – Present",
+    sub: "Mechanical Engineering Department Lead",
+    description:
+      "Co-founded and co-led a 4-member robotics-for-good R&D team for accessibility, healthcare, and disaster response. Designed and deployed 10+ autonomous assistive systems, including robotic canes, HUD captioning glasses, spatial-audio hearing aids, and communication wearables.",
+    tags: ["Robotics", "Assistive Systems", "Embedded Systems", "UN SDG"],
   },
-]
-const Research = () => {
-  const [showAll, setShowAll] = useState(false);
+  {
+    typeA: "image",
+    src: "/gonit.png",
+    title: "Prothom Alo Gonit Ishkul",
+    sub: "Academic Team Member",
+    description:
+      "Maintain a bilingual math problem-solving platform with 100+ auto-gradable problems, timed tests, instant rational-answer grading, saved reviews, leaderboards, contests, and offline support in Bangla and English.",
+    tags: ["Mathematics Education", "React", "TypeScript", "Bangla + English"],
+  },
+];
 
+const Research = () => {
   return (
-    <section className="flex flex-col items-center justify-center py-20" id="current-roles" aria-labelledby="research-heading">
+    <section
+      className="flex flex-col items-center justify-center py-4"
+      id="current-roles"
+      aria-labelledby="roles-heading"
+    >
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={slideInFromTop}
-        className="w-full px-6 text-[40px] font-medium text-center text-gray-200"
+        className="w-full px-6 text-[30px] sm:text-[40px] font-medium text-center text-gray-200 mb-10"
       >
-        <h2 id="research-heading" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-          Current Roles
+        <h2
+          id="roles-heading"
+          className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500"
+        >
+          Roles &amp; Leadership
         </h2>
       </motion.div>
-      {/*  Research Cards */}
-      <div className="mt-16 h-full w-full flex flex-wrap gap-10 px-10 justify-center">
-        {researchData
-          .slice(0, showAll ? researchData.length : 5
-          )
-          .map((research, index) => (
-            <ResearchCard
-              key={`research-${research.title.replace(/\s+/g, '-').toLowerCase()}-${index}`}
-              src={research.src}
-              title={research.title}
-              sub={research.sub}
-              description={research.description}
-              typeA={research.typeA} 
-              tags={research.tags}
-              status={research.status}
-              doi={research.doi}
-              date={research.date}
-              citations={research.citations}
-            />
-          ))}
+
+      <div className="h-full w-full flex flex-wrap gap-8 px-2 justify-center">
+        {researchData.map((research) => (
+          <ResearchCard
+            key={research.title}
+            src={research.src}
+            title={research.title}
+            sub={research.sub}
+            description={research.description}
+            typeA={research.typeA}
+            tags={research.tags}
+            link={research.link}
+          />
+        ))}
       </div>
     </section>
   );
