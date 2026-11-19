@@ -46,6 +46,31 @@ const achievementData: {
     description:
       "Awarded a silver medal at KAIPHO, hosted by Kazan National Research Technical University.",
   },
+  {
+    src: "/certis/iaac_hon.png",
+    title: "International Astronomy and Astrophysics Competition (IAAC)",
+    description: "Silver Honor.",
+  },
+  {
+    src: "/certis/bdoc.png",
+    title: "BDOC Chemistry Olympiad",
+    description: "Finalist.",
+  },
+  {
+    src: "/certis/nasac.png",
+    title: "NASA Space Apps Challenge",
+    description: "Exoplanet AI Model.",
+  },
+  {
+    src: "/lc.png",
+    title: "LeetCode",
+    description: "Top 7% · 200+ problems solved.",
+  },
+  {
+    src: "/codeforces.png",
+    title: "Codeforces",
+    description: "1300+ rating.",
+  },
 ];
 
 const Achievements = () => {
