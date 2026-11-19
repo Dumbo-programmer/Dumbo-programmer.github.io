@@ -1,19 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { HiMail, HiMenu, HiX } from "react-icons/hi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { requestTab, tabFromHash } from "@/utils/tabs";
+import {
+  DEFAULT_TAB,
+  TAB_EVENT,
+  TAB_IDS,
+  TAB_LABELS,
+  type TabId,
+  type TabNavigationDetail,
+  requestTab,
+  tabFromHash,
+} from "@/utils/tabs";
 
-const navLinks = [
-  { href: "/#projects", label: "Projects" },
-  { href: "/#roles", label: "Roles" },
-  { href: "/#notes", label: "Notes" },
-  { href: "/#certificates", label: "Certificates" },
-  { href: "/#writing", label: "Writing" },
-  { href: "/#contact", label: "Contact" },
-];
+const headerLabels: Record<TabId, string> = {
+  projects: "Projects",
+  roles: "Roles",
+  notes: "Notes",
+  achievements: "Achievements",
+  writing: "Writing",
+  contact: "Contact",
+};
 
 const headerSocials = [
   {
@@ -37,7 +46,9 @@ const headerSocials = [
 ];
 
 const Navbar = () => {
+  const [active, setActive] = useState<TabId>(DEFAULT_TAB);
   const [menuOpen, setMenuOpen] = useState(false);
+  const tabRefs = useRef<Partial<Record<TabId, HTMLAnchorElement | null>>>({});
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -46,16 +57,56 @@ const Navbar = () => {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const syncFromHash = () => {
+      const hash = window.location.hash;
+      setActive(hash ? tabFromHash(hash) : DEFAULT_TAB);
+    };
+    const onTabRequest = (event: Event) => {
+      setActive((event as CustomEvent<TabNavigationDetail>).detail.tab);
+    };
+
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+    window.addEventListener("popstate", syncFromHash);
+    window.addEventListener(TAB_EVENT, onTabRequest);
+    return () => {
+      window.removeEventListener("hashchange", syncFromHash);
+      window.removeEventListener("popstate", syncFromHash);
+      window.removeEventListener(TAB_EVENT, onTabRequest);
+    };
+  }, []);
+
   const handleNavClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    tab: TabId
   ) => {
     setMenuOpen(false);
     if (typeof window === "undefined" || window.location.pathname !== "/") return;
-    const hash = href.includes("#") ? `#${href.split("#")[1]}` : "";
-    if (!hash) return;
+
     event.preventDefault();
-    requestTab(tabFromHash(hash), { scroll: true });
+    setActive(tab);
+    requestTab(tab, { scroll: true });
+  };
+
+  const handleTabKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const currentIndex = TAB_IDS.indexOf(active);
+    let nextIndex: number | null = null;
+
+    if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % TAB_IDS.length;
+    if (event.key === "ArrowLeft")
+      nextIndex = (currentIndex - 1 + TAB_IDS.length) % TAB_IDS.length;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = TAB_IDS.length - 1;
+
+    if (nextIndex === null) return;
+    event.preventDefault();
+    const nextTab = TAB_IDS[nextIndex];
+    setActive(nextTab);
+    requestTab(nextTab, { replace: true });
+    tabRefs.current[nextTab]?.focus();
   };
 
   return (
@@ -63,7 +114,7 @@ const Navbar = () => {
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-1 sm:px-[10px]">
         <a
           href="/#projects"
-          onClick={(event) => handleNavClick(event, "/#projects")}
+          onClick={(event) => handleNavClick(event, "projects")}
           className="h-auto w-auto flex flex-row items-center"
           aria-label="Tawhid Bin Omar — Home"
         >
@@ -78,18 +129,39 @@ const Navbar = () => {
         </a>
 
         <nav className="hidden lg:flex h-full flex-row items-center" aria-label="Primary">
-          <div className="flex items-center justify-between w-auto border border-[#7042f861] bg-[#0300145e] mx-[15px] px-[15px] xl:px-[20px] py-[8px] xl:py-[10px] rounded-full text-gray-200 gap-4 xl:gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(event) => handleNavClick(event, link.href)}
-                className="cursor-pointer transition duration-300 hover:text-[#7042f8] text-xs xl:text-sm whitespace-nowrap"
-                aria-label={`Navigate to ${link.label}`}
-              >
-                {link.label}
-              </a>
-            ))}
+          <div
+            role="tablist"
+            aria-label="Portfolio sections"
+            aria-orientation="horizontal"
+            onKeyDown={handleTabKeyDown}
+            className="flex items-center justify-between w-auto border border-[#7042f861] bg-[#0300145e] mx-[15px] px-[15px] xl:px-[20px] py-[8px] xl:py-[10px] rounded-full text-gray-200 gap-4 xl:gap-6"
+          >
+            {TAB_IDS.map((tab) => {
+              const isActive = active === tab;
+              return (
+                <a
+                  key={tab}
+                  ref={(node) => {
+                    tabRefs.current[tab] = node;
+                  }}
+                  id={`tab-${tab}`}
+                  href={`/#${tab}`}
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`panel-${tab}`}
+                  aria-label={`Navigate to ${TAB_LABELS[tab]}`}
+                  tabIndex={isActive ? 0 : -1}
+                  onClick={(event) => handleNavClick(event, tab)}
+                  className={`cursor-pointer transition duration-300 whitespace-nowrap text-xs xl:text-sm ${
+                    isActive
+                      ? "text-white shadow-[0_0_12px_#8b5cf655]"
+                      : "text-gray-300 hover:text-[#b49bff]"
+                  }`}
+                >
+                  {headerLabels[tab]}
+                </a>
+              );
+            })}
           </div>
         </nav>
 
@@ -100,7 +172,11 @@ const Navbar = () => {
               href={social.href}
               target={social.external ? "_blank" : undefined}
               rel={social.external ? "noopener noreferrer" : undefined}
-              aria-label={social.name === "Email" ? "Email Tawhid Bin Omar" : `Visit ${social.name} profile`}
+              aria-label={
+                social.name === "Email"
+                  ? "Email Tawhid Bin Omar"
+                  : `Visit ${social.name} profile`
+              }
               className="text-gray-200 hover:text-[#b49bff] transition-transform duration-300 hover:scale-110"
             >
               {social.icon}
@@ -125,14 +201,19 @@ const Navbar = () => {
 
       {menuOpen && (
         <div className="fixed inset-0 top-0 left-0 w-full h-full bg-[#030014] z-40 flex flex-col items-center justify-center gap-6 sm:gap-8 py-24 px-6 overflow-y-auto">
-          {navLinks.map((link) => (
+          {TAB_IDS.map((tab) => (
             <a
-              key={link.href}
-              href={link.href}
-              className="text-2xl text-gray-200 hover:text-[#7042f8] transition duration-300"
-              onClick={(event) => handleNavClick(event, link.href)}
+              key={tab}
+              href={`/#${tab}`}
+              aria-current={active === tab ? "page" : undefined}
+              className={`text-2xl transition duration-300 ${
+                active === tab
+                  ? "text-purple-300"
+                  : "text-gray-200 hover:text-[#7042f8]"
+              }`}
+              onClick={(event) => handleNavClick(event, tab)}
             >
-              {link.label}
+              {TAB_LABELS[tab]}
             </a>
           ))}
           <div className="flex flex-row gap-6 mt-4">
@@ -142,7 +223,11 @@ const Navbar = () => {
                 href={social.href}
                 target={social.external ? "_blank" : undefined}
                 rel={social.external ? "noopener noreferrer" : undefined}
-                aria-label={social.name === "Email" ? "Email Tawhid Bin Omar" : `Visit ${social.name} profile`}
+                aria-label={
+                  social.name === "Email"
+                    ? "Email Tawhid Bin Omar"
+                    : `Visit ${social.name} profile`
+                }
                 onClick={() => setMenuOpen(false)}
                 className="text-gray-200 hover:text-[#b49bff]"
               >

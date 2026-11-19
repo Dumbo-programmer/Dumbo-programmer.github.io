@@ -8,9 +8,15 @@ const achievementData: {
 }[] = [
   {
     src: "/bdpho.png",
-    title: "National Champion — Bangladesh Physics Olympiad (BdPhO)",
+    title: "Bangladesh Physics Olympiad (BdPhO)",
     description:
-      "2× regional champion · 2× national finalist · 1× national champion · IPhO national camp selection.",
+      "1× national champion · 2× regional champion · 2× national finalist · IPhO Camper.",
+  },
+  {
+    src: "/certis/pb29.png",
+    title: "Physics Brawl",
+    description:
+      "29th place out of 1,584 teams internationally · 10th nationwide.",
   },
   {
     src: "/phiga.png",
@@ -31,9 +37,14 @@ const achievementData: {
   },
   {
     src: "/bdoaa.png",
-    title: "IPhO & IOAA National Camp Selections",
+    title: "Bangladesh Olympiad on Astronomy and Astrophysics (BDOAA)",
+    description: "15th Nationally · IOAA Camper.",
+  },
+  {
+    src: "/certis/kaipho.png",
+    title: "KAIPHO — Silver Medal",
     description:
-      "Selected for national physics and astronomy Olympiad camps through the IPhO and IOAA tracks.",
+      "Awarded a silver medal at KAIPHO, hosted by Kazan National Research Technical University.",
   },
 ];
 

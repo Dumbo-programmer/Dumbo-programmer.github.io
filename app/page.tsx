@@ -126,7 +126,7 @@ export default function Home() {
       "Physics Olympiad Champion — BdPhO National Champion, PHIGA #1 Worldwide",
     ],
     "description":
-      "Tawhid Bin Omar is a Bangladesh-based aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Physics Olympiad champion (BdPhO National Champion, PHIGA 1st place worldwide out of 1,211), creator of the Open Problem Solving Library — a free open-access STEM education platform. He is President (2026-2027) of the Josephite Math Club, where he organized the 8th Josephite Math Mania — one of the biggest national math events in the country, with over 5000 participants and 22 events — and previously served as Vice President & Head of Academics (2024-2025) while helping host over 6 national math events. He completed Code in Place, did the Conrad Challenge, Blue Ocean Challenge, NASA Space Apps Challenge, and Green Challenge, was a finalist at the BDOC chemistry olympiad, got a silver diploma at KAIPHO hosted by Kazan National Research Technical University, received the Silver Award in the Queen's Commonwealth Writing Competition 2026 out of 53,840 people, and got recognition from the Poetry Society for writing poems. Beyond education, he is a full stack developer, game developer (Pyxl Chronicles), robotics-for-good engineer (Team Nokkhotropoth), and a lifelong learner of quantum physics, number theory, and algorithms.",
+      "Tawhid Bin Omar is a Bangladesh-based aspiring physicist, number theory enthusiast, competitive programmer, and STEM educator. Physics Olympiad champion (BdPhO National Champion, PHIGA 1st place worldwide out of 1,211), creator of the Open Problem Solving Library — a free open-access STEM education platform. He is President (2026-2027) of the Josephite Math Club, where he organized the 8th Josephite Math Mania — one of the biggest national math events in the country, with over 5000 participants and 22 events — and previously served as Vice President & Head of Academics (2024-2025) while helping host over 6 national math events. He completed Code in Place, did the Conrad Challenge, Blue Ocean Challenge, NASA Space Apps Challenge, and Green Challenge, was a finalist at the BDOC chemistry olympiad, won a silver medal at KAIPHO hosted by Kazan National Research Technical University, received the Silver Award in the Queen's Commonwealth Writing Competition 2026 out of 53,840 people, and got recognition from the Poetry Society for writing poems. Beyond education, he is a full stack developer, game developer (Pyxl Chronicles), robotics-for-good engineer (Team Nokkhotropoth), and a lifelong learner of quantum physics, number theory, and algorithms.",
     "nationality": {
       "@type": "Country",
       "name": "Bangladesh"
@@ -214,8 +214,13 @@ export default function Home() {
     "award": [
       {
         "@type": "Award",
-        "name": "Bangladesh Physics Olympiad — National Champion",
-        "description": "2× regional champion · 2× national finalist · 1× national champion · IPhO national camp selection"
+        "name": "Bangladesh Physics Olympiad (BdPhO)",
+        "description": "1× national champion · 2× regional champion · 2× national finalist · IPhO Camper"
+      },
+      {
+        "@type": "Award",
+        "name": "Bangladesh Olympiad on Astronomy and Astrophysics (BDOAA)",
+        "description": "15th Nationally, IOAA Camper"
       },
       {
         "@type": "Award",
@@ -229,8 +234,8 @@ export default function Home() {
       },
       {
         "@type": "Award",
-        "name": "Physics Brawl — Top 29 Teams Internationally",
-        "description": "29th place out of 1,584 teams, 10th nationwide"
+        "name": "Physics Brawl",
+        "description": "29th place out of 1,584 teams internationally · 10th nationwide"
       },
       {
         "@type": "Award",
@@ -280,8 +285,8 @@ export default function Home() {
       },
       {
         "@type": "Award",
-        "name": "KAIPHO \u2014 Silver Diploma",
-        "description": "Got a silver diploma at KAIPHO, hosted by Kazan National Research Technical University."
+        "name": "KAIPHO \u2014 Silver Medal",
+        "description": "Awarded a silver medal at KAIPHO, hosted by Kazan National Research Technical University."
       },
       {
         "@type": "Award",
@@ -410,7 +415,7 @@ export default function Home() {
       { "name": "Projects", "url": "https://tawhid.is-a.dev/#projects" },
       { "name": "Roles", "url": "https://tawhid.is-a.dev/#roles" },
       { "name": "Notes", "url": "https://tawhid.is-a.dev/#notes" },
-      { "name": "Certificates", "url": "https://tawhid.is-a.dev/#certificates" },
+      { "name": "Achievements", "url": "https://tawhid.is-a.dev/#achievements" },
       { "name": "Writing", "url": "https://tawhid.is-a.dev/#writing" },
       { "name": "Contact", "url": "https://tawhid.is-a.dev/#contact" },
       { "name": "Library", "url": "https://tawhid.is-a.dev/notes" }
@@ -425,7 +430,8 @@ export default function Home() {
       { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://tawhid.is-a.dev/#projects" },
       { "@type": "ListItem", "position": 3, "name": "Roles", "item": "https://tawhid.is-a.dev/#roles" },
       { "@type": "ListItem", "position": 4, "name": "Notes", "item": "https://tawhid.is-a.dev/#notes" },
-      { "@type": "ListItem", "position": 5, "name": "Writing", "item": "https://tawhid.is-a.dev/#writing" }
+      { "@type": "ListItem", "position": 5, "name": "Achievements", "item": "https://tawhid.is-a.dev/#achievements" },
+      { "@type": "ListItem", "position": 6, "name": "Writing", "item": "https://tawhid.is-a.dev/#writing" }
     ]
   };
 

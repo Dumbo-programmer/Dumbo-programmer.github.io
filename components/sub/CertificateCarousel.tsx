@@ -19,7 +19,7 @@ const knownCertificates: Certificate[] = [
   { file: "cr.png", title: "Certificate of Recognition", caption: "Recognition certificate from Tawhid’s archive" },
   { file: "iaac_hon.png", title: "IAAC Honorable Mention", caption: "International Astronomy and Astrophysics Competition honour" },
   { file: "iymc.png", title: "IYMC Certificate", caption: "International Youth Math Challenge certificate" },
-  { file: "kaipho.png", title: "KAIPHO Silver Diploma", caption: "Kazan National Research Technical University silver diploma" },
+  { file: "kaipho.png", title: "KAIPHO Silver Medal", caption: "Kazan National Research Technical University silver medal" },
   { file: "nasac.png", title: "NASA Space Apps Challenge", caption: "NASA Space Apps Challenge participation certificate" },
   { file: "pb177.png", title: "Physics Brawl", caption: "International Physics Brawl certificate" },
   { file: "pb29.png", title: "Physics Brawl — Top 29 Team", caption: "29th place out of 1,584 international teams" },
@@ -61,7 +61,7 @@ const archivedCertificates: Certificate[] = archivedFiles.map((file) => ({
   title: file === "image.png" || file === "image copy.png"
     ? "Additional certificate"
     : `Additional certificate ${file.replace(/image copy\s?/i, "").replace(/\.png$/i, "")}`,
-  caption: "Additional certificate from Tawhid Bin Omar’s archive.",
+  caption: "",
 }));
 
 const certificates: Certificate[] = [...knownCertificates, ...archivedCertificates];
@@ -149,9 +149,11 @@ const CertificateCarousel = () => {
                   <p className="text-sm font-semibold text-white leading-tight">
                     {certificate.title}
                   </p>
-                  <p className="text-[11px] text-gray-400 mt-1 leading-snug">
-                    {certificate.caption}
-                  </p>
+                  {certificate.caption && (
+                    <p className="text-[11px] text-gray-400 mt-1 leading-snug">
+                      {certificate.caption}
+                    </p>
+                  )}
                 </figcaption>
               </figure>
             </li>

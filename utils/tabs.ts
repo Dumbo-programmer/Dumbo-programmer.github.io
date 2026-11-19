@@ -2,12 +2,21 @@ export const TAB_IDS = [
   "projects",
   "roles",
   "notes",
-  "certificates",
+  "achievements",
   "writing",
   "contact",
 ] as const;
 
 export type TabId = (typeof TAB_IDS)[number];
+
+export const TAB_LABELS: Record<TabId, string> = {
+  projects: "Projects",
+  roles: "Roles & Leadership",
+  notes: "Notes",
+  achievements: "Achievements",
+  writing: "Writing",
+  contact: "Contact",
+};
 
 export const DEFAULT_TAB: TabId = "projects";
 
@@ -23,7 +32,6 @@ const HASH_ALIASES: Record<string, TabId> = {
   about: "notes",
   overview: "notes",
   skills: "notes",
-  achievements: "notes",
   projects: "projects",
   "current-roles": "roles",
   roles: "roles",
@@ -31,7 +39,9 @@ const HASH_ALIASES: Record<string, TabId> = {
   impact: "notes",
   notes: "notes",
   library: "notes",
-  certificates: "certificates",
+  achievements: "achievements",
+  awards: "achievements",
+  certificates: "achievements",
   writing: "writing",
   contact: "contact",
 };
