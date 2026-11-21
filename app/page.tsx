@@ -109,10 +109,10 @@ export default function Home() {
       "https://www.linkedin.com/in/tawhidbinomar/",
       "https://www.facebook.com/tawhiddayo/",
       "https://instagram.com/acutepierce",
-      "https://dev.to/dumbo_programmer",
+      "https://dev.to/dumboprogrammer",
       "https://leetcode.com/u/Dumbo-programmer/",
-      "https://codeforces.com/profile/Dumbo-programmer",
-      "https://pyxl-chronicles.itch.io",
+      "https://codeforces.com/profile/tawhid_",
+      "https://tawhidzip.itch.io",
       "https://discord.com/users/707079802531872769",
       "https://www.youtube.com/@tawhidbinomar",
     ],
@@ -327,7 +327,7 @@ export default function Home() {
       {
         "@type": "Organization",
         "name": "Dev.to",
-        "url": "https://dev.to/dumbo_programmer",
+        "url": "https://dev.to/dumboprogrammer",
         "description": "Technical blogger with over 50 blogs, 1300+ followers, and 78k+ post views on Dev.to community platform.",
         "keywords": "technical writing, blogging, dev.to, developer community"
       },

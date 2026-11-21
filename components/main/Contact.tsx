@@ -40,7 +40,7 @@ const socials = [
   },
   {
     name: "Dev.to",
-    href: "https://dev.to/dumbo_programmer",
+    href: "https://dev.to/dumboprogrammer",
     icon: <FaDev size={20} aria-hidden="true" />,
   },
   {
@@ -50,12 +50,12 @@ const socials = [
   },
   {
     name: "Codeforces",
-    href: "https://codeforces.com/profile/Dumbo-programmer",
+    href: "https://codeforces.com/profile/tawhid_",
     icon: <SiCodeforces size={20} aria-hidden="true" />,
   },
   {
-    name: "Pyxl Chronicles (itch.io)",
-    href: "https://pyxl-chronicles.itch.io",
+    name: "itch.io",
+    href: "https://tawhidzip.itch.io",
     icon: <FaItchIo size={20} aria-hidden="true" />,
   },
   {

@@ -26,7 +26,7 @@ const Footer = () => {
               <span className="ml-2">GitHub</span>
             </a>
             <a
-              href="https://dev.to/dumbo_programmer"
+              href="https://dev.to/dumboprogrammer"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center my-2 cursor-pointer hover:text-gray-500 transition"

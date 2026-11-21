@@ -1,3 +1,8 @@
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import {
   Backend_skill,
   Frontend_skill,
@@ -5,93 +10,178 @@ import {
   Other_skill,
   Skill_data,
 } from "@/constants";
-import React from "react";
-import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
+
+type Skill = {
+  skill_name: string;
+  Image: string;
+  width: number;
+  height: number;
+};
+
+type SkillCategory = {
+  title: string;
+  description: string;
+  accent: string;
+  skills: string[];
+};
+
+const CATEGORY_DEFS: SkillCategory[] = [
+  {
+    title: "Frontend & UI",
+    description: "Interfaces, motion, and polished web experiences.",
+    accent: "from-purple-500/30 to-fuchsia-500/10",
+    skills: [
+      "Html 5",
+      "Css",
+      "Java Script",
+      "Type Script",
+      "React",
+      "Next js 13",
+      "Vue",
+      "Tailwind Css",
+      "Material UI",
+      "Redux",
+      "React Query",
+      "Framer Motion",
+    ],
+  },
+  {
+    title: "Backend & Data",
+    description: "APIs, databases, and application infrastructure.",
+    accent: "from-cyan-500/30 to-blue-500/10",
+    skills: [
+      "Node js",
+      "Express js",
+      "Mongo db",
+      "PostgreSQL",
+      "My SQL",
+      "Prisma",
+      "Graphql",
+      "Fire base",
+      "Stripe Payment",
+    ],
+  },
+  {
+    title: "Mobile, Desktop & DevOps",
+    description: "Shipping products across platforms and environments.",
+    accent: "from-emerald-500/25 to-teal-500/10",
+    skills: [
+      "React Native",
+      "Flutter",
+      "Android",
+      "Tauri",
+      "QT",
+      "Docker",
+      "Git",
+    ],
+  },
+  {
+    title: "Languages & Systems",
+    description: "Low-level, performance, and general-purpose programming.",
+    accent: "from-orange-500/25 to-amber-500/10",
+    skills: ["C", "Cpp", "Csharp", "Java", "Python", "Go", "Ruby", "Swift"],
+  },
+  {
+    title: "AI, Graphics & Hardware",
+    description: "ML, creative tools, engines, and embedded exploration.",
+    accent: "from-pink-500/25 to-violet-500/10",
+    skills: [
+      "PyTorch",
+      "OpenCV",
+      "Unity",
+      "UE4",
+      "Blender",
+      "Arduino",
+      "Figma",
+    ],
+  },
+];
+
+const allSkills: Skill[] = [
+  ...Skill_data,
+  ...Frontend_skill,
+  ...Backend_skill,
+  ...Full_stack,
+  ...Other_skill,
+];
+
+const skillByName = new Map<string, Skill>();
+for (const skill of allSkills) {
+  if (!skillByName.has(skill.skill_name)) {
+    skillByName.set(skill.skill_name, skill);
+  }
+}
+
+const categories = CATEGORY_DEFS.map((category) => ({
+  ...category,
+  items: category.skills
+    .map((name) => skillByName.get(name))
+    .filter((skill): skill is Skill => Boolean(skill)),
+})).filter((category) => category.items.length > 0);
 
 const Skills = () => {
   return (
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
+      className="relative overflow-hidden py-16 sm:py-20"
     >
-      <SkillText />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(112,66,248,0.16),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(34,211,238,0.12),transparent_35%)]" />
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 sm:px-6">
+        <SkillText />
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Skill_data.map((image, index) => (
-          <SkillDataProvider
-            key={`skill-${image.skill_name}-${index}`}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-            alt={image.skill_name}
-          />
-        ))}
-      </div>
+        <div className="mt-8 grid w-full gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {categories.map((category, categoryIndex) => (
+            <motion.article
+              key={category.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.45, delay: categoryIndex * 0.06 }}
+              className="group relative overflow-hidden rounded-2xl border border-[#2A0E61] bg-[#0300145e] p-5 shadow-lg shadow-[#2A0E61]/20 backdrop-blur-sm"
+            >
+              <div
+                className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${category.accent} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
+              />
+              <div className="relative">
+                <div className="mb-4 flex items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">
+                      {category.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-400">
+                      {category.description}
+                    </p>
+                  </div>
+                  <span className="rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-1 text-xs text-purple-200">
+                    {category.items.length}
+                  </span>
+                </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Frontend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={`frontend-${image.skill_name}-${index}`}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-            alt={image.skill_name}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Backend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={`backend-${image.skill_name}-${index}`}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-            alt={image.skill_name}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Full_stack.map((image, index) => (
-          <SkillDataProvider
-            key={`fullstack-${image.skill_name}-${index}`}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-            alt={image.skill_name}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Other_skill.map((image, index) => (
-          <SkillDataProvider
-            key={`other-${image.skill_name}-${index}`}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-            alt={image.skill_name}
-          />
-        ))}
-      </div>
-
-      <div className="w-full h-full absolute">
-        <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
-          <video
-            className="w-full h-auto"
-            preload="none"
-            playsInline
-            loop
-            muted
-            autoPlay
-            aria-hidden="true"
-            src="/cards-video.webm"
-          />
+                <div className="flex flex-wrap gap-2.5">
+                  {category.items.map((skill) => (
+                    <div
+                      key={skill.skill_name}
+                      title={skill.skill_name}
+                      className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-gray-200 transition duration-200 hover:-translate-y-0.5 hover:border-purple-500/40 hover:bg-purple-500/10 hover:text-white"
+                    >
+                      <div className="relative h-7 w-7 shrink-0">
+                        <Image
+                          src={skill.Image}
+                          alt={skill.skill_name}
+                          fill
+                          sizes="28px"
+                          className="object-contain"
+                        />
+                      </div>
+                      <span className="whitespace-nowrap">{skill.skill_name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

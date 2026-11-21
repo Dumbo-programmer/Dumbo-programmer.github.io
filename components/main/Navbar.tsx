@@ -3,6 +3,14 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { HiMail, HiMenu, HiX } from "react-icons/hi";
+import {
+  HiOutlineBookOpen,
+  HiOutlineCodeBracket,
+  HiOutlineEnvelope,
+  HiOutlinePencilSquare,
+  HiOutlineTrophy,
+  HiOutlineUserGroup,
+} from "react-icons/hi2";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
   DEFAULT_TAB,
@@ -22,6 +30,15 @@ const headerLabels: Record<TabId, string> = {
   achievements: "Achievements",
   writing: "Writing",
   contact: "Contact",
+};
+
+const tabIcons: Record<TabId, React.ReactNode> = {
+  projects: <HiOutlineCodeBracket size={16} aria-hidden="true" />,
+  roles: <HiOutlineUserGroup size={16} aria-hidden="true" />,
+  notes: <HiOutlineBookOpen size={16} aria-hidden="true" />,
+  achievements: <HiOutlineTrophy size={16} aria-hidden="true" />,
+  writing: <HiOutlinePencilSquare size={16} aria-hidden="true" />,
+  contact: <HiOutlineEnvelope size={16} aria-hidden="true" />,
 };
 
 const headerSocials = [
@@ -152,13 +169,16 @@ const Navbar = () => {
                   aria-label={`Navigate to ${TAB_LABELS[tab]}`}
                   tabIndex={isActive ? 0 : -1}
                   onClick={(event) => handleNavClick(event, tab)}
-                  className={`cursor-pointer transition duration-300 whitespace-nowrap text-xs xl:text-sm ${
+                  className={`inline-flex items-center gap-1.5 cursor-pointer transition duration-300 whitespace-nowrap text-xs xl:text-sm ${
                     isActive
                       ? "text-white shadow-[0_0_12px_#8b5cf655]"
                       : "text-gray-300 hover:text-[#b49bff]"
                   }`}
                 >
-                  {headerLabels[tab]}
+                  <span className={isActive ? "text-purple-300" : "text-gray-400"}>
+                    {tabIcons[tab]}
+                  </span>
+                  <span>{headerLabels[tab]}</span>
                 </a>
               );
             })}
@@ -206,14 +226,15 @@ const Navbar = () => {
               key={tab}
               href={`/#${tab}`}
               aria-current={active === tab ? "page" : undefined}
-              className={`text-2xl transition duration-300 ${
+              className={`inline-flex items-center gap-3 text-2xl transition duration-300 ${
                 active === tab
                   ? "text-purple-300"
                   : "text-gray-200 hover:text-[#7042f8]"
               }`}
               onClick={(event) => handleNavClick(event, tab)}
             >
-              {TAB_LABELS[tab]}
+              <span className="[&>svg]:h-6 [&>svg]:w-6">{tabIcons[tab]}</span>
+              <span>{TAB_LABELS[tab]}</span>
             </a>
           ))}
           <div className="flex flex-row gap-6 mt-4">

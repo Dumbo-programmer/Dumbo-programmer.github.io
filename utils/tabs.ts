@@ -31,7 +31,7 @@ const HASH_ALIASES: Record<string, TabId> = {
   "about-me": "notes",
   about: "notes",
   overview: "notes",
-  skills: "notes",
+  skills: "projects",
   projects: "projects",
   "current-roles": "roles",
   roles: "roles",

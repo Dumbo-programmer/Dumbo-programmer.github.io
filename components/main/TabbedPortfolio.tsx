@@ -8,6 +8,7 @@ import EducationImpactSection from "@/components/main/EducationImpactSection";
 import LibrarySection from "@/components/main/LibrarySection";
 import Projects from "@/components/main/Projects";
 import Research from "@/components/main/Research";
+import Skills from "@/components/main/Skills";
 import Writing from "@/components/main/Writing";
 import {
   DEFAULT_TAB,
@@ -60,10 +61,12 @@ const TabbedPortfolio = () => {
     const id = hash.replace(/^#/, "");
     if (!id) return;
     window.requestAnimationFrame(() => {
-      const target =
-        document.getElementById(id) ??
-        document.getElementById(`panel-${tabFromHash(hash)}`);
-      target?.scrollIntoView({ block: "start" });
+      window.requestAnimationFrame(() => {
+        const target =
+          document.getElementById(id) ??
+          document.getElementById(`panel-${tabFromHash(hash)}`);
+        target?.scrollIntoView({ block: "start" });
+      });
     });
   }, []);
 
@@ -109,6 +112,7 @@ const TabbedPortfolio = () => {
           tabIndex={0}
           className="scroll-mt-36 focus:outline-none"
         >
+          <Skills />
           <Projects />
         </section>
 

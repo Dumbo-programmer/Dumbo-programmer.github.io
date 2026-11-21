@@ -12,7 +12,7 @@ import Image from "next/image";
 import { requestTab } from "@/utils/tabs";
 
 const proofPoints =
-  "National Physics Olympiad champion · Published researcher · 15k+ Rust downloads · Founder of an open STEM library serving 700+ students";
+  "I'm a Bangladeshi student, aspiring physicist, and independent software developer passionate about aerospace engineering, applied mathematics, and scientific research. Through robotics, open-source projects, and STEM education initiatives, I work to make technical knowledge more accessible and build engineering opportunities in Bangladesh.";
 
 const HeroContent = () => {
   return (
@@ -47,7 +47,7 @@ const HeroContent = () => {
             Bin Omar
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-200 leading-snug">
-            I turn hard problems into free learning infrastructure.
+            I model everything into a problem to be solved.
           </p>
         </motion.div>
 
