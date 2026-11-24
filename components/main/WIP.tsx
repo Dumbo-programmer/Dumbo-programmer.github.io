@@ -36,7 +36,7 @@ const WIP = () => {
           />
         </div>
 
-        <div className="Welcome-box px-[15px] py-[4px] z-[20] brder my-[20px] border-[#7042f88b] opacity-[0.9]">
+        <div className="Welcome-box z-[20] my-[20px] border border-line-accent/50 px-[15px] py-[4px] opacity-[0.9]">
           <h1 className="Welcome-text text-[12px]">WIP</h1>
         </div>
       </div>
@@ -50,7 +50,7 @@ const WIP = () => {
           playsInline
           preload="false"
           className="w-full h-auto"
-          src="/encryption.webm/"
+          src="/encryption.webm"
         />
       </div>
     </div>

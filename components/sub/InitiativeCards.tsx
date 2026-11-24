@@ -18,7 +18,7 @@ const InitiativeCards = ({ initiatives }: InitiativeCardsProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-30px" }}
           transition={{ delay: index * 0.05, duration: 0.4 }}
-          className="group relative rounded-xl border border-[#2A0E61] bg-white/5 backdrop-blur-md overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_#8b5cf6] hover:scale-[1.03] hover:border-purple-500/40"
+          className="group relative rounded-xl border border-line bg-white/5 backdrop-blur-md overflow-hidden transition-all duration-500 hover:shadow-glow hover:border-purple-500/40"
         >
           {/* top accent gradient */}
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-purple-500/0 to-transparent transition-all duration-500 group-hover:via-purple-400 group-hover:shadow-[0_0_12px_#a855f7]" />
@@ -30,7 +30,7 @@ const InitiativeCards = ({ initiatives }: InitiativeCardsProps) => {
             {/* icon with glow */}
             <div className="relative mb-4 w-fit">
               <div className="absolute inset-0 bg-purple-500/20 rounded-xl blur-md opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:text-purple-300 group-hover:border-purple-500/40 transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_15px_#a855f7]">
+              <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:text-purple-300 group-hover:border-purple-500/40 transition-all duration-500 group-hover:shadow-glow">
                 {initiative.icon}
               </div>
             </div>

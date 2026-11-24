@@ -23,7 +23,7 @@ const EducationTimeline = () => {
           className="w-full md:w-1/2 px-6 py-4 relative z-10 md:px-6 md:py-4"
           style={index % 2 === 0 ? { marginLeft: "auto" } : { marginRight: "auto" }}
         >
-          <div className="bg-black text-white shadow-lg rounded-lg p-6 border border-[#2A0E61] flex flex-col bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6] hover:scale-105">
+          <div className="bg-black text-white shadow-lg rounded-lg p-6 border border-line flex flex-col bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-glow">
             <h3 className="text-xl font-bold mb-2">{item.year}</h3>
             <p className="text-sm">{item.content}</p>
           </div>

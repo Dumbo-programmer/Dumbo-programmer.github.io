@@ -126,7 +126,7 @@ function TagChip({ tag, active, onClick }: { tag: string; active?: boolean; onCl
       aria-pressed={active}
       className={`text-[11px] px-2.5 py-1 rounded-full border transition-all duration-150 ${
         active
-          ? "border-purple-500/60 bg-purple-500/15 text-purple-300"
+          ? "border-purple-500/60 bg-purple-500/[0.15] text-purple-300"
           : "border-white/[0.08] bg-white/[0.02] text-gray-400 hover:text-white hover:border-purple-500/30"
       }`}
     >
@@ -148,8 +148,8 @@ function FilterPill({
 }) {
   const activeClasses =
     accent === "purple"
-      ? "border-purple-500/60 bg-purple-500/15 text-purple-300 shadow-[0_0_12px_#a855f733]"
-      : "border-cyan-500/60 bg-cyan-500/15 text-cyan-300 shadow-[0_0_12px_#06b6d433]";
+      ? "border-purple-500/60 bg-purple-500/[0.15] text-purple-300 shadow-[0_0_12px_#a855f733]"
+      : "border-cyan-500/60 bg-cyan-500/[0.15] text-cyan-300 shadow-[0_0_12px_#06b6d433]";
   return (
     <button
       type="button"

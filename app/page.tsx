@@ -1,7 +1,6 @@
 // app/page.tsx
 
 import Hero from "@/components/main/Hero";
-import LoadingScreen from "@/components/main/LoadingScreen";
 import TabbedPortfolio from "@/components/main/TabbedPortfolio";
 
 import type { Metadata } from "next";
@@ -586,8 +585,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="flex flex-col gap-10">
-        <LoadingScreen />
+      <div className="flex flex-col">
         <Hero />
         <TabbedPortfolio />
       </div>

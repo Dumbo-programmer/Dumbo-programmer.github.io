@@ -1,4 +1,5 @@
 import React from "react";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { HiDownload, HiMail } from "react-icons/hi";
 import {
   FaDev,
@@ -73,18 +74,14 @@ const socials = [
 const Contact = () => {
   return (
     <section className="w-full py-10" id="contact" aria-labelledby="contact-heading">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2
+      <div className="mx-auto max-w-3xl">
+        <SectionHeading
           id="contact-heading"
-          className="text-[30px] sm:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500"
-        >
-          Contact
-        </h2>
-        <p className="text-gray-400 text-sm sm:text-base mt-3">
-          collaborations, research conversations, or questions about free STEM resources.
-        </p>
+          title="Contact"
+          description="collaborations, research conversations, or questions about free STEM resources."
+        />
 
-        <address className="not-italic mt-6">
+        <address className="not-italic mt-6 text-center">
           <a
             href="mailto:tawhidbinomar@gmail.com"
             className="text-lg text-white hover:text-purple-300 transition break-all"
@@ -96,14 +93,14 @@ const Contact = () => {
         <div className="flex flex-wrap justify-center gap-4 mt-8">
           <a
             href="mailto:tawhidbinomar@gmail.com?subject=Collaboration"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-semibold hover:opacity-90 transition"
+            className="btn-primary"
           >
             <HiMail aria-hidden="true" />
             Collaborate
           </a>
           <a
             href="mailto:tawhidbinomar@gmail.com?subject=Get%20in%20Touch"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#2A0E61] bg-white/5 text-gray-200 text-sm font-semibold hover:text-white hover:border-purple-500/50 hover:bg-purple-500/10 transition"
+            className="btn-secondary"
           >
             <HiMail aria-hidden="true" />
             Get in Touch
@@ -123,7 +120,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 aria-label={`Visit ${social.name}`}
                 title={social.name}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#2A0E61] bg-white/5 text-gray-300 transition-all duration-300 hover:border-purple-500/50 hover:bg-purple-500/10 hover:text-white hover:scale-110"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-surface text-gray-300 transition-colors duration-300 hover:border-accent/50 hover:bg-accent/10 hover:text-white"
               >
                 {social.icon}
               </a>

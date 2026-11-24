@@ -1,6 +1,8 @@
-"use client";  
+"use client";
 import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import ProjectCard from "../sub/ProjectCard";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 const projectData: {
   typeA?: "image" | "video";
@@ -240,36 +242,61 @@ const Projects = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <section aria-labelledby="projects-heading">
-      <div className="flex flex-col items-center justify-center py-20" id="projects">
-        <h2 id="projects-heading" className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
-        Projects
-      </h2>
-      <div className="h-full w-full flex flex-wrap gap-10 px-10 justify-center">
-        {projectData.slice(0, showAll ? projectData.length : 3).map((project, index) => (
-          <ProjectCard
-            key={`project-${project.title.replace(/\s+/g, '-').toLowerCase()}-${index}`}
-            src={project.src}
-            title={project.title}
-            link={project.link}
-            description={project.description}
-            typeA={project.typeA} 
-            tags={project.tags}
-            purpose={project.purpose}
-            impact={project.impact}
-            users={project.users}
-          />
-        ))}
+    <section
+      aria-labelledby="projects-heading"
+      className="py-16 sm:py-20"
+      id="projects"
+    >
+      <div className="section-shell">
+        <SectionHeading id="projects-heading" title="Projects" className="mb-10" />
+
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          <AnimatePresence mode="popLayout">
+            {projectData
+              .slice(0, showAll ? projectData.length : 3)
+              .map((project, index) => (
+                <motion.div
+                  key={`project-${project.title.replace(/\s+/g, "-").toLowerCase()}-${index}`}
+                  layout
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8, scale: 0.98 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{
+                    duration: 0.35,
+                    delay: Math.min(index, 6) * 0.05,
+                    ease: "easeOut",
+                  }}
+                  className="h-full"
+                >
+                  <ProjectCard
+                    src={project.src}
+                    title={project.title}
+                    link={project.link}
+                    description={project.description}
+                    typeA={project.typeA}
+                    tags={project.tags}
+                    purpose={project.purpose}
+                    impact={project.impact}
+                    users={project.users}
+                  />
+                </motion.div>
+              ))}
+          </AnimatePresence>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setShowAll(!showAll)}
+            className="btn-primary"
+            aria-label={showAll ? "Show less projects" : "Show more projects"}
+          >
+            {showAll ? "Show Less" : "Show More"}
+          </button>
+        </div>
       </div>
-      <button
-        onClick={() => setShowAll(!showAll)}
-        className="mt-10 px-6 py-3 text-white text-lg font-semibold bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full hover:opacity-80 transition"
-        aria-label={showAll ? "Show less projects" : "Show more projects"}
-      >
-        {showAll ? "Show Less" : "Show More"}
-      </button>
-    </div>
-  </section>
+    </section>
   );
 };
 

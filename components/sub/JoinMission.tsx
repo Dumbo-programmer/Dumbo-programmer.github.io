@@ -45,7 +45,7 @@ const JoinMission = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className="group relative rounded-2xl border border-[#2A0E61] bg-gradient-to-br from-white/[0.03] via-transparent to-white/[0.01] backdrop-blur-md text-center overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_#8b5cf6] hover:border-purple-500/30"
+      className="group relative rounded-2xl border border-line bg-gradient-to-br from-white/[0.03] via-transparent to-white/[0.01] backdrop-blur-md text-center overflow-hidden transition-all duration-500 hover:shadow-glow hover:border-purple-500/30"
     >
       {/* top accent */}
       <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-purple-400/20 to-transparent group-hover:via-purple-400/50 transition-all duration-700" />
@@ -55,7 +55,7 @@ const JoinMission = () => {
       <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl group-hover:bg-cyan-500/10 transition-all duration-700" />
 
       <div className="relative z-10 p-10 md:p-14 max-w-2xl mx-auto">
-        <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-cyan-400 mb-4">
+        <h3 className="subhead mb-4">
           Join the Mission
         </h3>
 
@@ -71,10 +71,10 @@ const JoinMission = () => {
             <a
               key={btn.label}
               href={btn.href}
-              className={`group/btn inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`group/btn ${
                 btn.variant === "primary"
-                  ? "bg-gradient-to-r from-purple-600 via-purple-500 to-cyan-500 text-white shadow-[0_0_20px_#a855f7]/30 hover:shadow-[0_0_35px_#a855f7] hover:scale-105"
-                  : "border border-[#2A0E61] text-gray-300 hover:border-purple-500/50 hover:text-white hover:bg-purple-500/10 hover:shadow-[0_0_20px_#a855f7] hover:scale-105"
+                  ? "btn-primary"
+                  : "btn-secondary"
               }`}
               aria-label={btn.label}
             >

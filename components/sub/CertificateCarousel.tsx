@@ -131,7 +131,7 @@ const CertificateCarousel = () => {
           {certificates.map((certificate) => (
             <li
               key={certificate.file}
-              className="shrink-0 w-[250px] m-2 overflow-hidden rounded-lg border border-[#2A0E61] bg-black/50 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6]"
+              className="shrink-0 w-[250px] m-2 overflow-hidden rounded-lg border border-line bg-black/50 backdrop-blur-md transition-all duration-300 hover:shadow-glow"
             >
               <figure className="flex flex-col h-full">
                 <div className="h-[200px] w-full flex items-center justify-center overflow-hidden">
@@ -145,7 +145,7 @@ const CertificateCarousel = () => {
                     loading="lazy"
                   />
                 </div>
-                <figcaption className="px-3 py-3 border-t border-[#2A0E61] bg-white/[0.03]">
+                <figcaption className="px-3 py-3 border-t border-line bg-white/[0.03]">
                   <p className="text-sm font-semibold text-white leading-tight">
                     {certificate.title}
                   </p>
@@ -184,7 +184,7 @@ const CarouselButton = ({ direction, onClick }: ButtonProps) => {
           ? "Scroll certificates forward"
           : "Scroll certificates backward"
       }
-      className="relative z-10 h-10 w-10 rounded-full bg-white/5 border border-[#2A0E61] text-white text-lg leading-none flex items-center justify-center hover:shadow-[0_0_20px_#8b5cf6] hover:scale-110 transition-all duration-300"
+      className="relative z-10 h-10 w-10 rounded-full bg-white/5 border border-line text-white text-lg leading-none flex items-center justify-center hover:shadow-glow transition-all duration-300"
     >
       {direction > 0 ? "\u203a" : "\u2039"}
     </button>

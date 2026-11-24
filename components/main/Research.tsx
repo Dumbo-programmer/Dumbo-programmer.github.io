@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { slideInFromTop } from "@/utils/motion";
 import ResearchCard from "../sub/ResearchCard";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
 
 const researchData: {
   typeA?: "image" | "video";
@@ -69,38 +69,32 @@ const researchData: {
 const Research = () => {
   return (
     <section
-      className="flex flex-col items-center justify-center py-4"
+      className="py-16 sm:py-20"
       id="current-roles"
       aria-labelledby="roles-heading"
     >
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={slideInFromTop}
-        className="w-full px-6 text-[30px] sm:text-[40px] font-medium text-center text-gray-200 mb-10"
-      >
-        <h2
+      <div className="section-shell">
+        <SectionHeading
           id="roles-heading"
-          className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500"
-        >
-          Roles &amp; Leadership
-        </h2>
-      </motion.div>
+          title="Roles & Leadership"
+          className="mb-10"
+        />
 
-      <div className="h-full w-full flex flex-wrap gap-8 px-2 justify-center">
-        {researchData.map((research) => (
-          <ResearchCard
-            key={research.title}
-            src={research.src}
-            title={research.title}
-            sub={research.sub}
-            description={research.description}
-            typeA={research.typeA}
-            tags={research.tags}
-            link={research.link}
-          />
-        ))}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {researchData.map((research, index) => (
+            <Reveal key={research.title} className="h-full" delay={index * 0.06}>
+              <ResearchCard
+                src={research.src}
+                title={research.title}
+                sub={research.sub}
+                description={research.description}
+                typeA={research.typeA}
+                tags={research.tags}
+                link={research.link}
+              />
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

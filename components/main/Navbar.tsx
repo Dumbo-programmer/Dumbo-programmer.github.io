@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { HiMail, HiMenu, HiX } from "react-icons/hi";
 import {
   HiOutlineBookOpen,
@@ -127,7 +128,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-3 sm:px-6 lg:px-10">
+    <div className="fixed top-0 z-50 h-[65px] w-full border-b border-line/50 bg-ink/70 px-3 backdrop-blur-md sm:px-6 lg:px-10">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-1 sm:px-[10px]">
         <a
           href="/#projects"
@@ -151,7 +152,7 @@ const Navbar = () => {
             aria-label="Portfolio sections"
             aria-orientation="horizontal"
             onKeyDown={handleTabKeyDown}
-            className="flex items-center justify-between w-auto border border-[#7042f861] bg-[#0300145e] mx-[15px] px-[15px] xl:px-[20px] py-[8px] xl:py-[10px] rounded-full text-gray-200 gap-4 xl:gap-6"
+            className="mx-[15px] flex items-center justify-between gap-4 rounded-full border border-line-accent/40 bg-ink/60 px-4 py-2 text-gray-200 xl:gap-6 xl:px-5"
           >
             {TAB_IDS.map((tab) => {
               const isActive = active === tab;
@@ -169,16 +170,27 @@ const Navbar = () => {
                   aria-label={`Navigate to ${TAB_LABELS[tab]}`}
                   tabIndex={isActive ? 0 : -1}
                   onClick={(event) => handleNavClick(event, tab)}
-                  className={`inline-flex items-center gap-1.5 cursor-pointer transition duration-300 whitespace-nowrap text-xs xl:text-sm ${
+                  className={`relative inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-xs transition-colors duration-300 xl:text-sm ${
                     isActive
-                      ? "text-white shadow-[0_0_12px_#8b5cf655]"
-                      : "text-gray-300 hover:text-[#b49bff]"
+                      ? "text-white"
+                      : "text-gray-300 hover:bg-white/5 hover:text-accent-light"
                   }`}
                 >
-                  <span className={isActive ? "text-purple-300" : "text-gray-400"}>
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-active-pill"
+                      className="absolute inset-0 rounded-full bg-accent/[0.15]"
+                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                    />
+                  )}
+                  <span
+                    className={`relative z-10 ${
+                      isActive ? "text-accent-light" : "text-gray-400"
+                    }`}
+                  >
                     {tabIcons[tab]}
                   </span>
-                  <span>{headerLabels[tab]}</span>
+                  <span className="relative z-10">{headerLabels[tab]}</span>
                 </a>
               );
             })}
@@ -197,7 +209,7 @@ const Navbar = () => {
                   ? "Email Tawhid Bin Omar"
                   : `Visit ${social.name} profile`
               }
-              className="text-gray-200 hover:text-[#b49bff] transition-transform duration-300 hover:scale-110"
+              className="text-gray-200 transition-colors duration-300 hover:text-accent-light"
             >
               {social.icon}
             </a>
@@ -211,53 +223,81 @@ const Navbar = () => {
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}
         >
-          {menuOpen ? (
-            <HiX size={28} aria-hidden="true" />
-          ) : (
-            <HiMenu size={28} aria-hidden="true" />
-          )}
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={menuOpen ? "close" : "open"}
+              initial={{ opacity: 0, rotate: -60, scale: 0.8 }}
+              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              exit={{ opacity: 0, rotate: 60, scale: 0.8 }}
+              transition={{ duration: 0.18, ease: "easeOut" }}
+              className="block"
+            >
+              {menuOpen ? (
+                <HiX size={28} aria-hidden="true" />
+              ) : (
+                <HiMenu size={28} aria-hidden="true" />
+              )}
+            </motion.span>
+          </AnimatePresence>
         </button>
       </div>
 
-      {menuOpen && (
-        <div className="fixed inset-0 top-0 left-0 w-full h-full bg-[#030014] z-40 flex flex-col items-center justify-center gap-6 sm:gap-8 py-24 px-6 overflow-y-auto">
-          {TAB_IDS.map((tab) => (
-            <a
-              key={tab}
-              href={`/#${tab}`}
-              aria-current={active === tab ? "page" : undefined}
-              className={`inline-flex items-center gap-3 text-2xl transition duration-300 ${
-                active === tab
-                  ? "text-purple-300"
-                  : "text-gray-200 hover:text-[#7042f8]"
-              }`}
-              onClick={(event) => handleNavClick(event, tab)}
-            >
-              <span className="[&>svg]:h-6 [&>svg]:w-6">{tabIcons[tab]}</span>
-              <span>{TAB_LABELS[tab]}</span>
-            </a>
-          ))}
-          <div className="flex flex-row gap-6 mt-4">
-            {headerSocials.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target={social.external ? "_blank" : undefined}
-                rel={social.external ? "noopener noreferrer" : undefined}
-                aria-label={
-                  social.name === "Email"
-                    ? "Email Tawhid Bin Omar"
-                    : `Visit ${social.name} profile`
-                }
-                onClick={() => setMenuOpen(false)}
-                className="text-gray-200 hover:text-[#b49bff]"
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed inset-0 z-40 flex h-full w-full flex-col items-center justify-center gap-6 overflow-y-auto bg-ink px-6 py-24 sm:gap-8"
+          >
+            {TAB_IDS.map((tab, index) => (
+              <motion.a
+                key={tab}
+                href={`/#${tab}`}
+                aria-current={active === tab ? "page" : undefined}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.05 + index * 0.05, duration: 0.3 }}
+                className={`inline-flex items-center gap-3 text-2xl transition-colors duration-300 ${
+                  active === tab
+                    ? "text-accent-light"
+                    : "text-gray-200 hover:text-accent-light"
+                }`}
+                onClick={(event) => handleNavClick(event, tab)}
               >
-                {social.icon}
-              </a>
+                <span className="[&>svg]:h-6 [&>svg]:w-6">{tabIcons[tab]}</span>
+                <span>{TAB_LABELS[tab]}</span>
+              </motion.a>
             ))}
-          </div>
-        </div>
-      )}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.35, duration: 0.3 }}
+              className="mt-4 flex flex-row gap-6"
+            >
+              {headerSocials.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target={social.external ? "_blank" : undefined}
+                  rel={social.external ? "noopener noreferrer" : undefined}
+                  aria-label={
+                    social.name === "Email"
+                      ? "Email Tawhid Bin Omar"
+                      : `Visit ${social.name} profile`
+                  }
+                  onClick={() => setMenuOpen(false)}
+                  className="text-gray-200 transition-colors hover:text-accent-light"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

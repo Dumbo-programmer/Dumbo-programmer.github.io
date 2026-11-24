@@ -5,6 +5,7 @@ import StarsCanvas from "@/components/main/StarBackground";
 import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import MotionProvider from "@/components/main/MotionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -77,7 +78,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
+        className={`${inter.className} overflow-x-hidden bg-ink`}
       >
         <a
           href="#main-content"
@@ -85,12 +86,14 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <ErrorBoundary>
-          <StarsCanvas />
-          <Navbar />
-          {children}
-          <Footer />
-        </ErrorBoundary>
+        <MotionProvider>
+          <ErrorBoundary>
+            <StarsCanvas />
+            <Navbar />
+            {children}
+            <Footer />
+          </ErrorBoundary>
+        </MotionProvider>
       </body>
     </html>
   );

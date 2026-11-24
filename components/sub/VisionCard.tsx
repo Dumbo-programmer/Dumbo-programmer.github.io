@@ -26,12 +26,12 @@ const VisionCard = () => {
         {/* icon */}
         <div className="relative mb-6 mx-auto w-fit">
           <div className="absolute inset-0 bg-cyan-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-700" />
-          <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border border-cyan-500/25 flex items-center justify-center text-cyan-400 group-hover:text-cyan-300 group-hover:border-cyan-400/50 group-hover:scale-110 transition-all duration-500">
+          <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border border-cyan-500/25 flex items-center justify-center text-cyan-400 group-hover:text-cyan-300 group-hover:border-cyan-400/50 transition-all duration-500">
             <HiEye className="text-2xl" aria-hidden="true" />
           </div>
         </div>
 
-        <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-purple-400 mb-6">
+        <h3 className="subhead mb-6">
           Looking Forward
         </h3>
 

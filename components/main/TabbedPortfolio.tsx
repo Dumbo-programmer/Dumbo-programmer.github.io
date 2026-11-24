@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Achievements from "@/components/main/Achievements";
 import CertificateCarousel from "@/components/sub/CertificateCarousel";
 import Contact from "@/components/main/Contact";
@@ -10,6 +11,7 @@ import Projects from "@/components/main/Projects";
 import Research from "@/components/main/Research";
 import Skills from "@/components/main/Skills";
 import Writing from "@/components/main/Writing";
+import SectionHeading from "@/components/ui/SectionHeading";
 import {
   DEFAULT_TAB,
   TAB_EVENT,
@@ -19,19 +21,13 @@ import {
 } from "@/utils/tabs";
 
 const AchievementsSection = () => (
-  <section className="py-10" aria-labelledby="achievements-heading">
-    <div className="text-center mb-6">
-      <h2
-        id="achievements-heading"
-        className="text-[30px] sm:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500"
-      >
-        Achievements
-      </h2>
-      <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mt-2">
-        Competition results, research milestones, selected honours, and the full
-        certificate archive.
-      </p>
-    </div>
+  <section className="py-16 sm:py-20" aria-labelledby="achievements-heading">
+    <SectionHeading
+      id="achievements-heading"
+      title="Achievements"
+      description="Competition results, research milestones, selected honours, and the full certificate archive."
+      className="mb-10"
+    />
 
     <Achievements />
 
@@ -40,15 +36,13 @@ const AchievementsSection = () => (
       className="mt-14 scroll-mt-36"
       aria-labelledby="certificates-heading"
     >
-      <h3
+      <SectionHeading
+        as="h3"
         id="certificates-heading"
-        className="text-center text-xl sm:text-2xl font-semibold text-white mb-4"
-      >
-        Certificates
-      </h3>
-      <p className="text-center text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mb-6">
-        A full archive of competition, research, and course certifications.
-      </p>
+        title="Certificates"
+        description="A full archive of competition, research, and course certifications."
+        className="mb-6"
+      />
       <CertificateCarousel />
     </div>
   </section>
@@ -101,76 +95,51 @@ const TabbedPortfolio = () => {
     };
   }, [scrollToHashTarget]);
 
+  const renderPanel = (
+    tab: TabId,
+    children: React.ReactNode,
+    className = ""
+  ) => (
+    <section
+      id={`panel-${tab}`}
+      role="tabpanel"
+      aria-labelledby={`tab-${tab}`}
+      hidden={active !== tab}
+      tabIndex={0}
+      className={`scroll-mt-36 focus:outline-none ${className}`}
+    >
+      <motion.div
+        initial={false}
+        animate={{ opacity: active === tab ? 1 : 0, y: active === tab ? 0 : 10 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        {children}
+      </motion.div>
+    </section>
+  );
+
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div className="section-shell pb-20">
       <div className="min-h-[55vh]">
-        <section
-          id="panel-projects"
-          role="tabpanel"
-          aria-labelledby="tab-projects"
-          hidden={active !== "projects"}
-          tabIndex={0}
-          className="scroll-mt-36 focus:outline-none"
-        >
-          <Skills />
-          <Projects />
-        </section>
-
-        <section
-          id="panel-roles"
-          role="tabpanel"
-          aria-labelledby="tab-roles"
-          hidden={active !== "roles"}
-          tabIndex={0}
-          className="scroll-mt-36 focus:outline-none"
-        >
-          <Research />
-        </section>
-
-        <section
-          id="panel-notes"
-          role="tabpanel"
-          aria-labelledby="tab-notes"
-          hidden={active !== "notes"}
-          tabIndex={0}
-          className="scroll-mt-36 space-y-6 focus:outline-none"
-        >
-          <EducationImpactSection />
-          <LibrarySection />
-        </section>
-
-        <section
-          id="panel-achievements"
-          role="tabpanel"
-          aria-labelledby="tab-achievements"
-          hidden={active !== "achievements"}
-          tabIndex={0}
-          className="scroll-mt-36 focus:outline-none"
-        >
-          <AchievementsSection />
-        </section>
-
-        <section
-          id="panel-writing"
-          role="tabpanel"
-          aria-labelledby="tab-writing"
-          hidden={active !== "writing"}
-          tabIndex={0}
-          className="scroll-mt-36 focus:outline-none"
-        >
-          <Writing />
-        </section>
-
-        <section
-          id="panel-contact"
-          role="tabpanel"
-          aria-labelledby="tab-contact"
-          hidden={active !== "contact"}
-          tabIndex={0}
-          className="scroll-mt-36 focus:outline-none"
-        >
-          <Contact />
-        </section>
+        {renderPanel(
+          "projects",
+          <>
+            <Skills />
+            <Projects />
+          </>
+        )}
+        {renderPanel("roles", <Research />)}
+        {renderPanel(
+          "notes",
+          <>
+            <EducationImpactSection />
+            <LibrarySection />
+          </>,
+          "space-y-6"
+        )}
+        {renderPanel("achievements", <AchievementsSection />)}
+        {renderPanel("writing", <Writing />)}
+        {renderPanel("contact", <Contact />)}
       </div>
     </div>
   );

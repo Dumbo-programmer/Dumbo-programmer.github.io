@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useMemo, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import SectionHeading from "@/components/ui/SectionHeading";
 import {
   writingCategories,
   writingExcerpt,
@@ -109,24 +110,18 @@ const Writing = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(writingJsonLd) }}
       />
-      <div className="text-center mb-10">
-        <h2
-          id="writing-heading"
-          className="text-[30px] sm:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500"
-        >
-          Writing
-        </h2>
-        <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mt-2">
-          Poetry, essays, and short stories on love, loss, belonging, philosophy, and the
-          people who shape us.
-        </p>
-      </div>
+      <SectionHeading
+        id="writing-heading"
+        title="Writing"
+        description="Poetry, essays, and short stories on love, loss, belonging, philosophy, and the people who shape us."
+        className="mb-10"
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         {recognitions.map((item) => (
           <article
             key={item.title}
-            className="flex items-center gap-5 rounded-xl border border-[#2A0E61] bg-white/5 backdrop-blur-md p-5"
+            className="card-surface flex items-center gap-5 p-5"
           >
             <div className="relative w-24 h-28 shrink-0 rounded-lg overflow-hidden bg-black">
               <Image
@@ -154,10 +149,10 @@ const Writing = () => {
               type="button"
               onClick={() => setCategory(item)}
               aria-pressed={category === item}
-              className={`rounded-full px-4 py-2 text-xs sm:text-sm border transition ${
+              className={`rounded-full border px-4 py-2 text-xs transition sm:text-sm ${
                 category === item
-                  ? "border-purple-500/50 bg-purple-500/15 text-white"
-                  : "border-[#2A0E61] bg-white/5 text-gray-400 hover:text-white hover:border-purple-500/40"
+                  ? "border-accent/50 bg-accent/[0.15] text-white"
+                  : "border-line bg-surface text-gray-400 hover:border-accent/40 hover:text-white"
               }`}
             >
               {item}
@@ -171,7 +166,7 @@ const Writing = () => {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search writing..."
-            className="w-full rounded-full border border-[#2A0E61] bg-white/5 px-4 py-2 text-sm text-white placeholder-gray-500 focus:border-purple-500/50 focus:outline-none"
+            className="w-full rounded-full border border-line bg-surface px-4 py-2 text-sm text-white placeholder-gray-500 focus:border-accent/50 focus:outline-none"
           />
         </label>
       </div>
@@ -186,7 +181,7 @@ const Writing = () => {
             key={piece.id}
             id={`writing-${piece.id}`}
             aria-labelledby={`writing-title-${piece.id}`}
-            className="group scroll-mt-36 rounded-2xl border border-[#2A0E61] bg-white/[0.04] backdrop-blur-md transition-colors open:border-purple-500/40"
+            className="group scroll-mt-36 rounded-2xl border border-line bg-white/[0.04] backdrop-blur-md transition-colors open:border-purple-500/40"
           >
             <summary className="flex cursor-pointer list-none items-start justify-between gap-4 p-6 marker:hidden">
               <div className="min-w-0">
@@ -210,7 +205,7 @@ const Writing = () => {
                 aria-hidden="true"
               />
             </summary>
-            <div className="border-t border-[#2A0E61]/70 px-6 pb-7 pt-6">
+            <div className="border-t border-line/70 px-6 pb-7 pt-6">
               <div
                 className={`whitespace-pre-line text-gray-300 ${
                   piece.category === "Poetry"
@@ -222,7 +217,7 @@ const Writing = () => {
               </div>
               <a
                 href={writingPieceUrl(piece.id)}
-                className="inline-block mt-6 text-xs text-purple-300 hover:text-purple-200 underline decoration-purple-500/40 underline-offset-4"
+                className="animated-underline mt-6 pb-0.5 text-xs text-purple-300 transition-colors hover:text-purple-200"
               >
                 Open standalone page for “{piece.title}”
               </a>

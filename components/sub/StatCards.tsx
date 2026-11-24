@@ -58,7 +58,7 @@ const StatCards = ({ statistics }: StatCardsProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-30px" }}
           transition={{ delay: index * 0.08, duration: 0.5 }}
-          className="relative flex flex-col items-center text-center py-5 px-2 rounded-xl border border-[#2A0E61] bg-white/5 backdrop-blur-md overflow-hidden group transition-all duration-500 hover:shadow-[0_0_30px_#8b5cf6] hover:border-purple-500/30"
+          className="relative flex flex-col items-center text-center py-5 px-2 rounded-xl border border-line bg-white/5 backdrop-blur-md overflow-hidden group transition-all duration-500 hover:shadow-glow hover:border-purple-500/30"
         >
           {/* top accent */}
           <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-purple-500/0 to-transparent transition-all duration-500 group-hover:via-purple-400" />
@@ -66,13 +66,13 @@ const StatCards = ({ statistics }: StatCardsProps) => {
           {/* icon container */}
           <div className="relative mb-3">
             <div className="absolute inset-0 bg-purple-500/10 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/15 to-purple-500/5 border border-purple-500/10 flex items-center justify-center text-purple-400 group-hover:text-purple-300 group-hover:border-purple-500/30 group-hover:scale-110 transition-all duration-500">
+            <div className="relative w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/[0.15] to-purple-500/5 border border-purple-500/10 flex items-center justify-center text-purple-400 group-hover:text-purple-300 group-hover:border-purple-500/30 transition-all duration-500">
               {stat.icon}
             </div>
           </div>
 
           {/* number */}
-          <div className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 mb-0.5">
+          <div className="mb-0.5 text-xl font-bold text-white sm:text-2xl">
             <CountUp value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
           </div>
 

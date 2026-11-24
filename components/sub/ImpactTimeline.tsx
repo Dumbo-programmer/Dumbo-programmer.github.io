@@ -32,9 +32,9 @@ const ImpactTimeline = ({ entries }: ImpactTimelineProps) => {
                 <span
                   className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-bold border ${
                     entry.isFuture
-                      ? "bg-cyan-500/15 text-cyan-300 border-cyan-500/30"
+                      ? "bg-cyan-500/[0.15] text-cyan-300 border-cyan-500/30"
                       : entry.highlight
-                      ? "bg-purple-500/15 text-purple-300 border-purple-500/30"
+                      ? "bg-purple-500/[0.15] text-purple-300 border-purple-500/30"
                       : "bg-purple-500/10 text-purple-300/60 border-purple-500/20"
                   }`}
                 >
@@ -51,9 +51,9 @@ const ImpactTimeline = ({ entries }: ImpactTimelineProps) => {
               <div
                 className={`relative w-9 h-9 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${
                   entry.isFuture
-                    ? "border-cyan-400 bg-cyan-500/15 shadow-[0_0_20px_#06b6d4]"
+                    ? "border-cyan-400 bg-cyan-500/[0.15] shadow-[0_0_20px_#06b6d4]"
                     : entry.highlight
-                    ? "border-purple-400 bg-purple-500/15 shadow-[0_0_20px_#a855f7]"
+                    ? "border-purple-400 bg-purple-500/[0.15] shadow-[0_0_20px_#a855f7]"
                     : "border-purple-500/40 bg-purple-500/10"
                 }`}
               >
@@ -92,9 +92,9 @@ const ImpactTimeline = ({ entries }: ImpactTimelineProps) => {
                 <span
                   className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${
                     entry.isFuture
-                      ? "bg-cyan-500/15 text-cyan-300 border-cyan-500/30"
+                      ? "bg-cyan-500/[0.15] text-cyan-300 border-cyan-500/30"
                       : entry.highlight
-                      ? "bg-purple-500/15 text-purple-300 border-purple-500/30"
+                      ? "bg-purple-500/[0.15] text-purple-300 border-purple-500/30"
                       : "bg-purple-500/10 text-purple-300/60 border-purple-500/20"
                   }`}
                 >
@@ -115,10 +115,10 @@ const ImpactTimeline = ({ entries }: ImpactTimelineProps) => {
                 transition={{ delay: index * 0.15 + 0.1, duration: 0.5 }}
                 className={`relative p-5 md:p-6 rounded-xl border backdrop-blur-md transition-all duration-300 ${
                   entry.isFuture
-                    ? "border-cyan-500/30 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 hover:shadow-[0_0_30px_#06b6d4]"
+                    ? "border-cyan-500/30 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 hover:shadow-glow"
                     : entry.highlight
-                    ? "border-purple-500/40 bg-gradient-to-br from-purple-500/10 to-fuchsia-500/5 hover:shadow-[0_0_30px_#a855f7]"
-                    : "border-[#2A0E61] bg-white/[0.04] hover:bg-white/[0.07] hover:shadow-[0_0_20px_#8b5cf6]"
+                    ? "border-purple-500/40 bg-gradient-to-br from-purple-500/10 to-fuchsia-500/5 hover:shadow-glow"
+                    : "border-line bg-white/[0.04] hover:bg-white/[0.07] hover:shadow-glow"
                 }`}
               >
                 {/* desktop year badge */}
@@ -128,9 +128,9 @@ const ImpactTimeline = ({ entries }: ImpactTimelineProps) => {
                       <span
                         className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${
                           entry.isFuture
-                            ? "bg-cyan-500/15 text-cyan-300 border-cyan-500/30"
+                            ? "bg-cyan-500/[0.15] text-cyan-300 border-cyan-500/30"
                             : entry.highlight
-                            ? "bg-purple-500/15 text-purple-300 border-purple-500/30"
+                            ? "bg-purple-500/[0.15] text-purple-300 border-purple-500/30"
                             : "bg-purple-500/10 text-purple-300/60 border-purple-500/20"
                         }`}
                       >

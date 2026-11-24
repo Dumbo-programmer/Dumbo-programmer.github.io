@@ -1,88 +1,84 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
-import { slideInFromTop } from "@/utils/motion";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
 import { platformStats, featuredResources } from "@/constants/library";
 
 const LibrarySection = () => {
   return (
     <section
-      className="flex flex-col items-center justify-center py-20"
+      className="py-16 sm:py-20"
       id="open-problem-solving-library"
       aria-labelledby="library-heading"
     >
-      <div className="flex flex-col relative items-center justify-center min-h-screen w-full h-full">
-        <div className="absolute w-auto h-auto top-0 z-[5]">
-          <motion.div variants={slideInFromTop} className="text-center">
-            <h2
-              id="library-heading"
-              className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4"
-            >
-              Open Problem Solving Library
-            </h2>
-            <p className="text-gray-400 text-sm max-w-2xl mx-auto">
-              Built so that no student in Bangladesh is held back by the cost of educational resources.
-              Free, open-access, always.
-            </p>
-          </motion.div>
-        </div>
+      <div className="section-shell">
+        <SectionHeading
+          id="library-heading"
+          title="Open Problem Solving Library"
+          description="Built so that no student in Bangladesh is held back by the cost of educational resources. Free, open-access, always."
+          className="mb-10"
+        />
 
-        {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-20 mb-8">
+        <div className="mb-10 flex flex-wrap justify-center gap-3">
           {platformStats.map((stat) => (
             <div
               key={stat.label}
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#2A0E61] bg-white/5 backdrop-blur-sm"
+              className="flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 backdrop-blur-sm"
             >
               <span className="text-lg">{stat.icon}</span>
-              <span className="text-white font-bold">{stat.value.toLocaleString()}</span>
-              <span className="text-gray-400 text-sm">{stat.label}</span>
+              <span className="font-bold text-white">
+                {stat.value.toLocaleString()}
+              </span>
+              <span className="text-sm text-gray-400">{stat.label}</span>
             </div>
           ))}
         </div>
 
-        {/* Featured Cards */}
-        <div className="h-full w-full flex flex-wrap gap-6 px-10 justify-center mt-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {featuredResources.slice(0, 3).map((item, idx) => (
-            <a
-              key={idx}
-              href={item.link}
-              target={item.link.startsWith("http") ? "_blank" : undefined}
-              rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="w-full max-w-sm border border-[#2A0E61] rounded-lg bg-white/5 backdrop-blur-md p-5 transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6] hover:scale-105 flex flex-col"
-              aria-label={`Featured resource: ${item.title}`}
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded-full">
-                  {item.type.replace("-", " ")}
-                </span>
-                <span className="text-xs text-gray-500">{item.subject}</span>
-              </div>
-              <h3 className="text-white font-semibold mb-1 text-base">{item.title}</h3>
-              <p className="text-gray-400 text-xs leading-relaxed flex-1 line-clamp-3">
-                {item.description}
-              </p>
-              {item.tags.length > 0 && (
-                <div className="flex flex-wrap gap-1.5 mt-3">
-                  {item.tags.slice(0, 4).map((tag) => (
-                    <span key={tag} className="text-[10px] text-gray-500 bg-white/5 px-1.5 py-0.5 rounded">
-                      #{tag}
-                    </span>
-                  ))}
+            <Reveal key={idx} className="h-full" delay={idx * 0.08}>
+              <a
+                href={item.link}
+                target={item.link.startsWith("http") ? "_blank" : undefined}
+                rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="card-interactive flex h-full flex-col p-5"
+                aria-label={`Featured resource: ${item.title}`}
+              >
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="chip chip-accent">
+                    {item.type.replace("-", " ")}
+                  </span>
+                  <span className="text-xs text-gray-500">{item.subject}</span>
                 </div>
-              )}
-            </a>
+                <h3 className="mb-1 text-base font-semibold text-white">
+                  {item.title}
+                </h3>
+                <p className="flex-1 text-xs leading-relaxed text-gray-400 line-clamp-3">
+                  {item.description}
+                </p>
+                {item.tags.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {item.tags.slice(0, 4).map((tag) => (
+                      <span key={tag} className="chip text-[10px] text-gray-400">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </a>
+            </Reveal>
           ))}
         </div>
 
-        {/* CTA */}
-        <a
-          href="/notes"
-          className="mt-8 px-8 py-3 text-white text-lg font-semibold bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full hover:opacity-80 transition"
-          aria-label="Browse the full Open Problem Solving Library"
-        >
-          Browse the Library
-        </a>
+        <div className="mt-10 flex justify-center">
+          <a
+            href="/notes"
+            className="btn-primary"
+            aria-label="Browse the full Open Problem Solving Library"
+          >
+            Browse the Library
+          </a>
+        </div>
       </div>
     </section>
   );

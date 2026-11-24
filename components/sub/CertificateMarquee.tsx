@@ -62,7 +62,7 @@ const CertificateMarquee = ({
       {items.map((item, index) => (
         <figure
           key={`${item.src}-${index}`}
-          className="w-[240px] sm:w-[280px] shrink-0 flex flex-col overflow-hidden rounded-xl border border-[#2A0E61] bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_#8b5cf6]"
+          className="w-[240px] sm:w-[280px] shrink-0 flex flex-col overflow-hidden rounded-xl border border-line bg-white/5 backdrop-blur-md transition-all duration-300 hover:shadow-glow"
         >
           <div className="h-[220px] sm:h-[260px] w-full flex items-center justify-center overflow-hidden bg-black/60">
             <Image

@@ -112,16 +112,13 @@ const groupedSkills = CATEGORIES.reduce(
 const ToolsShowcase = () => {
   return (
     <section id="skills" aria-labelledby="tools-heading" className="w-full py-4">
-      <div className="rounded-2xl border border-[#2A0E61] bg-white/5 backdrop-blur-md p-6 sm:p-8">
+      <div className="card-surface p-6 sm:p-8">
         <div className="flex flex-wrap items-end justify-between gap-3 mb-8">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-purple-400 mb-2">
               Toolkit
             </p>
-            <h2
-              id="tools-heading"
-              className="text-3xl sm:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500"
-            >
+            <h2 id="tools-heading" className="section-title">
               Tools I have worked with
             </h2>
           </div>
@@ -134,7 +131,7 @@ const ToolsShowcase = () => {
           {CATEGORIES.map((category) => (
             <div
               key={category}
-              className="rounded-xl border border-[#2A0E61]/80 bg-[#030014]/50 p-5"
+              className="rounded-xl border border-line/80 bg-ink/50 p-5"
             >
               <div className="flex items-center justify-between gap-3 mb-4">
                 <h3 className="text-base font-semibold text-white">{category}</h3>

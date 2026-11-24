@@ -1,5 +1,6 @@
 import React from "react";
 import AchievementCard from "../sub/AchievementCard";
+import Reveal from "@/components/ui/Reveal";
 
 const achievementData: {
   src: string;
@@ -76,19 +77,26 @@ const achievementData: {
 const Achievements = () => {
   return (
     <section
-      className="flex flex-col relative items-center justify-center w-full py-4"
+      className="w-full py-16 sm:py-20"
       id="achievements"
       aria-label="Achievements"
     >
-      <div className="h-full w-full flex flex-wrap gap-8 px-2 justify-center">
-        {achievementData.map((achievement) => (
-          <AchievementCard
-            key={achievement.title}
-            src={achievement.src}
-            title={achievement.title}
-            description={achievement.description}
-          />
-        ))}
+      <div className="section-shell">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {achievementData.map((achievement, index) => (
+            <Reveal
+              key={achievement.title}
+              className="h-full"
+              delay={Math.min(index, 8) * 0.04}
+            >
+              <AchievementCard
+                src={achievement.src}
+                title={achievement.title}
+                description={achievement.description}
+              />
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

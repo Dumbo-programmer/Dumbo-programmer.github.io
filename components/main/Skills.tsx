@@ -139,7 +139,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45, delay: categoryIndex * 0.06 }}
-              className="group relative overflow-hidden rounded-2xl border border-[#2A0E61] bg-[#0300145e] p-5 shadow-lg shadow-[#2A0E61]/20 backdrop-blur-sm"
+              className="group relative overflow-hidden rounded-2xl border border-line bg-ink/50 p-5 shadow-lg shadow-[#2A0E61]/20 backdrop-blur-sm"
             >
               <div
                 className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${category.accent} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}

@@ -30,17 +30,18 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         this.props.fallback || (
-          <div className="flex flex-col items-center justify-center min-h-screen bg-[#030014] text-white p-8">
+          <div className="flex min-h-screen flex-col items-center justify-center bg-ink p-8 text-white">
             <div className="max-w-md text-center">
-              <h1 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+              <h1 className="mb-4 text-section font-semibold text-white">
                 Oops! Something went wrong
               </h1>
-              <p className="text-gray-400 mb-6">
+              <p className="mb-6 text-gray-400">
                 We encountered an unexpected error. Please try refreshing the page.
               </p>
               <button
+                type="button"
                 onClick={() => window.location.reload()}
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg hover:opacity-80 transition"
+                className="btn-primary"
               >
                 Refresh Page
               </button>

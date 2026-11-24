@@ -6,133 +6,147 @@ import {
   RxLinkedinLogo,
   RxTwitterLogo,
 } from "react-icons/rx";
-import { FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaDev, FaFacebook, FaYoutube } from "react-icons/fa";
+
+const footerLink =
+  "flex items-center gap-2 py-1.5 text-sm text-gray-400 transition-colors hover:text-accent-light";
 
 const Footer = () => {
   return (
-    <footer className="relative z-[10] bg-transparent text-gray-200 shadow-lg p-5">
-      <div className="w-full flex flex-col items-center justify-center">
-        <div className="w-full flex flex-row items-center justify-around flex-wrap gap-8">
-          <div className="min-w-[200px] flex flex-col items-center">
-            <div className="font-bold text-lg">Community</div>
+    <footer className="relative z-10 border-t border-line/60 bg-ink/60 py-12 text-gray-200">
+      <div className="section-shell">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+          <div className="flex flex-col items-start">
+            <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white">
+              Community
+            </h2>
             <a
               href="https://github.com/Dumbo-programmer/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit Tawhid Bin Omar's GitHub profile"
-              className="flex items-center my-2 cursor-pointer hover:text-gray-500 transition"
+              className={footerLink}
             >
-              <RxGithubLogo size={20} />
-              <span className="ml-2">GitHub</span>
+              <RxGithubLogo size={18} aria-hidden="true" />
+              GitHub
             </a>
             <a
               href="https://dev.to/dumboprogrammer"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center my-2 cursor-pointer hover:text-gray-500 transition"
+              aria-label="Visit Tawhid Bin Omar's Dev.to profile"
+              className={footerLink}
             >
-              <RxGithubLogo size={20} />
-              <span className="ml-2">Dev.to</span>
+              <FaDev size={18} aria-hidden="true" />
+              Dev.to
             </a>
             <a
               href="https://discord.com/users/707079802531872769"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center my-2 cursor-pointer hover:text-blue-500 transition"
+              aria-label="Visit Tawhid Bin Omar on Discord"
+              className={footerLink}
             >
-              <RxDiscordLogo size={20} />
-              <span className="ml-2">Discord</span>
+              <RxDiscordLogo size={18} aria-hidden="true" />
+              Discord
             </a>
           </div>
 
-          <div className="min-w-[200px] flex flex-col items-center">
-            <div className="font-bold text-lg">Social Media</div>
+          <div className="flex flex-col items-start">
+            <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white">
+              Social Media
+            </h2>
             <a
               href="https://www.facebook.com/tawhiddayo/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center my-2 cursor-pointer hover:text-blue-400 transition"
+              aria-label="Visit Tawhid Bin Omar on Facebook"
+              className={footerLink}
             >
-              <FaFacebook size={20} />
-              <span className="ml-2">Facebook</span>
+              <FaFacebook size={18} aria-hidden="true" />
+              Facebook
             </a>
             <a
               href="https://www.instagram.com/acutepierce"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center my-2 cursor-pointer hover:text-pink-500 transition"
+              aria-label="Visit Tawhid Bin Omar on Instagram"
+              className={footerLink}
             >
-              <RxInstagramLogo size={20} />
-              <span className="ml-2">Instagram</span>
+              <RxInstagramLogo size={18} aria-hidden="true" />
+              Instagram
             </a>
             <a
               href="https://x.com/tawhid_omar"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center my-2 cursor-pointer hover:text-blue-400 transition"
+              aria-label="Visit Tawhid Bin Omar on X"
+              className={footerLink}
             >
-              <RxTwitterLogo size={20} />
-              <span className="ml-2">Twitter</span>
+              <RxTwitterLogo size={18} aria-hidden="true" />
+              Twitter
             </a>
             <a
               href="https://www.linkedin.com/in/tawhidbinomar/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center my-2 cursor-pointer hover:text-blue-700 transition"
+              aria-label="Visit Tawhid Bin Omar on LinkedIn"
+              className={footerLink}
             >
-              <RxLinkedinLogo size={20} />
-              <span className="ml-2">LinkedIn</span>
+              <RxLinkedinLogo size={18} aria-hidden="true" />
+              LinkedIn
             </a>
             <a
               href="https://www.youtube.com/@tawhidbinomar"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center my-2 cursor-pointer hover:text-red-500 transition"
+              aria-label="Visit Tawhid Bin Omar on YouTube"
+              className={footerLink}
             >
-              <FaYoutube size={20} />
-              <span className="ml-2">YouTube</span>
+              <FaYoutube size={18} aria-hidden="true" />
+              YouTube
             </a>
           </div>
 
-          <div className="min-w-[200px] flex flex-col items-center">
-            <div className="font-bold text-lg">Resources</div>
-            <a
-              href="/notes"
-              className="flex items-center my-2 cursor-pointer hover:text-purple-400 transition"
-            >
-              <span className="ml-2">Open Problem Solving Library</span>
+          <div className="flex flex-col items-start">
+            <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white">
+              Resources
+            </h2>
+            <a href="/notes" className={footerLink}>
+              Open Problem Solving Library
             </a>
           </div>
 
-          <div className="min-w-[200px] flex flex-col items-center">
-            <div className="font-bold text-lg">Contact</div>
-            <address className="not-italic flex flex-col items-center">
+          <div className="flex flex-col items-start">
+            <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white">
+              Contact
+            </h2>
+            <address className="not-italic flex flex-col items-start">
               <a
                 href="mailto:tawhidbinomar@gmail.com"
                 aria-label="Send email to tawhidbinomar@gmail.com"
-                className="flex items-center my-2 cursor-pointer hover:text-teal-300 transition"
+                className={footerLink}
               >
-                <span className="ml-2">tawhidbinomar@gmail.com</span>
+                tawhidbinomar@gmail.com
               </a>
             </address>
             <a
               href="https://buymeacoffee.com/tawhid"
-              className="flex items-center my-2 cursor-pointer hover:text-yellow-400 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={footerLink}
             >
-              <span className="ml-2">Donate</span>
+              Donate
             </a>
-            <a
-              href="/resume.pdf"
-              className="flex items-center my-2 cursor-pointer hover:text-green-400 transition"
-            >
-              <span className="ml-2">Resume</span>
+            <a href="/resume.pdf" className={footerLink}>
+              Resume
             </a>
           </div>
         </div>
 
-        <div className="mt-5 text-sm text-center">
+        <p className="mt-12 border-t border-line/50 pt-6 text-center text-sm text-gray-500">
           &copy; {new Date().getFullYear()} Tawhid Bin Omar. All rights reserved.
-        </div>
+        </p>
       </div>
     </footer>
   );
