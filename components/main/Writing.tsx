@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useMemo, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
 import {
   writingCategories,
   writingExcerpt,
@@ -31,6 +32,15 @@ const categoryStyles: Record<WritingCategory, string> = {
   Poetry: "text-purple-300 bg-purple-500/10 border-purple-500/30",
   Essay: "text-cyan-300 bg-cyan-500/10 border-cyan-500/30",
   "Short story": "text-amber-300 bg-amber-500/10 border-amber-500/30",
+};
+
+const categorySurfaces: Record<WritingCategory, string> = {
+  Poetry:
+    "bg-purple-500/[0.04] hover:bg-purple-500/[0.08] open:bg-purple-500/[0.08]",
+  Essay:
+    "bg-cyan-500/[0.04] hover:bg-cyan-500/[0.08] open:bg-cyan-500/[0.08]",
+  "Short story":
+    "bg-amber-500/[0.04] hover:bg-amber-500/[0.08] open:bg-amber-500/[0.08]",
 };
 
 const writingJsonLd = [
@@ -117,27 +127,30 @@ const Writing = () => {
         className="mb-10"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        {recognitions.map((item) => (
-          <article
+      <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {recognitions.map((item, index) => (
+          <Reveal
             key={item.title}
-            className="card-surface flex items-center gap-5 p-5"
+            className="lg:col-span-2"
+            delay={index * 0.06}
           >
-            <div className="relative w-24 h-28 shrink-0 rounded-lg overflow-hidden bg-black">
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                sizes="96px"
-                className="object-contain"
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-              <p className="text-purple-300 text-sm mt-1">{item.detail}</p>
-            </div>
-          </article>
+            <article className="card-interactive flex h-full items-center gap-5 p-5">
+              <div className="relative h-28 w-24 shrink-0 overflow-hidden rounded-lg bg-black">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="96px"
+                  className="object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <div className="min-w-0">
+                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                <p className="mt-1 text-sm text-purple-300">{item.detail}</p>
+              </div>
+            </article>
+          </Reveal>
         ))}
       </div>
 
@@ -175,55 +188,75 @@ const Writing = () => {
         {filteredPieces.length} {filteredPieces.length === 1 ? "piece" : "pieces"}
       </p>
 
-      <div className="space-y-4">
-        {filteredPieces.map((piece) => (
-          <details
-            key={piece.id}
-            id={`writing-${piece.id}`}
-            aria-labelledby={`writing-title-${piece.id}`}
-            className="group scroll-mt-36 rounded-2xl border border-line bg-white/[0.04] backdrop-blur-md transition-colors open:border-purple-500/40"
-          >
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4 p-6 marker:hidden">
-              <div className="min-w-0">
-                <span
-                  className={`inline-block text-[10px] uppercase tracking-[0.2em] border px-2 py-1 rounded-full mb-3 ${categoryStyles[piece.category]}`}
-                >
-                  {piece.category}
-                </span>
-                <h3
-                  id={`writing-title-${piece.id}`}
-                  className="writing-serif text-xl sm:text-2xl font-semibold text-white"
-                >
-                  {piece.title}
-                </h3>
-                <p className="text-gray-500 text-sm mt-2 line-clamp-2">
-                  {writingExcerpt(piece.body, 160)}
-                </p>
-              </div>
-              <ChevronDownIcon
-                className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-300 group-open:rotate-180"
-                aria-hidden="true"
-              />
-            </summary>
-            <div className="border-t border-line/70 px-6 pb-7 pt-6">
-              <div
-                className={`whitespace-pre-line text-gray-300 ${
-                  piece.category === "Poetry"
-                    ? "writing-serif text-[15px] leading-8"
-                    : "text-[15px] leading-8"
-                }`}
+      <div className="grid grid-cols-1 items-start gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {filteredPieces.map((piece, index) => {
+          const isFeature = piece.category !== "Poetry" || index % 6 === 0;
+          return (
+            <Reveal
+              key={piece.id}
+              className={`min-w-0 ${isFeature ? "lg:col-span-2" : ""}`}
+              delay={Math.min(index, 12) * 0.03}
+            >
+              <details
+                id={`writing-${piece.id}`}
+                aria-labelledby={`writing-title-${piece.id}`}
+                className={`group scroll-mt-36 overflow-hidden rounded-2xl border border-line backdrop-blur-sm transition-[border-color,background-color,box-shadow] duration-300 hover:border-line-accent/60 hover:shadow-glow open:border-accent/40 open:shadow-glow ${categorySurfaces[piece.category]}`}
               >
-                {piece.body.trim()}
-              </div>
-              <a
-                href={writingPieceUrl(piece.id)}
-                className="animated-underline mt-6 pb-0.5 text-xs text-purple-300 transition-colors hover:text-purple-200"
-              >
-                Open standalone page for “{piece.title}”
-              </a>
-            </div>
-          </details>
-        ))}
+                <summary
+                  className={`flex cursor-pointer list-none flex-col justify-between gap-4 p-5 marker:hidden sm:p-6 ${
+                    isFeature ? "lg:min-h-[14rem]" : "lg:min-h-[11rem]"
+                  }`}
+                >
+                  <div className="min-w-0">
+                    <span
+                      className={`inline-block rounded-full border px-2 py-1 text-[10px] uppercase tracking-[0.2em] ${categoryStyles[piece.category]}`}
+                    >
+                      {piece.category}
+                    </span>
+                    <h3
+                      id={`writing-title-${piece.id}`}
+                      className={`writing-serif mt-3 font-semibold text-white ${
+                        isFeature ? "text-2xl sm:text-3xl" : "text-xl"
+                      }`}
+                    >
+                      {piece.title}
+                    </h3>
+                    <p
+                      className={`mt-2 text-sm text-gray-500 ${
+                        isFeature ? "line-clamp-3" : "line-clamp-2"
+                      }`}
+                    >
+                      {writingExcerpt(piece.body, isFeature ? 220 : 160)}
+                    </p>
+                  </div>
+                  <div className="flex justify-end">
+                    <ChevronDownIcon
+                      className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-300 group-open:rotate-180 group-open:text-accent-light"
+                      aria-hidden="true"
+                    />
+                  </div>
+                </summary>
+                <div className="border-t border-line/70 px-5 pb-6 pt-5 sm:px-6">
+                  <div
+                    className={`whitespace-pre-line text-gray-300 ${
+                      piece.category === "Poetry"
+                        ? "writing-serif text-[15px] leading-8"
+                        : "text-[15px] leading-8"
+                    }`}
+                  >
+                    {piece.body.trim()}
+                  </div>
+                  <a
+                    href={writingPieceUrl(piece.id)}
+                    className="animated-underline mt-6 pb-0.5 text-xs text-purple-300 transition-colors hover:text-purple-200"
+                  >
+                    Open standalone page for “{piece.title}”
+                  </a>
+                </div>
+              </details>
+            </Reveal>
+          );
+        })}
       </div>
 
       {filteredPieces.length === 0 && (
