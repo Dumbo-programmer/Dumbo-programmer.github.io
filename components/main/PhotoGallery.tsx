@@ -57,14 +57,13 @@ const PhotoCard = ({ photo, eager = false }: PhotoCardProps) => (
       href={photo.src}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`Open full-size image: ${photo.title}`}
+      aria-label={`Open full-size image: ${photo.alt}`}
       className="block"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-black/60">
         <Image
           src={photo.src}
           alt={photo.alt}
-          title={photo.title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-contain p-2 transition-transform duration-500 group-hover:scale-[1.03]"
@@ -72,42 +71,33 @@ const PhotoCard = ({ photo, eager = false }: PhotoCardProps) => (
         />
       </div>
     </a>
-    <figcaption className="border-t border-line px-4 py-4">
-      <h4 className="text-sm font-semibold text-white leading-snug">
-        {photo.title}
-      </h4>
-      <p className="mt-2 text-xs leading-relaxed text-gray-400">
-        {photo.caption}
-      </p>
-      <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Image topics">
-        {photo.keywords.slice(0, 4).map((keyword) => (
-          <li
-            key={keyword}
-            className="rounded-full border border-line/70 bg-white/[0.03] px-2 py-0.5 text-[10px] text-gray-400"
-          >
-            {keyword}
-          </li>
-        ))}
-      </ul>
-    </figcaption>
   </figure>
 );
 
 interface PhotoGridProps {
   id: string;
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   photos: GalleryPhoto[];
 }
 
 const PhotoGrid = ({ id, title, description, photos }: PhotoGridProps) => (
-  <section id={id} aria-labelledby={`${id}-heading`} className="scroll-mt-36">
-    <h3 id={`${id}-heading`} className="subhead mb-3 text-center">
-      {title}
-    </h3>
-    <p className="section-subtitle mx-auto mb-8 max-w-2xl text-center text-sm">
-      {description}
-    </p>
+  <section
+    id={id}
+    aria-labelledby={title ? `${id}-heading` : undefined}
+    aria-label={title ? undefined : "Portrait photos"}
+    className="scroll-mt-36"
+  >
+    {title && (
+      <h3 id={`${id}-heading`} className="subhead mb-3 text-center">
+        {title}
+      </h3>
+    )}
+    {description && (
+      <p className="section-subtitle mx-auto mb-8 max-w-2xl text-center text-sm">
+        {description}
+      </p>
+    )}
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
       {photos.map((photo, index) => (
         <PhotoCard key={photo.src} photo={photo} eager={index === 0} />
@@ -146,12 +136,7 @@ const PhotoGallery = () => {
 
         <div className="space-y-16">
           <Reveal delay={0.08}>
-            <PhotoGrid
-              id="portrait-photos"
-              title="Portraits"
-              description="Photos of Tawhid Bin Omar — physicist, competitive programmer, and STEM educator from Bangladesh."
-              photos={personalPhotos}
-            />
+            <PhotoGrid id="portrait-photos" photos={personalPhotos} />
           </Reveal>
 
           <Reveal delay={0.12}>
