@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { personalPhotos } from "@/constants/gallery";
+import { allPhotos } from "@/constants/gallery";
 
 const SeoImageLayer = () => {
   return (
     <div aria-hidden="true">
       <div className="sr-only">
-        {personalPhotos.map((photo) => (
+        {allPhotos.map((photo) => (
           <Image
             key={photo.src}
             src={photo.src}

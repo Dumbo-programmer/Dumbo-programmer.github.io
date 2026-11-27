@@ -120,6 +120,66 @@ export const sessionPhotos: GalleryPhoto[] = [
     width: 2000,
     height: 1333,
   },
+  {
+    src: "/sessions/tawhid-bin-omar-8thjmm-speech.JPG",
+    title: "Tawhid Bin Omar — 8th Josephite Math Mania Speech",
+    alt: "Tawhid Bin Omar speaking at the 8th Josephite Math Mania in Dhaka, Bangladesh — one of the largest student mathematics events in the country.",
+    caption:
+      "Speaking at the 8th Josephite Math Mania, a national mathematics festival with over 5,000 participants and 22 events.",
+    keywords: ["Tawhid Bin Omar", "8th Josephite Math Mania", "math event", "Dhaka", "Bangladesh", "Math Club President"],
+    width: 1620,
+    height: 1080,
+  },
+  {
+    src: "/sessions/ndsctnp1.png",
+    title: "Tawhid Bin Omar — STEM Teaching Session 1",
+    alt: "Tawhid Bin Omar leading a STEM teaching session in Bangladesh — students listening and working through mathematics and science problems in a classroom.",
+    caption:
+      "First in a series of STEM teaching sessions where Tawhid Bin Omar makes mathematics and science accessible to school students in Bangladesh.",
+    keywords: ["Tawhid Bin Omar", "STEM teaching", "classroom", "mathematics", "science", "Bangladesh", "student mentorship"],
+    width: 1365,
+    height: 910,
+  },
+  {
+    src: "/sessions/ndsctnp2.png",
+    title: "Tawhid Bin Omar — STEM Teaching Session 2",
+    alt: "Tawhid Bin Omar explaining a problem during a STEM teaching session in Bangladesh — students engaged in collaborative mathematics and science problem solving.",
+    caption:
+      "Second in a series of classroom STEM sessions focused on hands-on problem solving and Olympiad-style thinking.",
+    keywords: ["Tawhid Bin Omar", "STEM workshop", "problem solving", "classroom", "mathematics", "Bangladesh"],
+    width: 1365,
+    height: 910,
+  },
+  {
+    src: "/sessions/ndsctnp3.png",
+    title: "Tawhid Bin Omar — STEM Teaching Session 3",
+    alt: "Tawhid Bin Omar conducting a STEM teaching session in Bangladesh — students following a mathematics or physics lesson during an educational outreach program.",
+    caption:
+      "Third in a series of STEM outreach lessons connecting school curricula with competitive problem solving.",
+    keywords: ["Tawhid Bin Omar", "STEM outreach", "physics lesson", "mathematics lesson", "Bangladesh", "education"],
+    width: 1365,
+    height: 910,
+  },
+  {
+    src: "/sessions/ndsctnp4.png",
+    title: "Tawhid Bin Omar — STEM Teaching Session 4",
+    alt: "Tawhid Bin Omar interacting with students during a STEM teaching session in Bangladesh — a classroom discussion about mathematics, physics, or programming.",
+    caption:
+      "Fourth in a series of student-centered STEM sessions led by Tawhid Bin Omar in Bangladesh.",
+    keywords: ["Tawhid Bin Omar", "STEM education", "student discussion", "classroom", "programming", "Bangladesh"],
+    width: 1365,
+    height: 910,
+  },
+  {
+    src: "/sessions/ndsctnp5.png",
+    title: "Tawhid Bin Omar — STEM Teaching Session 5",
+    alt: "Tawhid Bin Omar wrapping up a STEM teaching session in Bangladesh — students and a classroom setting during a mathematics and science workshop.",
+    caption:
+      "Fifth in a series of STEM teaching sessions helping students in Bangladesh build confidence with unfamiliar problems.",
+    keywords: ["Tawhid Bin Omar", "STEM workshop", "mathematics", "physics", "Bangladesh", "problem solving"],
+    width: 1365,
+    height: 910,
+  },
 ];
 
 export const allPhotos: GalleryPhoto[] = [...personalPhotos, ...sessionPhotos];

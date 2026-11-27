@@ -7,6 +7,7 @@ import CertificateCarousel from "@/components/sub/CertificateCarousel";
 import Contact from "@/components/main/Contact";
 import EducationImpactSection from "@/components/main/EducationImpactSection";
 import LibrarySection from "@/components/main/LibrarySection";
+import PhotoGallery from "@/components/main/PhotoGallery";
 import Projects from "@/components/main/Projects";
 import Research from "@/components/main/Research";
 import Skills from "@/components/main/Skills";
@@ -137,6 +138,7 @@ const TabbedPortfolio = () => {
           </>,
           "space-y-6"
         )}
+        {renderPanel("gallery", <PhotoGallery />)}
         {renderPanel("achievements", <AchievementsSection />)}
         {renderPanel("writing", <Writing />)}
         {renderPanel("contact", <Contact />)}

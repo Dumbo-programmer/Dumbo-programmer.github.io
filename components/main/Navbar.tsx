@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { HiMail, HiMenu, HiX } from "react-icons/hi";
 import {
   HiOutlineBookOpen,
+  HiOutlineCamera,
   HiOutlineCodeBracket,
   HiOutlineEnvelope,
   HiOutlinePencilSquare,
@@ -28,6 +29,7 @@ const headerLabels: Record<TabId, string> = {
   projects: "Projects",
   roles: "Roles",
   notes: "Notes",
+  gallery: "Gallery",
   achievements: "Achievements",
   writing: "Writing",
   contact: "Contact",
@@ -37,6 +39,7 @@ const tabIcons: Record<TabId, React.ReactNode> = {
   projects: <HiOutlineCodeBracket size={16} aria-hidden="true" />,
   roles: <HiOutlineUserGroup size={16} aria-hidden="true" />,
   notes: <HiOutlineBookOpen size={16} aria-hidden="true" />,
+  gallery: <HiOutlineCamera size={16} aria-hidden="true" />,
   achievements: <HiOutlineTrophy size={16} aria-hidden="true" />,
   writing: <HiOutlinePencilSquare size={16} aria-hidden="true" />,
   contact: <HiOutlineEnvelope size={16} aria-hidden="true" />,

@@ -55,6 +55,36 @@ const photoImages = [
     title: "Tawhid Bin Omar — STEM Teaching Session",
     caption: "A STEM teaching session led by Tawhid Bin Omar, President of the St. Joseph Higher Secondary School Math Club.",
   },
+  {
+    src: "/sessions/tawhid-bin-omar-8thjmm-speech.JPG",
+    title: "Tawhid Bin Omar — 8th Josephite Math Mania Speech",
+    caption: "Tawhid Bin Omar speaking at the 8th Josephite Math Mania in Dhaka, Bangladesh.",
+  },
+  {
+    src: "/sessions/ndsctnp1.png",
+    title: "Tawhid Bin Omar — STEM Teaching Session 1",
+    caption: "Tawhid Bin Omar leading a STEM teaching session in Bangladesh — students working through mathematics and science problems.",
+  },
+  {
+    src: "/sessions/ndsctnp2.png",
+    title: "Tawhid Bin Omar — STEM Teaching Session 2",
+    caption: "Tawhid Bin Omar explaining a problem during a collaborative STEM teaching session in Bangladesh.",
+  },
+  {
+    src: "/sessions/ndsctnp3.png",
+    title: "Tawhid Bin Omar — STEM Teaching Session 3",
+    caption: "Tawhid Bin Omar conducting a mathematics or physics lesson during STEM outreach in Bangladesh.",
+  },
+  {
+    src: "/sessions/ndsctnp4.png",
+    title: "Tawhid Bin Omar — STEM Teaching Session 4",
+    caption: "Tawhid Bin Omar interacting with students during a classroom STEM discussion in Bangladesh.",
+  },
+  {
+    src: "/sessions/ndsctnp5.png",
+    title: "Tawhid Bin Omar — STEM Teaching Session 5",
+    caption: "Tawhid Bin Omar wrapping up a mathematics and science workshop for students in Bangladesh.",
+  },
 ];
 
 module.exports = {

@@ -399,7 +399,10 @@ export default function Home() {
     "inLanguage": "en",
     "isPartOf": { "@id": "https://tawhid.is-a.dev/#website" },
     "mainEntity": { "@id": "https://tawhid.is-a.dev/#person" },
-    "hasPart": [{ "@id": "https://tawhid.is-a.dev/#writing-works" }],
+    "hasPart": [
+      { "@id": "https://tawhid.is-a.dev/#writing-works" },
+      { "@id": "https://tawhid.is-a.dev/#gallery" }
+    ],
     "about": { "@id": "https://tawhid.is-a.dev/#person" },
     "creator": { "@id": "https://tawhid.is-a.dev/#person" },
     "author": { "@id": "https://tawhid.is-a.dev/#person" },
@@ -414,6 +417,7 @@ export default function Home() {
       { "name": "Projects", "url": "https://tawhid.is-a.dev/#projects" },
       { "name": "Roles", "url": "https://tawhid.is-a.dev/#roles" },
       { "name": "Notes", "url": "https://tawhid.is-a.dev/#notes" },
+      { "name": "Gallery", "url": "https://tawhid.is-a.dev/#gallery" },
       { "name": "Achievements", "url": "https://tawhid.is-a.dev/#achievements" },
       { "name": "Writing", "url": "https://tawhid.is-a.dev/#writing" },
       { "name": "Contact", "url": "https://tawhid.is-a.dev/#contact" },
@@ -429,8 +433,9 @@ export default function Home() {
       { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://tawhid.is-a.dev/#projects" },
       { "@type": "ListItem", "position": 3, "name": "Roles", "item": "https://tawhid.is-a.dev/#roles" },
       { "@type": "ListItem", "position": 4, "name": "Notes", "item": "https://tawhid.is-a.dev/#notes" },
-      { "@type": "ListItem", "position": 5, "name": "Achievements", "item": "https://tawhid.is-a.dev/#achievements" },
-      { "@type": "ListItem", "position": 6, "name": "Writing", "item": "https://tawhid.is-a.dev/#writing" }
+      { "@type": "ListItem", "position": 5, "name": "Gallery", "item": "https://tawhid.is-a.dev/#gallery" },
+      { "@type": "ListItem", "position": 6, "name": "Achievements", "item": "https://tawhid.is-a.dev/#achievements" },
+      { "@type": "ListItem", "position": 7, "name": "Writing", "item": "https://tawhid.is-a.dev/#writing" }
     ]
   };
 
