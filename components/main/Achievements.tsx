@@ -6,6 +6,7 @@ const achievementData: {
   src: string;
   title: string;
   description: string;
+  imageAlt?: string;
 }[] = [
   {
     src: "/bdpho.png",
@@ -18,6 +19,14 @@ const achievementData: {
     title: "Physics Brawl",
     description:
       "29th place out of 1,584 teams internationally · 10th nationwide.",
+  },
+  {
+    src: "/physicscup.png",
+    title: "Physics Cup 2026 — Bronze",
+    description:
+      "First undergraduate team to solve Problem 2 in the Physics Cup 2026 competition.",
+    imageAlt:
+      "Physics Cup 2026 bronze award graphic — first undergraduate team to solve Problem 2",
   },
   {
     src: "/phiga.png",
@@ -93,6 +102,7 @@ const Achievements = () => {
                 src={achievement.src}
                 title={achievement.title}
                 description={achievement.description}
+                imageAlt={achievement.imageAlt}
               />
             </Reveal>
           ))}

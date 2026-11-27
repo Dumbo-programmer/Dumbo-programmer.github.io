@@ -6,6 +6,7 @@ interface Props {
   description: string;
   typeA?: "image" | "video";
   link?: string;
+  imageAlt?: string;
 }
 
 const AchievementCard = ({
@@ -14,12 +15,19 @@ const AchievementCard = ({
   description,
   typeA = "image",
   link,
+  imageAlt,
 }: Props) => (
   <ContentCard
     title={title}
     href={link}
     ariaLabel={`View ${title} achievement details`}
-    media={<MediaPanel src={src} typeA={typeA} alt={`${title} achievement`} />}
+    media={
+      <MediaPanel
+        src={src}
+        typeA={typeA}
+        alt={imageAlt ?? `${title} achievement`}
+      />
+    }
   >
     <div className="flex flex-1 flex-col p-5">
       <h3 className="text-base font-semibold leading-snug text-white">{title}</h3>

@@ -238,6 +238,13 @@ export default function Home() {
       },
       {
         "@type": "Award",
+        "name": "Physics Cup 2026 — Bronze",
+        "description": "First undergraduate team to solve Problem 2 in the Physics Cup 2026 competition.",
+        "image": "https://tawhid.is-a.dev/physicscup.png",
+        "url": "https://physicscup.ee/"
+      },
+      {
+        "@type": "Award",
         "name": "IAAC — Silver Honor, International Astronomy and Astrophysics Competition"
       },
       {

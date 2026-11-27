@@ -8,6 +8,7 @@ interface Certificate {
   file: string;
   title: string;
   caption: string;
+  src?: string;
 }
 
 const knownCertificates: Certificate[] = [
@@ -23,6 +24,12 @@ const knownCertificates: Certificate[] = [
   { file: "nasac.png", title: "NASA Space Apps Challenge", caption: "NASA Space Apps Challenge participation certificate" },
   { file: "pb177.png", title: "Physics Brawl", caption: "International Physics Brawl certificate" },
   { file: "pb29.png", title: "Physics Brawl — Top 29 Team", caption: "29th place out of 1,584 international teams" },
+  {
+    file: "physicscup.png",
+    src: "/physicscup.png",
+    title: "Physics Cup 2026 — Bronze",
+    caption: "First undergraduate team to solve Problem 2",
+  },
   { file: "pf_cert.png", title: "Programme Certificate", caption: "Programme completion certificate from Tawhid’s archive" },
   { file: "phiga.png", title: "PHIGA #1 Worldwide", caption: "1st place out of 1,211 participants worldwide" },
   { file: "qcwc.png", title: "Queen’s Commonwealth Essay Competition", caption: "Silver Award out of 53,840 entries" },
@@ -136,7 +143,7 @@ const CertificateCarousel = () => {
               <figure className="flex flex-col h-full">
                 <div className="h-[200px] w-full flex items-center justify-center overflow-hidden">
                   <Image
-                    src={`/certis/${certificate.file}`}
+                    src={certificate.src ?? `/certis/${certificate.file}`}
                     alt={`${certificate.title} — certificate earned by Tawhid Bin Omar`}
                     width={250}
                     height={200}
